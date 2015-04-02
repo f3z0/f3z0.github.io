@@ -1,0 +1,3 @@
+[submodule "axionfx"]
+	path = axionfx
+	url = https://github.com/f3z0/axionfx
