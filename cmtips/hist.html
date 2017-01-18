@@ -1,0 +1,1491 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+
+<html lang="en">
+
+	<!-- #BeginTemplate "../../cmtips.data/Templates/cmtemp.html" -->
+
+		<head>
+			<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+			<title>Cable Modem Troubleshooting Tips: Update history</title>
+			<!-- #BeginHeadLocked "" -->
+				<meta name="description" content="Technical tips for troubleshooting a cable modem connection.">
+				<meta name="keywords" content="cable modem, FAQ, broadband, cablemodem, troubleshooting, tips, NTL, NTLworld, ntlhome, Telewest, blueyonder">
+				<meta name="author" content="Robin Walker">
+				<meta name="copyright" content="&copy; 2001-02 Robin Walker">
+				<link href="../favicon.ico" rel="shortcut icon">
+				<link href="mailto:rdhw@cam.ac.uk" rel="author">
+				<link href="copyright.html" rel="copyright">
+				<link href="index.html" rel="index">
+				<link href="cmstyle.css" rel="stylesheet">
+				<script type="text/javascript" language="JavaScript"><!--
+function jsinit() {
+  if (top!=self) top.location.href = self.location.href;
+}
+// -->
+</script>
+			<!-- #EndHeadLocked -->
+		</head>
+
+		<body onload="jsinit()" bgcolor="#eeffff">
+			<h1>Cable Modem Troubleshooting Tips</h1>
+			<hr>
+			<table border="0" cellpadding="0" align="left" summary="Quick links">
+				<tr>
+					<td nowrap bgcolor="#ffffff">
+						<div class="menubox">
+							<a class="sidelink" title="Introduction and Index to articles" href="index.html">Intro&nbsp;&amp;&nbsp;Index</a>.<br>
+							<a class="sidelink" title="History of updates and changes to this site" href="hist.html">Update&nbsp;history</a>.<br>
+							<a class="sidelink" title="Problems with BroadJump Broadband Installer" href="broadjump.html">Installer issues</a>.<br>
+							<a class="sidelink" title="Problems associated with getting a cable modem registered with your cable operator" href="register.html">Registration&nbsp;issues</a>.&nbsp;<br>
+							<a class="sidelink" title="PC network configuration for cable service" href="basicset.html">Network&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Swapping one PC between multiple networks" href="mobile.html">Mobile&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Understanding the flashing lights on the cable modem" href="lights.html">Cable&nbsp;Modem&nbsp;LEDs</a>.<br>
+							<a class="sidelink" title="How to determine various important IP addresses" href="ipaddr.html">IP&nbsp;addresses</a>.<br>
+							<a class="sidelink" title="How to determine various important MAC addresses" href="macaddr.html">MAC addresses</a>.<br>
+							<a class="sidelink" title="What to check if you have no service" href="badip.html">Dead&nbsp;connection</a>.<br>
+							<a class="sidelink" title="Updating your system with the latest patches and fixes" href="sysupdates.html">System&nbsp;updates</a>.<br>
+							<a class="sidelink" title="Tweaking your PC for best cable modem performance" href="tweaks.html">Network&nbsp;tweaks</a>.<br>
+							<a class="sidelink" title="Problems specifically related to the ethernet connection between your PC and the cable modem" href="ethernet.html">Ethernet&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Problems specifically related to a USB connection between the PC and cable modem" href="usb.html">USB&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Procedures and tips specifically for Surfboard cable modems" href="surfboard.html">Surfboard&nbsp;tips</a>.<br>
+							<a class="sidelink" title="Diagnosing your cable modem's connection" href="signal.html">CM&nbsp;diagnostics</a>.<br>
+							<a class="sidelink" title="Quality of service determined by configuration file" href="cmfile.html">CM&nbsp;config&nbsp;file</a>.<br>
+							<a class="sidelink" title="The network structure of a cable modem" href="cmworks.html">CM&nbsp;tech&nbsp;info</a>.<br>
+							<a class="sidelink" title="DHCP-related problems" href="dhcp.html">DHCP&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Understanding DNS and fixing DNS problems" href="dnsname.html">DNS&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Transparent web proxy caches and how to sidestep them" href="trancache.html">Web&nbsp;proxy&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance of streaming media" href="stream.html">Streaming&nbsp;media</a>.<br>
+							<a class="sidelink" title="Settings that affect performance, latency and pings" href="games.html">Gaming&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance; avoiding saturation of upstream" href="p2p.html">P2P&nbsp;file-sharing</a>.<br>
+							<a class="sidelink" title="Work around connection errors" href="seti.html">SETI@home&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect web browsing performance" href="fasterweb.html">Faster&nbsp;web&nbsp;browsing</a>.<br>
+							<a class="sidelink" title="Strategies to get better download speeds" href="fasterftp.html">Faster&nbsp;downloads</a>.<br>
+							<a class="sidelink" title="How to avoid performance hits" href="downup.html">Simul&nbsp;down/uploads</a>.<br>
+							<a class="sidelink" title="How to restore lost connection when you swap PCs connected to the CM" href="swap.html">Swapping&nbsp;PCs&nbsp;on&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Multiple PCs sharing one CM, home LANs, and NAT Routers" href="homelan.html">PCs&nbsp;sharing&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Using dial-up without losing cable connection" href="dialup.html">Simul&nbsp;dialup&nbsp;&amp;&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Problems with some VPN configurations" href="vpn.html">VPN&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Keep your clock correct, for ever, from cable time" href="timesync.html">Time&nbsp;sync</a>.<br>
+							<a class="sidelink" title="Avoiding virus and trojan infections" href="virus.html">Virus&nbsp;security</a>.<br>
+							<a class="sidelink" title="Configuring firewalls for cable connection" href="security.html">Firewall&nbsp;security</a>.<br>
+							<a class="sidelink" title="Limitations of some speed tests" href="speed.html">Speed&nbsp;testing</a>.<br>
+							<a class="sidelink" title="Understanding, diagnosing, and fixing latency and ping problems" href="latency.html">Latency issues</a>.<br>
+							<a class="sidelink" title="How to perform a traceroute, and how they can mislead" href="traceroute.html">Traceroute</a>.<br>
+							<a class="sidelink" title="Understanding and diagnosing packet loss" href="loss.html">Packet loss</a>.<br>
+							<a class="sidelink" href="frontpage.html">FrontPage tips</a>.<br>
+							<a class="sidelink" title="How to obtain technical support" href="techsupp.html">NTL/BY&nbsp;Tech&nbsp;Support</a>.</div>
+					</td>
+					<td width="18">&nbsp;</td>
+				</tr>
+			</table>
+			<!-- #BeginEditable "main" -->
+				<h2>History of Site Updates</h2>
+				<hr>
+				<p>2006 Apr 23: updated list of <a href="trancache.html#ntl">NTL web proxies</a>. Updated <a href="techsupp.html">technical support</a>.<br>
+					2004 Oct 24: add proxy configuration for <a href="trancache.html#firefox">Firefox</a> and <a href="trancache.html#macosx103">Safari</a>.<br>
+					2004 Oct 23: updated list of <a href="trancache.html#ntl">NTL web proxies</a>.<br>
+					2004 Feb 8: updated list of <a href="trancache.html#ntl">NTL web proxies</a>.<br>
+					2004 Jan 16: updated list of <a href="trancache.html#ntl">NTL web proxies</a>. Distinguished between Inktomi and NetApp proxies.<br>
+					2004 Jan 8: updated list of <a href="trancache.html#ntl">NTL web proxies</a>. Listed nthellworld.co.uk as a <a href="techsupp.html">technical support</a> site, instead of nthellworld.com<br>
+					2003 Sep 22: updated <a href="downup.html#winbw">Windows bandwidth limiting</a>.<br>
+					
+					2003 Aug 25: updated list of <a href="trancache.html#ntl">NTL web proxies</a>. Listed community.ntl.com as a <a href="techsupp.html">technical support</a> site. Added section on <a href="downup.html#winbw">Windows bandwidth limiting</a>.<br>
+					
+					2003 Mar 16: updated list of <a href="ipaddr.html#wanip">NTL IP address</a> ranges. Updated list of <a href="trancache.html#ntl">NTL</a> web proxies. Noted that Blueyonder no longer enforce transparent proxying. Updated <a href="swap.html">Swapping PCs on CM</a> and <a href="homelan.html">PCs sharing CM</a> for the NTL Xbox Live service. Added 3Com 510 to list of <a href="homelan.html#natupnp">UPnP-enabled routers</a>.<br>
+					
+					2003 Feb 16: updated list of <a href="trancache.html#ntl">NTL</a> web proxies. Made a new list of abbreviations used in <a href="dnsname.html#dnsname">DNS names</a> on NTL network.<br>
+					
+					2003 Jan 22: added work-around for <a href="stream.html#wmp">Windows Media Player</a> problems with Inktomi traffic servers.<br>
+					
+					2003 Jan 7: clarified procedure for <a href="register.html#pacereg">registering on an STB</a> via a router.<br>
+					
+					2002 Nov 24: updated lists of <a href="trancache.html#ntl">NTL</a> and <a href="trancache.html#by">Blueyonder</a> web proxies. Updated list of <a href="homelan.html#natupnp">UPnP-aware routers</a>. Updated Blueyonder <a href="cmfile.html">CM configuration file</a> names.<br>
+					
+					2002 Nov 10: updated <a href="stream.html">Streaming Media</a> page for Real Player versions. Added section on <a href="lights.html#activity">Cable modem data activity light keeps flashing</a>.<br>
+					
+					
+					2002 Oct 27: many updates on the <a href="homelan.html">PCs sharing CM</a> Home LAN page, including UPnP-aware routers and NAT-unfriendly applications.<br>
+					
+					2002 Oct 12: new section on <a href="badip.html#ip10">10.xxx.xxx.xxx addresses</a> with NTL STBs; updated <a href="register.html">registration page</a> and <a href="techsupp.html">technical support info</a>.<br>
+					
+					
+					
+					2002 Sep 28: updated <a href="homelan.html#natupnp">UPnP NAT traversal</a>.<br>
+					
+					
+					
+					2002 Sep 21: updated <a href="homelan.html">PCs sharing CM</a>; minor updates on <a href="p2p.html">P2P sharing</a>.<br>
+					
+					
+					
+					
+					2002 Sep 20: small edits on various pages for references to the NTL 600kbps service, instead of 512kbps.<br>
+					
+					
+					
+					
+					2002 Sep 12: Linksys firmware v1.43 fixes <a href="homelan.html#natupnp">UPnP NAT traversal</a> problems with XP Remote Assistance.<br>
+					
+					
+					
+					
+					2002 Sep 10: added new page <a href="frontpage.html">FrontPage tips</a>.<br>
+					
+					
+					
+					
+					
+					2002 Sep 8: re-write and expansion of the <a href="dnsname.html">DNS issues</a> page.<br>
+					
+					
+					
+					
+					
+					
+					2002 Sep 7: re-write of the <a href="signal.html">CM Diagnostics and signal levels</a> page, updated <a href="loss.html">Packet Loss</a> page.<br>
+					
+					
+					
+					
+					
+					
+					2002 Sep 4: in <a href="cmfile.html">CM config file</a>, noted NTL change to 600kbps.<br>
+					
+					
+					
+					
+					
+					
+					2002 Sep 3: updated the <a href="trancache.html#ntl">NTL web proxies</a> for Swansea.<br>
+					
+					
+					
+					
+					
+					
+					2002 Sep 1: complete re-write of the <a href="dhcp.html">DHCP issues</a> page. Added new page on <a href="loss.html">Packet Loss</a>. Updated <a href="badip.html">No Connectivity</a>.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 Aug 31: updated <a href="ipaddr.html">IP Addresses</a>, <a href="macaddr.html">MAC Addresses</a>, <a href="timesync.html">Time Synchronisation</a>, and <a href="tweaks.html">Network tweaks</a> with information for Mac OS X.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 Aug 26: updated <a href="ethernet.html">Ethernet issues</a> to include Auto-MDIX, and duplex settings for Mac OS X and BSD Unix. New article on <a href="traceroute.html#revroute">Partial return routes</a> using ping.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 Aug 23: updated <a href="seti.html">SETI@home</a> info.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 Aug 22: updated <a href="swap.html">swapping PCs</a> on NTL cable modems, decoding of NTL <a href="dnsname.html">DNS names</a>. Mentioned ntl:home 120 as well as 100 <i>passim</i>.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 Aug 18: added new page on <a href="latency.html">Latency Issues</a>.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 Aug 17: added new article on <a href="tweaks.html#cfg">Network Configuration Tweaks</a>. Updated list of <a href="trancache.html#ntl">NTL web proxies</a>, and <a href="trancache.html#mycache">Which is my web proxy cache</a>?<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 Aug 15: updated how to find <a href="ipaddr.html#dhcpip">DHCP addresses</a>, and decoding of <a href="dnsname.html">DNS names</a>.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 Aug 11: updated <a href="swap.html">swapping PCs</a> on NTL cable modems.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 Jul 26: updated <a href="security.html#fwza">ZoneAlarm configuration</a> for v3.x<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 Jul 21: added new page on <a href="surfboard.html">Surfboard tips</a>; updated <a href="signal.html#pacediag">Pace STB diagnostics</a>.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 Jul 14: added Mac OS X <a href="downup.html#throttled">throttled</a> to list of solutions for simultaneous upload/download performance problems.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 Jun 30: updated pages on <a href="trancache.html">Web Proxy issues</a>, <a href="homelan.html">PCs sharing CM</a>, <a href="broadjump.html">Correct Connect</a>, <a href="ipaddr.html">IP addresses</a>.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 Jun 27: noted change enabling <a href="swap.html">swapping of PCs</a> without the 6-hour wait on parts of NTL's network.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 Jun 23: rewrote the <a href="usb.html">USB issues</a> page. Added note about <a href="ethernet.html#ethdrive">Ethernet drivers</a>. Updated <a href="dhcp.html">DHCP</a> problem-solving. Updated <a href="badip.html">No connectivity</a> page.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 Jun 9: added section on <a href="downup.html#linux">Linux Wonder Shaper</a> for upload rate-limiting. Added sections on <a href="basicset.html#mac9">Mac OS 8/9</a> and <a href="basicset.html#macx">Mac OS X</a> setup.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 May 28: added info re <a href="broadjump.html#ambit98">ntl:home 100 and Windows 98 FE USB</a>.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 May 22: added new sections on <a href="stream.html">streaming media</a> issues.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 May 17: added new section on <a href="broadjump.html">installer issues</a>.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 May 8: added details of <a href="signal.html#ntlhmdiags">diagnostics</a> for ntl:home 100.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 May 15: references to Manchester NAT addresses removed.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 May 6: added ntl:home 100 cable modem: how to get <a href="signal.html">diagnostics</a>, the <a href="lights.html#ltntl100">lights</a>.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 May 4: added info for ntl:home 100 cable modem: <a href="macaddr.html">MAC address</a> range and <a href="cmfile.html">configuration file</a> names.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 May 1: updated notes on <a href="swap.html#swap">swapping PCs</a> on NTL cable modems.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 Apr 28: added new <a href="macaddr.html">MAC address</a> ranges for Surfboard 4100.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 Apr 14: updated <a href="register.html">NTL configuration</a> details.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 Apr 9: Blueyonder technical support phone numbers updated.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 Apr 6: new section on <a href="macaddr.html">MAC addresses</a>, revised section on <a href="register.html">Registration issues</a>.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 Apr 2: added notes on <a href="security.html#fwmcafee">McAfee Firewall</a>, <a href="security.html#fwmspr">Microsoft Proxy Server</a>.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 Apr 1: split site into multiple pages.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 Mar 17: added rate-limiting configuration for the new <a href="p2p.html#morpheus">Morpheus</a> Preview Edition.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 Mar 10: added NTL 1Mbps service to <a href="cmfile.html#cmfile">cable modem configuration</a> files, updated <a href="trancache.html#sidestep">NTL transparent proxy</a> addresses.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 Feb 23: noted need for JavaScript for <a href="register.html#pacereg">Pace STB registration</a> and <a href="register.html#ntlreg">NTL registration</a>.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 Jan 29: Updated <a href="dnsname.html#dnsname">decoding DNS names</a>.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 Jan 27: Updated <a href="security.html#fwconfig">firewall configuration</a> info.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 Jan 11: Added article on <a href="vpn.html#vpn">VPN issues</a>.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 Jan 10: Added <a href="p2p.html#winmx">WinMX</a> configuration, <a href="p2p.html#edonkey">eDonkey2000</a> configuration. Added article on <a href="dialup.html#dialup">simultaneous use of dial-up modem and cable modem</a>.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 Jan 8: Updated <a href="sysupdates.html#sysupdates">System updates and patches</a>.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2002 Jan 6: Clarified ntl:home <a href="register.html#ntlreg">Post-installation registration</a>. Noted that MSIE 5.1 for Mac can now <a href="trancache.html#refreshstale">refresh stale pages in a transparent proxy cache</a>. Several other tidies.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Dec 27: Tidied up <a href="register.html#macreg">Modem MAC pre-registration</a>. Updated <a href="basicset.html#winxp">Windows XP configuration</a> for fetching updated USB drivers. Updated article on <a href="usb.html#usb">USB connections</a>.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Dec 17: Corrections in <a href="cmfile.html#cmfile">Cable Modem Configuration File</a>.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Dec 11: Updated article on <a href="p2p.html#p2p">Peer-to-Peer file sharing</a> issues for BearShare.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Dec 2: Added article on <a href="p2p.html#p2p">Peer-to-Peer file sharing</a> issues.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Dec 1: Added article on <a href="ipaddr.html#gateway">Default Gateway</a> address. Updated <a href="ipaddr.html#ipaddr">What's my IP address</a>? for Linksys routers. Updated <a href="badip.html#badip">No connectivity at all</a> for DHCP non-response after PC swaps. Updated <a href="signal.html#nocmdiag">Inability to connect to cable modem diagnostic address</a> for general need to change PC's sub-net. Updated <a href="swap.html#swap">Swapping PCs on the cable modem</a> for ISPs that require user MACs to be registered.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Nov 25: Revised notes on in-service IP addresses for NTL, and moved them to <a href="ipaddr.html#ipaddr">What's my IP address</a>? Revised notes on <a href="ipaddr.html#ubrip">Finding the UBR address</a>. Changed recommendation on address to use for requesting <a href="timesync.html#timesync">time synchronisation</a> from UBR.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Nov 18: Revised notes on the <a href="basicset.html#xpfw">XP firewall</a>. Revised notes on <a href="timesync.html#timesync">time synchronisation</a> for XP. Revised notes on <a href="swap.html#swap">swapping PCs</a> connected to the cable modem. Added article on <a href="seti.html#seti">SETI@home</a> issues.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Oct 28: Revised notes on firewalls; added some notes on Windows XP. Added notes on <a href="ipaddr.html#cmip">Finding the cable modem's address</a>.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Oct 21: Added Blueyonder proxy cache information. Improved listing of Blueyonder DNS codes. Added method of determining both DHCP server addresses for Blueyonder users. Noted change of NTL registration code. Added note on applications which might not work behind a firewall.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Oct 14: Added much Blueyonder information throughout, courtesy of the by-Users group.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Sep 2: Added article on <a href="virus.html#virus">viruses</a>.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Aug 19: Added <a href="ipaddr.html#ubrip">Finding the UBR address</a>, <a href="ipaddr.html#dnsip">Finding the DNS addresses</a>, <a href="ipaddr.html#dhcpip">Finding the DHCP address</a>., <a href="sysupdates.html#sysupdates">System updates and patches</a>, <a href="register.html#pacereg">First connection to Pace STB</a>.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Aug 18: Added notes on <a href="cmfile.html#cmfile">Cable Modem configuration file</a>. Added <a href="ipaddr.html#ipaddr">What's my IP address</a>?<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Aug 17: Added notes on identifying the <a href="trancache.html#mycache">address of your web cache</a>.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Aug 15: Added notes on <a href="trancache.html#authoring">web authoring</a> to cope with caches.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Aug 12: Worked around some of the CSS bugs in Netscape 4.7x.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Aug 11: Revised notes on <a href="signal.html#pacediag">Pace diagnostic</a> pages.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Jul 27: Added further technique for <a href="trancache.html#refreshstale">refreshing stale pages</a> from a web cache.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Jul 19: Revised notes on NTL registration procedures.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Jul 15: Terayon modems confirmed as requiring <a href="ethernet.html#ethernet">half-duplex ethernet</a> working.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Jul 11: Expanded notes on <a href="games.html#games">network game performance</a>.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Jul 7: Notes throughout on private IP ranges for Pace STBs.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Jun 28: Added note on lack of diagnostics for <a href="signal.html#pacediag">Pace STB</a>.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Jun 17: Updated section on decoding <a href="dnsname.html#dnsname">NTL DNS names</a> to avoid use of nslookup.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Jun 15: Further distinctions between <a href="speed.html#kilobytes">bits-per-second and bytes-per-second</a>.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Jun 5: Removed reference to temporary primary DNS server for NTL cable modem users.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Jun 4: Added links to <a title="Program for viewing cable modem diagnostics" href="http://homepage.ntlworld.com/robin.d.h.walker/docsdiag/">DocsDiag</a> for <a href="signal.html#cmxdiag">CMX</a> and <a href="signal.html#teradiag">Terayon</a> diagnostics.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Jun 2: Minor edits to post-installation registration and decoding DNS names.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 May 27: Added self-reference for printed copies.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 May 26: Added section on decoding <a href="dnsname.html#dnsname">NTL DNS names</a>.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 May 16: Added section on <a href="dhcp.html#dhcp">DHCP problem-solving</a>.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 May 15: updated names of NTL support newsgroups.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 May 6: Added notes on why the UBR is important in <a href="security.html#fwconfig">firewall configuration</a>.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 May 6: Added section on <a href="downup.html#downup">Simultaneous download and upload</a> performance.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 May 6: Updated <a href="usb.html#usb4100">USB</a>. Added null section on <a href="signal.html#teradiag">Terayon</a> diagnostics. Noted IP ranges for <b>unreg.cm</b>.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Apr 22: Added section on <a href="games.html#games">on-line game</a> configuration.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Apr 14/16/21: Added notes on <b>unreg.cm</b> in <a href="register.html#macreg">pre-registration</a>, <a href="register.html#ntlreg">post-registration</a>.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Apr 9: Added section on configuration of <a href="mobile.html#mobile">mobile</a> PCs.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Apr 5: Updated <a href="timesync.html#timesync">Time Synchronisation</a> for Linux.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Apr 4: Added notes on the <a href="signal.html#cmlog">cable modem log</a>.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Apr 3: Updated <a href="timesync.html#timesync">Time Synchronisation</a> for Windows 2000.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Apr 1: <a href="basicset.html#win2k">Windows 2000</a> setup and <a href="basicset.html#internetopt">Internet Options</a> setup added.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Mar 31: Added 3Com Tailfin and 3Com CMX details to <a href="lights.html#lights">Flashing Lights</a> article.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Mar 30: Updated <a href="basicset.html#basicset">Basic Network Settings</a> to cope with new NTL help pages.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Mar 28: Added section on <a href="timesync.html#timesync">Time Synchronisation</a>.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Mar 25: Updated notes on <a href="ethernet.html#ethernet">ethernet duplex</a> setting and <a href="trancache.html#refreshstale">refreshing stale</a> cache pages.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Mar 25: Updated <a href="security.html#fwconfig">firewall configuration</a> notes. Added cautions about <a href="security.html#stealth">stealth mode</a>.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Mar 22: Added section on <a href="basicset.html#win2k">Windows 2000 DHCP</a> problems.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Mar 18: Updated notes on Windows 2000 <a href="security.html#security">security</a>.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Mar 4: Section on <a href="speed.html#speed">Speed Tests</a> added.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Mar 4: Section on <a href="badip.html#badip">No connectivity</a> and Strange IP addresses added.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Feb 25: <a href="security.html#fwconfig">Firewall configuration</a> info expanded.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Feb 10: Article on <a href="fasterweb.html#fasterweb">Faster Web Browsing</a> added. Apple Mac proxy config added.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					2001 Feb 4: This week, I have been mainly writing notes on <a href="security.html#security">Security</a>.</p>
+				<hr>
+			<!-- #EndEditable -->
+			<p>Return to <a href="index.html">Index</a>.</p>
+		</body>
+
+	<!-- #EndTemplate -->
+
+</html>
+

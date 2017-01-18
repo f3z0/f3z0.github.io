@@ -1,0 +1,628 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+
+<html lang="en">
+
+	<!-- #BeginTemplate "../../cmtips.data/Templates/cmtemp.html" -->
+
+		<head>
+			<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+			<title>Cable Modem Troubleshooting Tips: Web Proxy Caches</title>
+			<!-- #BeginHeadLocked "" -->
+				<meta name="description" content="Technical tips for troubleshooting a cable modem connection.">
+				<meta name="keywords" content="cable modem, FAQ, broadband, cablemodem, troubleshooting, tips, NTL, NTLworld, ntlhome, Telewest, blueyonder">
+				<meta name="author" content="Robin Walker">
+				<meta name="copyright" content="&copy; 2001-02 Robin Walker">
+				<link href="../favicon.ico" rel="shortcut icon">
+				<link href="mailto:rdhw@cam.ac.uk" rel="author">
+				<link href="copyright.html" rel="copyright">
+				<link href="index.html" rel="index">
+				<link href="cmstyle.css" rel="stylesheet">
+				<script type="text/javascript" language="JavaScript"><!--
+function jsinit() {
+  if (top!=self) top.location.href = self.location.href;
+}
+// -->
+</script>
+			<!-- #EndHeadLocked -->
+		</head>
+
+		<body onload="jsinit()" bgcolor="#eeffff">
+			<h1>Cable Modem Troubleshooting Tips</h1>
+			<hr>
+			<table summary="Quick links" border="0" cellpadding="0" align="left">
+				<tr>
+					<td nowrap bgcolor="#ffffff">
+						<div class="menubox">
+							<a class="sidelink" title="Introduction and Index to articles" href="index.html">Intro&nbsp;&amp;&nbsp;Index</a>.<br>
+							<a class="sidelink" title="History of updates and changes to this site" href="hist.html">Update&nbsp;history</a>.<br>
+							<a class="sidelink" title="Problems with BroadJump Broadband Installer" href="broadjump.html">Installer issues</a>.<br>
+							<a class="sidelink" title="Problems associated with getting a cable modem registered with your cable operator" href="register.html">Registration&nbsp;issues</a>.&nbsp;<br>
+							<a class="sidelink" title="PC network configuration for cable service" href="basicset.html">Network&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Swapping one PC between multiple networks" href="mobile.html">Mobile&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Understanding the flashing lights on the cable modem" href="lights.html">Cable&nbsp;Modem&nbsp;LEDs</a>.<br>
+							<a class="sidelink" title="How to determine various important IP addresses" href="ipaddr.html">IP&nbsp;addresses</a>.<br>
+							<a class="sidelink" title="How to determine various important MAC addresses" href="macaddr.html">MAC addresses</a>.<br>
+							<a class="sidelink" title="What to check if you have no service" href="badip.html">Dead&nbsp;connection</a>.<br>
+							<a class="sidelink" title="Updating your system with the latest patches and fixes" href="sysupdates.html">System&nbsp;updates</a>.<br>
+							<a class="sidelink" title="Tweaking your PC for best cable modem performance" href="tweaks.html">Network&nbsp;tweaks</a>.<br>
+							<a class="sidelink" title="Problems specifically related to the ethernet connection between your PC and the cable modem" href="ethernet.html">Ethernet&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Problems specifically related to a USB connection between the PC and cable modem" href="usb.html">USB&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Procedures and tips specifically for Surfboard cable modems" href="surfboard.html">Surfboard&nbsp;tips</a>.<br>
+							<a class="sidelink" title="Diagnosing your cable modem's connection" href="signal.html">CM&nbsp;diagnostics</a>.<br>
+							<a class="sidelink" title="Quality of service determined by configuration file" href="cmfile.html">CM&nbsp;config&nbsp;file</a>.<br>
+							<a class="sidelink" title="The network structure of a cable modem" href="cmworks.html">CM&nbsp;tech&nbsp;info</a>.<br>
+							<a class="sidelink" title="DHCP-related problems" href="dhcp.html">DHCP&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Understanding DNS and fixing DNS problems" href="dnsname.html">DNS&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Transparent web proxy caches and how to sidestep them" href="trancache.html">Web&nbsp;proxy&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance of streaming media" href="stream.html">Streaming&nbsp;media</a>.<br>
+							<a class="sidelink" title="Settings that affect performance, latency and pings" href="games.html">Gaming&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance; avoiding saturation of upstream" href="p2p.html">P2P&nbsp;file-sharing</a>.<br>
+							<a class="sidelink" title="Work around connection errors" href="seti.html">SETI@home&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect web browsing performance" href="fasterweb.html">Faster&nbsp;web&nbsp;browsing</a>.<br>
+							<a class="sidelink" title="Strategies to get better download speeds" href="fasterftp.html">Faster&nbsp;downloads</a>.<br>
+							<a class="sidelink" title="How to avoid performance hits" href="downup.html">Simul&nbsp;down/uploads</a>.<br>
+							<a class="sidelink" title="How to restore lost connection when you swap PCs connected to the CM" href="swap.html">Swapping&nbsp;PCs&nbsp;on&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Multiple PCs sharing one CM, home LANs, and NAT Routers" href="homelan.html">PCs&nbsp;sharing&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Using dial-up without losing cable connection" href="dialup.html">Simul&nbsp;dialup&nbsp;&amp;&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Problems with some VPN configurations" href="vpn.html">VPN&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Keep your clock correct, for ever, from cable time" href="timesync.html">Time&nbsp;sync</a>.<br>
+							<a class="sidelink" title="Avoiding virus and trojan infections" href="virus.html">Virus&nbsp;security</a>.<br>
+							<a class="sidelink" title="Configuring firewalls for cable connection" href="security.html">Firewall&nbsp;security</a>.<br>
+							<a class="sidelink" title="Limitations of some speed tests" href="speed.html">Speed&nbsp;testing</a>.<br>
+							<a class="sidelink" title="Understanding, diagnosing, and fixing latency and ping problems" href="latency.html">Latency issues</a>.<br>
+							<a class="sidelink" title="How to perform a traceroute, and how they can mislead" href="traceroute.html">Traceroute</a>.<br>
+							<a class="sidelink" title="Understanding and diagnosing packet loss" href="loss.html">Packet loss</a>.<br>
+							<a class="sidelink" href="frontpage.html">FrontPage tips</a>.<br>
+							<a class="sidelink" title="How to obtain technical support" href="techsupp.html">NTL/BY&nbsp;Tech&nbsp;Support</a>.</div>
+					</td>
+					<td width="18">&nbsp;</td>
+				</tr>
+			</table>
+			<!-- #BeginEditable "main" -->
+				<h2>Web Proxy issues: on this page:</h2>
+				<ul>
+					<li><a href="#trancache">Transparent web proxy caches</a>: what they do
+					<li><a href="#mycache">Which is my web proxy cache</a>? - identifying the address of the web proxy
+					<li><a href="#refreshstale">Stale pages in a proxy web cache</a>: how to refresh
+					
+					<li><a href="#sidestep">Sidestepping the transparent web proxy caches</a>: how to set explicit proxies
+					
+						<ul>
+							<li><a href="#iew">Setting an explicit web proxy in Internet Explorer for Windows</a>
+							<li><a href="#iem">Setting an explicit web proxy in Internet Explorer for Macintosh</a>
+							<li><a href="#macosx103">Setting an explicit web proxy in Mac OS 10.3 for Safari or Internet Explorer</a> 
+							<li><a href="#ns">Setting an explicit web proxy in Netscape or Mozilla</a>
+							<li><a href="#firefox">Setting an explicit web proxy in Firefox</a> 
+						</ul>
+					
+					<li class="ntlns4"><a href="#ntl">NTL web proxy caches</a>: list by centre <span class="flash">&nbsp;Updated 2006 Apr 23&nbsp;</span>
+					<li class="by"><a href="#by">Blueyonder web proxy caches</a>: list
+					<li><a href="#authoring">Web authoring</a> tips for being cache-aware
+				</ul>
+				<hr>
+				<h2><a name="trancache"></a>The transparent web caches</h2>
+				<p>Your ISP's network might intercept all attempts you make to connect to the web (by means of the HTTP protocol on TCP port 80), and route your request through a transparent web proxy cache, technically known as an <i>interception proxy</i>. <span class="ntl">NTLworld used <a href="http://www.inktomi.com/">Inktomi</a> Traffic Servers, but is now introducing NetApp NetCache appliances</span>. Your ISP does this in order to reduce the traffic on their backbone, and to reduce the traffic they exchange with other operators' networks. If a proxy cache works well, it can also improve performance for the customer, by supplying locally cached copies of web pages and graphics much more quickly than by fetching them from the remote original web server.</p>
+				<p>However, when the proxy web cache is overloaded, it can make your web browsing appear slower than the nominal speed of your cable modem. For this reason, you should not rely on HTTP download speeds as evidence of the practical speed of your cable modem.</p>
+				<p class="byns4">According to reports, Blueyonder no longer enforce transparent web proxies (in some regions?), but permit their users to configure Blueyonder's web proxies explicitly if they wish.</p>
+				<!-- <p>The transparent web proxy also slows down the rendering of web pages by disabling <b>&quot;Keep-Alive&quot; Persistent Connections</b> between the browser and the server. This imposes the full latency of TCP/IP connection set-up and tear-down on each and every image in the page. If <b>Persistent Connections</b> were enabled, the requests and replies for the images would be able to tail-gate on the TCP/IP connections for earlier requests such as the HTML page itself. In the absence of support for Persistent Connections, performance can be improved by increasing the maximum allowed number of HTTP connections per server: see <a href="#fasterweb">Faster Web Browsing</a> below.</p>
+-->
+				<hr>
+				<h2><a name="mycache"></a>Which is my web proxy cache?</h2>
+				<p>You can find out whether your web connection is being proxy cached, and, if so, the address of the web proxy cache, by visiting either of these sites:</p>
+				<ul>
+					<li><a title="All Nettools Proxy Server test" href="http://www.all-nettools.com/pr.htm">http://www.all-nettools.com/pr.htm</a> (see <b>Remote address</b> or <b>Remote host</b>)
+					<li><a title="Broadband-Help " href="http://www.broadband-help.com/cm_diagnose.asp?init=1">http://www.broadband-help.com/cm_diagnose.asp?init=1</a> (see <b>Proxy Name(R-DNS)</b>)
+				</ul>
+				<p>Because the ISP might be load-balancing across more than one web proxy cache, your web connections might use different proxy caches for different web destinations. So you might get different answers from the two sites above. And the actual cache used for your other web accesses might be different yet again. When load-balancing is in operation, the above sites will identify an individual cache in a cluster of caches, and the DNS names of the caches will usually have an obvious structure enabling you to deduce the names of other members of the cluster.</p>
+				<div class="ntlns4">
+					<p>For instance, with NTL web proxy cache clusters, the DNS names of the individual caches are of the form:</p>
+					<ul>
+						<li><b>inktomiN-XXX.server.ntl.com</b>, where <b>XXX</b> is a 3 character code for the regional centre; or
+						<li><b>cacheN-YYYY.server.ntl.com</b>, where <b>YYYY</b> is a 4 character code for the regional centre;
+					</ul>
+					<p>and <b>N</b> is the number of the cache within the cluster.</p>
+				</div>
+				<hr>
+				<h2><a name="refreshstale"></a>Refreshing stale pages in the web cache</h2>
+				<p>While a copy of a page is stored in a proxy cache, the original page could be updated, and users would never see it, because the proxy will return the stale copy to users. Even if a browser user clicks on <b>Refresh</b> or <b>Reload</b>, the proxy will still return the stale version.</p>
+				<p>With <b>MSIE for Windows</b>, the fix is to use <b>Ctrl-Refresh</b> (hold down the <b>Ctrl</b> key while clicking on <b>Refresh</b>) or <b>Ctrl-F5</b>, which causes the transparent proxy to refresh its copy of the page from the original web server. However, <b>Ctrl-Refresh</b> does <b>not</b> work with:</p>
+				<ul>
+					<li>MSIE v5.5 unless it has been updated with Service Pack 1 or higher. MSIE v5.5 (without the service pack) was the version of MSIE supplied with Windows 2000 and Windows ME.
+					<li>MSIE 5.01 and MSIE 5.01 SP1.
+				</ul>
+				<p>See <a title="Microsoft Knowledge Base Article - Q266121" href="http://support.microsoft.com/default.aspx?scid=KB;EN-US;Q266121">http://support.microsoft.com/default.aspx?scid=KB;EN-US;Q266121</a> for more details. The faulty versions of MSIE send cache-control commands on <b>Refresh</b> or <b>Ctrl-Refresh</b> only if they know it is using a user-configured proxy. A fixed version of MSIE, such as MSIE 5.5+SP1 sends a cache-control command also for <b>Ctrl-Refresh</b> even when functioning without a user-configured proxy, and so works better with transparent proxies. If you have faulty versions of MSIE 5.01 or 5.5, use <b>Windows Update</b> to update MSIE with the latest service pack.</p>
+				<p><b>MSIE 5.0 for Mac</b> and earlier versions have similar problems. It sends cache-control requests only if it knows it is using a user-configured proxy, and does not send cache-control requests when working without a configured proxy. Therefore there is no way to flush stale pages from a transparent proxy cache. This was fixed in version MSIE 5.1 for Mac (download <a title="Download MSIE 5.1 for Mac" href="http://www.microsoft.com/mac/download/ie/ie51.asp">http://www.microsoft.com/mac/download/ie/ie51.asp</a>), so that <b>Option-Refresh</b> will always send cache-control commands. An ordinary <b>Refresh</b> will not work.</p>
+				<p>Another method which works is to use <b>Netscape</b> (on any platform) as your browser. In Netscape, clicking <b>Reload</b> always causes the proxy cache to conditionally refresh the page from the original server. Clicking <b>Shift-Reload</b> (<b>Option-Reload</b> for Mac Netscape earlier than version 6) forces the proxy cache to unconditionally refresh the page from the original server.</p>
+				<p class="ntlns4">As of March 2001, transparent web proxy caches in some regions of the NTL network have been reconfigured so that <b>Ctrl-Refresh/Shift-Reload/Option-Reload</b> no longer force a reload from the original server, unless the page had been updated. This is technically incorrect, though it yields the right visible results. It will however, yield incorrect timings if you had been trying to time downloads from the original server: you will only get a download from the proxy.</p>
+				<p>In cases where the transparent proxy cache is a Network Appliance NetCache, to ensure that you get a full refresh from the original server, you should perform a full browser refresh (<b>Ctrl-Refresh</b> in IE, or <b>Shift-Reload</b> in Netscape) twice, with the second one following the first after a gap of at least 1 and not more than 10 seconds.</p>
+				<p>Another technique to force a fresh copy of a page through a proxy cache to your browser is to edit the URL by appending a question mark followed by a string chosen to be different each time you try this trick. For instance, if the URL was originally:</p>
+				<blockquote>
+					<pre><b>http://www.erehwon.com/somepage.html</b></pre>
+				</blockquote>
+				<p>then the first time you want a fresh copy, you would edit it to be:</p>
+				<blockquote>
+					<pre><b>http://www.erehwon.com/somepage.html?1</b></pre>
+				</blockquote>
+				<p>and the second time you want a fresh copy, you would edit it to be:</p>
+				<blockquote>
+					<pre><b>http://www.erehwon.com/somepage.html?2</b></pre>
+				</blockquote>
+				<p>and so on. This works because the cache treats these URLs as being references to different documents. However, there are drawbacks to this technique:</p>
+				<ul>
+					<li>it works only for the HTML page, and not any embedded images or objects;
+					<li>it cannot be used if the URL already has a question mark in this position, because the chances are that you would send a malformed request to a CGI in the server;
+					<li>it doesn't actually refresh the cached copy of the original URL: it just adds another cached version, so other users will continue to receive the old cached copy.
+				</ul>
+				<hr>
+				<h2><a name="sidestep"></a>How to sidestep the transparent web caches</h2>
+				<p>When your default transparent proxy cache breaks down, you lose all contact with the web. Because it is a transparent cache, there is no setting you can adjust on your computer to cause it to go direct to the remote site rather than via the proxy.</p>
+				<p>You can however defeat the transparent web cache by configuring your web browser explicitly to use another working proxy cache that accepts requests on a port other than 80 (usually 8080 or 3128). Because the request is made on a port other than 80, the transparent cache does not intercept the request.</p>
+				<p>In choosing an alternative HTTP (web) proxy server name, try the following in order of preference for performance:</p>
+				<ul>
+					<li>Your default transparent proxy cache (see <a href="#mycache">Which is my cache?</a>): often it works when selected explicitly even when not working transparently;
+					<li>Another HTTP proxy cache at the same network centre of your ISP;
+					<li>An HTTP proxy cache elsewhere on your ISP's network:
+					<ul>
+						<li>see below for a list of <a class="ntl" href="#ntl">NTL</a> and <a class="by" href="#by">BlueYonder</a> web proxy caches;
+					</ul>
+					<li>An HTTP proxy cache on another network:
+					<ul>
+						<li>for example, UK users might try <b>webcache.bt.net</b> on port <b>8080</b>.
+					</ul>
+				</ul>
+				<p>The higher in the list above, the better the web browsing performance is likely to be. You should revert to normal working (with no explicit proxy setting) when your default transparent proxy has recovered.</p>
+				<p>Each application that used the HTTP protocol is likely to have its own HTTP proxy configuration, every one of which might need setting. Just setting the HTTP proxy for Internet Explorer will not affect the HTTP settings for (e.g.) Netscape, RealPlayer, QuickTime Player, etc.</p>
+				<hr>
+				<h3><a name="iew"></a>Setting an explicit web proxy in Internet Explorer for Windows</h3>
+				<p>The following procedure works on all Windows platforms running Internet Explorer 5.x/6.x, and the procedure for Internet Explorer 4.x is very similar:</p>
+				<ul>
+					<li>Open Control Panel <b>Internet Options</b> (or, in IE, pull down menu <b>Tools</b> and select <b>Internet Options...</b>).
+					<li>Click on the tab <b>Connections</b>.
+					<li>Click on button <b>LAN Settings</b>.
+					<ul>
+						<li><b>UN</b>check <b>Automatically detect settings</b>.
+						<li><b>UN</b>check <b>Use automatic configuration script</b>.
+						<li>Check <b>Use a proxy server</b> but ensure that the boxes are left blank.
+						<li>Click on button <b>Advanced</b>:
+						<ul>
+							<li>In the row <b>HTTP</b> fill in the name and port number of your chosen web proxy server (see above). It is essential that you do not select port <b>80</b>, even if your chosen server offers a proxy service on that port.
+							<li>Ensure that the other rows are left blank.
+							<li><b>UN</b>check <b>Use the same proxy server for all protocols</b>.
+							<li>In the <b>Exceptions</b> box enter: <b>192.168.*</b>
+							<li>Click <b>OK</b>.
+						</ul>
+						<li>Click <b>OK</b> to exit LAN settings.
+					</ul>
+					<li>Click <b>OK</b> to apply the changes and exit Internet Options.
+				</ul>
+				<p>The last few stages in <b>Advanced</b> avoid using the proxy for Secure HTTPS and FTP traffic, and ensure that you retain local access to any cable modem diagnostics pages and to any NAT router setup pages, which typically use addresses in the range 192.168.xxx.xxx.</p>
+				<p>To return Internet Explorer to normal operation with no explicit web proxy:</p>
+				<ul>
+					<li>Open Control Panel <b>Internet Options</b> (or in IE pull down menu <b>Tools</b> and select <b>Internet Options...</b>).
+					<li>Click on the tab <b>Connections</b>.
+					<li>Click on button <b>LAN Settings</b>:
+					<ul>
+						<li><b>UN</b>check <b>Automatically detect settings</b>.
+						<li><b>UN</b>check <b>Use automatic configuration script</b>.
+						<li><b>UN</b>check <b>Use a proxy server</b>.
+						<li>Click <b>OK</b> to exit LAN settings.
+					</ul>
+					<li>Click <b>OK</b> to exit Internet Options.
+				</ul>
+				<hr>
+				<h3><a name="iem"></a>Setting an explicit web proxy in Internet Explorer for Macintosh OS 8.x/9.x</h3>
+				<p>To set an explicit web proxy in MSIE 5.x under Mac OS 8.x/9.x:</p>
+				<ul>
+					<li>Pull down the <b>Edit</b> menu and select <b>Preferences</b>.
+					<li>Click the triangle to expand <b>Network</b>.
+					<li>Select <b>Proxies</b>.
+					<li>Check <b>Web Proxy</b>.
+					<li><b>Un</b>check <b>Use Web Proxy for all</b>.
+					<li>Check <b>Bypass Web Proxy for FTP</b>.
+					<li>Click the <b>Settings</b> button for <b>Web Proxy</b> to open the settings panel.
+					<ul>
+						<li>Set the <b>Address</b> box to the name of the web proxy server (see above).
+						<li>Set the <b>Port</b> box to the port number, usually 8080.
+						<li>Set <b>Method</b> to <b>Normal</b>.
+						<li>Empty the boxes <b>User Name</b> and <b>Password</b>.
+						<li>Click <b>OK</b> to return to the main panel.
+					</ul>
+					<li><b>Un</b>check <b>Secure Proxy</b>, <b>Mail Proxy</b>, and <b>Gopher Proxy</b>.
+					<li>In the box <b>List the sites you want to connect to directly</b> enter: <b>192.168.*</b>
+					<li>Click <b>OK</b>.
+				</ul>
+				<hr>
+				<h3><a name="macosx103"></a>Setting an explicit web proxy in Mac OS X 10.3 for Safari or Internet Explorer</h3>
+				<ul>
+					<li>Pull down the Apple menu and select <b>System Preferences</b>.
+					<li>Click <b>Network</b>.
+					<li>Ensure that the <b>Location</b> drop-down shows the Location settings you wish to configure.
+					<li>Set the <b>Show</b> drop-down to the network interface that connects to your broadband connection (e.g. <b>Built-in Ethernet</b> or <b>Airport</b>).
+					<li>Click the tab <b>Proxies</b>.
+					<li>Check <b>Web Proxy (HTTP)</b>.
+					<li>In the box <b>Web Proxy Server</b> enter the name of your chosen HTTP proxy server, and in the next box enter the port number, usually 8080 or 3128.
+					<li>Ensure <b>Proxy server requires password</b> is unchecked.
+					<li>In the box <b>Bypass proxy settings for these Hosts &amp; Domains</b>, enter: <b>192.168.*</b>
+					<li>Ensure that all proxies other than <b>Web Proxy (HTTP)</b> are unchecked.
+					<li>Click <b>Apply Now</b>.
+					<li>Pull down the <b>System Preferences</b> menu and select <b>Quit</b> to exit System Preferences.
+				</ul>
+				<p>To restore to normal working, repeat the above, but leaving <b>Web Proxy (HTTP)</b> unchecked. </p>
+				<hr>
+				<h3><a name="ns"></a>Setting an explicit web proxy in Netscape or Mozilla</h3>
+				<ul>
+					<li>Pull down the <b>Edit</b> menu and select <b>Preferences</b>.
+					<li>In the left-hand panel, expand <b>Advanced</b> and select <b>Proxies</b>.
+					<li>In the right-hand panel, check <b>Manual proxy configuration</b>.
+					<li>If there is a button <b>Configure</b> or <b>View</b> on this line, click it.
+					<ul>
+						<li>In the row <b>HTTP Proxy</b> enter the name of your chosen HTTP proxy server, and in the box <b>Port</b> enter the port number, usually 8080 or 3128. Do not use 80.
+						<li>Ensure all other proxy and SOCKS rows are cleared to blank.
+						<li>In the box <b>No proxy for</b> enter: <b>192.168.100.1</b>
+						<ul>
+							<li>There is no wild card feature: if you have more than one local web server, separate the IP addresses with a comma, such as: <b>192.168.100.1,192.168.1.1</b>
+						</ul>
+						<li>If you had to click a button to reach this panel, click <b>OK</b> to exit Manual Proxy Configuration.
+					</ul>
+					<li>Click <b>OK</b> to exit Preferences.
+				</ul>
+				<p>To restore to normal working:</p>
+				<ul>
+					<li>Pull down the <b>Edit</b> menu and select <b>Preferences</b>.
+					<li>In the left-hand panel, expand <b>Advanced</b> and select <b>Proxies</b>.
+					<li>In the right-hand panel, check <b>Direct connection to the Internet</b>.
+					<li>Click <b>OK</b> to exit Preferences.
+				</ul>
+				<hr>
+				<h3><a name="firefox"></a>Setting an explicit web proxy in Firefox</h3>
+				<ul>
+					<li>Pull down the <b>Tools</b> menu and select <b>Options</b>.
+					<li>In the <b>Options</b> dialogue, left-hand panel, click on <b>General</b>.
+					<li>In the right-hand panel, click button <b>Connection Settings</b>.
+						<ul>
+							<li>In the <b>Connection Settings</b> dialogue, select <b>Manual Proxy Configuration</b>.
+							<li>Ensure that <b>Use the same proxy for all protocols</b> is unchecked.
+							<li>In the row <b>HTTP Proxy</b> enter the name of your chosen HTTP proxy server, and in the box <b>Port</b> enter the port number, usually 8080 or 3128.
+							<li>Ensure all other proxy and SOCKS rows are cleared to blank.
+							<li>In the box <b>No proxy for</b> enter: <b>192.168.0.0/16</b>
+							<li>Click <b>OK</b> to exit Connection Settings.
+						</ul>
+					<li>Click <b>OK</b> to exit Options.
+				</ul>
+				<p>To restore to normal working:</p>
+				<ul>
+					<li>Pull down the <b>Tools</b> menu and select <b>Options</b>.
+					<li>In the <b>Options</b> dialogue, left-hand panel, click on <b>General</b>.
+					<li>In the right-hand panel, click button <b>Connection Settings</b>.
+						<ul>
+							<li>In the <b>Connection Settings</b> dialogue, select <b>Direct connection to the Internet</b>.
+							<li>Click <b>OK</b> to exit Connection Settings.
+						</ul>
+					<li>Click <b>OK</b> to exit Options. 
+				</ul>
+				<hr>
+				<div class="ntlns4">
+					<p><a name="ntl"></a><b>NTL web proxy caches</b> (use port 8080) are as follows.</p>
+					<p><b>Old naming scheme</b>: <tt>inktomiN-<b>xxx</b>.server.ntl.com</tt><br>
+						<b>2003 naming scheme</b>: <tt>cacheN-<b>yyyy</b>.server.ntli.net<br>
+						</tt><b>2004 naming scheme</b>: <tt><b>yyyy</b>-cache-N.server.ntli.net</tt></p>
+					<p>where <tt><b>xxx</b></tt> is the old 3-character abbreviation for the area, and <tt><b>yyyy</b></tt> is the new 4-character abbreviation. <b>N</b> is the number of the cache in the cluster.</p>
+					<p>In the list below, sites marked <tt><span class="yellbg">Ink</span></tt> are believed to running Inktomi Traffic Servers; other sites are believed to be running NetApp NetCache appliances. Caches listed in italics were not working when last checked (23 April 2006).</p>
+					<table summary="List of NTL proxy caches" width="100%" border="0" cellspacing="2" cellpadding="0">
+						<tr>
+							<td valign="top"><tt>asfd-cache-1.server.ntli.net (Ashford)<br>
+									asfd-cache-2.server.ntli.net &nbsp;[ash/asfd]<br>
+									bagu-cache-1.server.ntli.net (Baguley)<br>
+									bagu-cache-2.server.ntli.net &nbsp;[bagu]<br>
+									bagu-cache-3.server.ntli.net<br>
+									bagu-cache-4.server.ntli.net<br>
+									bagu-cache-5.server.ntli.net<br>
+									bagu-cache-6.server.ntli.net<br>
+									bagu-cache-7.server.ntli.net<br>
+									bagu-cache-8.server.ntli.net<br>
+										belf-cache-1.server.ntli.net (Belfast)<br>
+									
+									belf-cache-2.server.ntli.net &nbsp;[bel/blfs/belf]<br>
+									belf-cache-3.server.ntli.net<br>
+									belf-cache-4.server.ntli.net<br>
+									belf-cache-5.server.ntli.net<br>
+									<i>
+									belf-cache-6.server.ntli.net<br>
+											belf-cache-7.server.ntli.net<br>
+											belf-cache-8.server.ntli.net<br>
+											belf-cache-9.server.ntli.net<br>
+											belf-cache-10.server.ntli.net<br>
+									</i>
+									
+									brhm-cache-1.server.ntli.net (Birmingham)<br>
+									brhm-cache-2.server.ntli.net &nbsp;[bir/brhm]<br>
+									brhm-cache-3.server.ntli.net<br>
+									brhm-cache-4.server.ntli.net<br>
+									brhm-cache-5.server.ntli.net<br>
+									brhm-cache-6.server.ntli.net<br>
+										brhm-cache-7.server.ntli.net<br>
+									brhm-cache-8.server.ntli.net<br>
+									brhm-cache-9.server.ntli.net<br>
+										brnt-cache-1.server.ntli.net (Brentford)<br>
+									brnt-cache-2.server.ntli.net &nbsp;[bre/brnt]<br>
+										brnt-cache-3.server.ntli.net<br>
+										brnt-cache-4.server.ntli.net<br>
+										brnt-cache-5.server.ntli.net<br>
+										brnt-cache-6.server.ntli.net<br>
+										brnt-cache-7.server.ntli.net<br>
+										brnt-cache-8.server.ntli.net<br>
+										brnt-cache-9.server.ntli.net<br>
+									brig-cache-1.server.ntli.net (Brighton)<br>
+									brig-cache-2.server.ntli.net &nbsp;[btn/brtn/brig]<br>
+									brig-cache-3.server.ntli.net<br>
+									brig-cache-4.server.ntli.net<br>
+									brig-cache-5.server.ntli.net<br>
+									brig-cache-6.server.ntli.net<br>
+									bstl-cache-1.server.ntli.net (Bristol)<span class="yellbg">Ink</span><br>
+									bstl-cache-2.server.ntli.net &nbsp;[bri/bstl]<br>
+										bstl-cache-3.server.ntli.net<br>
+										bstl-cache-4.server.ntli.net<br>
+										bstl-cache-5.server.ntli.net<br>
+										bmly-cache-1.server.ntli.net (Bromley)<span class="yellbg">Ink</span><br>
+									bmly-cache-2.server.ntli.net &nbsp;[bro/bror/bmly]<br>
+										bmly-cache-3.server.ntli.net<br>
+										bmly-cache-4.server.ntli.net<br>
+										bmly-cache-5.server.ntli.net<br>
+										bmly-cache-6.server.ntli.net<br>
+										bmly-cache-7.server.ntli.net<br>
+										bmly-cache-8.server.ntli.net<br>
+										bmly-cache-9.server.ntli.net<br>
+										bmly-cache-10.server.ntli.net<br>
+										cmbg-cache-1.server.ntli.net (Cambridge)<br>
+									cmbg-cache-2.server.ntli.net &nbsp;[cam/cmbg]<br>
+										cmbg-cache-3.server.ntli.net<br>
+										cmbg-cache-4.server.ntli.net<br>
+										cmbg-cache-5.server.ntli.net<br>
+										cdif-cache-1.server.ntli.net (Cardiff)<br>
+									cdif-cache-2.server.ntli.net &nbsp;[cdf/cdif]<br>
+										cdif-cache-3.server.ntli.net<br>
+										cdif-cache-4.server.ntli.net<br>
+										cdif-cache-5.server.ntli.net<br>
+										cdif-cache-6.server.ntli.net<br>
+										colc-cache-1.server.ntli.net (Colchester)<br>
+									colc-cache-2.server.ntli.net &nbsp;[col/colc]<br>
+										colc-cache-3.server.ntli.net<br>
+										colc-cache-4.server.ntli.net<br>
+										colc-cache-5.server.ntli.net<br>
+										colc-cache-6.server.ntli.net<br>
+										cosh-cache-1.server.ntli.net (Cosham)<br>
+									cosh-cache-2.server.ntli.net &nbsp;[cos/cos2/cosh]<br>
+										cosh-cache-3.server.ntli.net<br>
+										cosh-cache-4.server.ntli.net<br>
+										cosh-cache-5.server.ntli.net<br>
+										cosh-cache-6.server.ntli.net<br>
+										cosh-cache-7.server.ntli.net<br>
+										cosh-cache-8.server.ntli.net<br>
+										cosh-cache-9.server.ntli.net<br>
+										cosh-cache-10.server.ntli.net<br>
+										dbln-cache-1.server.ntli.net (Dublin)<span class="yellbg">Ink</span><br>
+									dbln-cache-2.server.ntli.net &nbsp;[dub/dbln]<br>
+										dbln-cache-3.server.ntli.net<br>
+										dbln-cache-4.server.ntli.net<br>
+										dbln-cache-5.server.ntli.net<br>
+										dbln-cache-6.server.ntli.net<br>
+										dbln-cache-7.server.ntli.net<br>
+										edin-cache-1.server.ntli.net (Edinburgh)<span class="yellbg">Ink</span><br>
+									edin-cache-2.server.ntli.net &nbsp;[edi/edin]<br>
+										edin-cache-3.server.ntli.net<br>
+										edin-cache-4.server.ntli.net<br>
+										glfd-cache-1.server.ntli.net (Guildford)<br>
+									glfd-cache-2.server.ntli.net &nbsp;[gui/glfd]<br>
+										glfd-cache-3.server.ntli.net<br>
+										glfd-cache-4.server.ntli.net<br>
+										glfd-cache-5.server.ntli.net<br>
+										glfd-cache-6.server.ntli.net<br>
+										glfd-cache-7.server.ntli.net<br>
+										glfd-cache-8.server.ntli.net<br>
+										glfd-cache-9.server.ntli.net<br>
+										hers-cache-1.server.ntli.net (Hersham)<span class="yellbg">Ink</span><br>
+									hers-cache-2.server.ntli.net &nbsp;[her/herm/hers]<br>
+										hers-cache-3.server.ntli.net<br>
+										hers-cache-4.server.ntli.net<br>
+										hers-cache-5.server.ntli.net<br>
+										hers-cache-6.server.ntli.net<br>
+										hers-cache-7.server.ntli.net<br>
+										hers-cache-8.server.ntli.net<br>
+										hudd-cache-1.server.ntli.net (Huddersfield)<span class="yellbg">Ink</span><br>
+									hudd-cache-2.server.ntli.net &nbsp;[hud/hudd]<br>
+										hudd-cache-3.server.ntli.net<br>
+										hudd-cache-4.server.ntli.net<br>
+										hudd-cache-5.server.ntli.net<br>
+										hudd-cache-7.server.ntli.net<br>
+										hudd-cache-8.server.ntli.net</tt></td>
+							<td valign="top"><tt>cache1-lang.server.ntli.net (Langley)<span class="yellbg">Ink</span><br>
+									cache2-lang.server.ntli.net &nbsp;[lng/lang]<br>
+									cache3-lang.server.ntli.net<br>
+									leed-cache-1.server.ntli.net (Leeds)<br>
+									leed-cache-2.server.ntli.net &nbsp;[lee/ldst/leed]<br>
+									leed-cache-3.server.ntli.net<br>
+									leed-cache-4.server.ntli.net<br>
+									leed-cache-5.server.ntli.net<br>
+									leed-cache-6.server.ntli.net<br>
+									leed-cache-7.server.ntli.net<br>
+									leed-cache-8.server.ntli.net<br>
+									leed-cache-9.server.ntli.net<br>
+									leic-cache-1.server.ntli.net (Leicester)<br>
+									leic-cache-2.server.ntli.net<br>
+									leic-cache-3.server.ntli.net<br>
+									leic-cache-4.server.ntli.net<br>
+									leic-cache-5.server.ntli.net<br>
+									leic-cache-6.server.ntli.net<br>
+									leic-cache-7.server.ntli.net<br>
+										lutn-cache-1.server.ntli.net (Luton)<br>
+									lutn-cache-2.server.ntli.net &nbsp;[lut/lutn]<br>
+										lutn-cache-3.server.ntli.net<br>
+										lutn-cache-4.server.ntli.net<br>
+										lutn-cache-5.server.ntli.net<br>
+										lutn-cache-6.server.ntli.net<br>
+										lutn-cache-7.server.ntli.net<br>
+										lutn-cache-8.server.ntli.net<br>
+										lutn-cache-9.server.ntli.net<br>
+										lutn-cache-10.server.ntli.net<br>
+										lutn-cache-11.server.ntli.net<br>
+										lutn-cache-12.server.ntli.net<br>
+										manc-cache-1.server.ntli.net (Manchester)<br>
+									manc-cache-2.server.ntli.net &nbsp;[man/mant/manc]<br>
+										manc-cache-3.server.ntli.net<br>
+										manc-cache-4.server.ntli.net<br>
+										manc-cache-5.server.ntli.net<br>
+										manc-cache-6.server.ntli.net<br>
+										manc-cache-7.server.ntli.net<br>
+										manc-cache-8.server.ntli.net<br>
+										manc-cache-9.server.ntli.net<br>
+										manc-cache-10.server.ntli.net<br>
+										manc-cache-11.server.ntli.net<br>
+										manc-cache-12.server.ntli.net<br>
+										manc-cache-13.server.ntli.net<br>
+										manc-cache-14.server.ntli.net<br>
+										midd-cache-1.server.ntli.net (Middlesbrough)<br>
+									midd-cache-2.server.ntli.net &nbsp;[mid/midd]<br>
+										midd-cache-3.server.ntli.net<br>
+										midd-cache-4.server.ntli.net<br>
+										midd-cache-5.server.ntli.net<br>
+										midd-cache-6.server.ntli.net<br>
+										midd-cache-7.server.ntli.net<br>
+										midd-cache-8.server.ntli.net<br>
+										nrth-cache-1.server.ntli.net (Northampton)<br>
+									nrth-cache-2.server.ntli.net &nbsp;[nth/nrth]<br>
+										nrth-cache-3.server.ntli.net<br>
+										nrth-cache-4.server.ntli.net<br>
+										nrth-cache-5.server.ntli.net<br>
+										nott-cache-1.server.ntli.net (Nottingham)<br>
+									nott-cache-2.server.ntli.net &nbsp;[not/nott]<br>
+										nott-cache-3.server.ntli.net<br>
+										nott-cache-4.server.ntli.net<br>
+										nott-cache-5.server.ntli.net<br>
+										nott-cache-6.server.ntli.net<br>
+										nott-cache-7.server.ntli.net<br>
+										nott-cache-8.server.ntli.net<br>
+										nott-cache-9.server.ntli.net<br>
+										nott-cache-10.server.ntli.net<br>
+										nott-cache-11.server.ntli.net<br>
+										nott-cache-12.server.ntli.net<br>
+										nott-cache-13.server.ntli.net<br>
+										nott-cache-14.server.ntli.net<br>
+										nott-cache-15.server.ntli.net<br>
+										oxfd-cache-1.server.ntli.net (Oxford)<br>
+									oxfd-cache-2.server.ntli.net &nbsp;[oxf/oxfd]<br>
+										oxfd-cache-3.server.ntli.net<br>
+										oxfd-cache-4.server.ntli.net<br>
+										pete-cache-1.server.ntli.net (Peterborough)<br>
+									pete-cache-2.server.ntli.net &nbsp;[pet/pete]<br>
+										pete-cache-3.server.ntli.net<br>
+										pete-cache-4.server.ntli.net<br>
+										pete-cache-5.server.ntli.net<br>
+										pete-cache-6.server.ntli.net<br>
+										popl-cache-1.server.ntli.net (Poplar)<br>
+									popl-cache-2.server.ntli.net &nbsp;[pop/popl]<br>
+										popl-cache-3.server.ntli.net<br>
+										popl-cache-4.server.ntli.net<br>
+										popl-cache-5.server.ntli.net<br>
+										popl-cache-6.server.ntli.net<br>
+										popl-cache-7.server.ntli.net<br>
+										popl-cache-8.server.ntli.net<br>
+										popl-cache-9.server.ntli.net<br>
+										renf-cache-1.server.ntli.net (Renfrew)<br>
+									renf-cache-2.server.ntli.net &nbsp;[ren/renf]<br>
+										renf-cache-3.server.ntli.net<br>
+										renf-cache-4.server.ntli.net<br>
+										renf-cache-5.server.ntli.net<br>
+										renf-cache-6.server.ntli.net<br>
+										rend-cache-7.server.ntli.net<br>
+										renf-cache-8.server.ntli.net<br>
+										renf-cache-9.server.ntli.net<br>
+										sotn-cache-1.server.ntli.net (Southampton)<br>
+									sotn-cache-2.server.ntli.net &nbsp;[sot3/sotn]<br>
+										sotn-cache-3.server.ntli.net<br>
+										sotn-cache-4.server.ntli.net<br>
+										sotn-cache-5.server.ntli.net<br>
+										sotn-cache-6.server.ntli.net<br>
+										swan-cache-1.server.ntli.net (Swansea)<span class="yellbg">Ink</span><br>
+									swan-cache-2.server.ntli.net &nbsp;[swa/swan]<br>
+										swan-cache-3.server.ntli.net<br>
+										swan-cache-4.server.ntli.net<br>
+										swan-cache-5.server.ntli.net<br>
+										swan-cache-6.server.ntli.net<br>
+										swan-cache-7.server.ntli.net<br>
+										swan-cache-8.server.ntli.net<br>
+										watf-cache-1.server.ntli.net (Watford)<br>
+									watf-cache-2.server.ntli.net &nbsp;[wat/wtfd/watf]<br>
+										watf-cache-3.server.ntli.net<br>
+										winn-cache-1.server.ntli.net (Winnersh)<br>
+									winn-cache-2.server.ntli.net &nbsp;[win/winn]<br>
+										winn-cache-3.server.ntli.net<br>
+										winn-cache-4.server.ntli.net<br>
+										winn-cache-5.server.ntli.net<br>
+										winn-cache-6.server.ntli.net</tt></td>
+						</tr>
+					</table>
+				</div>
+				<hr>
+				<div class="byns4">
+					<p><a name="by"></a><b>Blueyonder web proxy caches</b> (either port 8080 or 3128) appear to be:</p>
+					<blockquote>
+						<p><tt>cache-har.cableinet.co.uk&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* (London N)<br>
+								cache-hay.cableinet.co.uk&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(London W)<br>
+								cache-hay-hsi.cableinet.co.uk<br>
+								cache-cro.cableinet.co.uk&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* (London S)<br>
+								cache-cro-hsi.cableinet.co.uk&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*<br>
+								cache-ink1-cro-hsi.cableinet.co.uk *<br>
+								cache-ink2-cro-hsi.cableinet.co.uk *<br>
+								cache-bas.cableinet.co.uk&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* (London SE)<br>
+								cache-bas-hsi.cableinet.co.uk<br>
+								cache-ink1-bas-hsi.cableinet.co.uk<br>
+								cache-ink2-bas-hsi.cableinet.co.uk<br>
+								cache-wol.cableinet.co.uk&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Midlands)<br>
+								cache-wol2.cableinet.co.uk<br>
+								cache-wit.cableinet.co.uk&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Birmingham)<br>
+								cache-wit-hsi.cableinet.co.uk<br>
+								cache-wit2-hsi.cableinet.co.uk<br>
+								cache-haw.cableinet.co.uk&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;(South West)<br>
+								cache-haw2.cableinet.co.uk<br>
+								cache-gat.cableinet.co.uk&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(North East)<br>
+								cache-gat-hsi.cableinet.co.uk<br>
+								cache-gat2-hsi.cableinet.co.uk<br>
+								cache-kno.cableinet.co.uk&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* (North West)<br>
+								cache-kno-hsi.cableinet.co.uk<br>
+								cache-ink1-kno-hsi.cableinet.co.uk<br>
+								cache-ink2-kno-hsi.cableinet.co.uk<br>
+								cache-bra.cableinet.co.uk&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Yorkshire)<br>
+								cache-bra2.cableinet.co.uk<br>
+								cache-edi.cableinet.co.uk&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* (Scotland)<br>
+								cache-edi-hsi.cableinet.co.uk<br>
+								cache-udd.cableinet.co.uk<br>
+								cache-udd2.cableinet.co.uk</tt></p>
+					</blockquote>
+					<p>The caches marked with an asterisk are available on a round-robin from <b>webcache.blueyonder.co.uk</b>.</p>
+				</div>
+				<hr>
+				<h2><a name="authoring"></a>Web authoring tips for dealing with caches</h2>
+				<p>Web authors should (some say <b>must</b>) include hints in their pages as to how web caches should treat them. If your pages are static, and rarely subject to change, then you need take no action: the caches will cache your page and end-users will see correct results. If your pages are dynamic (created on the fly) or subject to frequent updates, then you must include a hint to web caches that they should check back for updates, otherwise they will cache your page and serve stale copies to clients. The mechanism for doing the hinting is the <tt><b>cache-control</b></tt> line in the HTTP headers, fully described in <a title="RFC 2616: HTTP Protocol" href="http://www.faqs.org/rfcs/rfc2616.html">RFC 2616</a>.</p>
+				<p class="ntlns4">There is no mechanism for authors to generate custom HTTP headers on <b>homepage.ntlworld.com</b>.</p>
+				<p>Some authors advise that web authors can achieve the same effect with a <b>meta</b> tag in the HTML headers of their page, for instance:</p>
+				<blockquote>
+					<pre class="log">&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta http-equiv=&quot;cache-control&quot; content=&quot;no-cache&quot;&gt;
+        &lt;title&gt;My page&lt;/title&gt;
+    &lt;/head&gt;</pre>
+				</blockquote>
+				<p>In fact, those authors are wrong. Web caches take no account of <b>meta</b> HTML headers; they respond only to HTTP headers. The <b>meta</b> tag above would work only if the hosting web server is of the type that promotes <b>meta http-equiv</b> HTML tags to true HTTP headers on the fly as the page is served out.</p>
+				<p class="ntlns4">The server <b>homepage.ntlworld.com</b> does not promote <b>meta http-equiv</b> tags to HTTP headers.</p>
+				<p class="byns4">The server <b>xxx.pwp.blueyonder.co.uk</b> does not promote <b>meta http-equiv</b> tags to HTTP headers.</p>
+				<p>For more detailed information on authoring in a cache-aware manner, see <a title="Caching Tutorial for Web Authors and Webmasters" href="http://www.mnot.net/cache_docs/">http://www.mnot.net/cache_docs/</a>.</p>
+				<hr>
+				</p>
+			<!-- #EndEditable -->
+			<p>Return to <a href="index.html">Index</a>.</p>
+		</body>
+
+	<!-- #EndTemplate -->
+
+</html>

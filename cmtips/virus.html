@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+
+<html lang="en">
+
+	<!-- #BeginTemplate "../../cmtips.data/Templates/cmtemp.html" -->
+
+		<head>
+			<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+			<title>Cable Modem Troubleshooting Tips: Security against viruses</title>
+			<!-- #BeginHeadLocked "" -->
+				<meta name="description" content="Technical tips for troubleshooting a cable modem connection.">
+				<meta name="keywords" content="cable modem, FAQ, broadband, cablemodem, troubleshooting, tips, NTL, NTLworld, ntlhome, Telewest, blueyonder">
+				<meta name="author" content="Robin Walker">
+				<meta name="copyright" content="&copy; 2001-02 Robin Walker">
+				<link href="../favicon.ico" rel="shortcut icon">
+				<link href="mailto:rdhw@cam.ac.uk" rel="author">
+				<link href="copyright.html" rel="copyright">
+				<link href="index.html" rel="index">
+				<link href="cmstyle.css" rel="stylesheet">
+				<script type="text/javascript" language="JavaScript"><!--
+function jsinit() {
+  if (top!=self) top.location.href = self.location.href;
+}
+// -->
+</script>
+			<!-- #EndHeadLocked -->
+		</head>
+
+		<body onload="jsinit()" bgcolor="#eeffff">
+			<h1>Cable Modem Troubleshooting Tips</h1>
+			<hr>
+			<table border="0" cellpadding="0" align="left" summary="Quick links">
+				<tr>
+					<td nowrap bgcolor="#ffffff">
+						<div class="menubox">
+							<a class="sidelink" title="Introduction and Index to articles" href="index.html">Intro&nbsp;&amp;&nbsp;Index</a>.<br>
+							<a class="sidelink" title="History of updates and changes to this site" href="hist.html">Update&nbsp;history</a>.<br>
+							<a class="sidelink" title="Problems with BroadJump Broadband Installer" href="broadjump.html">Installer issues</a>.<br>
+							<a class="sidelink" title="Problems associated with getting a cable modem registered with your cable operator" href="register.html">Registration&nbsp;issues</a>.&nbsp;<br>
+							<a class="sidelink" title="PC network configuration for cable service" href="basicset.html">Network&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Swapping one PC between multiple networks" href="mobile.html">Mobile&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Understanding the flashing lights on the cable modem" href="lights.html">Cable&nbsp;Modem&nbsp;LEDs</a>.<br>
+							<a class="sidelink" title="How to determine various important IP addresses" href="ipaddr.html">IP&nbsp;addresses</a>.<br>
+							<a class="sidelink" title="How to determine various important MAC addresses" href="macaddr.html">MAC addresses</a>.<br>
+							<a class="sidelink" title="What to check if you have no service" href="badip.html">Dead&nbsp;connection</a>.<br>
+							<a class="sidelink" title="Updating your system with the latest patches and fixes" href="sysupdates.html">System&nbsp;updates</a>.<br>
+							<a class="sidelink" title="Tweaking your PC for best cable modem performance" href="tweaks.html">Network&nbsp;tweaks</a>.<br>
+							<a class="sidelink" title="Problems specifically related to the ethernet connection between your PC and the cable modem" href="ethernet.html">Ethernet&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Problems specifically related to a USB connection between the PC and cable modem" href="usb.html">USB&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Procedures and tips specifically for Surfboard cable modems" href="surfboard.html">Surfboard&nbsp;tips</a>.<br>
+							<a class="sidelink" title="Diagnosing your cable modem's connection" href="signal.html">CM&nbsp;diagnostics</a>.<br>
+							<a class="sidelink" title="Quality of service determined by configuration file" href="cmfile.html">CM&nbsp;config&nbsp;file</a>.<br>
+							<a class="sidelink" title="The network structure of a cable modem" href="cmworks.html">CM&nbsp;tech&nbsp;info</a>.<br>
+							<a class="sidelink" title="DHCP-related problems" href="dhcp.html">DHCP&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Understanding DNS and fixing DNS problems" href="dnsname.html">DNS&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Transparent web proxy caches and how to sidestep them" href="trancache.html">Web&nbsp;proxy&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance of streaming media" href="stream.html">Streaming&nbsp;media</a>.<br>
+							<a class="sidelink" title="Settings that affect performance, latency and pings" href="games.html">Gaming&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance; avoiding saturation of upstream" href="p2p.html">P2P&nbsp;file-sharing</a>.<br>
+							<a class="sidelink" title="Work around connection errors" href="seti.html">SETI@home&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect web browsing performance" href="fasterweb.html">Faster&nbsp;web&nbsp;browsing</a>.<br>
+							<a class="sidelink" title="Strategies to get better download speeds" href="fasterftp.html">Faster&nbsp;downloads</a>.<br>
+							<a class="sidelink" title="How to avoid performance hits" href="downup.html">Simul&nbsp;down/uploads</a>.<br>
+							<a class="sidelink" title="How to restore lost connection when you swap PCs connected to the CM" href="swap.html">Swapping&nbsp;PCs&nbsp;on&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Multiple PCs sharing one CM, home LANs, and NAT Routers" href="homelan.html">PCs&nbsp;sharing&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Using dial-up without losing cable connection" href="dialup.html">Simul&nbsp;dialup&nbsp;&amp;&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Problems with some VPN configurations" href="vpn.html">VPN&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Keep your clock correct, for ever, from cable time" href="timesync.html">Time&nbsp;sync</a>.<br>
+							<a class="sidelink" title="Avoiding virus and trojan infections" href="virus.html">Virus&nbsp;security</a>.<br>
+							<a class="sidelink" title="Configuring firewalls for cable connection" href="security.html">Firewall&nbsp;security</a>.<br>
+							<a class="sidelink" title="Limitations of some speed tests" href="speed.html">Speed&nbsp;testing</a>.<br>
+							<a class="sidelink" title="Understanding, diagnosing, and fixing latency and ping problems" href="latency.html">Latency issues</a>.<br>
+							<a class="sidelink" title="How to perform a traceroute, and how they can mislead" href="traceroute.html">Traceroute</a>.<br>
+							<a class="sidelink" title="Understanding and diagnosing packet loss" href="loss.html">Packet loss</a>.<br>
+							<a class="sidelink" href="frontpage.html">FrontPage tips</a>.<br>
+							<a class="sidelink" title="How to obtain technical support" href="techsupp.html">NTL/BY&nbsp;Tech&nbsp;Support</a>.</div>
+					</td>
+					<td width="18">&nbsp;</td>
+				</tr>
+			</table>
+			<!-- #BeginEditable "main" -->
+				<h2><a name="virus"></a>Security and Viruses</h2>
+				<p>Summary: <b>You must install anti-virus protection</b>. Let me repeat that: <b>YOU MUST INSTALL ANTI-VIRUS PROTECTION</b>. Without anti-virus protection, not only might you get into trouble yourself, but also you will become a burden to others, as your PC attempts to infect others. Having installed anti-virus protection, <b>YOU MUST KEEP IT REGULARLY UP TO DATE</b>.</p>
+				<p>The meanings of the nouns and adjectives used to label and describe the various sorts of malware that infest computers and networks tend to overlap somewhat, just as some malware can exhibit characteristics of more than one class of infection. Here are some rough definitions:</p>
+				<dl>
+					<dt>t<b>rojan</b>
+					<dd>An abbreviation for <b>Trojan Horse</b>, something which looks attractive to the gullible, but containing a secret payload with malevolent intent. The original story of how the Athenians broke into Troy by creating a wooden horse (secretly containing Athenian soldiers) which the Trojans took inside their city walls is told in <a href="http://classics.mit.edu/Virgil/aeneid.2.ii.html">Book 2 of Vergil's Aeneid</a>. The original Latin contains the famous quotation <i>Timeo Danaos et dona ferentes: </i><b>I fear Greeks bearing gifts</b>, nowadays jokingly rendered as <b>I fear geeks bearing GIFs</b>. The original wooden horse stratagem remains an accurate analogy of how trojans infect computers today. All computer viruses and worms can be considered to be sub-classes of <b>trojan</b>, while the term <b>trojan</b> tends to be reserved for cases where the malware has no self-replicating ability. Examples of well-known trojans are <b>Back Orifice</b> and <b>SubSeven</b>.
+
+					<dt><b>virus</b>
+					<dd>A virus is a trojan with self-replicating ability. In English, the <a title="What is the plural of virus?" href="http://language.perl.com/misc/virus.html">correct plural of <i>virus</i></a> is <i>viruses</i>. A virus is a piece of computer program (or macro) which attaches itself to another (innocent) program, the carrier. When the carrier is executed, the virus gains control of the computer and copies itself into other programs within the computer, which themselves become carriers. This normally happens within a single PC, which accumulates multiple copies of the virus. The virus usually also contains a malevolent payload, which might not be triggered until long after the infection has been established. As in real life, making the leap from one infected host to another is more difficult for the virus than the replication phase within one host: for new hosts to become infected requires the cooperation of gullible human owners, which unfortunately are in plentiful supply. Viruses are normally spread by downloading infected files, or by receiving them in e-mail (especially as attachments).
+
+					<dt><b>worm</b>
+					<dd>Like a virus, a worm is a trojan with self-replicating ability, but the term <b>worm</b> tends to be used where the malware is an e-mail message which is capable of replicating many similar infectious e-mail messages. This is normally done by sending copies of itself to every entry in your address book: thus the worm tends to spread rapidly amongst friends who work together. However, a recent worm (<b>SirCam</b>) copied itself also to every e-mail address it could find embedded in the cache of web pages recently displayed by Internet Explorer, which resulted in a much faster and widespread pattern of infection.
+
+					<dt><b>spyware</b>
+					<dd>Spyware is the name for software containing a trojan component whose purpose is to <i>phone home</i> and send back to the author or some other agency reports on your activity, especially on your download and web-browsing habits. Many downloadable programs and utilities are spyware, particularly distributed file-sharing systems or download agents. Most anti-virus protection systems do not detect spyware. To detect and remove spyware, try Ad-aware from <a title="Ad-Aware site" href="http://www.lavasoftusa.com/">http://www.lavasoftusa.com/</a>.
+
+					<dt><b>adware</b>
+					<dd>Adware is the name for software (normally free to the end-user), for which the author receives payment by presenting the user with a continual stream of advertisements. Most anti-virus protection systems do not detect adware. To detect and remove adware, try Ad-aware from <a title="Ad-Aware site" href="http://www.lavasoftusa.com/">http://www.lavasoftusa.com/</a>.
+
+				</dl>
+				<p>I could write a very long essay on viruses and the avoidance of infection, but it easier for both me and you if I just say: <b>you must install an anti-virus product and keep it regularly up to date</b>.</p>
+				<p class="byns4">See <a title="by-Users: Anti-Virus" href="http://www.by-users.co.uk/faqs/anti-virus/">http://www.by-users.co.uk/faqs/anti-virus/</a> for more.</p>
+				<hr>
+			<!-- #EndEditable -->
+			<p>Return to <a href="index.html">Index</a>.</p>
+		</body>
+
+	<!-- #EndTemplate -->
+
+</html>
+

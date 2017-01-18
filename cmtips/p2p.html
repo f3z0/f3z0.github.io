@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+
+<html lang="en">
+
+	<!-- #BeginTemplate "../../cmtips.data/Templates/cmtemp.html" -->
+
+		<head>
+			<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+			<title>Cable Modem Troubleshooting Tips: Peer-to-Peer issues</title>
+			<!-- #BeginHeadLocked "" -->
+				<meta name="description" content="Technical tips for troubleshooting a cable modem connection.">
+				<meta name="keywords" content="cable modem, FAQ, broadband, cablemodem, troubleshooting, tips, NTL, NTLworld, ntlhome, Telewest, blueyonder">
+				<meta name="author" content="Robin Walker">
+				<meta name="copyright" content="&copy; 2001-02 Robin Walker">
+				<link href="../favicon.ico" rel="shortcut icon">
+				<link href="mailto:rdhw@cam.ac.uk" rel="author">
+				<link href="copyright.html" rel="copyright">
+				<link href="index.html" rel="index">
+				<link href="cmstyle.css" rel="stylesheet">
+				<script type="text/javascript" language="JavaScript"><!--
+function jsinit() {
+  if (top!=self) top.location.href = self.location.href;
+}
+// -->
+</script>
+			<!-- #EndHeadLocked -->
+		</head>
+
+		<body onload="jsinit()" bgcolor="#eeffff">
+			<h1>Cable Modem Troubleshooting Tips</h1>
+			<hr>
+			<table border="0" cellpadding="0" align="left" summary="Quick links">
+				<tr>
+					<td nowrap bgcolor="#ffffff">
+						<div class="menubox">
+							<a class="sidelink" title="Introduction and Index to articles" href="index.html">Intro&nbsp;&amp;&nbsp;Index</a>.<br>
+							<a class="sidelink" title="History of updates and changes to this site" href="hist.html">Update&nbsp;history</a>.<br>
+							<a class="sidelink" title="Problems with BroadJump Broadband Installer" href="broadjump.html">Installer issues</a>.<br>
+							<a class="sidelink" title="Problems associated with getting a cable modem registered with your cable operator" href="register.html">Registration&nbsp;issues</a>.&nbsp;<br>
+							<a class="sidelink" title="PC network configuration for cable service" href="basicset.html">Network&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Swapping one PC between multiple networks" href="mobile.html">Mobile&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Understanding the flashing lights on the cable modem" href="lights.html">Cable&nbsp;Modem&nbsp;LEDs</a>.<br>
+							<a class="sidelink" title="How to determine various important IP addresses" href="ipaddr.html">IP&nbsp;addresses</a>.<br>
+							<a class="sidelink" title="How to determine various important MAC addresses" href="macaddr.html">MAC addresses</a>.<br>
+							<a class="sidelink" title="What to check if you have no service" href="badip.html">Dead&nbsp;connection</a>.<br>
+							<a class="sidelink" title="Updating your system with the latest patches and fixes" href="sysupdates.html">System&nbsp;updates</a>.<br>
+							<a class="sidelink" title="Tweaking your PC for best cable modem performance" href="tweaks.html">Network&nbsp;tweaks</a>.<br>
+							<a class="sidelink" title="Problems specifically related to the ethernet connection between your PC and the cable modem" href="ethernet.html">Ethernet&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Problems specifically related to a USB connection between the PC and cable modem" href="usb.html">USB&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Procedures and tips specifically for Surfboard cable modems" href="surfboard.html">Surfboard&nbsp;tips</a>.<br>
+							<a class="sidelink" title="Diagnosing your cable modem's connection" href="signal.html">CM&nbsp;diagnostics</a>.<br>
+							<a class="sidelink" title="Quality of service determined by configuration file" href="cmfile.html">CM&nbsp;config&nbsp;file</a>.<br>
+							<a class="sidelink" title="The network structure of a cable modem" href="cmworks.html">CM&nbsp;tech&nbsp;info</a>.<br>
+							<a class="sidelink" title="DHCP-related problems" href="dhcp.html">DHCP&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Understanding DNS and fixing DNS problems" href="dnsname.html">DNS&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Transparent web proxy caches and how to sidestep them" href="trancache.html">Web&nbsp;proxy&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance of streaming media" href="stream.html">Streaming&nbsp;media</a>.<br>
+							<a class="sidelink" title="Settings that affect performance, latency and pings" href="games.html">Gaming&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance; avoiding saturation of upstream" href="p2p.html">P2P&nbsp;file-sharing</a>.<br>
+							<a class="sidelink" title="Work around connection errors" href="seti.html">SETI@home&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect web browsing performance" href="fasterweb.html">Faster&nbsp;web&nbsp;browsing</a>.<br>
+							<a class="sidelink" title="Strategies to get better download speeds" href="fasterftp.html">Faster&nbsp;downloads</a>.<br>
+							<a class="sidelink" title="How to avoid performance hits" href="downup.html">Simul&nbsp;down/uploads</a>.<br>
+							<a class="sidelink" title="How to restore lost connection when you swap PCs connected to the CM" href="swap.html">Swapping&nbsp;PCs&nbsp;on&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Multiple PCs sharing one CM, home LANs, and NAT Routers" href="homelan.html">PCs&nbsp;sharing&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Using dial-up without losing cable connection" href="dialup.html">Simul&nbsp;dialup&nbsp;&amp;&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Problems with some VPN configurations" href="vpn.html">VPN&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Keep your clock correct, for ever, from cable time" href="timesync.html">Time&nbsp;sync</a>.<br>
+							<a class="sidelink" title="Avoiding virus and trojan infections" href="virus.html">Virus&nbsp;security</a>.<br>
+							<a class="sidelink" title="Configuring firewalls for cable connection" href="security.html">Firewall&nbsp;security</a>.<br>
+							<a class="sidelink" title="Limitations of some speed tests" href="speed.html">Speed&nbsp;testing</a>.<br>
+							<a class="sidelink" title="Understanding, diagnosing, and fixing latency and ping problems" href="latency.html">Latency issues</a>.<br>
+							<a class="sidelink" title="How to perform a traceroute, and how they can mislead" href="traceroute.html">Traceroute</a>.<br>
+							<a class="sidelink" title="Understanding and diagnosing packet loss" href="loss.html">Packet loss</a>.<br>
+							<a class="sidelink" href="frontpage.html">FrontPage tips</a>.<br>
+							<a class="sidelink" title="How to obtain technical support" href="techsupp.html">NTL/BY&nbsp;Tech&nbsp;Support</a>.</div>
+					</td>
+					<td width="18">&nbsp;</td>
+				</tr>
+			</table>
+			<!-- #BeginEditable "main" -->
+				<h2>On this page:</h2>
+				<ul>
+					<li><a href="#p2p">Peer-to-Peer</a> file sharing issues</li>
+					<li><a href="#fasttrack">FastTrack</a>, <a href="#kazaa">KaZaA</a>, <a href="#grokster">Grokster</a> configuration</li>
+					<li><a href="#gnutella">Gnutella</a>, <a href="#morpheus">Morpheus</a>, <a href="#limewire">LimeWire</a>, <a href="#bearshare">BearShare</a> configuration</li>
+					<li><a href="#winmx">WinMX</a> configuration</li>
+					<li><a href="#edonkey">eDonkey2000</a> configuration <span class="flash">&nbsp;Updated 2002 Sep 21&nbsp;</span></li>
+				</ul>
+				<h2><a name="p2p"></a>Peer-to-Peer file sharing issues</h2>
+				<p>If you run a Peer-to-Peer (P2P) file sharing system such as KaZaA, Morpheus, Grokster, Gnutella, LimeWire, WinMX, or eDonkey2000, you may expect the following problems unless you make specific configuration changes:</p>
+				<ul>
+					<li>your cable modem connection will be continually hitting the rate cap, leading to apparent poor bandwidth for other applications;</li>
+					<li>your ping times will look bad;</li>
+					<li>your traceroutes will look bad, even on the very first hop to the local UBR;</li>
+					<li>your online games will show terrible latency;</li>
+					<li>your firewall might detect hundreds or thousands of incoming connection attempts;</li>
+					<li>if your PC is behind a NAT router, the P2P application might not work properly.</li>
+				</ul>
+				<p>Be aware that most P2P systems will run in the background even when their window is not open. Because of their P2P nature, they are capable of loading your cable connection even when you are not downloading files: other users might be causing your PC to be uploading to them, or your PC might be acting as a <b>SuperNode</b> server, passing on search requests from other P2P clients.</p>
+				<p>The problem of hitting the rate cap is the same in nature as that described for on-line <a href="games.html#games">gaming</a>. The P2P application sees a network connection via an ethernet or USB interface and assumes a fast network such as a LAN. It does not realise that the cable modem connection will impose a rate cap. As soon as P2P traffic hits the rate cap (especially the upload rate cap), ping times will go through the roof, and other applications will suffer. The general strategy to avoid this is:</p>
+				<ul>
+					<li>if the P2P application supports its own internal rate capping, configure the internal rate cap to be substantially less than the cable modem upload rate cap;</li>
+					<li>if it doesn't, make sure that you can totally close down the P2P application when using other critical applications, such as online games;</li>
+					<li>on a low bandwidth cable connection (e.g. 32 kbps upload cap or less), you <b>must</b> turn off SuperNode support.</li>
+				</ul>
+				<p>The P2P application will expect to receive incoming connections from other users. If you run a firewall or a NAT router, you <b>must</b> configure them to accept those connections, otherwise the P2P application might not work properly, and/or your firewall log might be inundated with messages about attempted connections.</p>
+				<h3><a name="fasttrack"></a><a name="kazaa"></a><a name="grokster"></a>KaZaA, Grokster configuration</h3>
+				<p>KaZaA, Grokster, and similar systems are based on the FastTrack P2P file sharing system, and share a common network. The old Morpheus used to use this network, but now uses Gnutella (see below).</p>
+				<p>For the FastTrack P2P file-sharing system system to work correctly, you must arrange for incoming connections on port <b>1214</b> to be accepted. With a NAT router, you must port-forward port <b>1214</b> to the local PC that is running the FastTrack P2P application. With a firewall, you must configure the firewall to permit incoming connections from anywhere in the world to the local port <b>1214</b>, or grant Server rights to the P2P application.</p>
+				<p>To configure (based on the <b>KaZaA</b>, the others should be similar):</p>
+				<ul>
+					<li>Pull down the <b><u>T</u>ools</b> menu and select <b><u>O</u>ptions...</b></li>
+					<li>Click tab <b>Traffic</b> to bring it to the front, then:</li>
+					<ul>
+						<li>if you do not wish other users to download files from you, <b>check</b> the box <b>Disable sharing of files with other KaZaA members</b>;</li>
+						<li>otherwise, in the box <b>You can define the maximum number of simultaneous uploads here</b>, set a very low number. For a cable modem upload cap of 64 kbps or worse, this number should be <b>1</b>. For an upload cap of 128 kbps, set <b>1</b> or <b>2</b> at most.</li>
+					</ul>
+					<li>Click tab <b>Advanced</b> to bring it to the front, then:</li>
+					<ul>
+						<li>In the select-box <b>Maximum bandwidth in kilobits to be used for transferring files to other KaZaA members</b>, select a value which is the highest below, but not equal to, your cable modem upload cap in <b>kilobits per sec</b>. For instance:</li>
+						<ul>
+							<li class="ntlns4">on the NTL 600kbps service (128kbps upload) select <b>64</b>;</li>
+							<li class="ntlns4">on the NTL 128kbps service (64kbps upload) select <b>32</b>;</li>
+							<li class="byns4">on the Blueyonder 512kbps service (128kbps upload) select <b>64</b>.</li>
+						</ul>
+						<li>If you do not wish to function as a <b>SuperNode</b>, then <b>check</b> the box <b>Do not function as a SuperNode</b>. The FastTrack P2P file sharing network would collapse if every user checked this box, as it relies on the P2P community of users contributing their PCs as distributed servers, but here are some legitimate reasons for opting out of being a SuperNode:</li>
+						<ul>
+							<li>Your cable modem upload cap is 64 kbps or less;</li>
+							<li>The PC is behind a NAT router and you have not been able to forward incoming traffic on port 1214 to this local PC;</li>
+							<li>The PC is behind a firewall and you have not been able to open port 1214 for incoming connections from arbitrary callers through the firewall.</li>
+						</ul>
+					</ul>
+					<li>Click <b>OK</b> to close the <b>Options</b> dialogue.</li>
+				</ul>
+				<p>To close down KaZaA completely, right-click its icon in the system tray, and select <b><u>C</u>lose KaZaA</b>, rather than the default <b>Hide KaZaA</b>.</p>
+				<h3><a name="gnutella"></a><a name="morpheus"></a><a name="limewire"></a><a name="bearshare"></a>Gnutella, Morpheus, LimeWire, BearShare configuration</h3>
+				<p>The Gnutella P2P file sharing protocol is used by BearShare, Gnotella, Gnucleus, LimeWire, Phex, SwapNut and similar applications, and the new Morpheus has changed to using this protocol.</p>
+				<p>For the Gnutella P2P file-sharing system system to work correctly, you must arrange for incoming connections on port <b>6346</b> to be accepted. With a NAT router, you must port-forward port <b>6346</b> to the local PC that is running the Gnutella P2P application. With a firewall, you must configure the firewall to permit incoming connections from anywhere in the world to the local port <b>6346</b>, or grant Server rights to the P2P application.</p>
+				<p>To configure <b>Morpheus Preview Edition</b>:</p>
+				<ul>
+					<li>Pull down the <b><u>E</u>dit</b> menu and select <b>P<u>r</u>eferences...</b> (or click <b>Preferences</b> button).</li>
+					<li>Click on <b>Bandwidth</b>. Check <b>Limit upload bandwidth to</b> and enter a figure in <b>kiloBytes/sec</b> which represents about three-quarters of your cable modem <b>upload</b> rate cap. For instance:</li>
+					<ul>
+						<li class="ntlns4">on the NTL 600kbps service (128kbps upload) you would set about <b>12</b></li>
+						<li class="ntlns4">on the NTL 128kbps service (64kbps upload) you would set about <b>6</b></li>
+						<li class="byns4">on the Blueyonder 512kbps service (128kbps upload) you would set about <b>12</b></li>
+					</ul>
+					<li>If <b>either</b> (a) the MorpheusPE PC is behind a firewall and port 6346 has not been opened through to this PC, <b>or</b> (b) the MorpheusPE PC is behind a NAT router and port 6346 has not been forwarded to this PC, then click <b>Firewall</b> and check <b>I am behind a firewall</b>. Otherwise, if it possible for outside callers to connect to port 6346 on this PC, <b>uncheck</b> this box.</li>
+					<li>If the MorpheusPE PC is behind a NAT router, then click <b>Local</b> and <b>check</b> the box <b>Set local IP to</b>, and in the box enter the public WAN address of your cable connection (see <a href="ipaddr.html#ipaddr">What's my IP address</a>? and remember that this can change from time to time). If the MorpheusPE PC is connected directly to the cable modem, <b>uncheck</b> this box.</li>
+					<li>Click <b>OK</b> to close the <b>Local Properties</b> panel.</li>
+				</ul>
+				<p>To configure <b>LimeWire</b>:</p>
+				<ul>
+					<li>Pull down the <b><u>T</u>ools</b> menu and select <b><u>O</u>ptions</b>.</li>
+					<li>Click on <b>Speed</b>. In the drop-down, select <b>Cable/DSL</b> if your upload rate cap is 128 kbps or higher, or <b>Modem</b> if it is less than 128 kbps.</li>
+					<li>Click on <b>Uploads</b>. Adjust the slider <b>Upload Bandwidth</b> so that the figure shown after <b>Upload Speed KB/s</b> is roughly three-quarters of your cable modem <b>upload</b> cap, as expressed in <b>kiloBytes/sec</b>. For instance:</li>
+					<ul>
+						<li class="ntlns4">on the NTL 600kbps service (128kbps upload) you would set about <b>12</b>;</li>
+						<li class="ntlns4">on the NTL 128kbps service (64kbps upload) you would set about <b>6</b>;</li>
+						<li class="byns4">on the Blueyonder 512 kbps service (128kbps upload) you would set about <b>12</b>.</li>
+					</ul>
+					<li>If the LimeWire PC is behind a NAT router, and if you have successfully configured the router to port-forward incoming connections for port 6346 to this PC, then turn down the arrow beside <b>Advanced</b> and click <b>Firewalls</b>. Check <b>Force IP</b>, and in the box <b>Address</b> enter the public WAN address of your cable connection (see <a href="ipaddr.html#ipaddr">What's my IP address</a>? and remember that this can change from time to time).</li>
+					<li>Click <b>OK</b> to close the <b>Options</b> panel.</li>
+				</ul>
+				<p>To close down LimeWire completely, right-click its icon in the system tray, and select <b>E<u>x</u>it</b>.</p>
+				<p>To configure <b>BearShare</b>:</p>
+				<ul>
+					<li>Pull down the <b><u>S</u>etup</b> menu and select <b>Co<u>n</u>nection</b>.</li>
+					<li>In the box <b>Network Interface</b>, check <b>Other</b>, and in the box enter the rate in kilobits per second of your cable modem <b>upload</b> cap. For instance:</li>
+					<ul>
+						<li class="ntlns4">on the NTL 600kbps service (128kbps upload) you would enter <b>128</b>,</li>
+						<li class="ntlns4">on the NTL 128kbps service (64kbps upload) you would enter <b>64</b>;</li>
+						<li class="byns4">on the Blueyonder 512kbps service (128kbps upload) you would enter <b>128</b>.</li>
+					</ul>
+					<li>In the box <b>Firewall Settings</b>:</li>
+					<ul>
+						<li>If <b>either</b> (a) the BearShare PC is behind a firewall and port 6346 has not been opened through to this PC, <b>or</b> (b) the BearShare PC is behind a NAT router and port 6346 has not been forwarded to this PC, then <b>check</b> the box <b>This computer cannot accept incoming TCP/IP connections</b>. Otherwise, if it possible for outside callers to connect to port 6346 on this PC, <b>uncheck</b> this box.</li>
+						<li>If the BearShare PC is behind a NAT router, then <b>check</b> the box <b>Report the IP address for accepting connections</b>, and in the box enter the public WAN address of your cable connection (see <a href="ipaddr.html#ipaddr">What's my IP address</a>? and remember that this can change from time to time). If the BearShare PC is connected directly to the cable modem, <b>uncheck</b> this box.</li>
+					</ul>
+					<li>In the box <b>Recommended Settings</b>, click the button <b>Reset...</b> to tune BearShare to the settings you have just entered. This will change various settings in other panels.</li>
+					<li>Click <b>OK</b> to close the <b>Setup</b> panel.</li>
+				</ul>
+				<p>To close down BearShare completely, pull down the <b><u>F</u>ile</b> menu and select <b>E<u>x</u>it</b>, or right-click on its icon in the system tray, and select <b>Exit</b>.</p>
+				<h3><a name="winmx"></a>WinMX configuration</h3>
+				<p>For the WinMX P2P file-sharing system system to work at its best, you must arrange for incoming TCP connections on port <b>6699</b>, and incoming UDP connections on port <b>6257</b>, to be accepted. With a NAT router, you must port-forward TCP port <b>6699</b> and UDP port <b>6257</b> to the local PC that is running the WinMX P2P application. With a firewall, you must configure the firewall to permit incoming connections from anywhere in the world to the local TCP port <b>6699</b> and UDP port <b>6257</b>, or grant Server rights to WinMX. If you are unable to open these ports, you can configure WinMX to cope with that.</p>
+				<p>To configure <b>WinMX</b>:</p>
+				<ul>
+					<li>Pull down the <b>Settings</b> menu and select <b>Connection</b>.</li>
+					<li>In the pull-down box <b>Connection Speed</b>, select the speed which is next below your cable modem <b>upload</b> rate cap. For instance:</li>
+					<ul>
+						<li class="ntlns4">on the NTL 600kbps service (128kbps upload) you would select <b>64K&nbsp;ISDN</b></li>
+						<li class="ntlns4">on the NTL 128kbps service (64kbps upload) you would select <b>56K Modem</b></li>
+						<li class="byns4">on the Blueyonder service (128kbps upload) you would select <b>64K ISDN</b>.</li>
+					</ul>
+					<li>Click button <b>Filewall/Network Settings</b>.</li>
+					<ul>
+						<li>If you had been able to open TCP port 6699 through any firewall or NAT routers (or if you have no firewalls or NAT routers), then check <b>Listen on port 6699</b>.</li>
+						<li>If you had not been able to open TCP port 6699, then check <b>Unable to accept incoming connections</b>.</li>
+						<li>Click <b>OK</b> to close <b>Network Settings</b>.</li>
+					</ul>
+					<li>Click <b>OK </b>to close <b>Connection Settings</b>.</li>
+				</ul>
+				<h3><a name="edonkey"></a>eDonkey2000 configuration</h3>
+				<p>For the eDonkey2000 P2P file-sharing system system to work, you must arrange for incoming TCP connections on port <b>4662</b>, and incoming UDP connections on port <b>4665</b>, to be accepted. With a NAT router, you must port-forward TCP port <b>4662</b> and UDP port <b>4665</b> to the local PC that is running the eDonkey2000 P2P application. With a firewall, you must configure the firewall to permit incoming connections from anywhere in the world to the local TCP port <b>4662</b> and UDP port <b>4665</b>, or grant Server rights to eDonkey.</p>
+				<p>To configure <b>eDonkey2000</b>:</p>
+				<ul>
+					<li>Click <b>Options</b>.</li>
+					<li>In the box <b>Max Upload Speed</b> enter a figure which is roughly half of your cable modem <b>upload</b> cap, as expressed in <b>kiloBytes/sec</b>. For instance:</li>
+					<ul>
+						<li class="ntlns4">on the NTL 600kbps service (128kbps upload) you would enter about <b>8</b></li>
+						<li class="ntlns4">on the NTL 128kbps service (64kbps upload) you would enter about <b>4</b></li>
+						<li class="byns4">on the Blueyonder 512kbps service (128kbps upload) you would enter about <b>8</b>.</li>
+					</ul>
+					<li>Click <b>OK</b> to close <b>Options</b>.</li>
+				</ul>
+				<p>A helper application, the <b>eDonkeyBot</b>, is available from <a title="eDonkeyBot" href="http://www.file-finder.com/">http://www.file-finder.com/</a>. It features some automatic bandwidth regulation.</p>
+				<hr>
+			<!-- #EndEditable -->
+			<p>Return to <a href="index.html">Index</a>.</p>
+		</body>
+
+	<!-- #EndTemplate -->
+
+</html>
+

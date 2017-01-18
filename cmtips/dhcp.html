@@ -1,0 +1,272 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+
+<html lang="en">
+
+	<!-- #BeginTemplate "../../cmtips.data/Templates/cmtemp.html" -->
+
+		<head>
+			<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+			<title>Cable Modem Troubleshooting Tips: DHCP issues</title>
+			<!-- #BeginHeadLocked "" -->
+				<meta name="description" content="Technical tips for troubleshooting a cable modem connection.">
+				<meta name="keywords" content="cable modem, FAQ, broadband, cablemodem, troubleshooting, tips, NTL, NTLworld, ntlhome, Telewest, blueyonder">
+				<meta name="author" content="Robin Walker">
+				<meta name="copyright" content="&copy; 2001-02 Robin Walker">
+				<link href="../favicon.ico" rel="shortcut icon">
+				<link href="mailto:rdhw@cam.ac.uk" rel="author">
+				<link href="copyright.html" rel="copyright">
+				<link href="index.html" rel="index">
+				<link href="cmstyle.css" rel="stylesheet">
+				<script type="text/javascript" language="JavaScript"><!--
+function jsinit() {
+  if (top!=self) top.location.href = self.location.href;
+}
+// -->
+</script>
+			<!-- #EndHeadLocked -->
+		</head>
+
+		<body onload="jsinit()" bgcolor="#eeffff">
+			<h1>Cable Modem Troubleshooting Tips</h1>
+			<hr>
+			<table border="0" cellpadding="0" align="left" summary="Quick links">
+				<tr>
+					<td nowrap bgcolor="#ffffff">
+						<div class="menubox">
+							<a class="sidelink" title="Introduction and Index to articles" href="index.html">Intro&nbsp;&amp;&nbsp;Index</a>.<br>
+							<a class="sidelink" title="History of updates and changes to this site" href="hist.html">Update&nbsp;history</a>.<br>
+							<a class="sidelink" title="Problems with BroadJump Broadband Installer" href="broadjump.html">Installer issues</a>.<br>
+							<a class="sidelink" title="Problems associated with getting a cable modem registered with your cable operator" href="register.html">Registration&nbsp;issues</a>.&nbsp;<br>
+							<a class="sidelink" title="PC network configuration for cable service" href="basicset.html">Network&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Swapping one PC between multiple networks" href="mobile.html">Mobile&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Understanding the flashing lights on the cable modem" href="lights.html">Cable&nbsp;Modem&nbsp;LEDs</a>.<br>
+							<a class="sidelink" title="How to determine various important IP addresses" href="ipaddr.html">IP&nbsp;addresses</a>.<br>
+							<a class="sidelink" title="How to determine various important MAC addresses" href="macaddr.html">MAC addresses</a>.<br>
+							<a class="sidelink" title="What to check if you have no service" href="badip.html">Dead&nbsp;connection</a>.<br>
+							<a class="sidelink" title="Updating your system with the latest patches and fixes" href="sysupdates.html">System&nbsp;updates</a>.<br>
+							<a class="sidelink" title="Tweaking your PC for best cable modem performance" href="tweaks.html">Network&nbsp;tweaks</a>.<br>
+							<a class="sidelink" title="Problems specifically related to the ethernet connection between your PC and the cable modem" href="ethernet.html">Ethernet&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Problems specifically related to a USB connection between the PC and cable modem" href="usb.html">USB&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Procedures and tips specifically for Surfboard cable modems" href="surfboard.html">Surfboard&nbsp;tips</a>.<br>
+							<a class="sidelink" title="Diagnosing your cable modem's connection" href="signal.html">CM&nbsp;diagnostics</a>.<br>
+							<a class="sidelink" title="Quality of service determined by configuration file" href="cmfile.html">CM&nbsp;config&nbsp;file</a>.<br>
+							<a class="sidelink" title="The network structure of a cable modem" href="cmworks.html">CM&nbsp;tech&nbsp;info</a>.<br>
+							<a class="sidelink" title="DHCP-related problems" href="dhcp.html">DHCP&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Understanding DNS and fixing DNS problems" href="dnsname.html">DNS&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Transparent web proxy caches and how to sidestep them" href="trancache.html">Web&nbsp;proxy&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance of streaming media" href="stream.html">Streaming&nbsp;media</a>.<br>
+							<a class="sidelink" title="Settings that affect performance, latency and pings" href="games.html">Gaming&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance; avoiding saturation of upstream" href="p2p.html">P2P&nbsp;file-sharing</a>.<br>
+							<a class="sidelink" title="Work around connection errors" href="seti.html">SETI@home&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect web browsing performance" href="fasterweb.html">Faster&nbsp;web&nbsp;browsing</a>.<br>
+							<a class="sidelink" title="Strategies to get better download speeds" href="fasterftp.html">Faster&nbsp;downloads</a>.<br>
+							<a class="sidelink" title="How to avoid performance hits" href="downup.html">Simul&nbsp;down/uploads</a>.<br>
+							<a class="sidelink" title="How to restore lost connection when you swap PCs connected to the CM" href="swap.html">Swapping&nbsp;PCs&nbsp;on&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Multiple PCs sharing one CM, home LANs, and NAT Routers" href="homelan.html">PCs&nbsp;sharing&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Using dial-up without losing cable connection" href="dialup.html">Simul&nbsp;dialup&nbsp;&amp;&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Problems with some VPN configurations" href="vpn.html">VPN&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Keep your clock correct, for ever, from cable time" href="timesync.html">Time&nbsp;sync</a>.<br>
+							<a class="sidelink" title="Avoiding virus and trojan infections" href="virus.html">Virus&nbsp;security</a>.<br>
+							<a class="sidelink" title="Configuring firewalls for cable connection" href="security.html">Firewall&nbsp;security</a>.<br>
+							<a class="sidelink" title="Limitations of some speed tests" href="speed.html">Speed&nbsp;testing</a>.<br>
+							<a class="sidelink" title="Understanding, diagnosing, and fixing latency and ping problems" href="latency.html">Latency issues</a>.<br>
+							<a class="sidelink" title="How to perform a traceroute, and how they can mislead" href="traceroute.html">Traceroute</a>.<br>
+							<a class="sidelink" title="Understanding and diagnosing packet loss" href="loss.html">Packet loss</a>.<br>
+							<a class="sidelink" href="frontpage.html">FrontPage tips</a>.<br>
+							<a class="sidelink" title="How to obtain technical support" href="techsupp.html">NTL/BY&nbsp;Tech&nbsp;Support</a>.</div>
+					</td>
+					<td width="18">&nbsp;</td>
+				</tr>
+			</table>
+			<!-- #BeginEditable "main" -->
+				<h2>DHCP issues</h2>
+				<ul>
+					<li><a href="#what">What is DHCP</a>? <span class="flash">&nbsp;New 2002 Sep 1&nbsp;</span></li>
+					<li><a href="#why">Why use DHCP</a>? <span class="flash">&nbsp;New 2002 Sep 1&nbsp;</span></li>
+					<li><a href="#which">Which are my DHCP servers</a>? <span class="flash">&nbsp;New 2002 Sep 8&nbsp;</span></li>
+					<li><a href="#long">How long will I keep my IP address</a>? <span class="flash">&nbsp;New 2002 Sep 1&nbsp;</span></li>
+					<li><a href="#dhcp">DHCP problem-solving</a>. <span class="flash">&nbsp;Updated 2002 Sep 1&nbsp;</span></li>
+					<li><a href="#lease">Releasing an old DHCP lease or requesting a new DHCP lease</a>. <span class="flash">&nbsp;New 2002 Sep 1&nbsp;</span></li>
+					<li><a href="#macprob">Apple Mac OS 8.6/9.x DHCP problems</a>. <span class="flash">&nbsp;New 2002 Sep 1&nbsp;</span></li>
+					<li><a href="#how">How does DHCP work</a>? <span class="flash">&nbsp;New 2002 Sep 1&nbsp;</span></li>
+					<li><a href="#dhcpmulti">Keeping the same IP address in multi-boot machines</a>.</li>
+				</ul>
+				<hr>
+				<h3><a name="what"></a>What is DHCP?</h3>
+				<p>The Dynamic Host Configuration Protocol (DHCP) is a means of automatically distributing essential network configuration data to PCs connected to large networks. The settings that are automatically distributed are typically:</p>
+				<ul>
+					<li>IP address</li>
+					<li>IP sub-net mask</li>
+					<li>IP Default Gateway address</li>
+					<li>DNS server IP address(es)</li>
+					<li>DHCP server IP address</li>
+				</ul>
+				<p>The configuration is not distributed on a once-and-for-all basis, but for a fixed time period, known as the <i>DHCP lease</i>, which typically varies from a few hours to a few days. Once the lease time has expired, the configuration might stop working. It is the responsibility of the PC's operating system to <i>renew the lease</i> periodically. If a lease is not renewed before it expires, the DHCP system is free to reallocate the previously leased IP address to someone else, if necessary. If a lease is renewed before it expires, then it is almost always the case that the same configuration is obtained as in the old lease.</p>
+				<hr>
+				<h3><a name="why"></a>Why use DHCP?</h3>
+				<p>The network configuration data listed above could in principle be set manually by the user, or by an installer program, but ISPs prefer to use DHCP to allocate addresses dynamically. This is because ISP's networks are subject to growth and re-organisation, which might require some customer PCs to be assigned new addresses. For instance, consider a neighbourhood of cable customers, all having IP addresses on the same shared sub-net (e.g. 62.253.123.xxx). As more customers subscribe to the service, it will eventually become necessary to divide the neighbourhood geographically into two, each on different sub-nets (e.g. 62.253.201.xxx and 62.253.202.xxx) and every customer's IP address needs to be changed. This is not feasible if customers configure their own addresses manually, so the ISP will use DHCP to distribute addresses automatically.</p>
+				<hr>
+				<h3><a name="which"></a>Which are my DHCP servers?</h3>
+				<p>See <a href="ipaddr.html#dhcpip">Finding the DHCP server address(es)</a>.</p>
+				<hr>
+				<h3><a name="long"></a>How long will I keep my IP address?</h3>
+				<p>The <b>D</b> in <b>DHCP</b> stands for <b>Dynamic</b>, so the allocated IP address can in principle change. A change of IP address is frustating to those who wish (for instance) to connect to their home PC from elsewhere. As described above, if a DHCP lease is renewed before it expires, then almost always the same address is renewed (if this were not so, then any open IP connections at the moment of lease renewal would be broken, and lease renewals can happen at any time). The only time a change of IP address might occur at lease renewal is when the ISP's network is being reorganised (e.g. during <i>resegmentation</i> of a cable network), or after a major breakdown.</p>
+				<p>So one strategy for keeping the same IP address for as long as possible is to leave the cable modem powered on continuously, and leave the PC powered on continuously (don't even let it drop into System Standby: you can let it spin down the hard disk and blank the display, but both the processor and the network interface must be kept active and not allowed to go to standby or sleep). If you are wanting to accept incoming connections, you would need to have the PC on all the time anyway.</p>
+				<p>If you have a NAT router connected to the cable modem, then it is the NAT router which leases the WAN IP address from the ISP, and so it is the NAT router which has to be left powered on continuously to keep the lease renewed. This is usually easier to arrange than keeping a PC powered on continuously, because the NAT routers are small silent devices and use little power.</p>
+				<p>However, what happens if you do power off your systems, and switch them on again a day or two later? Will you get the same IP address back as you had before? The answer is that often you will get the same address back, but it is not guaranteed. The DHCP server identifies you by the unique MAC address of your PC's network interface connected to the cable modem, and it maintains a record of which IP addresses it has issued to which MAC addresses. When you power off your PC and fail to renew the DHCP lease, your old IP address remains linked to your MAC address in the DHCP server's records, but it is available for re-allocation to someone else if the DHCP server runs out of spare IP addresses. So, if your area is short of spare IP addresses, you might not get the same IP address back the next time you go online, if that address has been given to someone else. On the other hand, if your area has plenty of spare IP addresses, you might be able to power off for many days and still get the same address back when you go back online. It's all a matter of chance.</p>
+				<p>If you want a way of addressing your PC at home which is not subject to the whim of a DHCP server, then you should investigate a <b><a href="dnsname.html#dyndns">Dynamic DNS</a></b> service.</p>
+				<hr>
+				<h3><a name="dhcp"></a>DHCP problem-solving</h3>
+				<p>A DHCP failure is often the first visible symptom of an underlying problem: in other words, often the problem is not actually a DHCP problem. The majority of users' problems with DHCP (such as inability to acquire or renew a lease, suffering disconnection every few hours, etc) are caused by one of the following:</p>
+				<ul>
+					<li>incorrect configuration of firewalls: see <a href="security.html#fwconfig">special firewall settings</a> for DHCP on a cable system to work correctly.</li>
+					<li>swapping the PC connected to the cable modem: see <a href="swap.html">Swapping computers on the cable modem</a>.</li>
+					<li>loss of cable network connection: see <a href="badip.html">No Connectivity</a> for a step-by-step checklist when diagnosing problems which have the symptom of a DHCP failure.</li>
+				</ul>
+				<hr>
+				<h3><a name="lease"></a>Releasing an old DHCP lease or requesting a new DHCP lease</h3>
+				<p>The trouble-shooting procedures listed elsewhere on this site sometimes require you to release and/or renew a DHCP lease. A simple method of requesting a new DHCP lease is to re-boot the PC, but that is disruptive and time consuming. It is possible to force a DHCP lease renewal during normal service without a re-boot. Before doing this, you should ensure that all applications which might have network connections open (e.g. e-mail) are closed. Alternative methods for some operating systems are as follows. If you are trying to release the DHCP lease and not renew it, just stop after the release stage of these methods, and don't continue with the renew.</p>
+				<p><b>Windows 9x/ME</b> (though the GUI):</p>
+				<ul>
+					<li>Click <b>Start</b>, click <b>Run</b>, type the command <b>winipcfg</b> in the box, click <b>OK</b>.</li>
+					<li>In the pull-down menu, select the network interface that is connected to the cable modem (rather than, say, any PPP connection).</li>
+					<li>Click button <b>Relea<u>s</u>e</b>.</li>
+					<li>Click button <b>Re<u>n</u>ew</b>.</li>
+					<li>Close the IP Configuration window.</li>
+				</ul>
+				<p><b>Windows 98/ME</b> (by command line):</p>
+				<ul>
+					<li>Open an <b>MS-DOS Prompt</b> command window.</li>
+					<li>Type the commands:<br>
+						<br>
+						<tt><b>ipconfig /release_all<br>
+								
+								
+								
+								
+								
+								
+								
+								
+								ipconfig /renew_all<br>
+								
+								
+								
+								
+								
+								
+								
+								
+								&nbsp;</b></tt></li>
+					<li>Type the command <tt><b>exit</b></tt> to close the command window.</li>
+				</ul>
+				<p><b>Windows NT/2000/XP</b> (by command line):</p>
+				<ul>
+					<li>Open a command window.</li>
+					<li>Type the commands:<br>
+						<br>
+						<tt><b>ipconfig /release<br>
+								
+								
+								
+								
+								
+								
+								
+								
+								ipconfig /renew<br>
+							</b></tt>&nbsp;</li>
+					<li>Type the command <tt><b>exit</b></tt> to close the command window.</li>
+				</ul>
+				<p><b>Windows XP</b> (through the GUI):</p>
+				<ul>
+					<li>Open the control panel <b>Network Connections</b>.</li>
+					<li>Identify the icon for the interface connecting to the cable modem, right-click it, and select <b>Repair</b>.</li>
+					<li>Close the Network Connections window.</li>
+					<li>[The <b>Repair</b> feature is also available as a button on the <b>Support</b> tab of the <b>Status</b> window for the connection].</li>
+				</ul>
+				<p><b>Apple Mac OS 8.x/9.x</b>:</p>
+				<ul>
+					<li>Pull down the <b>Apple</b> menu and select <b>Control Panels</b>.</li>
+					<li>Open the control panel <b>TCP/IP</b>.</li>
+					<li>Note the current setting of the pull-down <b>Connect via:</b>, and then set it to something else.</li>
+					<li>Close the control panel <b>TCP/IP</b>, confirming <b>Save</b> in any dialog that might pop up.</li>
+					<li>Open the control panel <b>TCP/IP</b> again.</li>
+					<li>Restore the pull-down <b>Connect via:</b> to the original setting that you noted above.</li>
+					<li>Close the control panel <b>TCP/IP</b>, confirming <b>Save</b> in any dialog that might pop up.</li>
+				</ul>
+				<p><b>Apple Mac OS X</b> (through the GUI):</p>
+				<ul>
+					<li>Pull down the <b>Apple</b> menu and select <b>System Preferences...</b></li>
+					<li>Click <b>Network</b>.</li>
+					<li>Click the <b>Show:</b> pull-down menu and select <b>Network Port Configurations</b> (or <b>Active Network Ports</b>, according to OS version).</li>
+					<li>Identify the network port that is connected to the cable modem (e.g. <b>Built-in Ethernet</b> or <b>Airport</b>).</li>
+					<li><b>Un</b>check the <b>On</b> check-box of that network port.</li>
+					<li>Click <b>Apply Now</b>.</li>
+					<li>Re-check the <b>On</b> check-box of the same network port.</li>
+					<li>Click <b>Apply Now</b>.</li>
+					<li>Close System Preferences.</li>
+				</ul>
+				<p><b>Apple Mac OS X</b> (by command line):</p>
+				<ul>
+					<li>Ensure that you know the password of an Administrator for the system.</li>
+					<li>Open a <b>Terminal</b> command window.</li>
+					<li>Type the commands:<br>
+						<br>
+						<tt><b>sudo ipconfig set en0 BOOTP<br>
+								
+								
+								
+								
+								
+								
+								
+								
+								sudo ipconfig set en0 DHCP<br>
+							</b></tt>&nbsp;<br>
+						
+						
+						
+						
+						
+						
+						
+						
+						where <tt><b>en0</b></tt> is the interface connecting to the cable modem. These commands are case-sensitive and must be typed as shown. When prompted, quote an Administrator's password.</li>
+					<li>Close the Terminal window.</li>
+				</ul>
+				<hr>
+				<h3><a name="macprob"></a>Apple Mac OS 8.6/9.x DHCP problems</h3>
+				<p>Although restarting usually relinquishes the DHCP lease, and requests a new one, with some versions of the Mac OS 8.6/9.x, this doesn't happen: the Mac continues using whatever network configuration it had when it closed down. Also, when the Mac shuts down, the DHCP lease is left dangling. See <a title="AppleCare Knowledge Base doc 30994" href="http://docs.info.apple.com/article.html?artnum=30994">http://docs.info.apple.com/article.html?artnum=30994</a> for more info.</p>
+				<p>To cure this problem, install the special <b>TCP/IP Options</b> control panel. It is located on the system CD-ROM in the folder <b>:CD Extras:Network Extras:OTExtras:TCP/IP</b>. Drag and drop <b>TCP/IP Options</b> from that folder to the <b>:System Folder:Control Panels</b> folder on hard disk, then restart. Then:</p>
+				<ul>
+					<li>Pull down the <b>Apple</b> menu and select <b>Control Panels</b>.</li>
+					<li>Open the new control panel <b>TCP/IP Options</b>.</li>
+					<li>Check <b>Don't retain DHCP lease on shutdown</b>.</li>
+					<li>Close the control panel TCP/IP Options.</li>
+					<li>Restart again.</li>
+				</ul>
+				<p>Now, shutdowns will relinquish the DHCP lease, and startups will do a full DHCP discovery.</p>
+				<hr>
+				<h3><a name="how"></a>How does DHCP work?</h3>
+				<p>When a PC is powered up, it doesn't know the address of the DHCP server, so it can't talk to it, and the PC itself doesn't have an IP address, so it can't receive any replies anyway. So how does the PC manage to get the DHCP process started?</p>
+				<p>The answer is that the very earliest stages of <b>DHCP Discovery</b> are done by broadcast in both directions. The PC broadcasts (to IP address 255.255.255.255) a request for any DHCP server to reply, with a random number in the request. In a cable network, this broadcast is picked up by the UBR at the cable ISP's head-end. The UBR is not itself a DHCP server, but acts as a <b>DHCP Agent</b> (see <a href="http://www.faqs.org/rfcs/rfc2131.html" title="Dynamic Host Configuration Protocol">RFC 2131</a>). The DHCP Agent passes the PC's request to the real DHCP server elsewhere in the ISP's network. The DHCP server constructs a reply packet, including the same random number as in the request, and sends it back to the DHCP Agent in the UBR. The UBR then broadcasts the reply into the local cable network downstream (so that every connected PC receives it!). Our PC listens on the network for DHCP replies, and when it sees one with the same random number as it first sent, it takes the reply in and extracts the configuration data from it.</p>
+				<p>One of the configuration items is the IP address of the real DHCP server, so that all future DHCP transactions, including periodic lease renewals, can be sent directly to the real DHCP server, not by broadcast.</p>
+				<p>It is the stage of the broadcast reply from the UBR DHCP Agent which causes most problems with user-configured firewalls, particularly when a PC re-awakes after Standby. On re-awakening, the PC reverts to broadcast DHCP discovery, and the reply from the UBR DHCP Agent can appear to be a hostile probe, which is blocked, because the firewall is already installed and running. See <a href="security.html#fwconfig">Personal Firewall Configuration for Cable Modems</a> for instructions for avoiding this problem.</p>
+				<hr>
+				<h3><a name="dhcpmulti"></a>Keeping the same IP address in multi-boot machines</h3>
+				<p>If you have a PC that can be booted into various different operating systems (e.g. Windows and Linux), you sometimes find that you get allocated different IP addresses in some or all of the systems, but in a consistent way: you usually get one address in Linux, and another in Windows. The disadvantage of this is that the longer you spend in one system, the less likely it is that you will be able to reclaim your normal IP address for the other system: the longer an IP address is idle and unleased, the more likely it is to be allocated to someone else.</p>
+				<p>The reason for this is that the IP address issued to you by the DHCP server is influenced by a <b>client_id</b> sent in your PC's DHCP request. Windows sends one <b>client_id</b>, and Linux sends another, so the DHCP server allocates different IP addresses even though your MAC address is the same in both cases.</p>
+				<p>If you can arrange for all your operating systems to send the same <b>client_id</b>, then you would get the same IP address when you boot into any of your systems. The chances of changing the <b>client_id</b> sent by Windows is small, but Linux DHCP clients can be configured to match Windows as follows.</p>
+				<p>Windows DHCP clients specify a <b>client_id</b> consisting of a type byte of <b>01</b> followed by the six-byte MAC address of your PC's ethernet/USB interface.</p>
+				<p>Some Unix DHCP clients, such as <b>dhclient</b> (from <a href="http://www.isc.org/" title="Internet Software Consortium">www.isc.org</a>), allow the <b>client_id</b> to be configured. Others, such as the versions of <b>pump</b> used by many Linux distributions, do not. However, <b><span class="nowrap">pump-0.8.11</span></b> or higher, supplied with RedHat Linux 7.1 and <a href="ftp://ftp.mirror.ac.uk/sites/ftp.redhat.com/pub/redhat/linux/7.1/en/os/i386/SRPMS/" title="Download from mirror site">downloadable</a> from ftp.redhat.com, has a new command-line option <b><span class="nowrap">--win-client-ident</span></b> to match the Windows behaviour. Download, build and install the new version, then edit the startup script <b><span class="nowrap">/etc/sysconfig/network-scripts/ifup</span></b> to add the <b><span class="nowrap">--win-client-ident</span></b> option. Reboot, and your PC should now keep the same IP address when it boots under Linux as when it boots under Windows. [Thanks to John Stark for the multi-boot DHCP information].</p>
+				<hr>
+			<!-- #EndEditable -->
+			<p>Return to <a href="index.html">Index</a>.</p>
+		</body>
+
+	<!-- #EndTemplate -->
+
+</html>
+

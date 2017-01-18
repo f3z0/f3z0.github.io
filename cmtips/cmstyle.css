@@ -1,0 +1,41 @@
+body   { font-size: 14px; font-family: Verdana, Arial, Helvetica, sans-serif; background-color: #eff }
+p { font-size: 14px; font-family: Verdana, Arial, Helvetica, sans-serif }
+ul { font-size: 14px; font-family: Verdana, Arial, Helvetica, sans-serif }
+ol { font-size: 14px; font-family: Verdana, Arial, Helvetica, sans-serif }
+li { font-size: 14px; font-family: Verdana, Arial, Helvetica, sans-serif }
+caption  { font-size: 14px; font-family: Verdana, Arial, Helvetica, sans-serif }
+td  { font-size: 14px; font-family: Verdana, Arial, Helvetica, sans-serif }
+th  { font-size: 14px; font-family: Verdana, Arial, Helvetica, sans-serif }
+pre    { font-size: 14px; font-family: "Courier New", Courier, Monaco, monospace }
+h1  { font-size: 24px; font-family: Verdana, Arial, Helvetica, sans-serif }
+h2  { font-size: 20px; font-family: Verdana, Arial, Helvetica, sans-serif }
+h3  { font-size: 17px; font-family: Verdana, Arial, Helvetica, sans-serif }
+h4 { font-size: 14px; font-family: Verdana, Arial, Helvetica, sans-serif }
+tt    { font-size: 14px; font-family: "Courier New", Courier, Monaco, monospace }
+a:link    {color: #0000CC; text-decoration: underline}
+a:active  {color: #FF0000; text-decoration: underline}
+a:visited {color: #660099; text-decoration: underline}
+a:hover   {color: #FF0000; text-decoration: none; background-color: Khaki}
+a.sidelink:link { color: white; text-decoration: none }
+a.sidelink:visited { color: white; text-decoration: none }
+a.sidelink:hover { color: red; text-decoration: none }
+.presm  { font-size: 11px; background-color: #ffc }
+.flash { color: red; background-color: yellow }
+.nowrap { white-space: nowrap }
+.ntl  { background-color: #9f9 }
+.ntlns4  { background-color: #9f9; border: none }
+.by  { background-color: #9cf }
+.byns4  { background-color: #9cf; border: none }
+.log  { background-color: #ffc }
+.logns4  { background-color: #ffc; border: none }
+.yellbg { background-color: #ff0 }
+.paceout1 { background-color: #0066ff; margin-bottom: 5px; margin-left: 8px; border: outset 2px #ccffff; width: 500px }
+.paceout2  { background-color: #0066ff; margin-right: auto; margin-left: auto; padding: 0px; border: outset 2px #ccffff; width: 520px }
+.pacein0   { padding: 2px; border: none 2px #ccffff; color: white; font-size: 14px; font-family: Verdana, Arial, Helvetica, sans-serif }
+.pacein1   { padding: 2px; border: inset 2px #ccffff; color: white; font-size: 14px; font-family: Verdana, Arial, Helvetica, sans-serif }
+.pacein2  { background-color: green; text-align: center; padding: 2px; border: inset 2px #ccffff; color: white; font-size: 14px; font-family: Verdana, Arial, Helvetica, sans-serif }
+.linktab { border: white }
+.linkcol1 { color: white; background-color: #66c }
+.linkcol2 { color: black; background-color: white }
+.wh   { color: white; font-size: 14px; font-family: Verdana, Arial, Helvetica, sans-serif }
+.menubox  { color: white; font-weight: bold; font-size: 10px; background-color: #008000; padding: 2px; border: solid 2px red }

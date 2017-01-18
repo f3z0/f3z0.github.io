@@ -1,0 +1,404 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+
+<html lang="en">
+
+	<!-- #BeginTemplate "../../cmtips.data/Templates/cmtemp.html" -->
+
+		<head>
+			<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+			<title>Cable Modem Troubleshooting Tips: Security and Firewalls</title>
+			<!-- #BeginHeadLocked "" -->
+				<meta name="description" content="Technical tips for troubleshooting a cable modem connection.">
+				<meta name="keywords" content="cable modem, FAQ, broadband, cablemodem, troubleshooting, tips, NTL, NTLworld, ntlhome, Telewest, blueyonder">
+				<meta name="author" content="Robin Walker">
+				<meta name="copyright" content="&copy; 2001-02 Robin Walker">
+				<link href="../favicon.ico" rel="shortcut icon">
+				<link href="mailto:rdhw@cam.ac.uk" rel="author">
+				<link href="copyright.html" rel="copyright">
+				<link href="index.html" rel="index">
+				<link href="cmstyle.css" rel="stylesheet">
+				<script type="text/javascript" language="JavaScript"><!--
+function jsinit() {
+  if (top!=self) top.location.href = self.location.href;
+}
+// -->
+</script>
+			<!-- #EndHeadLocked -->
+		</head>
+
+		<body onload="jsinit()" bgcolor="#eeffff">
+			<h1>Cable Modem Troubleshooting Tips</h1>
+			<hr>
+			<table border="0" cellpadding="0" align="left" summary="Quick links">
+				<tr>
+					<td nowrap bgcolor="#ffffff">
+						<div class="menubox">
+							<a class="sidelink" title="Introduction and Index to articles" href="index.html">Intro&nbsp;&amp;&nbsp;Index</a>.<br>
+							<a class="sidelink" title="History of updates and changes to this site" href="hist.html">Update&nbsp;history</a>.<br>
+							<a class="sidelink" title="Problems with BroadJump Broadband Installer" href="broadjump.html">Installer issues</a>.<br>
+							<a class="sidelink" title="Problems associated with getting a cable modem registered with your cable operator" href="register.html">Registration&nbsp;issues</a>.&nbsp;<br>
+							<a class="sidelink" title="PC network configuration for cable service" href="basicset.html">Network&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Swapping one PC between multiple networks" href="mobile.html">Mobile&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Understanding the flashing lights on the cable modem" href="lights.html">Cable&nbsp;Modem&nbsp;LEDs</a>.<br>
+							<a class="sidelink" title="How to determine various important IP addresses" href="ipaddr.html">IP&nbsp;addresses</a>.<br>
+							<a class="sidelink" title="How to determine various important MAC addresses" href="macaddr.html">MAC addresses</a>.<br>
+							<a class="sidelink" title="What to check if you have no service" href="badip.html">Dead&nbsp;connection</a>.<br>
+							<a class="sidelink" title="Updating your system with the latest patches and fixes" href="sysupdates.html">System&nbsp;updates</a>.<br>
+							<a class="sidelink" title="Tweaking your PC for best cable modem performance" href="tweaks.html">Network&nbsp;tweaks</a>.<br>
+							<a class="sidelink" title="Problems specifically related to the ethernet connection between your PC and the cable modem" href="ethernet.html">Ethernet&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Problems specifically related to a USB connection between the PC and cable modem" href="usb.html">USB&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Procedures and tips specifically for Surfboard cable modems" href="surfboard.html">Surfboard&nbsp;tips</a>.<br>
+							<a class="sidelink" title="Diagnosing your cable modem's connection" href="signal.html">CM&nbsp;diagnostics</a>.<br>
+							<a class="sidelink" title="Quality of service determined by configuration file" href="cmfile.html">CM&nbsp;config&nbsp;file</a>.<br>
+							<a class="sidelink" title="The network structure of a cable modem" href="cmworks.html">CM&nbsp;tech&nbsp;info</a>.<br>
+							<a class="sidelink" title="DHCP-related problems" href="dhcp.html">DHCP&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Understanding DNS and fixing DNS problems" href="dnsname.html">DNS&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Transparent web proxy caches and how to sidestep them" href="trancache.html">Web&nbsp;proxy&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance of streaming media" href="stream.html">Streaming&nbsp;media</a>.<br>
+							<a class="sidelink" title="Settings that affect performance, latency and pings" href="games.html">Gaming&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance; avoiding saturation of upstream" href="p2p.html">P2P&nbsp;file-sharing</a>.<br>
+							<a class="sidelink" title="Work around connection errors" href="seti.html">SETI@home&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect web browsing performance" href="fasterweb.html">Faster&nbsp;web&nbsp;browsing</a>.<br>
+							<a class="sidelink" title="Strategies to get better download speeds" href="fasterftp.html">Faster&nbsp;downloads</a>.<br>
+							<a class="sidelink" title="How to avoid performance hits" href="downup.html">Simul&nbsp;down/uploads</a>.<br>
+							<a class="sidelink" title="How to restore lost connection when you swap PCs connected to the CM" href="swap.html">Swapping&nbsp;PCs&nbsp;on&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Multiple PCs sharing one CM, home LANs, and NAT Routers" href="homelan.html">PCs&nbsp;sharing&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Using dial-up without losing cable connection" href="dialup.html">Simul&nbsp;dialup&nbsp;&amp;&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Problems with some VPN configurations" href="vpn.html">VPN&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Keep your clock correct, for ever, from cable time" href="timesync.html">Time&nbsp;sync</a>.<br>
+							<a class="sidelink" title="Avoiding virus and trojan infections" href="virus.html">Virus&nbsp;security</a>.<br>
+							<a class="sidelink" title="Configuring firewalls for cable connection" href="security.html">Firewall&nbsp;security</a>.<br>
+							<a class="sidelink" title="Limitations of some speed tests" href="speed.html">Speed&nbsp;testing</a>.<br>
+							<a class="sidelink" title="Understanding, diagnosing, and fixing latency and ping problems" href="latency.html">Latency issues</a>.<br>
+							<a class="sidelink" title="How to perform a traceroute, and how they can mislead" href="traceroute.html">Traceroute</a>.<br>
+							<a class="sidelink" title="Understanding and diagnosing packet loss" href="loss.html">Packet loss</a>.<br>
+							<a class="sidelink" href="frontpage.html">FrontPage tips</a>.<br>
+							<a class="sidelink" title="How to obtain technical support" href="techsupp.html">NTL/BY&nbsp;Tech&nbsp;Support</a>.</div>
+					</td>
+					<td width="18">&nbsp;</td>
+				</tr>
+			</table>
+			<!-- #BeginEditable "main" -->
+				<h2>On this page:</h2>
+				<ul>
+					<li><a href="#security">Security and firewalls</a>: how to protect your PC(s) from intrusion.</li>
+					<li><a href="#persfire">Personal firewalls</a>: the downside</li>
+					<li><a href="#stealth">Stealth-mode firewalls considered harmful</a>: avoiding stealth</li>
+					<li><a href="#fwconfig">Personal firewall configuration</a> for cable modem service</li>
+					<ul>
+						<li><a href="#fwspecific">Firewall configuration notes</a> on specific setups</li>
+						<ul>
+							<li><a href="#fwnat">Firewall on a PC behind a NAT router</a></li>
+							<li><a href="#fwza">ZoneAlarm</a> <span class="flash">&nbsp;Updated 2002 Nov 10&nbsp;</span></li>
+							<li><a href="#fwmcafee">McAfee Firewall</a>&nbsp;<span class="flash">&nbsp;New 2002 April 2&nbsp;</span></li>
+							<li><a href="#fwmspr">Microsoft Proxy Server v2</a>&nbsp;<span class="flash">&nbsp;New 2002 April 2&nbsp;</span></li>
+							<li><a href="#fwipch">ipchains</a></li>
+						</ul>
+					</ul>
+					<li><a href="#fwapps">Problems with certain applications and firewalls</a>: special settings needed</li>
+					<li><a href="#fwnotbad">Network traffic not to get worried about</a>: non-malicious traffic</li>
+					<li><a href="#fwubr">Why the UBR address is important in firewall configuration</a>: tech info</li>
+				</ul>
+				<h2><a name="security"></a>Security and Firewalls</h2>
+				<p>This article applies in the main to PCs connected directly to the cable modem, and to a PC configured as the DMZ machine on a NAT Router. Other PCs connected to a NAT Router are much safer from external network attack, because the router blocks incoming calls that it does not know how to handle.</p>
+				<p>The golden rule of security on public TCP/IP networks is: <b>Keep unwanted ports closed</b>. A hacker can only penetrate your PC (a) if you leave a port open for him to attack on; <b>and</b> (b) if that port exposes a vulnerability which can be exploited. Having a vulnerable port open to the public network is like leaving your front door open while you are away from home: you should not be too surprised if you get burgled.</p>
+				<p>In principle, if a port does not expose a vulnerability, then there is no need to worry about it being open. The idea that <i>a hacker can slip a trojan in through any open port</i> is a paranoid urban myth.</p>
+				<p>Some distributions of the <b>Linux</b> operating system are problematic in respect of unwanted open ports. From a fresh installation, such distributions come with almost all network services enabled by default, leaving many ports open to the world for services that a normal end-user would never need to offer to a network. Many of these services have, in their first installed form, known security vulnerabilities (until extra patches have been applied), and these leave the machine vulnerable to hackers the world over that scan for these specific vulnerabilities. No Linux machine should ever be connected to a network until (a) all relevant patches have been applied, and (b) all services have been turned off, except those which are explicitly required (such as a DHCP client).</p>
+				<p>In <b>Windows</b> you can get a list of open ports by opening a command prompt window and giving the command <b>netstat -a</b>, with results looking like this:</p>
+				<pre class="log">C:\WINDOWS&gt;netstat -a
+
+Active Connections
+
+  Proto  Local Address          Foreign Address        State
+  TCP    rdhw-a:137             RDHW-B:0               LISTENING
+  TCP    rdhw-a:138             RDHW-B:0               LISTENING
+  TCP    rdhw-a:nbsession       RDHW-B:0               LISTENING
+  UDP    rdhw-a:nbname          *:*
+  UDP    rdhw-a:nbdatagram      *:*
+</pre>
+				<p>Each of the UDP lines, and each of the TCP lines in state <b>LISTENING</b> is a port open to the world. In the <b>Local Address</b> column, the port number appears after the colon. In some cases, the port number has been translated to a service name: the table of translations is in the text file <b>C:\WINDOWS\SERVICES</b> for Win 9x/ME, or in <b>C:\WINNT\system32\drivers\etc\services</b> for Win NT/2000. Note the absence of a <b>.txt</b> extension in both cases. You can view the connection list without the text translations by using <b>netstat -an</b>.</p>
+				<p>Ports 137 (nbname), 138 (nbdatagram) and 139 (nbsession) belong to the NetBIOS transport protocol upon which Microsoft networking is based. Windows 2000/XP also use port 445 (microsoft-ds) for Microsoft networking without NetBIOS. These open ports are therefore to be expected on a Windows system. Any others need to be checked out to see whether they are legitimate or not. For instance, it is characteristic of infection with trojan horses such as <b>Back Orifice</b> or <b>SubSeven</b> that they open a port, waiting for some script kiddie to come by, detect the open port, and use the port to perform some malevolent act on your PC. However, it does take some experience to tell the difference between a legitimately open port and one which is the result of a hostile resident trojan horse. For this reason, it is advisable to have a good virus-checking program scan your entire system from time to time, checking for trojan horse infections. It is essential that you keep your virus-scanner up to date, with virus definition updates being applied at monthly intervals or more frequently. <b>You need an anti-virus system more than you need a firewall</b>.</p>
+				<p>In the meantime, ports 137-139 and 445 themselves are a security vulnerability <b>if</b> the user has file-sharing or printer-sharing turned on, and many users are unaware whether they have these services turned on or not. Assuming that you do not actually want to share your hard disk or printers with other PCs on the global internet, a Windows 9x/ME user can turn these services off as follows:</p>
+				<ul>
+					<li>Open Control Panel</li>
+					<li>Double-click <b>Network</b></li>
+					<li>Click the button <b><u>F</u>ile and Print Sharing...</b></li>
+					<li>Uncheck both <b>I want to be able to give others access to my <u>f</u>iles</b> and <b>I want to be able to allow others to <u>p</u>rint to my printer(s)</b>.</li>
+					<li>Click <b>OK</b>, click <b>OK</b>, and allow it to restart if necessary.</li>
+				</ul>
+				<p>A Windows 2000/XP user can turn these services off as follows:</p>
+				<ul>
+					<li>Open Control Panel.</li>
+					<li>Double-click <b>Network and Dial-up Connections</b>.</li>
+					<li>Identify the icon for your cable modem connection. For ethernet, it is usually <b>Local Area Connection</b>.</li>
+					<li>Right-click that icon, and select <b>Properties</b>.</li>
+					<li><b>UN</b>check the component <b>File and Printer Sharing for Microsoft Networks</b>.</li>
+					<li>Click <b>OK</b>.</li>
+				</ul>
+				<p>The above will lock out hackers trying to access your hard disk, by eliminating the exploitable vulnerabilities on ports 137-139 and 445. It will not close ports 137-139 and 445, which remain held open by <b>Client for Microsoft Networks</b>, the component that allows you to use files and printers on other Windows computers. In this state, hackers will still be able to deduce something about the identity and configuration of your PC, but they will not be able to break in. If you are so paranoid that you want to close ports 137-139 and 445 completely, then see the excellent discussion at <a href="http://cable-dsl.home.att.net/#Security" title="Navas Cable Modem/DSL Tuning Guide">http://cable-dsl.home.att.net/#Security</a> and then <a href="http://cable-dsl.home.att.net/netbios.htm" title="File and Printer Sharing (NetBIOS) Fact and Fiction">http://cable-dsl.home.att.net/netbios.htm</a> for a demolition of NetBIOS hysteria and FUD.</p>
+				<p>With Windows NT/2000, if you choose to leave <b>File and Printer Sharing for Microsoft Networks</b> enabled, then be aware that, out of the box, Windows NT/2000 share your entire hard disk(s) with the world, with no protection at all, unless you define passwords for Administrator accounts. It is <b>absolutely essential</b> that you define hard-to-guess passwords for all Administrator and User accounts. However convenient it may be to operate locally with null passwords, your PC is wide open to attack on the network unless all accounts have hard-to-guess passwords.</p>
+				<p>With Windows NT/2000, also be aware that, when sharing an object with <b>File and Printer Sharing for Microsoft Networks</b>, the default <b>Permission</b> is <b>Full Control</b> by <b>Everyone</b>, and <b>Everyone</b> includes <b>Guest</b>. For this reason, you should keep the <b>Guest</b> account disabled (or give it hard-to-guess password like any other account).</p>
+				<p>If you have good reason to offer the file-sharing service to the internet, ensure that you follow these guidelines to keep your PC secure:</p>
+				<ul>
+					<li>[WinNT/2k] ensure all accounts have hard-to-guess passwords;</li>
+					<li>[WinNT/2k] for each share, in <b>Permissions</b>, remove the default <b>Everyone</b>, and add explicit permissions just for those users who need them;</li>
+					<li>[Win9x/ME] never share any resource without applying a hard-to-guess password to the share;</li>
+					<li>never share the root of any hard disk;</li>
+					<li>never share the <b>C:\WINDOWS</b> or <b>C:\WINNT</b> directory or any sub-directory in the tree below those directories.</li>
+				</ul>
+				<p>If you want a DMZ machine, or an ICS/router machine, to offer file-sharing to other PCs on your home LAN, you should consider transferring the transport of Microsoft Networking from TCP/IP to <b>NetBEUI</b>, a protocol designed for LAN use, which is blocked by the cable modem, and thus secure from external probing. See <a href="http://cable-dsl.home.att.net/#Security" title="Navas Cable Modem/DSL Tuning Guide">http://cable-dsl.home.att.net/#Security</a> for how to do this.</p>
+				<p>For further reading:</p>
+				<ul>
+					<li>See <b>Home Network Security</b> at <a href="http://www.cert.org/tech_tips/home_networks.html" title="CERT Co-ordination Center">http://www.cert.org/tech_tips/home_networks.html</a>.</li>
+					<li>See the Shields UP! site at <a href="http://grc.com/" title="Gibson Research Corp">http://grc.com/</a>.</li>
+					<li>Then see the comments on Shields UP! at <a href="http://cable-dsl.home.att.net/netbios.htm#ShieldsUp" title="Navas Cable Modem/DSL Tuning Guide">http://cable-dsl.home.att.net/netbios.htm#ShieldsUp</a>.</li>
+				</ul>
+				<p><b>Apple Macintoshes</b> by default keep all their TCP/IP ports closed unless a user application explicitly opens them, so they tend to be naturally more secure than other platforms. Traditional AppleTalk networking is filtered out by the cable modem, so even old-style File Sharing does not represent a security risk. However, Mac OS 9 and higher have, in the <b>Start/Stop</b> tab of the <b>File Sharing</b> control panel, a check box entitled <b>Enable File Sharing clients to connect over TCP/IP</b>. If both (a) this check box is checked, and (b) <b>File Sharing</b> is <b>on</b>, then ports 427 (Service Location Protocol) and 548 (Apple Filing Protocol) will be open to the internet. You should do this only if you wish other internet users to have access to your shared folders or disks. In this case, you should first define the <b>Owner Name</b>, <b>Owner Password</b>, and <b>Computer Name</b> fields on the <b>Start/Stop</b> tab, then use the <b>Users &amp; Groups</b> tab to define userids and passwords for those users to whom you wish to grant access. Then apply the following guidelines:</p>
+				<ul>
+					<li>ensure that the <b>Owner Password</b> is hard to guess;</li>
+					<li>ensure that all user accounts have hard-to-guess passwords;</li>
+					<li>never share the whole disk on which your <b>System Folder</b> resides;</li>
+					<li>never share the <b>System Folder</b> or any sub-folder within it;</li>
+					<li>when sharing a folder or disk, alter the access rights for <b>Everyone</b> to <b>None</b>, so that only the listed user or group has access;</li>
+					<li>disable logon for the <b>Guest</b> account (which has no password);</li>
+					<li>ensure <b>Program linking</b> is disabled: this is a major security exposure if enabled for TCP/IP.</li>
+				</ul>
+				<p>Apple Mac users can check open ports (and more besides) with utilities such as <a href="http://www.interarchy.com/">Interarchy</a> or <a href="http://www.sustworks.com/">IPNetMonitor</a>.</p>
+				<hr>
+				<h3><a name="persfire"></a>Personal firewalls</h3>
+				<p>A personal firewall is a program which you can add to your PC or Mac which monitors incoming network connection attempts, and takes action according to a set of rules which you help to supply. It might permit the connection, log the attempt, or just not respond to the attempt.</p>
+				<p>A list of freely downloadable personal firewalls for Windows is at <a href="http://www.webattack.com/freeware/security/fwfirewall.shtml" title="WebAttack">http://www.webattack.com/freeware/security/fwfirewall.shtml</a>.</p>
+				<p>There are some downsides to personal firewalls:</p>
+				<ul>
+					<li>They get in the way, just by being there. They can add a layer of confusion to other network problems, and make diagnosis of other problems more difficult.</li>
+					<li>If the firewall is configured to be too strict, it makes problems for the user by disallowing things that the user expected to work. The user might have to put some effort into configuring the firewall to suit local needs. In the worst case, a firewall which has not been configured with sufficient exceptions will cause the a loss of connection from time to time.</li>
+					<li>Viewing the logs can induce feelings of paranoia in the user, now that he can see what was going on all the time. The paranoia can be unjustified when the log lists events which are just part of normal network life, rather than intrusion attempts.</li>
+					<li>Worse still are the feelings of desire for retribution when the user sees attempted intrusion probes in the log. If you are happy that the lock on your front door stops the burglar, perhaps you should be content that your firewall stopped the intruder, and leave it at that.</li>
+					<li>It needs to be remembered that firewalls will log attempted intrusions that would never have affected you anyway: they will log a Sub-Seven probe even when you would not have been vulnerable because you did not have the relevant trojan resident. This will apply to the majority of log entries on a well maintained machine.</li>
+				</ul>
+				<p>For information on what you might see in firewall logs, see <a href="http://www.robertgraham.com/pubs/firewall-seen.html" title="FAQ: Firewall Forensics (What am I seeing?)">http://www.robertgraham.com/pubs/firewall-seen.html</a>. There is a particularly useful section on understanding NetBIOS probes, and how most of them are harmless parts of network life.</p>
+				<hr>
+				<h3><a name="stealth"></a>Stealth-mode firewalls considered harmful</h3>
+				<p>Some firewalls have a hiding mechanism they call <b>stealth</b>. For instance, the <b>High Security</b> setting in <b>ZoneAlarm</b> is an example of stealth mode. In stealth mode, the firewall causes the PC just to ignore incoming connection attempts, rather than rejecting them, as would be normal for incoming connection attempts to closed ports. The result is that the PC appears to be switched off and absent from the network.</p>
+				<p>This hyper-paranoid approach to security causes some difficulties. For a start, Internet standard <a href="http://www.faqs.org/rfcs/rfc1122.html" title="Requirements for Internet Hosts -- Communication Layers">RFC&nbsp;1122</a> states categorically about ICMP Echoes (ping):</p>
+				<div class="log">
+					<blockquote>
+						<p>3.2.2.6 Echo Request/Reply: RFC-792</p>
+						<blockquote>
+							<p>Every host <b>MUST</b> implement an ICMP Echo server function that receives Echo Requests and sends corresponding Echo Replies.</p>
+						</blockquote>
+					</blockquote>
+				</div>
+				<p>Note the <b>MUST</b> rather than <b>SHOULD</b>. This means that any internet user, or ISP server, has a right to expect that all live PCs connected to the internet will respond to ICMP ping requests with an ICMP reply. If a firewall user chooses to stealth ICMP requests so that no response is sent, they have only themselves to blame if they start experiencing problems, because they are in breach of <a href="http://www.faqs.org/rfcs/rfc1122.html" title="Requirements for Internet Hosts -- Communication Layers">RFC&nbsp;1122</a>.</p>
+				<p>The problems that might arise if you kill ICMP responses with stealth are:</p>
+				<ul>
+					<li>Difficulties with DHCP lease acquisition or renewal in cases where the DHCP server checks on the availability of IP addresses, or your presence on the network, with ICMP ping requests [<span class="ntl">this doesn't actually happen on the original NTL network, but ICMP requests have been seen coming from the DHCP servers of digital TV set-top boxes</span>. <span class="by">No problems seen with blueyonder</span>];</li>
+					<li>Slowness of web connection setup in cases where the remote web server uses ICMP to determine the MTU of the response path;</li>
+					<li>Frustration at ISP help-desks (and with informal helpers) if your PC does not respond to <b>ping</b>s and <b>traceroute</b>s, as it is difficult to distinguish this situation from a broken connection.</li>
+				</ul>
+				<p>So you are strongly advised <b>not</b> to apply stealth techniques to the ICMP protocol. In the freeware version of <b>ZoneAlarm</b>, this means you should run it in <b>Medium Security</b>, not High Security, for the <b>Internet Zone</b>. In <b>ZoneAlarm Pro</b>, you can configure ICMP behaviour to permit ICMP Echo packets in and out even in <b>High Security</b>, using the <b>Cus<u>t</u>omize</b> button of the <b>Security Settings</b> panel.</p>
+				<p><b>Windows XP</b> has a built-in firewall that by default blocks ICMP Echo. You should uncheck this feature.</p>
+				<p>Similar problems arise with certain NAT routers, such as the Linksys. By default, the Linksys does not reply to incoming ICMP requests, equivalent to a stealth firewall. To configure the Linksys to reply properly to all incoming requests, send your web browser to the Linksys configuration page at <a href="http://192.168.1.1/" title="Linksys configuration">http://192.168.1.1/</a> and then:</p>
+				<ul>
+					<li>click on the <b>Advanced</b> tab.</li>
+					<li>On the <b>Filters</b> panel, find the option <b>Block WAN Request</b>, and check <b>Disable</b>.</li>
+				</ul>
+				<p>A commonly heard objection to allowing ICMP Echo Replies is that it gives away information to hackers that there is a live connection on this IP address. Such objections are not well-founded, and can be safely ignored. There is no evidence in practice that any hacker has been aided by the presence of an ICMP Echo Reply. Hackers do not typically write code that tests an address with ICMP Echo before launching a hostile probe: they always send the hostile probe directly: either it works or it doesn't, and information from ICMP adds nothing to the analysis.</p>
+				<hr>
+				<h3><a name="fwconfig"></a>Personal firewall configuration for cable modems</h3>
+				<p>With cable modem connections, most firewalls do not work correctly using their default configuration. Some extra configuration is always required from the user. There are many possible combinations of operating system and firewall, so this article will cover first an all-inclusive specification of what might need to be achieved to minimise firewall-related problems: how you achieve this specification will depend upon your specific operating system and firewall. Some firewalls are host-based, and require addresses of trusted hosts to be configured, regardless of protocol. Some firewalls are protocol based, and require port numbers to be configured as open, regardless of calling host. Some advanced firewalls allow you to specify rules combining both host addresses and protocols. Some tips for specific common combinations of operating system and firewall <a href="#fwspecific">follow below</a>.</p>
+				<p><b>The specification</b>: to minimise firewall-related problems on a cable connection, you might need to configure the following combinations of hosts and protocols to be trusted with access to the appropriate client applications or processes on your PC or LAN:</p>
+				<ul>
+					<li>the <b>cable modem</b> itself (usually <b>192.168.100.1</b>) for any protocol;</li>
+					<li>your local <b>UBR</b>'s private IP address, for broadcast DHCP (UDP local destination port 68);</li>
+					<li>your ISP's <b>DHCP server(s)</b> for your area, for DHCP (UDP local destination port 68) and ICMP;</li>
+					<li>your ISP's <b>DNS servers</b>, for UDP from remote source port 53 to any local destination port.</li>
+				</ul>
+				<p>Of the above list, the <b>UBR</b>'s private IP address (see <a href="ipaddr.html#ubrip">Finding the UBR Address</a> above) seems to be the most important (and the one which causes difficulties unique to cable connections): the UBR acts as a DHCP Relay Agent (see <a href="http://www.faqs.org/rfcs/rfc2131.html" title="Dynamic Host Configuration Protocol">RFC 2131</a>). Several users have reported that they had difficulties acquiring or renewing their DHCP lease (symptom: disconnection every few hours) until they included their UBR as a trusted host (or permitted DHCP protocol from any host). Some firewalls are smart enough to recognise a normal DHCP transaction, but few are smart enough to recognise the validity of the DHCP broadcasts emanating from an apparently off-subnet address such as the UBR's private IP address. See <a href="#fwubr" title="Why the UBR address is important in firewall configuration">more below</a>.</p>
+				<p>To discover the cable modem address, see <a href="ipaddr.html#cmip">Finding the cable modem's address</a>. <b>Note:</b> This recommendation to trust the cable modem itself is made in order to avoid false alarms from the firewall caused by the normal operation of the cable modem: some models of cable modem originate IP traffic themselves. For instance, the Surfboards multicast IGMP probes, which should not be treated as a cause for alarm. It should not be necessary to trust the cable modem address merely in order to browse its diagnostic pages, for instance, so you might be able to omit configuring the cable modem address.</p>
+				<p>To discover the DNS server addresses, see <a href="ipaddr.html#dnsip">Finding the DNS server address(es)</a>. These will not necessarily be your ISP's standard published DNS servers: the ones you need to trust are the ones actually being used, for instance, as notified in the DHCP lease. <b>Note:</b> This recommendation to trust the DNS servers is made not to enable the proper operation of the DNS system, but to avoid false alarms from the firewall when the DNS system does not work properly. Firewalls ought to be smart enough to recognise that replies from DNS servers are valid, but in practice DNS replies can be very slow to arrive, and can trigger false alarms in firewalls when they are late. These false alarms can be avoided by configuring the DNS servers as trusted hosts. Also, there were problems in some versions of DNS server software that caused a different DNS server to reply than the one to which the query was sent: in this case, a firewall will always raise an alarm to the reply - if this happens to you, just add the replying DNS server address to the list of trusted hosts.</p>
+				<p>To discover the DHCP server address, see <a href="ipaddr.html#dhcpip">Finding the DHCP server address</a>. <span class="ntl">Pace digital TV STB users in ex-C&amp;W regions of NTL should note that they have <b>two</b> DHCP servers, <b>10.0.xxx.70</b> and <b>10.0.xxx.71</b>, and <b>both</b> need adding as trusted hosts to the firewall</span>. <span class="by">Blueyonder users should note that they have <b>two</b> DHCP servers, and <b>both</b> need adding as trusted hosts to the firewall</span>.</p>
+				<p>If your firewall can distinguish the internet usage of individual applications or processes in your system, then the above configurations for UBR private IP address, DHCP server(s), and DNS server(s) need be applied only to the applications or processes running the local DHCP or DNS clients, rather than the entire system.</p>
+				<h3><a name="fwspecific"></a>Firewall configuration notes on specific setups:</h3>
+				<h4><a name="fwnat"></a>Firewall on a PC behind a NAT router:</h4>
+				<p>If your firewall is on a home LAN behind a NAT router, then you may omit both the UBR and the DHCP server(s) from the trusted host list, as the NAT router will provide DHCP service to the LAN.</p>
+				<h4><a name="fwza"></a>ZoneAlarm &amp; ZoneAlarm Pro 2.6 on Windows 95/98/ME:</h4>
+				<blockquote>
+					<p>Configure the hosts listed above (UBR, DHCP, DNS servers) as trusted by adding them to the <b>Local Zone</b> (ignore the protocol and port information above). Click <b>Security Settings</b>, click <b>Advanced</b>, [in <b>ZoneAlarm Pro</b> click tab <b>Local Zone Contents</b>], click <b>Add &gt;&gt; IP Address</b>. The <b>Local Zone</b> must then be set to <b>Low</b> security (or maybe <b>Medium</b> will work?).</p>
+				</blockquote>
+				<h4>ZoneAlarm &amp; ZoneAlarm Pro 2.6 on Windows NT/2K/XP:</h4>
+				<blockquote>
+					<p>Click the <b>Programs</b> tab. Ensure that the entry for <b>Services and Controller app</b> (<b>services.exe</b>) shows a <b>tick</b> for <b>Allow connect</b> in the Internet Zone, and a <b>tick</b> for <b>Allow server</b> in the Internet Zone. Click the <b>Options</b> button, and check <b>Allow the program to pass through the lock</b>. This removes all firewalling from <b>services.exe</b> and allows it to function as DHCP and DNS client without needing to configure specific servers as trusted. To prevent late DNS responses creating false alarms, you should also configure your DNS servers into the <b>Local Zone</b> as described above for 95/98/ME.</p>
+				</blockquote>
+				<h4>ZoneAlarm &amp; ZoneAlarm Pro 2.6 on Windows all versions:</h4>
+				<blockquote>
+					<p>If your PC is connected directly to the cable modem, without any intervening router, then you should configure your firewall to <b>not trust</b> the local sub-net (by default, many firewalls trust the local sub-net), as you do not want other users on the same CATV distribution sub-net to have access to your PC:</p>
+					<ul>
+						<li>In <b>ZoneAlarm</b>: click <b>Security Settings</b>, click button <b>Advanced</b>, and <b>un</b>check all entries under <b>Adapter Subnets</b>.</li>
+						<li>In <b>ZoneAlarm Pro 2.6</b>: click <b>Security Settings</b>, click button <b>Advanced</b>, click tab <b>Local Zone Contents</b>, and <b>un</b>check all entries under <b>Networks</b>.</li>
+					</ul>
+					<p>If your PC is part of a home LAN, then you <b>will</b> want to trust the local sub-net, so do the opposite of the last paragraph, and <b>check</b> the <b>Subnet</b> or <b>Network</b> entries.</p>
+					<p>For more on ZoneAlarm 2.6 configuration on cable connections, see <a title="ZoneAlarm support" href="http://www.zonealarm.com/store/content/support/znalmNetworkFAQ.jsp">http://www.zonealarm.com/store/content/support/znalmNetworkFAQ.jsp</a>. References on that site to <b>gateway</b> should be taken to mean <b>UBR</b>.</p>
+				</blockquote>
+				<h4>ZoneAlarm &amp; ZoneAlarm Pro 3.x on Windows 95/98/ME:</h4>
+				<blockquote>
+					<p>Configure the hosts listed above (UBR, DHCP, DNS servers) as trusted by adding them to the <b>Trusted Zone</b> (ignore the protocol and port information above):</p>
+				</blockquote>
+				<ul>
+					<li>Click left-hand tab <b>Firewall</b>:</li>
+					<ul>
+						<li>Click the top tab <b>Zones</b>, then for each host to be trusted:</li>
+						<ul>
+							<li>Click <b>Add &gt;&gt; IP Address</b>:</li>
+							<ul>
+								<li>Ensure <b>Zone</b> is set to <b>Trusted</b>.</li>
+								<li>In the box <b>IP Address</b>, type the address of the host.</li>
+								<li>In the box <b>Description</b>, type a memo of what the host is.</li>
+								<li>Click <b>OK</b>.</li>
+							</ul>
+							<li>Repeat above for each host to be trusted.</li>
+							<li>Click <b>Add &gt;&gt; Subnet</b>:</li>
+							<ul>
+								<li>Ensure <b>Zone</b> is set to <b>Trusted</b>.</li>
+								<li>In the box <b>IP Address</b>, type <b>192.168.100.0</b></li>
+								<li>In the box <b>Subnet Mask</b>, type <b>255.255.255.0</b></li>
+								<li>In the box <b>Description</b>, type a memo <b>Cable modem subnet</b>.</li>
+								<li>This permits unsolicited communication from the cable modem. Click <b>OK</b>.</li>
+							</ul>
+							<li>Double-click the line with the adaptor icon in the <b>Name</b> column:</li>
+							<ul>
+								<li>If this network interface is connected directly to the cable modem, set <b>Zone</b> to <b>Internet</b> to block other cable users in your locality;</li>
+								<li>If this network interface is connected to a LAN or NAT router, set <b>Zone</b> to <b>Trusted</b>, to permit traffic from your LAN.</li>
+								<li>Click <b>OK</b>.</li>
+							</ul>
+						</ul>
+						<li>Click the top tab <b>Main</b>:</li>
+						<ul>
+							<li>Set <b>Internet Zone Security</b> slider to <b>Medium</b>.</li>
+							<li>Set <b>Trusted Zone Security</b> slider to <b>Low</b>.</li>
+						</ul>
+					</ul>
+				</ul>
+				<h4>ZoneAlarm &amp; ZoneAlarm Pro 3.x on Windows NT/2K/XP:</h4>
+				<ul>
+					<li>Click left-hand tab <b>Program Control</b>:</li>
+					<ul>
+						<li>Click top tab <b>Programs</b>:</li>
+						<ul>
+							<li>Locate [XP] <b>Generic Host Process for Win32 Services</b>, or [NT/2K] <b>Services and Controller app</b>:</li>
+							<li>Ensure this program has a <b>tick</b> in <b>Access Internet</b> and a <b>tick</b> in <b>Server Internet</b>.</li>
+							<li>Click this program's entry in the <b>padlock</b> column, and in the pop-up contextual menu select <b>Pass lock</b>.</li>
+							<li>This allows routine DHCP and DNS client activity, even when the <b>Internet Lock</b> is engaged, so that DHCP leases are not lost.</li>
+						</ul>
+						<li>Click top tab <b>Main</b>.</li>
+						<ul>
+							<li>Set <b>Program Control</b> slider to <b>Medium</b>.</li>
+							<li>Set <b>Automatic Lock</b> to <b>Off</b>.</li>
+						</ul>
+					</ul>
+					<li>Click left-hand tab <b>Firewall</b>:</li>
+					<ul>
+						<li>Click top tab <b>Zones</b>:</li>
+						<ul>
+							<li>For each DNS server to be trusted:</li>
+							<ul>
+								<li>Click <b>Add &gt;&gt; IP Address</b>:</li>
+								<ul>
+									<li>Ensure <b>Zone</b> is set to <b>Trusted</b>.</li>
+									<li>In the box <b>IP Address</b>, type the address of the host.</li>
+									<li>In the box <b>Description</b>, type a memo <b>DNS server</b>.</li>
+									<li>Click <b>OK</b>.</li>
+								</ul>
+								<li>Repeat for each host to be trusted. This procedure prevents false alarms arising from late DNS replies.</li>
+							</ul>
+							<li>Click <b>Add &gt;&gt; Subnet</b>:</li>
+							<ul>
+								<li>Ensure <b>Zone</b> is set to <b>Trusted</b>.</li>
+								<li>In the box <b>IP Address</b>, type <b>192.168.100.0</b></li>
+								<li>In the box <b>Subnet Mask</b>, type <b>255.255.255.0</b></li>
+								<li>In the box <b>Description</b>, type a memo <b>Cable modem subnet</b>.</li>
+								<li>This prevents false alarms arising from unsolicited communication from the cable modem. Click <b>OK</b>.</li>
+							</ul>
+							<li>Double-click the line with the adaptor icon in the <b>Name</b> column:</li>
+							<ul>
+								<li>If this network interface is connected directly to the cable modem, set <b>Zone</b> to <b>Internet</b> to block other cable users in your locality;</li>
+								<li>If this network interface is connected to a LAN or NAT router, set <b>Zone</b> to <b>Trusted</b>, to permit traffic from your LAN.</li>
+								<li>Click <b>OK</b>.</li>
+							</ul>
+						</ul>
+						<li>Click top tab <b>Main</b>:</li>
+						<ul>
+							<li>Set <b>Internet Zone Security</b> to <b>Medium</b>;</li>
+							<li>Set <b>Trusted Zone Security</b> to <b>Low</b>.</li>
+						</ul>
+					</ul>
+				</ul>
+				<h4><a name="fwmcafee"></a>McAfee Firewall:</h4>
+				<ul>
+					<li>Open Firewall and click on Run Firewall. (You cannot see the Network Adapters if Firewall is not running)</li>
+					<li>Click on Pick a Task.</li>
+					<li>Configure Advanced Settings.</li>
+					<li>Configure Network Adapter Settings.</li>
+					<li>Select the Network Adapter device(s) on your system.</li>
+					<li>Click on your Network Adapter so that it is highlighted. (If there is more than 1 adapter, repeat these instructions for each adapter)</li>
+					<li>Click on View or change the properties of this adapter.</li>
+					<li>Click on the DHCP tab. Check the Box to Allow DHCP. Click Apply.</li>
+					<li>Click on the ARP tab. Check the Box to Allow ARP. Click Apply.</li>
+				</ul>
+				<p>For more see: <a title="McAfee help site" href="http://www.mcafeehelp.com/faq.asp?docid=60827">http://www.mcafeehelp.com/faq.asp?docid=60827</a>.</p>
+				<h4><a name="fwmspr"></a>Microsoft Proxy Server v2</h4>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				By default, Proxy Server (functioning as a firewall) does not permit DHCP access from the outside world, resulting in failure to renew DHCP leases. To remedy this:
+
+				<ul>
+					<li>Click <b>Start</b> [XP: click <b>Programs</b>].</li>
+					<li>Click <b>Microsoft Proxy Server</b>.</li>
+					<li>Click <b>Microsoft Management Console</b>.</li>
+					<li>Right-click <i>either</i> <b>Web Proxy</b> <i>or</i> <b>Winsock</b>, and select <b>Properties</b>.</li>
+					<li>Click <b>Security</b>.</li>
+					<li>Create a custom packet filter for protocol <b>UDP</b>, direction <b>both</b>, local port <b>68</b>, remote port <b>67</b>. This should enable DHCP for both the UBR and the DHCP servers.</li>
+				</ul>
+				<h4><a name="fwipch"></a>ipchains:</h4>
+				<p>For advice on <b>ipchains</b> firewall configuration under <b>Linux</b> 2.2.x, see the TrinityOS HOWTO at <a href="http://www.ecst.csuchico.edu/%7edranch/LINUX/TrinityOS/cHTML/TrinityOS-c-10.html" title="TrinityOS HOWTO">http://www.ecst.csuchico.edu/~dranch/LINUX/TrinityOS/cHTML/TrinityOS-c-10.html</a>.</p>
+				<hr>
+				<h3><a name="fwapps"></a>Problems with certain applications and firewalls</h3>
+				<p>Certain applications do not work correctly if you run a firewall (or a NAT router), unless you configure the firewall (or the NAT router) especially for them. Examples include:</p>
+				<ul>
+					<li>NetMeeting;</li>
+					<li>Peer-to-Peer file-sharing systems, such as <a href="p2p.html#fasttrack">KaZaA, Morpheus, Grokster</a>, <a href="p2p.html#gnutella">Gnutella, BearShare, Limewire</a>;</li>
+					<li>Multi-player games.</li>
+				</ul>
+				<p>The underlying problem is that such applications expect to be able to receive incoming connections, which a firewall or NAT router normally blocks. See <a href="http://www.practicallynetworked.com/sharing/app_ports.htm" title="Special applications and port list">http://www.practicallynetworked.com/sharing/app_ports.htm</a> for instructions and a list of ports which might need to be opened.</p>
+				<hr>
+				<h3><a name="fwnotbad"></a>Network traffic not to get worried about</h3>
+				<p>Some DOCSIS-compliant cable modem send IGMP multicasts (destination 224.0.0.1, meaning <i>any system on this sub-net</i>) to the connected PCs once every 5 minutes or so. These are <b>intended</b> to reach your PCs. These multicasts should be allowed through a firewall, if only to avoid clogging your firewall log with useless entries.</p>
+				<p>Do not be concerned about broadcasts (e.g. DHCP) from your UBR: you need to allow these through the firewall, see next section.</p>
+				<p>Do not get over-concerned about ICMP pings from random internet hosts, particularly if you are browsing those hosts. Sending a maximally sized ICMP ping is part of one algorithm for determining the path-MTU for the connection back to you from the remote server. Just allow your PC to reply to them in the normal way: it will marginally speed up the setup of the connection. For the freeware ZoneAlarm, this means setting the <b>Internet Zone</b> to <b>Medium Security</b>, not High Security.</p>
+				<hr>
+				<h3><a name="fwubr"></a>Why the UBR's private IP address is important in firewall configuration</h3>
+				<p>In the early stages of a DHCP exchange, a PC has to discover a DHCP server to talk to. When it starts, the PC does not know the address of the DHCP server, nor the address of the gateway out of the sub-net. Also, since the PC does not yet have an IP address, it is impossible to address IP packets back to the PC uniquely. So the early stages of DHCP discovery take place by broadcast in both directions. The PC transmits a broadcast calling for a DHCP server to respond. This is picked up by the gateway-UBR, which is a DHCP Relay Agent (see <a href="http://www.faqs.org/rfcs/rfc2131.html" title="Dynamic Host Configuration Protocol">RFC 2131</a>), and passed to the real DHCP server elsewhere in the ISP's network. The reply from the DHCP server also has to be broadcast back into the sub-net of the calling PC. The gateway-UBR therefore has to broadcast DHCP responses into the CATV network in the hope that the calling PC will recognise the reply intended for it. As a side-effect, every customer PC on the CATV network will also receive these DHCP broadcast replies, all of which will appear to emanate from the UBR's private IP address <b>10.xxx.xxx.1</b> or <b>172.xx.xxx.254</b> (see <a href="ipaddr.html#ubrip">Finding the UBR address</a>), directed to the PC's DHCP client port. So it is an entirely normal part of network life for the UBR to appear to be attempting to access your PC's DHCP client port, and it should not be treated as an attempted intrusion. Moreover, your own PC needs to hear those broadcast replies itself when it undertakes a DHCP discovery: therefore you must configure your firewall to permit the UBR to access your PC.</p>
+				<hr>
+			<!-- #EndEditable -->
+			<p>Return to <a href="index.html">Index</a>.</p>
+		</body>
+
+	<!-- #EndTemplate -->
+
+</html>
+

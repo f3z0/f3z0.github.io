@@ -1,0 +1,217 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+
+<html lang="en">
+
+	<!-- #BeginTemplate "../../cmtips.data/Templates/cmtemp.html" -->
+
+		<head>
+			<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+			<title>Cable Modem Troubleshooting Tips: Ethernet issues</title>
+			<!-- #BeginHeadLocked "" -->
+				<meta name="description" content="Technical tips for troubleshooting a cable modem connection.">
+				<meta name="keywords" content="cable modem, FAQ, broadband, cablemodem, troubleshooting, tips, NTL, NTLworld, ntlhome, Telewest, blueyonder">
+				<meta name="author" content="Robin Walker">
+				<meta name="copyright" content="&copy; 2001-02 Robin Walker">
+				<link href="../favicon.ico" rel="shortcut icon">
+				<link href="mailto:rdhw@cam.ac.uk" rel="author">
+				<link href="copyright.html" rel="copyright">
+				<link href="index.html" rel="index">
+				<link href="cmstyle.css" rel="stylesheet">
+				<script type="text/javascript" language="JavaScript"><!--
+function jsinit() {
+  if (top!=self) top.location.href = self.location.href;
+}
+// -->
+</script>
+			<!-- #EndHeadLocked -->
+		</head>
+
+		<body onload="jsinit()" bgcolor="#eeffff">
+			<h1>Cable Modem Troubleshooting Tips</h1>
+			<hr>
+			<table border="0" cellpadding="0" align="left" summary="Quick links">
+				<tr>
+					<td nowrap bgcolor="#ffffff">
+						<div class="menubox">
+							<a class="sidelink" title="Introduction and Index to articles" href="index.html">Intro&nbsp;&amp;&nbsp;Index</a>.<br>
+							<a class="sidelink" title="History of updates and changes to this site" href="hist.html">Update&nbsp;history</a>.<br>
+							<a class="sidelink" title="Problems with BroadJump Broadband Installer" href="broadjump.html">Installer issues</a>.<br>
+							<a class="sidelink" title="Problems associated with getting a cable modem registered with your cable operator" href="register.html">Registration&nbsp;issues</a>.&nbsp;<br>
+							<a class="sidelink" title="PC network configuration for cable service" href="basicset.html">Network&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Swapping one PC between multiple networks" href="mobile.html">Mobile&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Understanding the flashing lights on the cable modem" href="lights.html">Cable&nbsp;Modem&nbsp;LEDs</a>.<br>
+							<a class="sidelink" title="How to determine various important IP addresses" href="ipaddr.html">IP&nbsp;addresses</a>.<br>
+							<a class="sidelink" title="How to determine various important MAC addresses" href="macaddr.html">MAC addresses</a>.<br>
+							<a class="sidelink" title="What to check if you have no service" href="badip.html">Dead&nbsp;connection</a>.<br>
+							<a class="sidelink" title="Updating your system with the latest patches and fixes" href="sysupdates.html">System&nbsp;updates</a>.<br>
+							<a class="sidelink" title="Tweaking your PC for best cable modem performance" href="tweaks.html">Network&nbsp;tweaks</a>.<br>
+							<a class="sidelink" title="Problems specifically related to the ethernet connection between your PC and the cable modem" href="ethernet.html">Ethernet&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Problems specifically related to a USB connection between the PC and cable modem" href="usb.html">USB&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Procedures and tips specifically for Surfboard cable modems" href="surfboard.html">Surfboard&nbsp;tips</a>.<br>
+							<a class="sidelink" title="Diagnosing your cable modem's connection" href="signal.html">CM&nbsp;diagnostics</a>.<br>
+							<a class="sidelink" title="Quality of service determined by configuration file" href="cmfile.html">CM&nbsp;config&nbsp;file</a>.<br>
+							<a class="sidelink" title="The network structure of a cable modem" href="cmworks.html">CM&nbsp;tech&nbsp;info</a>.<br>
+							<a class="sidelink" title="DHCP-related problems" href="dhcp.html">DHCP&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Understanding DNS and fixing DNS problems" href="dnsname.html">DNS&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Transparent web proxy caches and how to sidestep them" href="trancache.html">Web&nbsp;proxy&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance of streaming media" href="stream.html">Streaming&nbsp;media</a>.<br>
+							<a class="sidelink" title="Settings that affect performance, latency and pings" href="games.html">Gaming&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance; avoiding saturation of upstream" href="p2p.html">P2P&nbsp;file-sharing</a>.<br>
+							<a class="sidelink" title="Work around connection errors" href="seti.html">SETI@home&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect web browsing performance" href="fasterweb.html">Faster&nbsp;web&nbsp;browsing</a>.<br>
+							<a class="sidelink" title="Strategies to get better download speeds" href="fasterftp.html">Faster&nbsp;downloads</a>.<br>
+							<a class="sidelink" title="How to avoid performance hits" href="downup.html">Simul&nbsp;down/uploads</a>.<br>
+							<a class="sidelink" title="How to restore lost connection when you swap PCs connected to the CM" href="swap.html">Swapping&nbsp;PCs&nbsp;on&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Multiple PCs sharing one CM, home LANs, and NAT Routers" href="homelan.html">PCs&nbsp;sharing&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Using dial-up without losing cable connection" href="dialup.html">Simul&nbsp;dialup&nbsp;&amp;&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Problems with some VPN configurations" href="vpn.html">VPN&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Keep your clock correct, for ever, from cable time" href="timesync.html">Time&nbsp;sync</a>.<br>
+							<a class="sidelink" title="Avoiding virus and trojan infections" href="virus.html">Virus&nbsp;security</a>.<br>
+							<a class="sidelink" title="Configuring firewalls for cable connection" href="security.html">Firewall&nbsp;security</a>.<br>
+							<a class="sidelink" title="Limitations of some speed tests" href="speed.html">Speed&nbsp;testing</a>.<br>
+							<a class="sidelink" title="Understanding, diagnosing, and fixing latency and ping problems" href="latency.html">Latency issues</a>.<br>
+							<a class="sidelink" title="How to perform a traceroute, and how they can mislead" href="traceroute.html">Traceroute</a>.<br>
+							<a class="sidelink" title="Understanding and diagnosing packet loss" href="loss.html">Packet loss</a>.<br>
+							<a class="sidelink" href="frontpage.html">FrontPage tips</a>.<br>
+							<a class="sidelink" title="How to obtain technical support" href="techsupp.html">NTL/BY&nbsp;Tech&nbsp;Support</a>.</div>
+					</td>
+					<td width="18">&nbsp;</td>
+				</tr>
+			</table>
+			<!-- #BeginEditable "main" -->
+				<h2>Ethernet issues</h2>
+				<h3>On this page:</h3>
+				<ul>
+					<li><a href="#xover">Ethernet cable</a>: straight-through or cross-over?</li>
+					<li><a href="#automdix">Auto-MDIX ports</a>: take either sort of cable.</li>
+					<li><a href="#ethdrive">Ethernet drivers</a>: updates.</li>
+					<li><a href="#ethernet">Ethernet card duplex setting</a>: affecting packet-loss and performance.</li>
+					<li><a href="#ambit">ntl:home 100/120 (Ambit) duplex setting</a>.</li>
+					<li><!-- #BeginEditable "main" --><a href="#semidup">Does semi-duplex mean I can't download and upload at the same time</a>?<!-- #EndEditable --></li>
+				</ul>
+				<hr>
+				<h2><a name="xover"></a>Ethernet cable: straight-through or cross-over?</h2>
+				<p>There are two sorts of ethernet twisted-pair cable with 8-pin RJ45 connectors at both ends:</p>
+				<ul>
+					<li><b>straight-through:</b> where each pin is connected to the same pin at the other end;</li>
+					<li><b>cross-over:</b> where pins (1,2) are connected to (3,6) at the other end, and vice-versa.</li>
+				</ul>
+				<p>For a normal stand-alone cable modem connecting to a normal ethernet NIC in a PC, you need a <b>straight-through</b> cable, because cable modem RJ45 sockets are normally wired as if they were hub sockets. Many cable modems are sold with an appropriate cable provided in the box.</p>
+				<p>As an exception to the general rule, the cable modem in certain Pace digital TV set top boxes requires a <b>cross-over</b> cable to connect to a normal ethernet NIC in a PC. In these cases the RJ45 socket will be marked <b>X-over</b> on the back panel. If it is not so marked, use a <b>straight-through</b> cable.</p>
+				<p>You can tell whether you have the correct cable because, when both cable modem and PC are powered up and operational, there should be <b>LINK</b> lights (usually green LEDs) lit beside the RJ45 sockets at both ends.</p>
+				<p>When connecting a cable modem to the specially designated <b>WAN port</b> of a router (for instance), a <b>straight-through</b> ethernet cable is usually required.</p>
+				<p>With other configurations, the general rule is that <b>NIC-to-hub</b> needs a <b>straight-through</b> cable, but <b>NIC-to-NIC</b> and <b>hub-to-hub</b> require <b>cross-over</b> cables.</p>
+				<h3><a name="automdix"></a>Auto-MDIX</h3>
+				<p>An <b>Auto-MDIX</b> ethernet socket automatically senses what sort of cable it has connected to it, and switches into the correct mode to work with the other end of the link. Some modern PC ethernet cards are <b>Auto-MDIX</b>. Some modern cable modems have <b>Auto-MDIX</b> ethernet sockets. If either end of a link is <b>Auto-MDIX</b>, then the link will work with either a straight-through or a cross-over cable. The following cable modems are known to have <b>Auto-MDIX</b> ethernet sockets:</p>
+				<ul>
+					<li>ntl:home 100/120 (Ambit).</li>
+				</ul>
+				<p>Note that Auto-MDIX sensing is different from speed and duplex settings: Auto-MDIX is just about the wiring configuration, speed auto-sensing and duplex auto-negotiation is about the signal on the wires.</p>
+				<hr>
+				<h2><a name="ethdrive"></a>Ethernet drivers</h2>
+				<p>If a cable modem is connected via ethernet, no special cable modem drivers are required: to the system the connection looks like an ethernet connection, and only ethernet drivers are required. If the cable modem vendor supplies drivers, they are likely intended for a USB connection, and do not need to be installed for ethernet usage.</p>
+				<p>Windows automatically supplies drivers for most common ethernet cards. However, it is worthwhile checking the ethernet card vendor's support site for updated drivers, and installing those if they are more recent than the ones that came supplied with Windows.</p>
+				<p>In particular, there are known problems with the drivers supplied with Windows 98 for RealTek ethernet cards (RTL8029, RTL8129), and they should be updated by downloading the latest drivers from <a title="RealTek site" href="http://www.realtek.com.tw/">http://www.realtek.com.tw/</a>.</p>
+				<hr>
+				<h2>Ethernet history: speed and duplex</h2>
+				<p>The original ethernet networks ran on coaxial cables and only at 10Mbps (1.25 million bytes per second). These systems were known as <b>10base2</b> and <b>10base5</b>. The coaxial cable was a shared medium for all the connected devices, so only one device could transmit at a time. Devices would wait for silence on the wire before transmitting (<b>carrier-sense</b>). It was still possible for more than one device to make the decision to transmit at the same time, so each device would also listen to its own transmission to make sure that no-one else was transmitting at the same time: if another transmission was detected (<b>collision detection</b>), each device would stop transmitting and wait a random amount of time before trying again. This method of working was known as <b>CSMA/CD</b>: carrier-sense multiple access with collision detection.</p>
+				<p>When ethernet was re-implemented on twisted-pair cable (UTP or STP), the same CSMA/CD conventions were retained, but now there were only two devices on the cable: one at each end. The original style of ethernet working became known as <b>half-duplex</b> or <b>semi-duplex</b>: data could flow in either direction, but only in one direction at one time. Ethernet at 10Mbps on twisted-pair cable is known as <b>10baseT</b>.</p>
+				<p>With the advent of twisted-pair cable between only two devices, it became possible to separate the electrical signals travelling in each direction onto different pairs of conductors in the cable, making <b>full-duplex</b> ethernet possible: data could flow in both directions at once without collisions. This required improved ethernet hardware at both ends, and each end required knowledge of whether the other end was capable of full-duplex working. A full-duplex ethernet card does not bother to listen for silence before transmitting, so cannot inter-work with a half-duplex card: chaos would ensure and performance would be terrible, as the half-duplex card would keep detecting collisions. So the consequence of mismatched duplex settings (full-duplex at one end, half-duplex at the other) is very poor data performance and packet loss.</p>
+				<p>With improved cabling, it became possible to raise ethernet speeds to 100Mbps: once again this required improved hardware at both ends of the link, and both ends had to function at the same speed, otherwise they could not communicate. Ethernet at 100Mbps on twisted-pair cable is known as <b>100baseTX</b>.</p>
+				<p>The need for each end of the link to know the speed and duplex settings of the other end gave rise to an ethenet <b>auto-negotiation</b> protocol implemented in the hardware, so that each end could determine the supported features of the other, and they could agree on an optimal setting that both ends could support. Unfortunately, this hardware auto-negotiation protocol has been known to fail, and leave the link with a duplex mismatch. Many hard-bitten network administrators now routinely turn off ethernet auto-negotiation and configure device speed and duplex settings manually at both ends of the link, thus ensuring a correct match.</p>
+				<p>It is always safe to force one end of an ethernet link to be semi-duplex even when you are not sure what duplex setting is in effect at the other end of the link.</p>
+				<p>It is never safe to force one end of an ethernet link to be full-duplex (or allow it to autonegotiate itself to full-duplex), unless you are <b>sure</b> the other end of the link is also full-duplex.</p>
+				<hr>
+				<h2><a name="ethernet"></a>Ethernet card: duplex setting</h2>
+				<p>This section applies to your PC only if your PC ethernet card is connected directly to the cable modem, and <i>not</i> if you have an intervening device, e.g. a NAT router such as a Linksys or Netgear. If you have an intervening device such as a router, then this section applies to the WAN port of the router.</p>
+				<p>This section applies to the following cable modems:</p>
+				<ul>
+					<li>Surfboard 3100 (proven by experiment)</li>
+					<li>3Com CMX (strongly believed to apply)</li>
+					<li>3Com Tailfin (strongly believed to apply)</li>
+					<li>Terayon TeraJet (proven by example)</li>
+				</ul>
+				<p>This section does <b>not</b> apply to the following cable modems, which are capable of full-duplex working:</p>
+				<ul>
+					<li>Surfboard 4100</li>
+					<li>ntl:home 100/120 (Ambit) (user-configurable as full-duplex or half-duplex; see <a href="#ambit">below</a>)</li>
+					<li>Pace digital set top boxes (assumed, until proven otherwise)</li>
+				</ul>
+				<p>It has been verified by experiment that certain auto-negotiating ethernet cards (both in PCs and in Macs), when connected to certain models of cable modem, sense the ethernet duplex setting incorrectly. Such a cable modem has ethernet hardware which is capable of operating only in half-duplex mode, at 10 Mbps, yet some auto-negotiating ethernet cards incorrectly sense the cable modem as full-duplex. If an auto-negotiation card incorrectly starts operating in full-duplex mode, there can be collisions between ethernet packets being transmitted in both directions at the same time, leading to packet loss, and repeated re-transmissions. There is no visible evidence of this apart from poor performance. This problem can be avoided by manually configuring your ethernet card to be <b>10 Mbps half-duplex</b>. No ill-effects will transpire from doing this, even when it is not necessary. The exact wording of the setting changes required varies from one manufacturer to another, so the instructions below are necessarily rather broadly defined.</p>
+				<p><b>Win98/ME</b>: to change to half-duplex:</p>
+				<ul>
+					<li>Open <b>Control Panel</b>.</li>
+					<li>Double-click <b>Network</b>.</li>
+					<li>From the scrollable list, select your <b>Ethernet</b> adapter (rather than any dial-up) with a green icon.</li>
+					<li>Click the button <b>Properties</b>.</li>
+					<ul>
+						<li>Click the tab <b>Advanced</b> to bring it to the front:</li>
+						<ul>
+							<li>In the <b><u>P</u>roperty</b> box, the property name to be selected varies according to model of ethernet card. Examples are: <b>Network Link Selection</b>, <b>Media Type</b>, <b>Connection Type</b>, <b>Duplex Mode</b>, or any similarly-named property which can have <b>Values</b> looking like <b>Auto-Negotiation</b>, or <b>10BT</b>, or <b>10BaseT</b>.</li>
+							<li>In the <b><u>V</u>alue</b> box, select a value which either (a) explicitly says <b>half-duplex</b> or <b>semi-duplex</b>, or (b) at least does not say <b>full-duplex</b> [e.g. <b>10BaseT</b> on its own is OK]. If there is a choice between <b>10</b> and <b>100</b> with half-duplex, choose the <b>10</b>. Do not choose <b>10Base5</b>, <b>10Base2</b>, or <b>AUI</b>.</li>
+						</ul>
+						<li>Click <b>OK</b> to exit the Adapter settings.</li>
+					</ul>
+					<li>Click <b>OK</b> all the way out - you might need to restart.</li>
+				</ul>
+				<p><b>Windows 2000 or XP</b>: to change to half-duplex:</p>
+				<ul>
+					<li>Open <b>Control Panel</b>.</li>
+					<li>Double-click <b>Network and Dial-up Connections</b>.</li>
+					<li>Identify the icon for your cable modem connection: usually <b>Local Area Connection</b>.</li>
+					<li>Right-click that icon and select <b>Properties</b>.</li>
+					<li>Under the ethernet adapter icon, click the button <b>Configure</b>.</li>
+					<ul>
+						<li>Click the tab <b>Advanced</b> to bring it to the front:</li>
+						<ul>
+							<li>In the <b><u>P</u>roperty</b> box, the property name to be selected varies according to model of ethernet card. Examples are: <b>Network Link Selection</b>, <b>Media Type</b>, <b>Connection Type</b>, <b>Duplex Mode</b>, or any similarly-named property which can have <b>Values</b> looking like <b>Auto-Negotiation</b>, or <b>10BT</b>, or <b>10BaseT</b>.</li>
+							<li>In the <b><u>V</u>alue</b> box, select a value which either (a) explicitly says <b>half-duplex</b> or <b>semi-duplex</b>, or (b) at least does not say <b>full-duplex</b> [e.g. <b>10BaseT</b> on its own is OK]. If there is a choice between <b>10</b> and <b>100</b> with half-duplex, choose the <b>10</b>. Do not choose <b>10Base5</b>, <b>10Base2</b>, or <b>AUI</b>.</li>
+						</ul>
+						<li>Click <b>OK</b> to exit the Adapter settings.</li>
+					</ul>
+					<li>Click <b>OK</b> to exit the Connection properties.</li>
+				</ul>
+				<p><b>Apple Mac OS 8.x/9.x</b> users with auto-negotiating ethernet sockets can check the setting it is actually operating on by using the <b>Apple System Profiler</b> utility from the Apple menu. [If a network speed and duplex setting is not shown, your ethernet interface is an older one which works only at 10 Mbps half-duplex, so you need take no action]. Mac users can force their auto-negotiating ethernet socket to 10Mbps half-duplex by means of a special System Extension, which they can download from here either in <a title="Download Duplexer10half in MacBinary format" href="http://homepage.ntlworld.com/robin.d.h.walker/Duplexer10half.bin">MacBinary</a> format or in <a title="Download Duplexer10half in BinHex format" href="http://homepage.ntlworld.com/robin.d.h.walker/Duplexer10half.hqx">BinHex</a> format. Microsoft Internet Explorer will automatically decode these downloads. If you download with any other browser, you will need to decode the resulting <b>.bin</b> or <b>.hqx</b> file by dropping it onto <b>Stuffit Expander</b>. The resulting file should be named &quot;<b>&nbsp;Duplexer10half</b>&quot; (note the leading space, which is required), and it should be exactly 14,792 bytes long, with a blank icon. If your download matches that length, drop the resulting file into the <b>Extensions</b> folder inside the <b>System Folder</b>, and restart. If you check with <b>Apple System Profiler</b>, you should now see your ethernet working half-duplex.</p>
+				<p><b>Apple Mac OS X</b> (v 10.2) and <b>BSD Unix</b> users can view and set the ethernet speed and duplex settings using the <b><tt>ifconfig</tt></b> command in a <b>terminal</b> window. For instance, the following is an extract of the output from the command <tt><b>ifconfig</b></tt> with no parameters:</p>
+				<pre class="logns4">        media: autoselect (100baseTX &lt;full-duplex&gt;) status:active
+        supported media: none autoselect 10baseT/UTP &lt;half-duplex&gt; 10baseT/UTP &lt;
+half-duplex,hw-loopback&gt; 10baseT/UTP &lt;full-duplex&gt; 10baseT/UTP &lt;full-duplex,hw-l
+oopback&gt; 100baseTX &lt;half-duplex&gt; 100baseTX &lt;half-duplex,hw-loopback&gt; 100baseTX &lt;
+full-duplex&gt; 100baseTX &lt;full-duplex,hw-loopback&gt;</pre>
+				<p>The <tt><b>media:</b></tt> line shows that the interface is set to <tt><b>autoselect</b></tt> and is currently operating as <tt><b>100baseTX full-duplex</b></tt>. The <tt><b>supported media:</b></tt> line lists the supported values of the <tt><b>media</b></tt> keyword (<tt>none, autoselect, 10baseT/UTP, 100baseTX</tt>), and the items in angled brackets are the supported values of the <tt><b>mediaopt</b></tt> keyword (<tt>half-duplex, full-duplex, hw-loopback</tt>) for each <tt><b>media</b></tt> setting. So, to force the ethernet to work at 10Mbps half-duplex, you would type the command:</p>
+				<pre class="logns4"><b>sudo ifconfig en0 media 10baseT/UTP mediaopt half-duplex</b></pre>
+				<p><b>Apple Mac OS X</b> (v 10.3 and above) users can set ethernet speed and duplex settings using System Preferences:</p>
+				<ul>
+					<li>Pull down the Apple menu and select <b>System Preferences</b>.</li>
+					<li>Click <b>Network</b>.</li>
+					<li>In the drop-down <b>Show:</b>, select <b>Built-in Ethernet</b>.</li>
+					<li>Click tab <b>Ethernet</b>.</li>
+					<li>In the drop-down <b>Configure:</b>, select <b>Manually (Advanced)</b>.</li>
+					<li>In the drop-down <b>Speed:</b>, select the speed you require: <b>10baseT/UTP</b> or <b>100baseTX</b>.</li>
+					<li>In the drop-down <b>Duplex</b>:, select <b>half-duplex</b> or <b>full-duplex</b>, as you require.</li>
+					<li>Click <b>Apply Now</b>.</li>
+					<li>Quit <b>System Preferences</b>.</li>
+				</ul>
+				<p><b>Linux</b>: to change to half-duplex, an <b>option</b> needs to be passed to the driver. For example, if the installed ethernet card is a Tulip, then the <b class="nowrap">/etc/modules.conf</b> file might say:</p>
+				<blockquote>
+					<pre>alias eth0 tulip
+options tulip options=12</pre>
+				</blockquote>
+				<p>to inform the system that you have a Tulip NIC and want it in 10baseT, half-duplex mode. The value of <b>12</b> is specific to the Tulip driver. Consult your <b>HOWTO</b> for the options for the particular card that you have.</p>
+				<p>Older models of Linksys Cable/DSL routers have a WAN port which is fixed 10 Mbps semi-duplex, and therefore work correctly with all models of cable modem. With other devices directly attached to the cable modem (such as a Netgear RT314 router), if they have an auto-negotiating WAN port, then you might need to set it to 10 Mbps half-duplex in accordance with the principles of this article.</p>
+				<hr>
+				<h2><a name="ambit"></a>ntl:home 100/120 (Ambit) duplex setting</h2>
+				<p>The <b>ntl:home 100/120 (Ambit)</b> cable modem duplex setting can be configured by the user, by using the web pages at <a title="Ambit diagnostics" href="http://192.168.100.1/">http://192.168.100.1/</a>, user <b>root</b> password <b>root</b>. By default, the cable modem is configured to auto-negotiate its speed and duplex setting to be the same as your ethernet card. If you manually configure an explicit speed and duplex setting in your ethernet card, you should also configure the same one in the cable modem, thus removing auto-negotiation from both ends of the link. The optimal setting is to manually force <b>both</b> the ethernet card and the cable modem to <b>full-duplex</b>, thus avoiding all ethernet collisions, and avoiding any possibility of an auto-negotiation mistake. </p>
+				<hr>
+				<h3><a name="semidup"></a>Does semi-duplex mean I can't download and upload at the same time?</h3>
+				<p>Semi-duplex means that only one end of the ethernet link can transmit at any one instant. But this state lasts only for the duration of a single ethernet packet (just over 1 millisecond at 10 Mbps). It is possible to interleave ethernet packets flowing in opposite directions so rapidly that the impression of simultaneous continuous download and upload is maintained. There is more than enough bandwidth in a 10 Mbps semi-duplex link to keep both download and upload fully loaded on a cable modem. So, yes, you can download and upload simultaneously with a half-duplex ethernet setting.</p>
+				<hr>
+			<!-- #EndEditable -->
+			<p>Return to <a href="index.html">Index</a>.</p>
+		</body>
+
+	<!-- #EndTemplate -->
+
+</html>
+

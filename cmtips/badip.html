@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+
+<html lang="en">
+
+	<!-- #BeginTemplate "../../cmtips.data/Templates/cmtemp.html" -->
+
+		<head>
+			<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+			<title>Cable Modem Troubleshooting Tips: No connectivity</title>
+			<!-- #BeginHeadLocked "" -->
+				<meta name="description" content="Technical tips for troubleshooting a cable modem connection.">
+				<meta name="keywords" content="cable modem, FAQ, broadband, cablemodem, troubleshooting, tips, NTL, NTLworld, ntlhome, Telewest, blueyonder">
+				<meta name="author" content="Robin Walker">
+				<meta name="copyright" content="&copy; 2001-02 Robin Walker">
+				<link href="../favicon.ico" rel="shortcut icon">
+				<link href="mailto:rdhw@cam.ac.uk" rel="author">
+				<link href="copyright.html" rel="copyright">
+				<link href="index.html" rel="index">
+				<link href="cmstyle.css" rel="stylesheet">
+				<script type="text/javascript" language="JavaScript"><!--
+function jsinit() {
+  if (top!=self) top.location.href = self.location.href;
+}
+// -->
+</script>
+			<!-- #EndHeadLocked -->
+		</head>
+
+		<body onload="jsinit()" bgcolor="#eeffff">
+			<h1>Cable Modem Troubleshooting Tips</h1>
+			<hr>
+			<table border="0" cellpadding="0" align="left" summary="Quick links">
+				<tr>
+					<td nowrap bgcolor="#ffffff">
+						<div class="menubox">
+							<a class="sidelink" title="Introduction and Index to articles" href="index.html">Intro&nbsp;&amp;&nbsp;Index</a>.<br>
+							<a class="sidelink" title="History of updates and changes to this site" href="hist.html">Update&nbsp;history</a>.<br>
+							<a class="sidelink" title="Problems with BroadJump Broadband Installer" href="broadjump.html">Installer issues</a>.<br>
+							<a class="sidelink" title="Problems associated with getting a cable modem registered with your cable operator" href="register.html">Registration&nbsp;issues</a>.&nbsp;<br>
+							<a class="sidelink" title="PC network configuration for cable service" href="basicset.html">Network&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Swapping one PC between multiple networks" href="mobile.html">Mobile&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Understanding the flashing lights on the cable modem" href="lights.html">Cable&nbsp;Modem&nbsp;LEDs</a>.<br>
+							<a class="sidelink" title="How to determine various important IP addresses" href="ipaddr.html">IP&nbsp;addresses</a>.<br>
+							<a class="sidelink" title="How to determine various important MAC addresses" href="macaddr.html">MAC addresses</a>.<br>
+							<a class="sidelink" title="What to check if you have no service" href="badip.html">Dead&nbsp;connection</a>.<br>
+							<a class="sidelink" title="Updating your system with the latest patches and fixes" href="sysupdates.html">System&nbsp;updates</a>.<br>
+							<a class="sidelink" title="Tweaking your PC for best cable modem performance" href="tweaks.html">Network&nbsp;tweaks</a>.<br>
+							<a class="sidelink" title="Problems specifically related to the ethernet connection between your PC and the cable modem" href="ethernet.html">Ethernet&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Problems specifically related to a USB connection between the PC and cable modem" href="usb.html">USB&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Procedures and tips specifically for Surfboard cable modems" href="surfboard.html">Surfboard&nbsp;tips</a>.<br>
+							<a class="sidelink" title="Diagnosing your cable modem's connection" href="signal.html">CM&nbsp;diagnostics</a>.<br>
+							<a class="sidelink" title="Quality of service determined by configuration file" href="cmfile.html">CM&nbsp;config&nbsp;file</a>.<br>
+							<a class="sidelink" title="The network structure of a cable modem" href="cmworks.html">CM&nbsp;tech&nbsp;info</a>.<br>
+							<a class="sidelink" title="DHCP-related problems" href="dhcp.html">DHCP&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Understanding DNS and fixing DNS problems" href="dnsname.html">DNS&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Transparent web proxy caches and how to sidestep them" href="trancache.html">Web&nbsp;proxy&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance of streaming media" href="stream.html">Streaming&nbsp;media</a>.<br>
+							<a class="sidelink" title="Settings that affect performance, latency and pings" href="games.html">Gaming&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance; avoiding saturation of upstream" href="p2p.html">P2P&nbsp;file-sharing</a>.<br>
+							<a class="sidelink" title="Work around connection errors" href="seti.html">SETI@home&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect web browsing performance" href="fasterweb.html">Faster&nbsp;web&nbsp;browsing</a>.<br>
+							<a class="sidelink" title="Strategies to get better download speeds" href="fasterftp.html">Faster&nbsp;downloads</a>.<br>
+							<a class="sidelink" title="How to avoid performance hits" href="downup.html">Simul&nbsp;down/uploads</a>.<br>
+							<a class="sidelink" title="How to restore lost connection when you swap PCs connected to the CM" href="swap.html">Swapping&nbsp;PCs&nbsp;on&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Multiple PCs sharing one CM, home LANs, and NAT Routers" href="homelan.html">PCs&nbsp;sharing&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Using dial-up without losing cable connection" href="dialup.html">Simul&nbsp;dialup&nbsp;&amp;&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Problems with some VPN configurations" href="vpn.html">VPN&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Keep your clock correct, for ever, from cable time" href="timesync.html">Time&nbsp;sync</a>.<br>
+							<a class="sidelink" title="Avoiding virus and trojan infections" href="virus.html">Virus&nbsp;security</a>.<br>
+							<a class="sidelink" title="Configuring firewalls for cable connection" href="security.html">Firewall&nbsp;security</a>.<br>
+							<a class="sidelink" title="Limitations of some speed tests" href="speed.html">Speed&nbsp;testing</a>.<br>
+							<a class="sidelink" title="Understanding, diagnosing, and fixing latency and ping problems" href="latency.html">Latency issues</a>.<br>
+							<a class="sidelink" title="How to perform a traceroute, and how they can mislead" href="traceroute.html">Traceroute</a>.<br>
+							<a class="sidelink" title="Understanding and diagnosing packet loss" href="loss.html">Packet loss</a>.<br>
+							<a class="sidelink" href="frontpage.html">FrontPage tips</a>.<br>
+							<a class="sidelink" title="How to obtain technical support" href="techsupp.html">NTL/BY&nbsp;Tech&nbsp;Support</a>.</div>
+					</td>
+					<td width="18">&nbsp;</td>
+				</tr>
+			</table>
+			<!-- #BeginEditable "main" -->
+				<h2><a name="badip"></a>No connectivity at all</h2>
+				<ul>
+					<li><a href="#noconn">Trouble-shooting lack of connectivity</a>. <span class="flash">&nbsp;Updated 2002 Sep 1&nbsp;</span></li>
+					<li><a href="#ip0000">Strange IP address 0.0.0.0</a></li>
+					<li><a href="#ip169">Strange IP address 169.254.xxx.xxx</a></li>
+					<li><a href="#ip192">Strange IP address 192.168.100.xxx</a></li>
+					<li class="ntlns4"><a href="#ntltempip">IP address xxx.xxx.xxx.248 to xxx.xxx.xxx.253</a></li>
+					<li class="ntlns4"><a href="#ip10">Strange IP address 10.xxx.xxx.xxx</a> <span class="flash">&nbsp;New 2002 Oct 11&nbsp;</span></li>
+					<li><a href="#ipnorm">In-service IP address, but no service</a>.</li>
+					<li><a href="#retry">Re-trying for a new DHCP lease</a>.</li>
+				</ul>
+				<hr>
+				<h3><a name="noconn"></a>Troubleshooting lack of connectivity</h3>
+				<p>When troubleshooting complete lack of connectivity, it's best to proceed in a systematic way in an attempt to isolate the problem.</p>
+				<p>It's usually a good strategy to put all your equipment into a standard condition, by doing the following:</p>
+				<ul>
+					<li>Shut down the PC(s).</li>
+					<li>Power off the NAT router, if you have one.</li>
+					<li>Power off the cable modem.</li>
+					<li>Eliminate the NAT router from the investigation by unplugging it from the cable modem, and connecting one of your PCs (configured for DHCP) directly to the cable modem.</li>
+					<li>Wait 30 seconds or so.</li>
+					<li>Power on the cable modem, and watch the LEDs.</li>
+					<li>Wait for the CM LEDs to reach their normal ready-for-service display (see <a href="lights.html">Flashing Lights</a>). If they never reach the ready-for-service pattern, then you may stop at this point: you know you have a CATV network problem that only your ISP can fix. Contact your ISP.</li>
+					<li>When the CM LEDs have settled down into their ready-for-service pattern, power on the PC, and wait for the boot-up procedures to finish.</li>
+					<li>Now is your connection working?  If yes, stop reading now: whatever was wrong has got better. If no, carry on reading.</li>
+				</ul>
+				<p>You can join at this point even if you haven't followed the above standard-conditioning, provided you recognise that the diagnostic tests below refer to a PC connected directly to a cable modem, and that, if you have a NAT router inbetween, things will be different. If your connectivity problem only occurs with the NAT router in circuit, see <a href="homelan.html#probs">NAT routers: common problems</a>.</p>
+				<p>If your PC or Mac does not work at all when connected to the cable modem, first check that your basic <a href="basicset.html#basicset">network settings</a> are correctly configured, then check the IP address which has been allocated, by following the procedure in <a href="ipaddr.html#ipaddr">What's my IP address?</a>.</p>
+				<p>The possibilities at this stage are an IP address looking like:</p>
+				<ul>
+					<li><a href="#ip0000">absent or <b>0.0.0.0</b></a> (ethernet interface not operational or DHCP failure);</li>
+					<li><a href="#ip169">in the range <b>169.254.xxx.xxx</b></a> (DHCP failure, with APIPA fall-back);</li>
+					<li><a href="#ip192">in the range <b>192.168.100.xxx</b></a> (cable modem internal DHCP fall-back);</li>
+					<li class="ntl"><a href="#ntltempip">in the ranges <b>xxx.xxx.xxx.248 - xxx.xxx.xxx.253</b></a> (NTL temporary pre-registration service);</li>
+					<li class="ntl">in the range <b><a href="#ip10">10.xxx.xxx.xxx</a></b> (NTL STB pending client MAC registration);</li>
+					<li><a href="#ipnorm">a normal in-service IP address</a>.</li>
+				</ul>
+				<hr>
+				<p><a name="ip0000"></a>If your IP address is absent or <b>0.0.0.0</b>, then the network interface is not operational. Possible causes for this are:</p>
+				<ul>
+					<li>The ethernet card (or USB driver) is not working.</li>
+					<li>Required drivers are not installed. Check documentation for the card.</li>
+					<li>You do not have a working ethernet/USB connection between your PC/Mac and the cable modem. Check cable and plugs, check ethernet LINK lights are lit at both ends.</li>
+					<li>You are running Windows NT/2000/XP or Linux, and the DHCP Client process is not running.</li>
+					<li>You are running Windows 95, or later versions of Windows with APIPA disabled, and the DHCP client failed to obtain an IP address: continue reading the next section.</li>
+				</ul>
+				<hr>
+				<p><a name="ip169"></a>If your IP address is in the range <b>169.254.xxx.xxx</b>, then this indicates that the DHCP client in your computer failed to contact a DHCP server on the network, and APIPA (<a title="Info about APIPA from Microsoft" href="http://support.microsoft.com/support/kb/articles/Q220/8/74.ASP">Automatic Private IP Addressing</a>) is enabled, and it has automatically assigned you a private IP address in the 169.254.xxx.xxx range. With such an address, you will not be able to work with the public Internet, nor even read the <a href="signal.html#signal">cable modem diagnostic</a> pages. Possible causes for this are:</p>
+				<ul>
+					<li>Your PC/Mac booted up faster than the cable modem did, and the cable modem was not ready for service by the time the PC/Mac sent out its DHCP request. You should not boot up your PC/Mac until after the cable modem has finished its start-up sequence (see <a href="lights.html">Flashing Lights</a>), or you should leave your cable modem powered on continuously.</li>
+					<li>A misconfigured firewall has prevented a DHCP lease being acquired: see <a href="security.html#fwconfig">Personal firewall configuration for cable modems</a>.</li>
+					<li>You have recently swapped the computer or network interface card connected to the cable modem, and the cable modem is blocking your access to the internet: see <a href="swap.html#swap">Swapping computers on the cable modem</a>.</li>
+					<li>You do not have a working ethernet/USB connection between your PC/Mac and the cable modem. Check cable and plugs, check ethernet LINK lights are lit at both ends, check <a href="ethernet.html#ethernet">ethernet speed and duplex settings</a>.</li>
+					<li>Your PC has multiple network interfaces and it is sending DHCP requests on an interface other than the one to the cable modem. Check your network configuration.</li>
+				</ul>
+				<hr>
+				<p><a name="ip192"></a>If your IP address is in the range <b>192.168.100.xxx</b>, then this indicates that you have a working connection to your cable modem, and the cable modem is working, but is not in contact with the cable network. The cable modem has an internal DHCP server which has temporarily issued you with a 192.168.100.xxx number so that you can at least look at the <a href="signal.html#signal">cable modem diagnostic pages</a> with a web browser. With this address, you will not be able to work with the Internet. Possible causes for this are:</p>
+				<ul>
+					<li>Your PC/Mac booted up faster than the cable modem did, and the cable modem was not ready for service by the time the PC/Mac sent out its DHCP request. You should not boot up your PC/Mac until after the cable modem has finished its start-up sequence (see <a href="lights.html">Flashing Lights</a>), or you should leave your cable modem powered on continuously.</li>
+					<li>The CATV coaxial TV cable is not correctly connected to the cable modem.</li>
+					<li>There is a fault on the CATV network.</li>
+				</ul>
+				<hr>
+				<p class="ntlns4"><a name="ntltempip"></a>If you are an NTL stand-alone cable modem user with an IP address in the range <b>xxx.xxx.xxx.248</b> to <b>xxx.xxx.xxx.253</b> then you are on the temporary limited-access pre-registration service. You must complete your registration online: see <b><a href="register.html#ntlreg">Post-installation registration</a></b>. Normally this is done as part of the broadband installation from the CD-ROM, but some incomplete installations can leave you in this state.</p>
+				<hr>
+				<p class="ntlns4"><a name="ip10"></a>If you are an NTL digital TV set top box (STB) user with an IP address in the range 10.xxx.xxx.xxx, then probably you have just connected to the STB a PC or router with a MAC address that has not previously been registered with this STB. You must register the new MAC address: see <a href="register.html#pacereg"><b>First connection to set top box on NTL</b></a>.</p>
+				<hr>
+				<p><a name="ipnorm"></a>If your IP address is a <b>normal in-service address</b>, but the connection appears dead, try using a <a href="traceroute.html">traceroute</a> command to one of your ISP's servers (e.g. e-mail, web, or news) to diagnose how far into the internet you can get replies from. If you get no replies at all, there is a fault somewhere between your PC and the UBR on the cable network. If you get replies with IP addresses, but none at all translated to names, then you have lost contact with your DNS servers. If you get a normal sequence of replies with both IP addresses and DNS names, then your connection is not in fact dead at basic TCP/IP level, but there might be problems with specific services.</p>
+				<p>If your problems are evident primarily in a web browser (e.g. <b>The page cannot be displayed</b>), then it is possible that your problem is with a web proxy (see <a href="trancache.html">Web Proxy issues</a>), and not with the network connection itself.</p>
+				<p>If your problems are exclusive to e-mail, then check your anti-virus product, as many anti-virus programs interfere with communication between e-mail clients and the e-mail servers.</p>
+				<hr>
+				<p><a name="retry"></a>If the cause of the strange IP addresses has been resolved, you can cause your PC/Mac to try its DHCP request again either by restarting, or by following the procedures in <a href="dhcp.html#lease">Requesting a new DHCP lease manually</a>.</p>
+				<hr>
+			<!-- #EndEditable -->
+			<p>Return to <a href="index.html">Index</a>.</p>
+		</body>
+
+	<!-- #EndTemplate -->
+
+</html>
+

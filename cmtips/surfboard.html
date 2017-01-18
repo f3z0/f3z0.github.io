@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+
+<html lang="en">
+
+	<!-- #BeginTemplate "../../cmtips.data/Templates/cmtemp.html" -->
+
+		<head>
+			<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+			<title>Cable Modem Troubleshooting Tips</title>
+			<!-- #BeginHeadLocked "" -->
+				<meta name="description" content="Technical tips for troubleshooting a cable modem connection.">
+				<meta name="keywords" content="cable modem, FAQ, broadband, cablemodem, troubleshooting, tips, NTL, NTLworld, ntlhome, Telewest, blueyonder">
+				<meta name="author" content="Robin Walker">
+				<meta name="copyright" content="&copy; 2001-02 Robin Walker">
+				<link href="../favicon.ico" rel="shortcut icon">
+				<link href="mailto:rdhw@cam.ac.uk" rel="author">
+				<link href="copyright.html" rel="copyright">
+				<link href="index.html" rel="index">
+				<link href="cmstyle.css" rel="stylesheet">
+				<script type="text/javascript" language="JavaScript"><!--
+function jsinit() {
+  if (top!=self) top.location.href = self.location.href;
+}
+// -->
+</script>
+			<!-- #EndHeadLocked -->
+		</head>
+
+		<body onload="jsinit()" bgcolor="#eeffff">
+			<h1>Cable Modem Troubleshooting Tips</h1>
+			<hr>
+			<table border="0" cellpadding="0" align="left" summary="Quick links">
+				<tr>
+					<td nowrap bgcolor="#ffffff">
+						<div class="menubox">
+							<a class="sidelink" title="Introduction and Index to articles" href="index.html">Intro&nbsp;&amp;&nbsp;Index</a>.<br>
+							<a class="sidelink" title="History of updates and changes to this site" href="hist.html">Update&nbsp;history</a>.<br>
+							<a class="sidelink" title="Problems with BroadJump Broadband Installer" href="broadjump.html">Installer issues</a>.<br>
+							<a class="sidelink" title="Problems associated with getting a cable modem registered with your cable operator" href="register.html">Registration&nbsp;issues</a>.&nbsp;<br>
+							<a class="sidelink" title="PC network configuration for cable service" href="basicset.html">Network&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Swapping one PC between multiple networks" href="mobile.html">Mobile&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Understanding the flashing lights on the cable modem" href="lights.html">Cable&nbsp;Modem&nbsp;LEDs</a>.<br>
+							<a class="sidelink" title="How to determine various important IP addresses" href="ipaddr.html">IP&nbsp;addresses</a>.<br>
+							<a class="sidelink" title="How to determine various important MAC addresses" href="macaddr.html">MAC addresses</a>.<br>
+							<a class="sidelink" title="What to check if you have no service" href="badip.html">Dead&nbsp;connection</a>.<br>
+							<a class="sidelink" title="Updating your system with the latest patches and fixes" href="sysupdates.html">System&nbsp;updates</a>.<br>
+							<a class="sidelink" title="Tweaking your PC for best cable modem performance" href="tweaks.html">Network&nbsp;tweaks</a>.<br>
+							<a class="sidelink" title="Problems specifically related to the ethernet connection between your PC and the cable modem" href="ethernet.html">Ethernet&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Problems specifically related to a USB connection between the PC and cable modem" href="usb.html">USB&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Procedures and tips specifically for Surfboard cable modems" href="surfboard.html">Surfboard&nbsp;tips</a>.<br>
+							<a class="sidelink" title="Diagnosing your cable modem's connection" href="signal.html">CM&nbsp;diagnostics</a>.<br>
+							<a class="sidelink" title="Quality of service determined by configuration file" href="cmfile.html">CM&nbsp;config&nbsp;file</a>.<br>
+							<a class="sidelink" title="The network structure of a cable modem" href="cmworks.html">CM&nbsp;tech&nbsp;info</a>.<br>
+							<a class="sidelink" title="DHCP-related problems" href="dhcp.html">DHCP&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Understanding DNS and fixing DNS problems" href="dnsname.html">DNS&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Transparent web proxy caches and how to sidestep them" href="trancache.html">Web&nbsp;proxy&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance of streaming media" href="stream.html">Streaming&nbsp;media</a>.<br>
+							<a class="sidelink" title="Settings that affect performance, latency and pings" href="games.html">Gaming&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance; avoiding saturation of upstream" href="p2p.html">P2P&nbsp;file-sharing</a>.<br>
+							<a class="sidelink" title="Work around connection errors" href="seti.html">SETI@home&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect web browsing performance" href="fasterweb.html">Faster&nbsp;web&nbsp;browsing</a>.<br>
+							<a class="sidelink" title="Strategies to get better download speeds" href="fasterftp.html">Faster&nbsp;downloads</a>.<br>
+							<a class="sidelink" title="How to avoid performance hits" href="downup.html">Simul&nbsp;down/uploads</a>.<br>
+							<a class="sidelink" title="How to restore lost connection when you swap PCs connected to the CM" href="swap.html">Swapping&nbsp;PCs&nbsp;on&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Multiple PCs sharing one CM, home LANs, and NAT Routers" href="homelan.html">PCs&nbsp;sharing&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Using dial-up without losing cable connection" href="dialup.html">Simul&nbsp;dialup&nbsp;&amp;&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Problems with some VPN configurations" href="vpn.html">VPN&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Keep your clock correct, for ever, from cable time" href="timesync.html">Time&nbsp;sync</a>.<br>
+							<a class="sidelink" title="Avoiding virus and trojan infections" href="virus.html">Virus&nbsp;security</a>.<br>
+							<a class="sidelink" title="Configuring firewalls for cable connection" href="security.html">Firewall&nbsp;security</a>.<br>
+							<a class="sidelink" title="Limitations of some speed tests" href="speed.html">Speed&nbsp;testing</a>.<br>
+							<a class="sidelink" title="Understanding, diagnosing, and fixing latency and ping problems" href="latency.html">Latency issues</a>.<br>
+							<a class="sidelink" title="How to perform a traceroute, and how they can mislead" href="traceroute.html">Traceroute</a>.<br>
+							<a class="sidelink" title="Understanding and diagnosing packet loss" href="loss.html">Packet loss</a>.<br>
+							<a class="sidelink" href="frontpage.html">FrontPage tips</a>.<br>
+							<a class="sidelink" title="How to obtain technical support" href="techsupp.html">NTL/BY&nbsp;Tech&nbsp;Support</a>.</div>
+					</td>
+					<td width="18">&nbsp;</td>
+				</tr>
+			</table>
+			<!-- #BeginEditable "main" -->
+				<h2>Surfboard tips</h2>
+				<p>This page applies only to the Surfboard range of cable modems, manufactured by <a title="General Instruments" href="http://www.gi.com/">General Instruments</a> (GI) or Motorola.</p>
+				<ul>
+					<li>The Surfboard <a href="#config">Configuration web page</a>.</li>
+					<li><a href="#plan">Frequency Plan</a> setting.</li>
+					<li><a href="#cmethip">CM Ethernet IP Address</a> setting.</li>
+					<li><a href="#upid">Upstream Channel ID</a>: get possibly better latency.</li>
+					<li><a href="#freq">Downstream Frequency</a>: get faster restarts.</li>
+					<li><a href="#dhcp">DHCP Server</a>: for use when CATV service is down.</li>
+					<li><a href="#driver">Driver</a> download.</li>
+					<li>Signal Diagnostics and Event Log are on the <a href="signal.html">CM Diagnostics</a> page.</li>
+				</ul>
+				<hr>
+				<h3><a name="config"></a>Configuration page</h3>
+				<p>If you send your web browser to <a title="Surfboard configuration page" href="http://192.168.100.1/config.html">http://192.168.100.1/config.html</a> you will see a page similar to this one:</p>
+				<form action="surfboard.html" method="POST">
+					<center>
+						<table border="1" cellspacing="0" cellpadding="8" align="center">
+							<tr>
+								<th bgcolor="#736B08"><font color="#FFFFFF">Configuration</font></th>
+							</tr>
+							<tr>
+								<td>Frequency Plan: <select name="FREQ_PLAN">
+										<option value="NORTH_AMERICA">North American Standard/HRC/IRC</option>
+										<option selected value="EUROPE">European PAL I/B/G</option>
+										<option value="JAPAN">Japan NTSC </option>
+									</select></td>
+							</tr>
+							<tr>
+								<td>CM Ethernet IP Address: 192.168.100. <input type="TEXT" name="ETHERNET_IP_ADDR" value="1" size="3" maxlength="3"></td>
+							</tr>
+							<tr>
+								<td>Upstream Channel ID: <input type="TEXT" name="US_CHANNEL_ID" value="2" size="3" maxlength="3"></td>
+							</tr>
+							<tr>
+								<td>Frequency (Hz): <input type="TEXT" name="FREQUENCY_MHZ" value="402750000" size="9" maxlength="9"></td>
+							</tr>
+							<tr>
+								<td><input type="CHECKBOX" name="DHCP_SERVER" value="YES" checked> Enable DHCP Server<br>
+									<small>The SURFboard cable modem can be used as a gateway to the Internet by a maximum of 32 users on a Local Area Network (LAN). When the Cable Modem is disconnected from the Internet, users on the LAN can be dynamically assigned IP Addresses by the Cable Modem DHCP Server. These addresses are assigned from an address pool which begins with 192.168.100.11 and ends with 192.168.100.42. Statically assigned IP addresses for other devices on the LAN should be chosen from outside of this range</small></td>
+							</tr>
+							<tr>
+								<td><input onclick="alert('This is a dummy button')" type="button" name="BUTTON_INPUT" value="Save Changes"> <input onclick="alert('This is a dummy button')" type="button" name="BUTTON_INPUT" value="Reset All Defaults"><br>
+									<small><strong>Note:</strong><br>
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										Resetting the cable modem to its factory default configuration will remove all stored parameters learned by the cable modem during prior initializations. The process to get back online from a factory default condition could take from 5 to 30 minutes. Please reference the cable modem User Guide for details on the power up sequence. </small></td>
+							</tr>
+						</table>
+						<p></p>
+						<input onclick="alert('This is a dummy button')" type="button" name="BUTTON_INPUT" value="Restart Cable Modem"></center>
+				</form>
+				<p>If you make any changes to the settings on this page, you must click <b>Save Changes</b>. The changes will not take effect until the next time the cable modem restarts: you may force a restart by clicking <b>Restart Cable Modem</b>.</p>
+				<hr>
+				<h3><a name="plan"></a>Frequency Plan</h3>
+				<p>On a cable system that uses a 6MHz channel spacing (e.g. NTSC colour), select <b>North American Standard/HRC/IRC</b>.</p>
+				<p>On a cable system that uses an 8MHz channel spacing (e.g. PAL or SECAM colour), select <b>European PAL I/B/G</b>.</p>
+				<p>The Surfboard might not be able to lock onto a downstream channel if the wrong <b>Frequency Plan</b> is chosen.</p>
+				<hr>
+				<h3><a name="cmethip"></a>CM Ethernet IP Address</h3>
+				<p>This should normally be left at <b>192.168.100.1</b>.</p>
+				<hr>
+				<h3><a name="upid"></a>Upstream Channel ID: (get better latency)</h3>
+				<p>This shows the software ID of the currently selected upstream channel, usually in the range 1-6, corresponding to the channels known as 0-5 in UBR configuration.</p>
+				<p>In the case where more than one upstream channel is available at your location, the Surfboard will, when restarting, preferentially lock on to the upstream channel whose ID is configured in this box.</p>
+				<p>If you have severe latency problems because of an over-subscribed upstream channel, you may try configuring the Surfboard to use a different upstream channel number, by setting a value in this box, then clicking <b>Save Changes</b>, then clicking <b>Restart Cable Modem</b>. Then wait doing nothing until the Surfboard has finished restarting and all four green LEDs are steadily lit. Then reload the Surfboard configuration page to check whether your selection has succeeded.</p>
+				<p>At your locality, not all the upstream channels of the UBR might be available for use, even if they are listed by the <b class="nowrap">-traffic</b> keyword of <a href="http://homepage.ntlworld.com/robin.d.h.walker/docsdiag/">DocsDiag</a>. Sometimes, for instance, there might be only 3 out of 6 available. In the worst case, there might be only one, the one the Surfboard is already using. There is no way you can tell in advance which of the six upstream IDs are available for selection at your location. The only thing you can do is to experiment by selecting each possibility in turn, saving, restarting the Surfboard, and checking the configuration page again to see whether (a) your selection has taken hold, or (b) the Surfboard has fallen back to a different selection.</p>
+				<p>When you succeed in changing the upstream channel in use, you should test it to see if the latency problems are any better or worse than with your original channel.</p>
+				<hr>
+				<h3><a name="freq"></a>Frequency: (get faster cable modem restarts)</h3>
+				<p>This box shows the frequency of the downstream channel, or the nearest the Surfboard could estimate to it when scanning for the downstream at its last restart. If your Surfboard takes a long time at each restart with the <b>Receive</b> LED flashing, or if your Surfboard event log contains many repeated entries looking like:</p>
+				<pre class="logns4">************ 8-Debug       T509.0  Acquired DS with status NO FEC lock, DS Freq 143000000, US Id 0</pre>
+				<p>with the <b>Freq</b> value changing on each line, then you can speed up Surboard restarts, and reduce clutter in the event log, by entering the exact downstream frequency in the <b>Frequency</b> box. With the correct exact frequency in the <b>Frequency</b> box, the Surfboard will lock on immediately to that frequency when it restarts, without scanning. You must type all the digits of the frequency (as expressed in Hz) even if they require the box to scroll in order to fit them in. If you are told the correct frequency is <b>402.75 MHz</b>, you must type <b>402750000</b>.</p>
+				<p>You can discover the correct frequency to set by:</p>
+				<ul>
+					<li>asking your ISP; or</li>
+					<li>trying the <b>-traffic</b> keyword of the <b><a title="DocsDiag info and download" href="http://homepage.ntlworld.com/robin.d.h.walker/docsdiag/">DocsDiag</a></b> program.</li>
+				</ul>
+				<p class="ntlns4">For NTL in the original (not ex-C&amp;W) regions, the correct frequency to set is <b>402750000</b>, instead of the Surfboard's estimate of <b>403000000</b>.</p>
+				<hr>
+				<h3><a name="dhcp"></a>DHCP Server</h3>
+				<p>This should normally stay checked, so that the Surfboard provides a DHCP service for local use while the CATV service is not available. Disregard the sentence about being able act as a gateway for up to 32 PCs: most ISPs allow only one IP address to be alloatced in service.</p>
+				<hr>
+				<h3><a name="driver"></a>Driver download</h3>
+				<p>If the Surfboard is connected by ethernet, no driver is required (you might need a driver for your ethernet interface card). If the Surfboard is connected to your PC by USB, then the latest drivers can be found at: <a title="Surfboard USB drivers" href="http://www.gi.com/noflash/usb_drivers.asp">http://www.gi.com/noflash/usb_drivers.asp</a>.</p>
+				<hr>
+			<!-- #EndEditable -->
+			<p>Return to <a href="index.html">Index</a>.</p>
+		</body>
+
+	<!-- #EndTemplate -->
+
+</html>
+

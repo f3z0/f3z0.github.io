@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+
+<html lang="en">
+
+	<!-- #BeginTemplate "../../cmtips.data/Templates/cmtemp.html" -->
+
+		<head>
+			<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+			<title>Cable Modem Troubleshooting Tips: How the cable mmodem works</title>
+			<!-- #BeginHeadLocked "" -->
+				<meta name="description" content="Technical tips for troubleshooting a cable modem connection.">
+				<meta name="keywords" content="cable modem, FAQ, broadband, cablemodem, troubleshooting, tips, NTL, NTLworld, ntlhome, Telewest, blueyonder">
+				<meta name="author" content="Robin Walker">
+				<meta name="copyright" content="&copy; 2001-02 Robin Walker">
+				<link href="../favicon.ico" rel="shortcut icon">
+				<link href="mailto:rdhw@cam.ac.uk" rel="author">
+				<link href="copyright.html" rel="copyright">
+				<link href="index.html" rel="index">
+				<link href="cmstyle.css" rel="stylesheet">
+				<script type="text/javascript" language="JavaScript"><!--
+function jsinit() {
+  if (top!=self) top.location.href = self.location.href;
+}
+// -->
+</script>
+			<!-- #EndHeadLocked -->
+		</head>
+
+		<body onload="jsinit()" bgcolor="#eeffff">
+			<h1>Cable Modem Troubleshooting Tips</h1>
+			<hr>
+			<table border="0" cellpadding="0" align="left" summary="Quick links">
+				<tr>
+					<td nowrap bgcolor="#ffffff">
+						<div class="menubox">
+							<a class="sidelink" title="Introduction and Index to articles" href="index.html">Intro&nbsp;&amp;&nbsp;Index</a>.<br>
+							<a class="sidelink" title="History of updates and changes to this site" href="hist.html">Update&nbsp;history</a>.<br>
+							<a class="sidelink" title="Problems with BroadJump Broadband Installer" href="broadjump.html">Installer issues</a>.<br>
+							<a class="sidelink" title="Problems associated with getting a cable modem registered with your cable operator" href="register.html">Registration&nbsp;issues</a>.&nbsp;<br>
+							<a class="sidelink" title="PC network configuration for cable service" href="basicset.html">Network&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Swapping one PC between multiple networks" href="mobile.html">Mobile&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Understanding the flashing lights on the cable modem" href="lights.html">Cable&nbsp;Modem&nbsp;LEDs</a>.<br>
+							<a class="sidelink" title="How to determine various important IP addresses" href="ipaddr.html">IP&nbsp;addresses</a>.<br>
+							<a class="sidelink" title="How to determine various important MAC addresses" href="macaddr.html">MAC addresses</a>.<br>
+							<a class="sidelink" title="What to check if you have no service" href="badip.html">Dead&nbsp;connection</a>.<br>
+							<a class="sidelink" title="Updating your system with the latest patches and fixes" href="sysupdates.html">System&nbsp;updates</a>.<br>
+							<a class="sidelink" title="Tweaking your PC for best cable modem performance" href="tweaks.html">Network&nbsp;tweaks</a>.<br>
+							<a class="sidelink" title="Problems specifically related to the ethernet connection between your PC and the cable modem" href="ethernet.html">Ethernet&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Problems specifically related to a USB connection between the PC and cable modem" href="usb.html">USB&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Procedures and tips specifically for Surfboard cable modems" href="surfboard.html">Surfboard&nbsp;tips</a>.<br>
+							<a class="sidelink" title="Diagnosing your cable modem's connection" href="signal.html">CM&nbsp;diagnostics</a>.<br>
+							<a class="sidelink" title="Quality of service determined by configuration file" href="cmfile.html">CM&nbsp;config&nbsp;file</a>.<br>
+							<a class="sidelink" title="The network structure of a cable modem" href="cmworks.html">CM&nbsp;tech&nbsp;info</a>.<br>
+							<a class="sidelink" title="DHCP-related problems" href="dhcp.html">DHCP&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Understanding DNS and fixing DNS problems" href="dnsname.html">DNS&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Transparent web proxy caches and how to sidestep them" href="trancache.html">Web&nbsp;proxy&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance of streaming media" href="stream.html">Streaming&nbsp;media</a>.<br>
+							<a class="sidelink" title="Settings that affect performance, latency and pings" href="games.html">Gaming&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance; avoiding saturation of upstream" href="p2p.html">P2P&nbsp;file-sharing</a>.<br>
+							<a class="sidelink" title="Work around connection errors" href="seti.html">SETI@home&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect web browsing performance" href="fasterweb.html">Faster&nbsp;web&nbsp;browsing</a>.<br>
+							<a class="sidelink" title="Strategies to get better download speeds" href="fasterftp.html">Faster&nbsp;downloads</a>.<br>
+							<a class="sidelink" title="How to avoid performance hits" href="downup.html">Simul&nbsp;down/uploads</a>.<br>
+							<a class="sidelink" title="How to restore lost connection when you swap PCs connected to the CM" href="swap.html">Swapping&nbsp;PCs&nbsp;on&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Multiple PCs sharing one CM, home LANs, and NAT Routers" href="homelan.html">PCs&nbsp;sharing&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Using dial-up without losing cable connection" href="dialup.html">Simul&nbsp;dialup&nbsp;&amp;&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Problems with some VPN configurations" href="vpn.html">VPN&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Keep your clock correct, for ever, from cable time" href="timesync.html">Time&nbsp;sync</a>.<br>
+							<a class="sidelink" title="Avoiding virus and trojan infections" href="virus.html">Virus&nbsp;security</a>.<br>
+							<a class="sidelink" title="Configuring firewalls for cable connection" href="security.html">Firewall&nbsp;security</a>.<br>
+							<a class="sidelink" title="Limitations of some speed tests" href="speed.html">Speed&nbsp;testing</a>.<br>
+							<a class="sidelink" title="Understanding, diagnosing, and fixing latency and ping problems" href="latency.html">Latency issues</a>.<br>
+							<a class="sidelink" title="How to perform a traceroute, and how they can mislead" href="traceroute.html">Traceroute</a>.<br>
+							<a class="sidelink" title="Understanding and diagnosing packet loss" href="loss.html">Packet loss</a>.<br>
+							<a class="sidelink" href="frontpage.html">FrontPage tips</a>.<br>
+							<a class="sidelink" title="How to obtain technical support" href="techsupp.html">NTL/BY&nbsp;Tech&nbsp;Support</a>.</div>
+					</td>
+					<td width="18">&nbsp;</td>
+				</tr>
+			</table>
+			<!-- #BeginEditable "main" -->
+				<h2><a name="cmworks"></a>How the cable modem works</h2>
+				<p>The cable modem acts as an Transparent Learning Bridge (see IEEE 802.1d), placing your PC in direct contact with the ISP's UBR at the MAC layer. In principle, this enables the network connection between your PC and the UBR to carry any network protocol, not just IP. Most cable operators implement only IP and ARP protocols. All network traffic at the level of ethernet, USB, or CATV wiring takes place between MAC source and destination addresses, and the networking at this level is entirely ignorant of the IP protocol above. Most of your PC's network traffic takes place between MAC addresses [m1] in the PC and [m4] in the UBR: the cable modem is transparent.</p>
+				<p>However, the cable modem also has IP interfaces on each side of its bridge, permitting both the user and the ISP to communicate with the cable modem control software.</p>
+				<br clear="all">
+				<pre class="presm">    Your PC                &lt;------------- The Cable Modem --------------&gt;          &lt;--- The ISP's head end ---&gt;
+
++-------------+            +--------------------------------------------+
+|   Network   |            |                                            |
+|Applications |            |  Cable modem control software, HTTP, SNMP  |
+|             |            |                                            |
++------+------+            +------+------+----------------+------+------+
+|      |      |            |      |      |                |      |      |
+| TCP  | UDP  |            | TCP  | UDP  |                | TCP  | UDP  |
+|      |      |            |      |      |                |      |      |
++------+------+            +------+------+                +------+------+          +--------------+-----------+
+|             |            |             |                |             |          |      IP      | Universal |
+|     IP      |            |     IP      |                |     IP      |          |172.16.123.254| Broadband |
+|62.67.189.231|            |192.168.100.1|                |172.16.123.39|          | 62.67.189.254|  Router   |
+|    [i1]     |            |    [i2]     |                |    [i3]     |          |     [i4]     |           |
++-------------+            +-------------+----------------+-------------+          +--------------+-----+-----+
+|Network Card |            |             |  Transparent   |             |          |              |     |
+|  MAC layer  |            |  MAC layer  |Learning Bridge |  MAC layer  |          |   MAC layer  |     +--&gt;ISP
+|0000864A4D79 |            |00204070F495 |customer traffic|00204070F494 |          | 00059AD7C8A8 |
+|    [m1]     |            |    [m2]     |    &lt;------&gt;    |    [m3]     |          |     [m4]     |
++.............+            +-------------+----------------+-------------+          +--------------+
+|             |            |             |                |             |          |              |
+|  Physical   |&lt;-ethernet-&gt;|  Physical   |                |  Physical   |&lt;- CATV -&gt;|   Physical   |
+|  ethernet   |     or     |  ethernet   |                |    CATV     |  DOCSIS  |     CATV     |
+|   or USB    |&lt;---USB----&gt;|   or USB    |                |             |          |              |
++-------------+            +-------------+                +-------------+          +--------------+</pre>
+				<ul>
+					<li><b>[m1]</b> is the MAC address of your ethernet NIC, or the emulated MAC address of a USB network termination. For an ethernet NIC, this MAC address will be unique to the card. For a USB connection, it might be arithmetically related to the addresses [m2] and [m3] in the cable modem. [m1] will be the source MAC address for all packets emitted by your PC, and the destination MAC address for all packets intended for your PC.</li>
+					<li><b>[m2]</b> is the MAC address of the customer-facing network interface of the cable modem. This will usually be arithmetically one greater or one less than [m3]. [m2] will be the source MAC address for packets emitted by the cable modem itself towards the user, for instance, from the cable modem's internal diagnostics.</li>
+					<li><b>[m3]</b> is the MAC address of the ISP-facing network interface of the cable modem. This is the MAC address that is normally registered with the ISP to uniquely identify this cable modem. It can usually be determined from the label on the cable modem: see <b><a href="register.html#macreg">Modem MAC pre-registration</a></b>.</li>
+					<li><b>[m4]</b> is the MAC address of the UBR interface for this CATV cable segment. It will be the source MAC address for all packets received by your PC from the internet. It will also be the source MAC address for all packets broadcast from other PCs on the same cable segment, as the split downstream and upstream in the CATV cable means that the UBR has to perform LAN emulation to route broadcasts received from an upstream back onto the downstream.</li>
+					<li><b>[i1]</b> is the IP address of your PC, see <b><a href="ipaddr.html#ipaddr">What's my IP address?</a></b>. It is normally automatically allocated by DHCP when your PC boots up, and renewed at intervals thereafter. The DHCP requests are picked up by the UBR and routed to the ISP's DHCP server.</li>
+					<li><b>[i2]</b> is the IP address of the customer-facing network interface of the cable modem. See <b><a href="ipaddr.html#cmip">Finding the cable modem address</a></b>.</li>
+					<li><b>[i3]</b> is the IP address of the ISP-facing network interface of the cable modem. It is allocated by DHCP from the ISP's DHCP system during cable modem boot-up. It is used by the ISP to remotely control the cable modem. [i3] is normally a <b>private</b> IP address, in the ranges <b>10.xxx.xxx.xxx</b> or <b>172.yy.xxx.xxx</b> where <b>yy</b> is in the range 16-31. [i3] will lie within the same sub-net as one of the [i4] gateway addresses, though the sub-net might be quite large: 1024 or 2048.</li>
+					<li><b>[i4]</b> are the IP addresses of the UBR interface for this CATV segment. The (normally) primary IP address will be the gateway address for all the cable modem [i3] IP addresses on the CATV segment, thus enabling the cable modems to talk to the ISP (as with the [i3] addresses, this will normally be a private IP address). There will normally also be as many secondary public IP addresses as required to act as <a href="ipaddr.html#gateway">gateways</a> for all the sub-nets used for customer [i1] IP addresses: there can be multiple non-contiguous customer sub-nets on the same CATV segment. IP packets sourced by the UBR itself will tend to be labelled with its primary address: this explains why the traceroute responses from a UBR are labelled with an address other than the customer's gateway address. See <b><a href="ipaddr.html#ubrip">Finding the UBR address</a></b>.</li>
+				</ul>
+				<p>The number of user MAC addresses that can be learnt by the 802.1d transparent learning bridge is limited by the <a href="cmfile.html#cmfile">cable modem configuration</a>: for most domestic cable customers this limit is one. This is why it is necessary to re-boot the cable modem (to clear the learnt MAC table) when the <a href="swap.html#swap">connected PC is changed</a>.</p>
+				<hr>
+			<!-- #EndEditable -->
+			<p>Return to <a href="index.html">Index</a>.</p>
+		</body>
+
+	<!-- #EndTemplate -->
+
+</html>
+

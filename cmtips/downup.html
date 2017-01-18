@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+
+<html lang="en">
+
+	<!-- #BeginTemplate "../../cmtips.data/Templates/cmtemp.html" -->
+
+		<head>
+			<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+			<title>Cable Modem Troubleshooting Tips: Simultaneous download and upload</title>
+			<!-- #BeginHeadLocked "" -->
+				<meta name="description" content="Technical tips for troubleshooting a cable modem connection.">
+				<meta name="keywords" content="cable modem, FAQ, broadband, cablemodem, troubleshooting, tips, NTL, NTLworld, ntlhome, Telewest, blueyonder">
+				<meta name="author" content="Robin Walker">
+				<meta name="copyright" content="&copy; 2001-02 Robin Walker">
+				<link href="../favicon.ico" rel="shortcut icon">
+				<link href="mailto:rdhw@cam.ac.uk" rel="author">
+				<link href="copyright.html" rel="copyright">
+				<link href="index.html" rel="index">
+				<link href="cmstyle.css" rel="stylesheet">
+				<script type="text/javascript" language="JavaScript"><!--
+function jsinit() {
+  if (top!=self) top.location.href = self.location.href;
+}
+// -->
+</script>
+			<!-- #EndHeadLocked -->
+		</head>
+
+		<body onload="jsinit()" bgcolor="#eeffff">
+			<h1>Cable Modem Troubleshooting Tips</h1>
+			<hr>
+			<table border="0" cellpadding="0" align="left" summary="Quick links">
+				<tr>
+					<td nowrap bgcolor="#ffffff">
+						<div class="menubox">
+							<a class="sidelink" title="Introduction and Index to articles" href="index.html">Intro&nbsp;&amp;&nbsp;Index</a>.<br>
+							<a class="sidelink" title="History of updates and changes to this site" href="hist.html">Update&nbsp;history</a>.<br>
+							<a class="sidelink" title="Problems with BroadJump Broadband Installer" href="broadjump.html">Installer issues</a>.<br>
+							<a class="sidelink" title="Problems associated with getting a cable modem registered with your cable operator" href="register.html">Registration&nbsp;issues</a>.&nbsp;<br>
+							<a class="sidelink" title="PC network configuration for cable service" href="basicset.html">Network&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Swapping one PC between multiple networks" href="mobile.html">Mobile&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Understanding the flashing lights on the cable modem" href="lights.html">Cable&nbsp;Modem&nbsp;LEDs</a>.<br>
+							<a class="sidelink" title="How to determine various important IP addresses" href="ipaddr.html">IP&nbsp;addresses</a>.<br>
+							<a class="sidelink" title="How to determine various important MAC addresses" href="macaddr.html">MAC addresses</a>.<br>
+							<a class="sidelink" title="What to check if you have no service" href="badip.html">Dead&nbsp;connection</a>.<br>
+							<a class="sidelink" title="Updating your system with the latest patches and fixes" href="sysupdates.html">System&nbsp;updates</a>.<br>
+							<a class="sidelink" title="Tweaking your PC for best cable modem performance" href="tweaks.html">Network&nbsp;tweaks</a>.<br>
+							<a class="sidelink" title="Problems specifically related to the ethernet connection between your PC and the cable modem" href="ethernet.html">Ethernet&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Problems specifically related to a USB connection between the PC and cable modem" href="usb.html">USB&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Procedures and tips specifically for Surfboard cable modems" href="surfboard.html">Surfboard&nbsp;tips</a>.<br>
+							<a class="sidelink" title="Diagnosing your cable modem's connection" href="signal.html">CM&nbsp;diagnostics</a>.<br>
+							<a class="sidelink" title="Quality of service determined by configuration file" href="cmfile.html">CM&nbsp;config&nbsp;file</a>.<br>
+							<a class="sidelink" title="The network structure of a cable modem" href="cmworks.html">CM&nbsp;tech&nbsp;info</a>.<br>
+							<a class="sidelink" title="DHCP-related problems" href="dhcp.html">DHCP&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Understanding DNS and fixing DNS problems" href="dnsname.html">DNS&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Transparent web proxy caches and how to sidestep them" href="trancache.html">Web&nbsp;proxy&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance of streaming media" href="stream.html">Streaming&nbsp;media</a>.<br>
+							<a class="sidelink" title="Settings that affect performance, latency and pings" href="games.html">Gaming&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance; avoiding saturation of upstream" href="p2p.html">P2P&nbsp;file-sharing</a>.<br>
+							<a class="sidelink" title="Work around connection errors" href="seti.html">SETI@home&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect web browsing performance" href="fasterweb.html">Faster&nbsp;web&nbsp;browsing</a>.<br>
+							<a class="sidelink" title="Strategies to get better download speeds" href="fasterftp.html">Faster&nbsp;downloads</a>.<br>
+							<a class="sidelink" title="How to avoid performance hits" href="downup.html">Simul&nbsp;down/uploads</a>.<br>
+							<a class="sidelink" title="How to restore lost connection when you swap PCs connected to the CM" href="swap.html">Swapping&nbsp;PCs&nbsp;on&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Multiple PCs sharing one CM, home LANs, and NAT Routers" href="homelan.html">PCs&nbsp;sharing&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Using dial-up without losing cable connection" href="dialup.html">Simul&nbsp;dialup&nbsp;&amp;&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Problems with some VPN configurations" href="vpn.html">VPN&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Keep your clock correct, for ever, from cable time" href="timesync.html">Time&nbsp;sync</a>.<br>
+							<a class="sidelink" title="Avoiding virus and trojan infections" href="virus.html">Virus&nbsp;security</a>.<br>
+							<a class="sidelink" title="Configuring firewalls for cable connection" href="security.html">Firewall&nbsp;security</a>.<br>
+							<a class="sidelink" title="Limitations of some speed tests" href="speed.html">Speed&nbsp;testing</a>.<br>
+							<a class="sidelink" title="Understanding, diagnosing, and fixing latency and ping problems" href="latency.html">Latency issues</a>.<br>
+							<a class="sidelink" title="How to perform a traceroute, and how they can mislead" href="traceroute.html">Traceroute</a>.<br>
+							<a class="sidelink" title="Understanding and diagnosing packet loss" href="loss.html">Packet loss</a>.<br>
+							<a class="sidelink" href="frontpage.html">FrontPage tips</a>.<br>
+							<a class="sidelink" title="How to obtain technical support" href="techsupp.html">NTL/BY&nbsp;Tech&nbsp;Support</a>.</div>
+					</td>
+					<td width="18">&nbsp;</td>
+				</tr>
+			</table>
+			<!-- #BeginEditable "main" -->
+				<h2><a name="downup"></a>Simultaneous download and upload performance</h2>
+				<ul>
+					<li><a href="#discuss">General discussion</a> of the problem</li>
+					<li><a href="downup.html#ethdup">Ethernet duplex setting</a> as another culprit</li>
+					<li><a href="downup.html#winbw">Windows bandwidth limiting</a> solutions <span class="flash">&nbsp;New 2003 Sep 22&nbsp;</span></li>
+					<li><a href="#linux">Linux Wonder Shaper</a> solution</li>
+					<li><a href="#throttled">Mac OS X throttled</a> solution</li>
+				</ul>
+				<hr>
+				<h3><a name="discuss"></a>Discussion</h3>
+				<p>Many cable modem users complain that, if they run an upload at the same time as a download, their download speed is reduced. This is because the cable modem rate capping impacts upon TCP acknowledgements (ACKs), thus upsetting the TCP flow-control algorithms.</p>
+				<p>When your PC opens a TCP connection to or from a remote server, your PC tells the remote server what your PC's <b>TCP Receive Window</b> (<b>RWIN</b>) is. The basic flow control mechanism of TCP is that the sender will stop sending data if it has not yet received an <b>ACK</b> for any of the last <b>RWIN</b> bytes of data sent, and the receiver should transmit an <b>ACK</b> packet back to the sender when there is about half an <b>RWIN</b>'s worth of data received but not yet <b>ACK</b>ed. The sender uses the arrival of the <b>ACK</b> packet to pace itself on how fast to send data to the receiver. Pulling in a fast download requires not only the download packets to arrive quickly, but also for the <b>ACK</b> packets to get back to the sender in a timely fashion.</p>
+				<p>If you saturate your cable modem's upload cap with an upload, the <b>ACK</b> packets of your download will have to queue up waiting for a gap between the congested upload data packets. So your <b>ACK</b>s will be delayed getting back to the remote download server, and it will therefore believe you are on a very slow link, and slow down the transmission of further data to you.</p>
+				<p>There is a similar effect at work on your upload speed, as the <b>ACK</b> packets from the upload server will be delayed getting back to you if you have saturated your cable modem's download rate-cap with a large download.</p>
+				<p>The combined effect of this is that the upload and download speeds through the cable modem rate-caps tend to fall into a synchronised ratio, as the <b>ACK</b> packets fall into step with the congested main data packets in the opposite direction. The exact ratio of the synchronised speeds will depend on the relative sizes of the <b>RWIN</b>s (TCP Receive Windows) in each direction, on certain timings, and on the ratio of the upload and download rate caps.</p>
+				<p>In theory (I have not sat down and tested it), you can reduce the impact of a simultaneous upload on your download speed by ensuring that your PC's <b>RWIN</b> is tweaked to a large value, thus increasing the amount of data that the remote source can send you before it stops and waits for an <b>ACK</b>. The logic of the theory suggests that you should set your <b>RWIN</b> to be <b>N</b> times larger than the <b>RWIN</b> typically used by the upload server, where <b>N</b> is the ratio of the download/upload bandwidths (i.e. 4 for 512/128). But unfortunately, you don't have an easy way to find out what the upload server's <b>RWIN</b> is before you start, and Windows users have to reboot every time they tweak their <b>RWIN</b>! Most Unix servers are observed to have an initial <b>RWIN</b> of 32768, suggesting that a cable modem user should have an <b>RWIN</b> of at least 131072, which is actually larger than Windows 95 and Windows NT can manage.</p>
+				<p>The default <b>RWIN</b> for Windows 9x systems is far too small at 8192, and Win9x systems will thus always display a bad impact on download speeds from uploads. Windows ME is slightly better at 16384, but still not good enough for cable. Windows 2000 is smart enough to adjust its <b>RWIN</b> to suit conditions on the connection. See <b><a href="tweaks.html#tweaks">Networking tweaks</a></b> for pointers to instructions for tweaking your <b>RWIN</b> upwards.</p>
+				<p>See <a href="http://cable-dsl.home.att.net/#Asymmetry" title="Navas Cable Modem/DSL Tuning Guide">http://cable-dsl.home.att.net/#Asymmetry</a> for further discussion.</p>
+				<p>The ultimate solution to this problem is to use, in your PC, a smart download and upload manager which is capable internally of regulating the data rate demands it makes on your network connection. You should configure it to self-limit just below the rate caps of your cable modem in each direction. Then there will always be small but frequent gaps between packets in each direction, just enough to slot in <b>ACK</b> packets from the opposite direction without them having to wait for a gap. Then you should observe close to maximum utilisation of the cable modem rate caps in both directions simultaneously. The bandwidth capping configuration instructions are given here for many <a href="p2p.html#p2p">P2P systems</a>.</p>
+				<p>It would be useful if anyone knowing the names of download/upload managers capable of regulating their bandwidth demands could let me know, so that we can build up a list of suitable ones.</p>
+				<p>There is another bad effect arising from running uploads at speeds hard up against the cable modem upload rate cap: both the cable modem head end and your PC will build up a backlog of data awaiting transmission. The time taken to move data through that backlog buffering will add to the apparent latency of the cable connection, affecting pings and UDP traffic as well as the TCP download effect discussed above.</p>
+				<hr>
+				<h3><a name="ethdup"></a>Ethernet duplex setting</h3>
+				<p>Another potent cause of bad performance when simultaneously uploading and downloading is a mismatched ethernet duplex setting: see <a href="ethernet.html#ethernet">Ethernet card: duplex setting</a>.</p>
+				<hr>
+				<h3><a name="winbw"></a>Windows bandwidth-limiting</h3>
+				<p>There are a few products which claim to be able to rate-limit network connections from Windows PCs. They are:</p>
+				<ul>
+					<li><a title="Go to Bandwidth Controller site" href="http://www.bandwidthcontroller.com/">Bandwidth Controller</a>. US$49.95. For Windows 2000 and XP only. Installs itself as a Windows kernel component which regulates traffic through each network connection for which it is enabled. Upstream can be limited separately from downstream.</li>
+					<li><a title="Go to NetLimiter site" href="http://www.netlimiter.com/">NetLimiter</a>. US$29.95. For Windows 98, ME, 2000, XP, 2003. Originally intended for rate-limiting on a per-application basis, it now supports overall limiting with effect from v1.21beta.</li>
+					<li><a title="DU Super Controler site" href="http://www.homeqos.com/">DU Super Controler</a>. US$14.95. For Windows 2000 and XP only (Win9x/ME planned). Limits upload and download speeds independently; can prevent uploads from degrading download performance. Also planned is an enhanced version for load-balancing clients of Microsoft ICS.</li>
+				</ul>
+				<hr>
+				<h3><a name="linux"></a>Linux Wonder Shaper</h3>
+				<p>With effect from Linux 2.4 and higher, a complete solution is available. The Linux Wonder Shaper from <a title="The Wonder Shaper download" href="http://lartc.org/wondershaper/">http://lartc.org/wondershaper/</a> is a script which can be configured to rate-limit uploads so that low latency and high download speeds are maintained. You can use this with a single Linux PC connected to the cable modem, or if you are using Linux as a NAT router gateway to the cable modem. When using this script, you supply 3 parameters:</p>
+				<ul>
+					<li>the device to have traffic-shaping applied (e.g. eth0)</li>
+					<li>download limit</li>
+					<li>upload limit</li>
+				</ul>
+				<p>You do not need to set a download limit any more restrictive than your cable mode rate cap, so this should be set to a figure several times greater than your download cap.  You should set the upload limit to be about 85% of the upload rate cap of the cable modem.</p>
+				<hr>
+				<h3><a name="throttled"></a>Mac OS X throttled</h3>
+				<p><b>throttled</b> provides upstream rate limiting for Mac OS X, and ensures prompt return of <b>ACK</b> packets, so as to maintain maximum downstream performance and low latency. See <a title="Download throttled" href="http://www.intrarts.com/throttled.html">http://www.intrarts.com/throttled.html</a>.</p>
+				<hr>
+			<!-- #EndEditable -->
+			<p>Return to <a href="index.html">Index</a>.</p>
+		</body>
+
+	<!-- #EndTemplate -->
+
+</html>
+

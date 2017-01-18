@@ -1,0 +1,367 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+
+<html lang="en">
+
+	<!-- #BeginTemplate "../../cmtips.data/Templates/cmtemp.html" -->
+
+		<head>
+			<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+			<title>Cable Modem Troubleshooting Tips: Network Settings</title>
+			<!-- #BeginHeadLocked "" -->
+				<meta name="description" content="Technical tips for troubleshooting a cable modem connection.">
+				<meta name="keywords" content="cable modem, FAQ, broadband, cablemodem, troubleshooting, tips, NTL, NTLworld, ntlhome, Telewest, blueyonder">
+				<meta name="author" content="Robin Walker">
+				<meta name="copyright" content="&copy; 2001-02 Robin Walker">
+				<link href="../favicon.ico" rel="shortcut icon">
+				<link href="mailto:rdhw@cam.ac.uk" rel="author">
+				<link href="copyright.html" rel="copyright">
+				<link href="index.html" rel="index">
+				<link href="cmstyle.css" rel="stylesheet">
+				<script type="text/javascript" language="JavaScript"><!--
+function jsinit() {
+  if (top!=self) top.location.href = self.location.href;
+}
+// -->
+</script>
+			<!-- #EndHeadLocked -->
+		</head>
+
+		<body onload="jsinit()" bgcolor="#eeffff">
+			<h1>Cable Modem Troubleshooting Tips</h1>
+			<hr>
+			<table border="0" cellpadding="0" align="left" summary="Quick links">
+				<tr>
+					<td nowrap bgcolor="#ffffff">
+						<div class="menubox">
+							<a class="sidelink" title="Introduction and Index to articles" href="index.html">Intro&nbsp;&amp;&nbsp;Index</a>.<br>
+							<a class="sidelink" title="History of updates and changes to this site" href="hist.html">Update&nbsp;history</a>.<br>
+							<a class="sidelink" title="Problems with BroadJump Broadband Installer" href="broadjump.html">Installer issues</a>.<br>
+							<a class="sidelink" title="Problems associated with getting a cable modem registered with your cable operator" href="register.html">Registration&nbsp;issues</a>.&nbsp;<br>
+							<a class="sidelink" title="PC network configuration for cable service" href="basicset.html">Network&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Swapping one PC between multiple networks" href="mobile.html">Mobile&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Understanding the flashing lights on the cable modem" href="lights.html">Cable&nbsp;Modem&nbsp;LEDs</a>.<br>
+							<a class="sidelink" title="How to determine various important IP addresses" href="ipaddr.html">IP&nbsp;addresses</a>.<br>
+							<a class="sidelink" title="How to determine various important MAC addresses" href="macaddr.html">MAC addresses</a>.<br>
+							<a class="sidelink" title="What to check if you have no service" href="badip.html">Dead&nbsp;connection</a>.<br>
+							<a class="sidelink" title="Updating your system with the latest patches and fixes" href="sysupdates.html">System&nbsp;updates</a>.<br>
+							<a class="sidelink" title="Tweaking your PC for best cable modem performance" href="tweaks.html">Network&nbsp;tweaks</a>.<br>
+							<a class="sidelink" title="Problems specifically related to the ethernet connection between your PC and the cable modem" href="ethernet.html">Ethernet&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Problems specifically related to a USB connection between the PC and cable modem" href="usb.html">USB&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Procedures and tips specifically for Surfboard cable modems" href="surfboard.html">Surfboard&nbsp;tips</a>.<br>
+							<a class="sidelink" title="Diagnosing your cable modem's connection" href="signal.html">CM&nbsp;diagnostics</a>.<br>
+							<a class="sidelink" title="Quality of service determined by configuration file" href="cmfile.html">CM&nbsp;config&nbsp;file</a>.<br>
+							<a class="sidelink" title="The network structure of a cable modem" href="cmworks.html">CM&nbsp;tech&nbsp;info</a>.<br>
+							<a class="sidelink" title="DHCP-related problems" href="dhcp.html">DHCP&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Understanding DNS and fixing DNS problems" href="dnsname.html">DNS&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Transparent web proxy caches and how to sidestep them" href="trancache.html">Web&nbsp;proxy&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance of streaming media" href="stream.html">Streaming&nbsp;media</a>.<br>
+							<a class="sidelink" title="Settings that affect performance, latency and pings" href="games.html">Gaming&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance; avoiding saturation of upstream" href="p2p.html">P2P&nbsp;file-sharing</a>.<br>
+							<a class="sidelink" title="Work around connection errors" href="seti.html">SETI@home&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect web browsing performance" href="fasterweb.html">Faster&nbsp;web&nbsp;browsing</a>.<br>
+							<a class="sidelink" title="Strategies to get better download speeds" href="fasterftp.html">Faster&nbsp;downloads</a>.<br>
+							<a class="sidelink" title="How to avoid performance hits" href="downup.html">Simul&nbsp;down/uploads</a>.<br>
+							<a class="sidelink" title="How to restore lost connection when you swap PCs connected to the CM" href="swap.html">Swapping&nbsp;PCs&nbsp;on&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Multiple PCs sharing one CM, home LANs, and NAT Routers" href="homelan.html">PCs&nbsp;sharing&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Using dial-up without losing cable connection" href="dialup.html">Simul&nbsp;dialup&nbsp;&amp;&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Problems with some VPN configurations" href="vpn.html">VPN&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Keep your clock correct, for ever, from cable time" href="timesync.html">Time&nbsp;sync</a>.<br>
+							<a class="sidelink" title="Avoiding virus and trojan infections" href="virus.html">Virus&nbsp;security</a>.<br>
+							<a class="sidelink" title="Configuring firewalls for cable connection" href="security.html">Firewall&nbsp;security</a>.<br>
+							<a class="sidelink" title="Limitations of some speed tests" href="speed.html">Speed&nbsp;testing</a>.<br>
+							<a class="sidelink" title="Understanding, diagnosing, and fixing latency and ping problems" href="latency.html">Latency issues</a>.<br>
+							<a class="sidelink" title="How to perform a traceroute, and how they can mislead" href="traceroute.html">Traceroute</a>.<br>
+							<a class="sidelink" title="Understanding and diagnosing packet loss" href="loss.html">Packet loss</a>.<br>
+							<a class="sidelink" href="frontpage.html">FrontPage tips</a>.<br>
+							<a class="sidelink" title="How to obtain technical support" href="techsupp.html">NTL/BY&nbsp;Tech&nbsp;Support</a>.</div>
+					</td>
+					<td width="18">&nbsp;</td>
+				</tr>
+			</table>
+			<!-- #BeginEditable "main" -->
+				<h2>On this page:</h2>
+				<ul>
+					<li><a href="#basicset">Basic Network Settings</a> for network configuration of the PC</li>
+					<li><a href="#win2k">Windows 2000</a> and <a href="#winxp">Windows XP</a> setup details</li>
+					<li><a href="#internetopt">Internet Options</a> control panel setup</li>
+					<li><a href="#xpfw">Windows XP firewall</a>: disable it at first</li>
+					<li><a href="#mac9">Mac OS 8.x-9.x</a> setup <span class="flash">&nbsp;New 2002 Jun 9&nbsp;</span></li>
+					<li><a href="#macx">Mac OS X</a> setup <span class="flash">&nbsp;New 2002 Jun 9&nbsp;</span></li>
+				</ul>
+				<h2><a name="basicset"></a>Basic Network Settings</h2>
+				<div class="ntlns4">
+					<p>The settings you need to configure a machine to use the ntlworld cable modem service are available at: <a href="http://www.ntlworld.com/help/settings.htm" title="NTLworld network settings page">http://www.ntlworld.com/help/settings.htm</a>, subject to the following error as at 2001 March 30 (the following information derived from recent posts in ntl.announce):</p>
+					<ul>
+						<li>The current news NNTP server for the cable modem service is:</li>
+						<ul>
+							<li><b>newscache.cable.ntlworld.com</b> (this change was posted on newsgroup <b>ntl.announce</b> on <span class="flash">2002 March 21</span>)</li>
+							<li><b>news.cable.ntlworld.com</b> (the previously published setting, still working but with a reduced number of allowed simultaneous connections).</li>
+						</ul>
+					</ul>
+				</div>
+				<p class="byns4">The settings for the blueyonder service are available at: <a href="http://help.blueyonder.co.uk/server.html" title="blueyonder server addresses">http://help.blueyonder.co.uk/server.html</a>.</p>
+				<p>The DNS server addresses that are issued to you by DHCP lease may differ from the ones listed by your ISP. You should not configure explicit DNS servers, but allow them to be discovered automatically by DHCP, as your ISP can change the DNS server addresses from time to time. The only users who might need to code DNS server addresses explicitly are those who run a private LAN behind a router, with no local DHCP service.</p>
+				<div class="ntlns4">
+					<p>If you know how to apply the above information, you don't need NTL's Broadband Installer CD-ROM. This enables you to get notionally unsupported systems such as Mac OS X and Linux up and running.</p>
+					<p>NTLworld provide an illustrated guide at <a href="http://www.ntlworld.com/help/cm.htm" title="Cable modem setup">http://www.ntlworld.com/help/cm.htm</a> to manually setting up Win9x/ME and Apple Mac OS 8.x/9.x for the cable modem service. There is little in the guide that is NTL-specific and it can be followed by users of other ISPs such as <span class="by">Blueyonder</span>. As at 2001 March 30 there are errors in this guide as follows:</p>
+					<ul>
+						<li>In <b>Internet Options</b>, <b>Local Area Network Settings</b>, the option <b><u>A</u>utomatically detect settings</b> should be <b>UN</b>checked, not checked. NTLworld does not offer a WPAD service, so leaving this option checked would slow down Internet Explorer launches.</li>
+						<li>In <b>TCP/IP Properties</b>, <b>WINS Configuration</b>, I am sceptical about checking <b>Use D<u>H</u>CP for WINS Resolution</b>, as I doubt that NTLworld offers WINS services, and I prefer <b><u>D</u>isable WINS Resolution</b>.</li>
+						<li>Under use of <b>winipcfg</b>, only the old 62.* series of addresses is listed: there are now addresses in the 213.* and 80.* ranges. Other ISPs will use different IP address ranges.</li>
+					</ul>
+					<p>After manual network configuration, you need to:</p>
+				</div>
+				<ul>
+					<div class="ntlns4">
+						<li>[if using a digital TV set top box as a cable modem] <a href="register.html#pacereg">register the PC's MAC address with the STB</a>;</li>
+						<li>execute the <a href="register.html#ntlreg">post-installation registration procedure</a>, in order to turn your cable connection on properly.</li>
+					</div>
+				</ul>
+				<p class="byns4">Blueyonder do not provide an online guide to manual configuration for their cable modem service; see <a href="http://help.blueyonder.co.uk/setup/hsiconfig.html" title="No manual instructions">http://help.blueyonder.co.uk/setup/hsiconfig.html</a>. However, the NTL illustrated guide at <a href="http://www.ntlworld.com/help/cm.htm" title="NTL illustrated setup guide">http://www.ntlworld.com/help/cm.htm</a> can be followed fairly safely (see above). See <a href="http://help.blueyonder.co.uk/setup/userguide.html" title="Blueyonder user guide downloads">http://help.blueyonder.co.uk/setup/userguide.html</a> for online copies of the latest versions of the User Guides in PDF format. The by-Users site has additional help at <a href="http://www.by-users.co.uk/faqs/cablemodems/" title="by-Users cable modem FAQs">http://www.by-users.co.uk/faqs/cablemodems/</a>.</p>
+				<hr>
+				<h3><a name="win2k"></a><a name="winxp"></a>Windows 2000 and XP setup</h3>
+				<p>Instructions for setting up Windows 2000/XP for cable modem service from a typical ISP are given here.</p>
+				<p class="ntlns4">NTL provide an online <a href="http://www.ntlworld.com/help/windowsxp/" title="Setting up Windows XP">installation guide</a>, including links to downloads for XP-compatible USB drivers for the Surfboard 4100 and Terayon TeraJet 210. These drivers might be more recent than the ones supplied on the CD-ROM with the cable modem.</p>
+				<p>No special driver for the cable modem is required if you will be using an ethernet connection: you just need the driver for the ethernet card, many of which are automatically recognised by Windows.</p>
+				<p>If you will be using a USB connection to the cable modem, you will first need USB drivers compatible with Windows 2000/XP (the ones supplied on CD-ROM with your cable modem might not be up to date):</p>
+				<ul>
+					<li>For the latest USB drivers for the Surfboard 4100, see <a href="http://www.gi.com/noflash/usb_drivers.asp" title="USB drivers for Surfboard 4100">http://www.gi.com/noflash/usb_drivers.asp</a>.</li>
+					<li>For the latest USB drivers for the Terayon TeraJet series, go to <a href="http://www.terayon.com/" title="Terayon site">http://www.terayon.com/</a>, click the <b>Support</b> link, click <b>TeraJet DOCSIS Cable Modems</b>, then click the link for <b>USB drivers</b>.</li>
+				</ul>
+				<p>You will need to un-Zip the downloaded file to obtain the driver files. You would then install these drivers in preference to the ones on the CD-ROM supplied with the cable modem, by manually navigating the Windows driver installation wizard to the new driver files.</p>
+				<p>The following instructions for configuring the network connection assume that you might be converting to cable from some previous network use, and therefore include elimination of previous configuration data: for a fresh connection, the previous data might not be present.</p>
+				<ul>
+					<li>Open <b>Control Panel</b>.</li>
+					<li>Double-click [2000] <b>Network and Dial-up Connections</b>, or [XP] <b>Network Connections</b>.</li>
+					<li>Identify the icon for your cable modem connection: it is usually <b>Local Area Connection</b>. If you have both ethernet and USB cable modem drivers active, you might have two icons, labelled <b>Local Area Connection</b> and <b>Local Area Connection 2</b>. You can distinguish them by right-clicking each, selecting <b>Properties</b>, and viewing which hardware interface each is connected to. <b>Note:</b> with Windows 2000/XP and USB-connected cable modems, these connection icons might disappear from the control panel if the USB connection is unplugged or the cable modem powered off.</li>
+					<li>Right-click the appropriate icon and select <b>Properties</b>.</li>
+					<li>[XP only] Ensure the <b>General</b> tab is at the front.</li>
+					<li>In the central box (scroll if necessary), if the component <b>Internet Protocol (TCP/IP)</b> is absent, then:</li>
+					<ul>
+						<li>Click the button <b><u>I</u>nstall...</b></li>
+						<li>Select <b>Protocol</b> and click <b><u>A</u>dd...</b></li>
+						<li>[2000 only] In the box <b><u>M</u>anufacturers</b> select <b>Microsoft</b>, and<br>
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							[2000/XP] in the box <b>Network <u>P</u>rotocol</b> select <b>Internet Protocol (TCP/IP)</b>.</li>
+						<li>Click <b>OK</b>.</li>
+					</ul>
+					<li>In the central<b> </b>box (scroll if necessary), uncheck all components except <b>Internet Protocol (TCP/IP)</b> and (optionally) <b>Client for Microsoft Networks</b>. For security, if your PC is connected directly to the cable modem, you should ensure that <b>File and Printer Sharing for Microsoft Networks</b> is <b>un</b>checked.</li>
+					<li>In the central<b> </b>box (scroll if necessary), select <b>Internet Protocol (TCP/IP)</b>, and click button <b>P<u>r</u>operties</b>.</li>
+					<ul>
+						<li>Check <b><u>O</u>btain an IP address automatically</b>.</li>
+						<li>Check <b>O<u>b</u>tain DNS server address automatically.</b></li>
+						<li>Click button <b>Ad<u>v</u>anced...</b></li>
+						<ul>
+							<li>With tab <b>IP Settings</b> at the front:</li>
+							<ul>
+								<li>If there are any entries in box <b>De<u>f</u>ault gateways</b>, select each and click <b>Re<u>m</u>ove</b>. See <a href="http://support.microsoft.com/support/kb/articles/Q244/3/99.ASP" title="MS Knowledge Base Q244399">http://support.microsoft.com/support/kb/articles/Q244/3/99.ASP</a> for more.</li>
+							</ul>
+							<li>Click tab <b>DNS</b> to bring it to the front:</li>
+							<ul>
+								<li>If there are any entries in box <b>D<u>N</u>S server addresses, in order of use</b>, select each and click <b>Remo<u>v</u>e</b>.</li>
+								<li><b>UN</b>check <b>Append t<u>h</u>ese DNS suffixes (in order)</b>.</li>
+								<li>In box <b>DNS <u>s</u>uffix for this connection</b> you may enter a default DNS domain for your ISP, e.g. <b class="ntl">ntlworld.com</b> or <b class="by">blueyonder.co.uk</b> or you may leave this box blank.</li>
+								<li><b>UN</b>check <b><u>R</u>egister this connection's addresses in DNS</b>. See <a href="http://support.microsoft.com/support/kb/articles/Q263/5/50.ASP" title="MS Knowledge Base Q263550">http://support.microsoft.com/support/kb/articles/Q263/5/50.ASP</a> for more.</li>
+							</ul>
+							<li>Click tab <b>WINS</b> to bring it to the front:</li>
+							<ul>
+								<li>If there are any entries in box <b><u>W</u>INS addresses in order of use</b>, select each and click <b>Remo<u>v</u>e</b>.</li>
+							</ul>
+							<li>Click <b>OK</b> to exit the Advanced settings.</li>
+						</ul>
+						<li>Click <b>OK</b> to exit Internet Protocol settings.</li>
+					</ul>
+					<li>[Win XP only] Click <b>OK</b> to save the changes you have made and exit the Connection properties, then come back again by right-clicking the connection icon and selecting <b>Properties</b>.</li>
+					<li>If this is an ethernet connection, and if your cable modem's ethernet interface is not specifically listed as capable of full-duplex working (see <a href="ethernet.html#ethernet" title="Ethernet link between PC and cable modem: duplex setting">list</a>), click the button <b><u>C</u>onfigure</b> below the adapter name.</li>
+					<ul>
+						<li>Click the tab <b>Advanced</b> to bring it to the front:</li>
+						<ul>
+							<li>In the <b><u>P</u>roperty</b> box, the property name to be selected varies according to model of ethernet card. Examples are: <b>Network Link Selection</b>, <b>Media Type</b>, <b>Connection Type</b>, <b>Duplex Mode</b>, or any similarly-named property which can have <b>Values</b> looking like <b>Auto-Negotiation</b>, or <b>10BT</b>, or <b>10BaseT</b>.</li>
+							<li>In the <b><u>V</u>alue</b> box, select a value which either (a) explicitly says <b>half-duplex</b> or <b>semi-duplex</b>, or (b) at least does not say <b>full-duplex</b> [e.g. <b>10BaseT</b> on its own is OK]. If there is a choice between <b>10</b> and <b>100</b> with half-duplex, choose the <b>10</b>. Do not choose <b>10Base5</b>, <b>10Base2</b>, or <b>AUI</b>.</li>
+						</ul>
+						<li>Click <b>OK</b> to exit the Adapter settings.</li>
+					</ul>
+					<li>Click <b>OK</b> to exit the Connection properties.</li>
+					<li>Close the <b>Network and Dial-up Connections</b> window.</li>
+					<li>Continue with <b>Internet Options</b> setup below.</li>
+				</ul>
+				<hr>
+				<h3><a name="internetopt"></a>Windows all versions: Internet Options setup</h3>
+				<ul>
+					<li>Open <b>Control Panel</b>.</li>
+					<li>Double-click <b>Internet Options</b>.</li>
+					<li>Click on the tab <b>Connections</b> to bring it to the front.</li>
+					<li>Check <b>Never dial a <u>c</u>onnection</b>.</li>
+					<li>Click on button <b><u>L</u>AN Settings...</b></li>
+					<ul>
+						<li><b>UN</b>check <b><u>A</u>utomatically detect settings</b> (unchecking this speeds up IE launches).</li>
+						<li><b>UN</b>check <b>Use automatic configuration <u>s</u>cript</b>.</li>
+						<li><b>UN</b>check <b>Use a pro<u>x</u>y server</b> (unless you want an <a href="trancache.html#sidestep">explicit setting</a>).</li>
+						<li>Click <b>OK</b> to exit Local Area Network settings.</li>
+					</ul>
+					<li>Click <b>OK</b> to exit Internet Options.</li>
+				</ul>
+				<hr>
+				<h3><a name="xpfw"></a>Windows XP built-in firewall</h3>
+				<p>Some users report difficulties getting Windows XP to work when first connected. It is possible that the built-in firewall might be causing problems with the strange requirements of the cable modem DHCP system. It is suggested that you should not enable the built-in firewall until after (a) you have a working cable connection, and (b) you understand how to configure the built-in firewall. You should only consider enabling the firewall if your XP PC is directly connected to the cable modem. You should disable the firewall if there is a NAT router and/or home LAN between the XP PC and the cable modem.</p>
+				<ul>
+					<li>Open <b>Control Panel</b>.</li>
+					<li>Double-click <b>Network Connections</b>.</li>
+					<li>Right-click the appropriate connection icon, and select <b>Properties</b>.</li>
+					<li>Click on tab <b>Advanced</b> to bring it to the front.</li>
+					<li>To enable the firewall, check <b>Protect my computer (etc)</b>; or</li>
+					<li>To disable the firewall, uncheck <b>Protect my computer (etc)</b>.</li>
+					<li>Click on button <b>Settings...</b></li>
+					<ul>
+						<li>With tab <b>Services</b> at the front:</li>
+						<ul>
+							<li>check any services offered on your PC that you wish outside users to be able to connect to. If there are no such services, uncheck all boxes.</li>
+						</ul>
+						<li>Click tab <b>ICMP</b> to bring it to the front:</li>
+						<ul>
+							<li>check <b>Allow incoming echo request</b>.</li>
+							<li>check all the <b>Allow outgoing</b> options.</li>
+						</ul>
+						<li>Click <b>OK</b> to exit Advanced Settings.</li>
+					</ul>
+					<li>Click <b>OK</b> to exit Connection Properties.</li>
+				</ul>
+				<hr>
+				<h3><a name="mac9"></a>Mac OS 8.x-9.x setup</h3>
+				<p>See <a title="Apple Macintosh Configuration for cable modems" href="http://www.ntlworld.com/help/cm.htm#macconfig">http://www.ntlworld.com/help/cm.htm#macconfig</a> for an illustrated guide which is generic for all cable systems requiring DHCP.</p>
+				<p>You might also have to configure e-mail, news, and FTP client applications with your ISP's settings.</p>
+				<p class="ntlns4">NTLworld e-mail, news, and FTP client settings are at <a title="NTLworld settings" href="http://www.ntlworld.com/help/settings.htm">http://www.ntlworld.com/help/settings.htm</a></p>
+				<hr>
+				<h3><a name="macx"></a>Mac OS X setup</h3>
+				<ul>
+					<li>Pull down the Apple menu and select <b>System Preferences...</b></li>
+					<li>In <b>System Preferences</b> click <b>Network</b>.</li>
+					<li>In the drop-down <b>Show:</b> select the interface which connects to the cable modem (e.g. <b>Built-in Ethernet</b>).</li>
+					<li>Click tab <b>TCP/IP</b>, then:</li>
+					<ul>
+						<li>In the drop-down <b>Configure:</b> select <b>Using DHCP</b>.</li>
+						<li>If your cable ISP specifies a Client ID, enter it in the box <b>DHCP Client ID</b>, otherwise clear the box to blank. <span class="ntl">NTL</span> and <span class="by">Blueyonder</span> do not require a Client ID.</li>
+						<li>Ensure the box <b>Domain Name Servers</b> is blank.</li>
+						<li>In the box <b>Search Domains</b> you may enter a default search domain for your ISP, e.g. <b class="ntl">ntlworld.com</b> or <b class="by">blueyonder.co.uk</b> or you may leave this box blank.</li>
+					</ul>
+					<li>If the tab <b>PPPoE</b> is present, click it, then:</li>
+					<ul>
+						<li>Ensure that <b>Connect using PPPoE</b> is unchecked.</li>
+					</ul>
+					<li>If the tab <b>AppleTalk</b> is present, click it, then:</li>
+					<ul>
+						<li>If you have a LAN with other Macintosh clients, check <b>Make AppleTalk Active</b>;</li>
+						<li>Otherwise, ensure <b>Make AppleTalk Active</b> is unchecked.</li>
+					</ul>
+					<li>Click tab <b>Proxies</b>, then:</li>
+					<ul>
+						<li>Ensure all <b>Proxy</b> or <b>Firewall</b> check-boxes are unchecked.</li>
+						<li>Check <b>Use Passive FTP Mode (PASV)</b>.</li>
+						<li>In <b>Bypass proxy settings for these Hosts &amp; Domains</b> enter <b>192.168.*</b></li>
+						<li>When/if you have a need to set a web proxy (not usually needed by default), you would do it by checking <b>Web Proxy (HTTP)</b>, and entering the name of the proxy and its port number, usually <b>8080</b>.</li>
+					</ul>
+					<li>Click <b>Apply Now</b>.</li>
+					<li>Click <b>Show All</b> to exit <b>Network</b>.</li>
+					<li>Click <b>Internet</b>.</li>
+					<li>Click tab <b>Email</b>, then:</li>
+					<ul>
+						<li>In the field <b>Email Address:</b> enter your preferred e-mail identity.</li>
+						<li>In the field <b>Incoming Mail Server:</b> enter your ISP's e-mail server name, and choose <b>POP</b> if it is a POP3 server or <b>IMAP</b> if it is an IMAP server.</li>
+						<ul>
+							<li class="ntlns4">For NTLworld, enter <b>pop.ntlworld.com</b> and choose <b>POP</b>.</li>
+						</ul>
+						<li>In the field <b>User Account ID</b>, enter the user identifier that your ISP has given you for the purpose of logging in to the mail server above.</li>
+						<li>In the field <b>Outgoing Mail Server:</b> enter your ISP's SMTP server name.</li>
+						<ul>
+							<li class="ntlns4">For NTLworld, enter <b>smtp.ntlworld.com</b></li>
+						</ul>
+					</ul>
+					<li>Click tab <b>Web</b>, then:</li>
+					<ul>
+						<li>you may set all fields to your personal preferred values.</li>
+					</ul>
+					<li>Click tab <b>News</b>, then:</li>
+					<ul>
+						<li>In the field <b>News Server:</b> enter your ISP's NNTP server name.</li>
+						<ul>
+							<li class="ntlns4">For NTLworld, enter <b>news.cable.ntlworld.com</b></li>
+						</ul>
+					</ul>
+					<li>Click <b>Show All</b> to exit <b>Internet.</b></li>
+					<li>Pull down the <b>System Prefs</b> menu and select <b>Quit System Prefs</b>.</li>
+				</ul>
+				<p>You might also have to configure e-mail, news, and FTP client applications with your ISP's settings.</p>
+				<p class="ntlns4">NTLworld e-mail, news, and FTP client settings are at <a title="NTLworld settings" href="http://www.ntlworld.com/help/settings.htm">http://www.ntlworld.com/help/settings.htm</a></p>
+				<hr>
+			<!-- #EndEditable -->
+			<p>Return to <a href="index.html">Index</a>.</p>
+		</body>
+
+	<!-- #EndTemplate -->
+
+</html>
+

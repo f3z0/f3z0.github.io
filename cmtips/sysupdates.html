@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+
+<html lang="en">
+
+	<!-- #BeginTemplate "../../cmtips.data/Templates/cmtemp.html" -->
+
+		<head>
+			<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+			<title>Cable Modem Troubleshooting Tips: System Updates and Patches</title>
+			<!-- #BeginHeadLocked "" -->
+				<meta name="description" content="Technical tips for troubleshooting a cable modem connection.">
+				<meta name="keywords" content="cable modem, FAQ, broadband, cablemodem, troubleshooting, tips, NTL, NTLworld, ntlhome, Telewest, blueyonder">
+				<meta name="author" content="Robin Walker">
+				<meta name="copyright" content="&copy; 2001-02 Robin Walker">
+				<link href="../favicon.ico" rel="shortcut icon">
+				<link href="mailto:rdhw@cam.ac.uk" rel="author">
+				<link href="copyright.html" rel="copyright">
+				<link href="index.html" rel="index">
+				<link href="cmstyle.css" rel="stylesheet">
+				<script type="text/javascript" language="JavaScript"><!--
+function jsinit() {
+  if (top!=self) top.location.href = self.location.href;
+}
+// -->
+</script>
+			<!-- #EndHeadLocked -->
+		</head>
+
+		<body onload="jsinit()" bgcolor="#eeffff">
+			<h1>Cable Modem Troubleshooting Tips</h1>
+			<hr>
+			<table border="0" cellpadding="0" align="left" summary="Quick links">
+				<tr>
+					<td nowrap bgcolor="#ffffff">
+						<div class="menubox">
+							<a class="sidelink" title="Introduction and Index to articles" href="index.html">Intro&nbsp;&amp;&nbsp;Index</a>.<br>
+							<a class="sidelink" title="History of updates and changes to this site" href="hist.html">Update&nbsp;history</a>.<br>
+							<a class="sidelink" title="Problems with BroadJump Broadband Installer" href="broadjump.html">Installer issues</a>.<br>
+							<a class="sidelink" title="Problems associated with getting a cable modem registered with your cable operator" href="register.html">Registration&nbsp;issues</a>.&nbsp;<br>
+							<a class="sidelink" title="PC network configuration for cable service" href="basicset.html">Network&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Swapping one PC between multiple networks" href="mobile.html">Mobile&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Understanding the flashing lights on the cable modem" href="lights.html">Cable&nbsp;Modem&nbsp;LEDs</a>.<br>
+							<a class="sidelink" title="How to determine various important IP addresses" href="ipaddr.html">IP&nbsp;addresses</a>.<br>
+							<a class="sidelink" title="How to determine various important MAC addresses" href="macaddr.html">MAC addresses</a>.<br>
+							<a class="sidelink" title="What to check if you have no service" href="badip.html">Dead&nbsp;connection</a>.<br>
+							<a class="sidelink" title="Updating your system with the latest patches and fixes" href="sysupdates.html">System&nbsp;updates</a>.<br>
+							<a class="sidelink" title="Tweaking your PC for best cable modem performance" href="tweaks.html">Network&nbsp;tweaks</a>.<br>
+							<a class="sidelink" title="Problems specifically related to the ethernet connection between your PC and the cable modem" href="ethernet.html">Ethernet&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Problems specifically related to a USB connection between the PC and cable modem" href="usb.html">USB&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Procedures and tips specifically for Surfboard cable modems" href="surfboard.html">Surfboard&nbsp;tips</a>.<br>
+							<a class="sidelink" title="Diagnosing your cable modem's connection" href="signal.html">CM&nbsp;diagnostics</a>.<br>
+							<a class="sidelink" title="Quality of service determined by configuration file" href="cmfile.html">CM&nbsp;config&nbsp;file</a>.<br>
+							<a class="sidelink" title="The network structure of a cable modem" href="cmworks.html">CM&nbsp;tech&nbsp;info</a>.<br>
+							<a class="sidelink" title="DHCP-related problems" href="dhcp.html">DHCP&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Understanding DNS and fixing DNS problems" href="dnsname.html">DNS&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Transparent web proxy caches and how to sidestep them" href="trancache.html">Web&nbsp;proxy&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance of streaming media" href="stream.html">Streaming&nbsp;media</a>.<br>
+							<a class="sidelink" title="Settings that affect performance, latency and pings" href="games.html">Gaming&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance; avoiding saturation of upstream" href="p2p.html">P2P&nbsp;file-sharing</a>.<br>
+							<a class="sidelink" title="Work around connection errors" href="seti.html">SETI@home&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect web browsing performance" href="fasterweb.html">Faster&nbsp;web&nbsp;browsing</a>.<br>
+							<a class="sidelink" title="Strategies to get better download speeds" href="fasterftp.html">Faster&nbsp;downloads</a>.<br>
+							<a class="sidelink" title="How to avoid performance hits" href="downup.html">Simul&nbsp;down/uploads</a>.<br>
+							<a class="sidelink" title="How to restore lost connection when you swap PCs connected to the CM" href="swap.html">Swapping&nbsp;PCs&nbsp;on&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Multiple PCs sharing one CM, home LANs, and NAT Routers" href="homelan.html">PCs&nbsp;sharing&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Using dial-up without losing cable connection" href="dialup.html">Simul&nbsp;dialup&nbsp;&amp;&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Problems with some VPN configurations" href="vpn.html">VPN&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Keep your clock correct, for ever, from cable time" href="timesync.html">Time&nbsp;sync</a>.<br>
+							<a class="sidelink" title="Avoiding virus and trojan infections" href="virus.html">Virus&nbsp;security</a>.<br>
+							<a class="sidelink" title="Configuring firewalls for cable connection" href="security.html">Firewall&nbsp;security</a>.<br>
+							<a class="sidelink" title="Limitations of some speed tests" href="speed.html">Speed&nbsp;testing</a>.<br>
+							<a class="sidelink" title="Understanding, diagnosing, and fixing latency and ping problems" href="latency.html">Latency issues</a>.<br>
+							<a class="sidelink" title="How to perform a traceroute, and how they can mislead" href="traceroute.html">Traceroute</a>.<br>
+							<a class="sidelink" title="Understanding and diagnosing packet loss" href="loss.html">Packet loss</a>.<br>
+							<a class="sidelink" href="frontpage.html">FrontPage tips</a>.<br>
+							<a class="sidelink" title="How to obtain technical support" href="techsupp.html">NTL/BY&nbsp;Tech&nbsp;Support</a>.</div>
+					</td>
+					<td width="18">&nbsp;</td>
+				</tr>
+			</table>
+			<!-- #BeginEditable "main" -->
+				<h2><a name="sysupdates"></a>System updates and patches</h2>
+				<p>Some system updates and fixes are important for use of cable connections. Now that you have a broadband connection, you can afford to download updates and fixes that previously would have been too time-consuming. To find out the version and sub-version of operating system you are using:</p>
+				<ul>
+					<li><b>Windows</b>: click <b>Start</b>, <b>Settings</b>, <b>Control Panel</b>. Double-click <b>System</b>. The long version number is shown under the Microsoft Windows name.</li>
+					<li><b>Apple Mac</b>: click on the desktop to bring the Finder to the front. Pull down the <b>Apple</b> menu, select <b>About This Computer</b>, look at the <b>Version</b> string.</li>
+				</ul>
+				<hr>
+				<h3>Windows 95</h3>
+				<p>Windows 95 has some serious deficiencies with networking that need to be fixed for satisfactory use of a broadband service. All the updates and patches are available at <a href="http://www.microsoft.com/windows95/downloads/" title="Windows95 update">http://www.microsoft.com/windows95/downloads/</a>.</p>
+				<p>If you are running the original Windows 95, <b>4.00.950</b> (with no suffix <b>A</b>, <b>B</b>, or <b>C</b>), then before anything else, you should apply <b><a title="Download info" href="http://www.microsoft.com/windows95/downloads/contents/WURecommended/S_WUServicePacks/W95SvcPack1/Default.asp">Windows 95 Service Pack 1</a></b>. This will take you to version <b>4.00.950A</b>.</p>
+				<p>With Windows 95, versions <b>4.00.950A</b> or <b>B</b> or <b>C</b>, apply:</p>
+				<ul>
+					<li><b><a title="Winsock2 update" href="http://www.microsoft.com/windows95/downloads/contents/WUAdminTools/S_WUNetworkingTools/W95Sockets2/Default.asp">Windows Socket 2 Update</a></b>, which incorporates many important TCP/IP network improvements and fixes, without which you will have problems on the cable system. This update must be applied before others below.</li>
+					<li><b><a href="http://support.microsoft.com/support/kb/articles/Q285/1/89.ASP" title="DUN 1.4 download page">Dial-Up Networking 1.4 Upgrade</a></b>: more TCP/IP improvements, including the earlier DUN 1.3 and Year 2000 fixes, making it unnecessary to apply those first.</li>
+				</ul>
+				<p>If your version of Internet Explorer is 3.x, you should download a newer version.</p>
+				<p>Then apply <b>all</b> the <b>Critical Updates</b> listed on the Downloads page in chronological order for security fixes. Note that the Windows Update site no longer supports Windows 95.</p>
+				<h3>Windows NT 4</h3>
+				<p>All the updates and patches are available at <a href="http://www.microsoft.com/windowsnt/downloads/" title="Win NT updates and fixes">http://www.microsoft.com/windowsnt/downloads/</a>.</p>
+				<p>Apply <b>Service Pack 6a</b>, then apply the latest cumulative <b>Security Update</b>, then any single Security Updates more recent than the cumulative one.</p>
+				<p>The <b>Windows Update</b> facility is available to NT users who have applied <b>Service Pack 3</b> or higher and <b>Internet Explorer</b> 4.01 SP2 or higher.</p>
+				<h3>Windows 98/ME</h3>
+				<p>Win98 only (not WinME) users: apply <a href="http://support.microsoft.com/support/kb/articles/Q285/1/89.ASP" title="DUN 1.4 download page">Dial-Up Networking 1.4 Upgrade</a>, for some TCP/IP improvements.</p>
+				<p>Both Win98 and WinME users: go to <b>Windows Update</b> (click <b>Start</b>, <b>Windows Update</b>). Click <b>Product Updates</b>. Apply all <b>Critical Updates</b>. Repeat regularly.</p>
+				<h3>Windows 2000</h3>
+				<p>Go to <b>Windows Update</b> (click <b>Start</b>, <b>Windows Update</b>). Click <b>Scan for updates</b>. Apply all <b>Critical Updates and Service Packs</b>. Repeat regularly. Also, with effect from Service Pack 3, open control panel <b>Automatic Updates</b>:</p>
+				<ul>
+					<li>Check <b>Keep my computer up to date</b>;</li>
+					<li>Choose your preferred setting for automatic updates;</li>
+					<li>Click <b>OK</b> to close Automatic Updates.</li>
+				</ul>
+				<h3>Windows XP</h3>
+				<p>Go to <b>Windows Update</b> (click <b>Start, All Programs, Windows Update</b>). Click <b>Scan for updates</b>. Apply all <b>Critical Updates</b>. Repeat regularly. Also:</p>
+				<ul>
+					<li>Right-click <b>My Computer</b>, select <b>Properties</b> (or open control panel <b>System</b>);</li>
+					<li>Click tab <b>Automatic Updates</b>;</li>
+					<li>Check <b>Keep my computer up to date</b>;</li>
+					<li>Choose your preferred setting for automatic updates;</li>
+					<li>Click <b>OK</b> to close System Properties.</li>
+				</ul>
+				<h3>Windows Update (all except 95, NT, XP)</h3>
+				<p>It is strongly recommended that you visit the <b>Windows Update</b> site, click <b>Product Updates</b>, and install <b>Windows Critical Update Notification</b>, which will check for new critical updates daily. For Windows 2000, with effect from Service Pack 3, the Critical Update Notification is superseded by the <b>Automatic Update</b> control panel.</p>
+				<h3>Apple Mac OS 8.5</h3>
+				<p>Update free to Mac OS 8.6 at <a href="http://www.info.apple.com/kbnum/n60283" title="Mac OS 8.6 update">http://www.info.apple.com/kbnum/n60283</a>.</p>
+				<h3>Apple Mac OS 8.6</h3>
+				<p>Apply <b>Font Manager Update 1.0</b> from <a href="http://www.info.apple.com/kbnum/n60444" title="Important fix for 8.6">http://www.info.apple.com/kbnum/n60444</a>. This fixes a frequent crashing bug in 8.6.</p>
+				<h3>Apple Mac OS 9.x</h3>
+				<p>Pull down the <b>Apple</b> menu, select <b>Control Panels</b>, and open the <b>Software Update</b> control panel. Apply all listed updates. Repeat until no further updates shown. Repeat regularly.</p>
+				<h3>Apple Mac OS X</h3>
+				<p>Pull down the <b>Apple</b> menu, select <b>System Preferences...</b>; click <b>Software Updates</b>; click <b>Update Now</b>.</p>
+				<h3>Microsoft updates for Apple Mac:</h3>
+				<blockquote>
+					<h3>Apple Mac OS (versions 7.6.1 to 8.0)</h3>
+					<p>Update to Microsoft Internet Explorer 5.0 from <a href="http://www.microsoft.com/mac/download/ie/ie50.asp" title="Download IE 5.0">http://www.microsoft.com/mac/download/ie/ie50.asp</a>. All earlier versions of IE for Mac have trouble with some secure web sites.</p>
+					<h3>Apple Mac OS (versions 8.1 to 9.x)</h3>
+					<p>Update to Microsoft Internet Explorer 5.1 from <a href="http://www.microsoft.com/mac/download/ie/ie50.asp" title="Download IE 5.0">http://www.microsoft.com/mac/download/ie/ie51.asp</a>. This version works better then 5.0 with transparent web proxy caches.</p>
+					<h3>Apple Mac OS X</h3>
+					<p>Update to Microsoft Internet Explorer 5.2 from <a title="Download IE 5.2" href="http://www.microsoft.com/mac/DOWNLOAD/IE/ie52.asp">http://www.microsoft.com/mac/DOWNLOAD/IE/ie52.asp</a>.</p>
+				</blockquote>
+				<hr>
+			<!-- #EndEditable -->
+			<p>Return to <a href="index.html">Index</a>.</p>
+		</body>
+
+	<!-- #EndTemplate -->
+
+</html>
+

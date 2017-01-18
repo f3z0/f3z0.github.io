@@ -1,0 +1,210 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+
+<html lang="en">
+
+	<!-- #BeginTemplate "../../cmtips.data/Templates/cmtemp.html" -->
+
+		<head>
+			<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+			<title>Cable Modem Troubleshooting Tips: USB issues</title>
+			<!-- #BeginHeadLocked "" -->
+				<meta name="description" content="Technical tips for troubleshooting a cable modem connection.">
+				<meta name="keywords" content="cable modem, FAQ, broadband, cablemodem, troubleshooting, tips, NTL, NTLworld, ntlhome, Telewest, blueyonder">
+				<meta name="author" content="Robin Walker">
+				<meta name="copyright" content="&copy; 2001-02 Robin Walker">
+				<link href="../favicon.ico" rel="shortcut icon">
+				<link href="mailto:rdhw@cam.ac.uk" rel="author">
+				<link href="copyright.html" rel="copyright">
+				<link href="index.html" rel="index">
+				<link href="cmstyle.css" rel="stylesheet">
+				<script type="text/javascript" language="JavaScript"><!--
+function jsinit() {
+  if (top!=self) top.location.href = self.location.href;
+}
+// -->
+</script>
+			<!-- #EndHeadLocked -->
+		</head>
+
+		<body onload="jsinit()" bgcolor="#eeffff">
+			<h1>Cable Modem Troubleshooting Tips</h1>
+			<hr>
+			<table border="0" cellpadding="0" align="left" summary="Quick links">
+				<tr>
+					<td nowrap bgcolor="#ffffff">
+						<div class="menubox">
+							<a class="sidelink" title="Introduction and Index to articles" href="index.html">Intro&nbsp;&amp;&nbsp;Index</a>.<br>
+							<a class="sidelink" title="History of updates and changes to this site" href="hist.html">Update&nbsp;history</a>.<br>
+							<a class="sidelink" title="Problems with BroadJump Broadband Installer" href="broadjump.html">Installer issues</a>.<br>
+							<a class="sidelink" title="Problems associated with getting a cable modem registered with your cable operator" href="register.html">Registration&nbsp;issues</a>.&nbsp;<br>
+							<a class="sidelink" title="PC network configuration for cable service" href="basicset.html">Network&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Swapping one PC between multiple networks" href="mobile.html">Mobile&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Understanding the flashing lights on the cable modem" href="lights.html">Cable&nbsp;Modem&nbsp;LEDs</a>.<br>
+							<a class="sidelink" title="How to determine various important IP addresses" href="ipaddr.html">IP&nbsp;addresses</a>.<br>
+							<a class="sidelink" title="How to determine various important MAC addresses" href="macaddr.html">MAC addresses</a>.<br>
+							<a class="sidelink" title="What to check if you have no service" href="badip.html">Dead&nbsp;connection</a>.<br>
+							<a class="sidelink" title="Updating your system with the latest patches and fixes" href="sysupdates.html">System&nbsp;updates</a>.<br>
+							<a class="sidelink" title="Tweaking your PC for best cable modem performance" href="tweaks.html">Network&nbsp;tweaks</a>.<br>
+							<a class="sidelink" title="Problems specifically related to the ethernet connection between your PC and the cable modem" href="ethernet.html">Ethernet&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Problems specifically related to a USB connection between the PC and cable modem" href="usb.html">USB&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Procedures and tips specifically for Surfboard cable modems" href="surfboard.html">Surfboard&nbsp;tips</a>.<br>
+							<a class="sidelink" title="Diagnosing your cable modem's connection" href="signal.html">CM&nbsp;diagnostics</a>.<br>
+							<a class="sidelink" title="Quality of service determined by configuration file" href="cmfile.html">CM&nbsp;config&nbsp;file</a>.<br>
+							<a class="sidelink" title="The network structure of a cable modem" href="cmworks.html">CM&nbsp;tech&nbsp;info</a>.<br>
+							<a class="sidelink" title="DHCP-related problems" href="dhcp.html">DHCP&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Understanding DNS and fixing DNS problems" href="dnsname.html">DNS&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Transparent web proxy caches and how to sidestep them" href="trancache.html">Web&nbsp;proxy&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance of streaming media" href="stream.html">Streaming&nbsp;media</a>.<br>
+							<a class="sidelink" title="Settings that affect performance, latency and pings" href="games.html">Gaming&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance; avoiding saturation of upstream" href="p2p.html">P2P&nbsp;file-sharing</a>.<br>
+							<a class="sidelink" title="Work around connection errors" href="seti.html">SETI@home&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect web browsing performance" href="fasterweb.html">Faster&nbsp;web&nbsp;browsing</a>.<br>
+							<a class="sidelink" title="Strategies to get better download speeds" href="fasterftp.html">Faster&nbsp;downloads</a>.<br>
+							<a class="sidelink" title="How to avoid performance hits" href="downup.html">Simul&nbsp;down/uploads</a>.<br>
+							<a class="sidelink" title="How to restore lost connection when you swap PCs connected to the CM" href="swap.html">Swapping&nbsp;PCs&nbsp;on&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Multiple PCs sharing one CM, home LANs, and NAT Routers" href="homelan.html">PCs&nbsp;sharing&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Using dial-up without losing cable connection" href="dialup.html">Simul&nbsp;dialup&nbsp;&amp;&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Problems with some VPN configurations" href="vpn.html">VPN&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Keep your clock correct, for ever, from cable time" href="timesync.html">Time&nbsp;sync</a>.<br>
+							<a class="sidelink" title="Avoiding virus and trojan infections" href="virus.html">Virus&nbsp;security</a>.<br>
+							<a class="sidelink" title="Configuring firewalls for cable connection" href="security.html">Firewall&nbsp;security</a>.<br>
+							<a class="sidelink" title="Limitations of some speed tests" href="speed.html">Speed&nbsp;testing</a>.<br>
+							<a class="sidelink" title="Understanding, diagnosing, and fixing latency and ping problems" href="latency.html">Latency issues</a>.<br>
+							<a class="sidelink" title="How to perform a traceroute, and how they can mislead" href="traceroute.html">Traceroute</a>.<br>
+							<a class="sidelink" title="Understanding and diagnosing packet loss" href="loss.html">Packet loss</a>.<br>
+							<a class="sidelink" href="frontpage.html">FrontPage tips</a>.<br>
+							<a class="sidelink" title="How to obtain technical support" href="techsupp.html">NTL/BY&nbsp;Tech&nbsp;Support</a>.</div>
+					</td>
+					<td width="18">&nbsp;</td>
+				</tr>
+			</table>
+			<!-- #BeginEditable "main" -->
+				<h2><a name="usb"></a><a name="usb4100"></a>USB connections between cable modem and PC</h2>
+				<p>Some cable modems have both an ethernet socket and a USB socket. Examples include:</p>
+				<ul>
+					<li>Surfboard 4100</li>
+					<li>Terayon TeraJet 210</li>
+					<li>ntl:home 100/120 (Ambit)</li>
+				</ul>
+				<p>Articles on this page:</p>
+				<ul>
+					<li><a href="#usbvsenet">USB vs ethernet: the pros and cons</a>.</li>
+					<li><a href="#usbswap">Swapping USB to ethernet and vice-versa</a>.</li>
+					<li><a href="#usbdrivers">Latest USB cable modem drivers and installation procedure</a>.</li>
+					<li><a href="#usbchip">USB chipset driver updates</a>.</li>
+					<li><a href="#xpusb">Windows XP and USB sleep/standby problems</a>. <span class="flash">&nbsp;New 2002 June 23&nbsp;</span></li>
+				</ul>
+				<hr>
+				<h3><a name="usbvsenet"></a>USB vs ethernet: the pros and cons</h3>
+				<p>USB networking imposes a heavier load on the system processor than ethernet does, so there might be a performance impact in using USB for networking: this is unlikely to affect your network speeds, but might affect the percentage of processor time available to applications. The USB experience is influenced greatly by the quality of the USB device drivers: ethernet drivers are more mature than USB ones. Some PCs have USB hardware that needs driver updates, see below. Some PCs have USB hardware that is not good enough for the high demands of a cable modem: you might get less trouble from an ethernet card. But an ethernet card involves extra expense, whereas USB connections are built in to most modern PCs. USB cable modem drivers do not work with Windows 95, even 95 with USB Additions.</p>
+				<p>If your PC already has an ethernet card, there is no contest: use ethernet.</p>
+				<p>USB drivers for cable modems are not available for Apple Macs: this is not too great a loss, as every Apple Mac has an ethernet socket built-in.</p>
+				<hr>
+				<h3><a name="usbswap"></a>Swapping USB to ethernet and vice-versa</h3>
+				<p>Unless you are able to lease more than one IP address from your ISP, you cannot use both the ethernet and the USB port simultaneously, as you are still limited to one network device per cable modem: this restriction definitely applies to both <span class="ntl">ntl:world</span> and <span class="by">blueyonder</span>.</p>
+				<p>If you switch between using the ethernet and the USB sockets or vice versa, you must power cycle the cable modem: this is the same problem as described in <b><a href="swap.html#swap">Swapping computers on the cable modem</a></b>.</p>
+				<p>A typical procedure for swapping from USB to ethernet would therefore be as follows:</p>
+				<ul>
+					<li>Shut down the operating system, and power off the PC.</li>
+					<li>Power off the cable modem.</li>
+					<li>Unplug USB cable from both cable modem and PC.</li>
+					<li>Connect cable modem's ethernet port to PC's ethernet port (usually with a straight-through <a href="ethernet.html#xover">ethernet cable</a>).</li>
+					<li>Power on cable modem, wait for it to finish booting, with all LEDs in normal condition.</li>
+					<li>Power on PC.</li>
+				</ul>
+				<p>The default <a href="basicset.html">network settings</a> arising from a new installation of an ethernet card will usually work.</p>
+				<p>No cable modem drivers are required for ethernet connections, but the ethernet card might require a driver installation if the operating system does not automatically recognise it.</p>
+				<p>Do not re-run any broadband installation software provided by your ISP. There is no need to re-register your cable modem account. However, for those ISPs which require the MAC address of the user's PC to be registered, this will be a necessary step, as the PC's MAC address will have changed.</p>
+				<hr>
+				<h3><a name="usbdrivers"></a>Latest USB cable modem drivers</h3>
+				<p>Rather than using the USB drivers that came on the CD-ROM with your cable modem, you should download the latest versions from the vendor's support site:</p>
+				<ul>
+					<li>For the latest USB drivers for the Surfboard 4100, see <a href="http://www.gi.com/noflash/usb_drivers.asp" title="USB drivers for Surfboard 4100">http://www.gi.com/noflash/usb_drivers.asp</a>.</li>
+					<li>For the latest USB drivers for the Terayon TeraJet series, go to <a href="http://www.terayon.com/" title="Terayon site">http://www.terayon.com/</a>, click the <b>Support</b> link, click <b>TeraJet DOCSIS Cable Modems</b>, then click the link for <b>USB drivers</b>. The latest version posted for XP compatability also works with all earlier versions of Windows.</li>
+					<li class="ntlns4">For USB drivers for the ntl:home 100 (Ambit) more recent than those on the Broadband Installer v1.1 CD-ROM, see <a title="Updated generic Ambit drivers" href="http://www.ntlworld.com/help/windows98/ntlhome100/">http://www.ntlworld.com/help/windows98/ntlhome100/</a>. Although this version is posted as being for Windows 98 First Edition only, I have tried it on Windows ME and Windows XP Pro with better results than the version on the Broadband Installer v1.1 CD-ROM. <b>Warning:</b> if you use these drivers on other than Windows 98 First Edition, you might disqualify yourself from support from NTL. The version posted above is the same as the version on the Broadband Installer v1.2 CD-ROM.</li>
+				</ul>
+				<p>For the Surfboard/Terayon, you will need to un-zip the downloaded file into an empty folder to obtain the driver files. (If you are using Windows ME or XP, you can do this by right-clicking the ZIP file and selecting <b>Extract all</b>. For older Windows versions, use a utility such as <a title="Get WinZip" href="http://www.winzip.com/">WinZip</a> or the free <a title="Get Stuffit Expander" href="http://www.aladdinsys.com/">Stuffit Expander</a> for Windows). If the un-zipped files include a <b>readme</b> file, read it now.</p>
+				<p>If the supplied files include an <b>Uninstall</b> program (for instance, the Terayon files include <b>tbnt-usbscrub.exe</b>), then:</p>
+				<ul>
+					<li>Use the uninstaller to remove the old USB drivers: restart after use.</li>
+					<li>Ensure the cable modem is powered on, and connected to the PC via USB.</li>
+					<li>When Windows detects new hardware, skip to the <b><a href="#hwiz">Hardware Wizard</a></b> section below.</li>
+				</ul>
+				<p>If there was not an <b>Uninstall</b> program with the driver files, and old drivers are already installed, then you can update them as follows:</p>
+				<ul>
+					<li>Ensure the cable modem is powered on, and connected to the PC via USB.</li>
+					<li>Right-click <b>My Computer</b>, and select <b>Properties</b> (or open control panel <b>System</b>).</li>
+					<li>[9x/ME] click tab <b>Device Manager</b>.</li>
+					<li>[2K/XP] click tab <b>Hardware</b>, click button <b>Device Manager</b>.</li>
+					<li>Expand <b>Network Adapters</b>.</li>
+					<li>Right-click the adapter for the USB cable modem, and select <b>Update Driver...</b></li>
+					<li>Select <b>Install from a list or specific location (Advanced)</b>, click <b>Next</b>.</li>
+				</ul>
+				<p><a name="hwiz"></a>Then, in the <b>Hardware Wizard</b>:</p>
+				<ul>
+					<li>[9x/ME] select <b>Search for the best driver for your device (Recommended)</b>.</li>
+					<li>[2K/XP] select <b>Search for the best driver in these locations</b>.</li>
+					<li>[9x/ME] uncheck <b>Floppy disk drives</b>, uncheck <b>CD-ROM drive</b>, uncheck <b>Microsoft Windows Update</b>; [2K/XP] uncheck <b>Search removable media</b>.</li>
+					<li>Check [9x/ME] <b>Specify a location</b> or [2K/XP] <b>Include this location in the search</b>.</li>
+					<li>Click button <b>Browse</b>.</li>
+					<ul>
+						<li>navigate to the folder containing the new drivers;</li>
+						<li>click <b>OK</b> to exit the browse dialogue.</li>
+					</ul>
+					<li>Click <b>Next</b>.</li>
+					<li>Follow the Hardware Wizard instructions to complete the installation. For Windows 98, you might require the Windows System CD-ROM.</li>
+					<li>[XP] Ignore warnings that the driver is not digitally signed: click <b>Continue Anyway</b>.</li>
+				</ul>
+				<p>If Windows 9x/ME does not correctly install the USB drivers for the 4100, it might be necessary to do the following:</p>
+				<ul>
+					<li>Open <b>Control Panel</b>.</li>
+					<li>Double-click <b>System</b>.</li>
+					<li>Click tab <b>Device Manager</b>.</li>
+					<li>Expand <b>Universal Serial Bus Controllers</b>.</li>
+					<li>If a <b>USB composite device</b> is listed, select it and click <b>R<u>e</u>move</b>.</li>
+					<li>Click <b>OK</b> to exit System Properties.</li>
+					<li>Shut down the PC.</li>
+					<li>While the PC is off, power off the cable modem, power it on again, and wait for the lights to go steady.</li>
+					<li>Ensure the USB cable connects the cable modem to the PC.</li>
+					<li>Start the PC.</li>
+					<li>When Windows asks for drivers, select to Search for the best drivers.</li>
+					<li>Guide Windows to the location of the driver <b>.INF</b> file (on the CD-ROM or in the downloaded files).</li>
+					<li>Now the drivers will be recognised and Windows should finish the installation.</li>
+					<li>It might throw up one more error (e.g. <b>NET4100.SYS</b> cannot be found): just click <b>OK</b>.</li>
+					<li>When Windows asks to restart, let it.</li>
+				</ul>
+				<hr>
+				<h3><a name="usbchip"></a>USB chipset driver updates</h3>
+				<p>If use of cable modem through USB causes problems such as Windows crashes or freezes, you might need to update the drivers for the USB support chipset. To do this, you should visit the support site of the USB chipset manufacturer. <a href="http://www.usbman.com/">http://www.usbman.com/</a> has specific pointers for ALi, SiS, and VIA chipsets: scroll down the left-hand column looking for the heading <b>Host Type</b>.</p>
+				<p>If your PC provides USB support with a VIA chipset (used on many Athlon motherboards), you might need to download updated <b>4-in-1</b> USB chipset drivers from <a href="http://www.viaarena.com/" title="VIA Technologies support site">http://www.viaarena.com/</a>, and you might also need the <b>USB Filter Patch</b> from the same site. See also a VIA support site at <a href="http://www.viahardware.com/" title="VIA hardware supporters">http://www.viahardware.com/</a>. </p>
+				<p>Another option to consider is updating the BIOS on the motherboard: visit the support site of your PC manufacturer.</p>
+				<p>For further extensive advice on USB problems see <a href="http://www.usbman.com/" title="USB Man">http://www.usbman.com/</a>.</p>
+				<hr>
+				<h3><a name="xpusb"></a>Windows XP and USB sleep/standby problems</h3>
+				<p>If you have applied all the updates and patches referred to the article on USB chipset driver updates, and you still get occasional USB disconnections, it is possible that your USB cable modem driver is not smart enough to recover after XP has put the USB root hub into standby to save power. (VIA users note that the <b>USB Filter Patch</b> appears to address similar issues).</p>
+				<p>If drivers and patches don't fix this, you can prevent XP putting USB to sleep as follows:</p>
+				<ul>
+					<li>Right-click <b>My Computer</b> and select <b>Properties</b> (or open control panel <b>System</b>).</li>
+					<li>Click tab <b>Hardware</b>, click button <b>Device Manager</b>.</li>
+					<ul>
+						<li>Expand <b>Universal Serial Bus controllers</b>.</li>
+						<li>Double-click <b>USB Root Hub</b> (or right-click it and select <b>Properties</b>).</li>
+						<ul>
+							<li>Click tab <b>Power Management</b>.</li>
+							<li>Uncheck <b>Allow the computer to turn off this device to save power</b>.</li>
+							<li>Click <b>OK</b> to exit <b>USB Root Hub Properties</b>.</li>
+						</ul>
+						<li>Click the red cross to close <b>Device Manager</b>.</li>
+					</ul>
+					<li>Click <b>OK</b> to close <b>System Properties</b>.</li>
+				</ul>
+				<hr>
+			<!-- #EndEditable -->
+			<p>Return to <a href="index.html">Index</a>.</p>
+		</body>
+
+	<!-- #EndTemplate -->
+
+</html>
+

@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+
+<html lang="en">
+
+	<!-- #BeginTemplate "../../cmtips.data/Templates/cmtemp.html" -->
+
+		<head>
+			<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+			<title>Cable Modem Troubleshooting Tips: Packet Loss</title>
+			<!-- #BeginHeadLocked "" -->
+				<meta name="description" content="Technical tips for troubleshooting a cable modem connection.">
+				<meta name="keywords" content="cable modem, FAQ, broadband, cablemodem, troubleshooting, tips, NTL, NTLworld, ntlhome, Telewest, blueyonder">
+				<meta name="author" content="Robin Walker">
+				<meta name="copyright" content="&copy; 2001-02 Robin Walker">
+				<link href="../favicon.ico" rel="shortcut icon">
+				<link href="mailto:rdhw@cam.ac.uk" rel="author">
+				<link href="copyright.html" rel="copyright">
+				<link href="index.html" rel="index">
+				<link href="cmstyle.css" rel="stylesheet">
+				<script type="text/javascript" language="JavaScript"><!--
+function jsinit() {
+  if (top!=self) top.location.href = self.location.href;
+}
+// -->
+</script>
+			<!-- #EndHeadLocked -->
+		</head>
+
+		<body onload="jsinit()" bgcolor="#eeffff">
+			<h1>Cable Modem Troubleshooting Tips</h1>
+			<hr>
+			<table border="0" cellpadding="0" align="left" summary="Quick links">
+				<tr>
+					<td nowrap bgcolor="#ffffff">
+						<div class="menubox">
+							<a class="sidelink" title="Introduction and Index to articles" href="index.html">Intro&nbsp;&amp;&nbsp;Index</a>.<br>
+							<a class="sidelink" title="History of updates and changes to this site" href="hist.html">Update&nbsp;history</a>.<br>
+							<a class="sidelink" title="Problems with BroadJump Broadband Installer" href="broadjump.html">Installer issues</a>.<br>
+							<a class="sidelink" title="Problems associated with getting a cable modem registered with your cable operator" href="register.html">Registration&nbsp;issues</a>.&nbsp;<br>
+							<a class="sidelink" title="PC network configuration for cable service" href="basicset.html">Network&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Swapping one PC between multiple networks" href="mobile.html">Mobile&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Understanding the flashing lights on the cable modem" href="lights.html">Cable&nbsp;Modem&nbsp;LEDs</a>.<br>
+							<a class="sidelink" title="How to determine various important IP addresses" href="ipaddr.html">IP&nbsp;addresses</a>.<br>
+							<a class="sidelink" title="How to determine various important MAC addresses" href="macaddr.html">MAC addresses</a>.<br>
+							<a class="sidelink" title="What to check if you have no service" href="badip.html">Dead&nbsp;connection</a>.<br>
+							<a class="sidelink" title="Updating your system with the latest patches and fixes" href="sysupdates.html">System&nbsp;updates</a>.<br>
+							<a class="sidelink" title="Tweaking your PC for best cable modem performance" href="tweaks.html">Network&nbsp;tweaks</a>.<br>
+							<a class="sidelink" title="Problems specifically related to the ethernet connection between your PC and the cable modem" href="ethernet.html">Ethernet&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Problems specifically related to a USB connection between the PC and cable modem" href="usb.html">USB&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Procedures and tips specifically for Surfboard cable modems" href="surfboard.html">Surfboard&nbsp;tips</a>.<br>
+							<a class="sidelink" title="Diagnosing your cable modem's connection" href="signal.html">CM&nbsp;diagnostics</a>.<br>
+							<a class="sidelink" title="Quality of service determined by configuration file" href="cmfile.html">CM&nbsp;config&nbsp;file</a>.<br>
+							<a class="sidelink" title="The network structure of a cable modem" href="cmworks.html">CM&nbsp;tech&nbsp;info</a>.<br>
+							<a class="sidelink" title="DHCP-related problems" href="dhcp.html">DHCP&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Understanding DNS and fixing DNS problems" href="dnsname.html">DNS&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Transparent web proxy caches and how to sidestep them" href="trancache.html">Web&nbsp;proxy&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance of streaming media" href="stream.html">Streaming&nbsp;media</a>.<br>
+							<a class="sidelink" title="Settings that affect performance, latency and pings" href="games.html">Gaming&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance; avoiding saturation of upstream" href="p2p.html">P2P&nbsp;file-sharing</a>.<br>
+							<a class="sidelink" title="Work around connection errors" href="seti.html">SETI@home&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect web browsing performance" href="fasterweb.html">Faster&nbsp;web&nbsp;browsing</a>.<br>
+							<a class="sidelink" title="Strategies to get better download speeds" href="fasterftp.html">Faster&nbsp;downloads</a>.<br>
+							<a class="sidelink" title="How to avoid performance hits" href="downup.html">Simul&nbsp;down/uploads</a>.<br>
+							<a class="sidelink" title="How to restore lost connection when you swap PCs connected to the CM" href="swap.html">Swapping&nbsp;PCs&nbsp;on&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Multiple PCs sharing one CM, home LANs, and NAT Routers" href="homelan.html">PCs&nbsp;sharing&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Using dial-up without losing cable connection" href="dialup.html">Simul&nbsp;dialup&nbsp;&amp;&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Problems with some VPN configurations" href="vpn.html">VPN&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Keep your clock correct, for ever, from cable time" href="timesync.html">Time&nbsp;sync</a>.<br>
+							<a class="sidelink" title="Avoiding virus and trojan infections" href="virus.html">Virus&nbsp;security</a>.<br>
+							<a class="sidelink" title="Configuring firewalls for cable connection" href="security.html">Firewall&nbsp;security</a>.<br>
+							<a class="sidelink" title="Limitations of some speed tests" href="speed.html">Speed&nbsp;testing</a>.<br>
+							<a class="sidelink" title="Understanding, diagnosing, and fixing latency and ping problems" href="latency.html">Latency issues</a>.<br>
+							<a class="sidelink" title="How to perform a traceroute, and how they can mislead" href="traceroute.html">Traceroute</a>.<br>
+							<a class="sidelink" title="Understanding and diagnosing packet loss" href="loss.html">Packet loss</a>.<br>
+							<a class="sidelink" href="frontpage.html">FrontPage tips</a>.<br>
+							<a class="sidelink" title="How to obtain technical support" href="techsupp.html">NTL/BY&nbsp;Tech&nbsp;Support</a>.</div>
+					</td>
+					<td width="18">&nbsp;</td>
+				</tr>
+			</table>
+			<!-- #BeginEditable "main" -->
+				<h2>Packet loss <span class="flash">&nbsp;New page 2002 Sep 1&nbsp;</span></h2>
+				<ul>
+					<li><a href="#what">What is packet loss</a>?</li>
+					<li><a href="#effect">What is the effect of packet loss</a>?</li>
+					<li><a href="#diag">Diagnosing packet loss</a>.</li>
+					<li><a href="#tshoot">Troubleshooting packet loss</a>.</li>
+					<li><a href="#pace">Packet loss in Pace digital TV set top box models 2000 or 4000</a>. <span class="flash">&nbsp;New 2002 Sep 7&nbsp;</span></li>
+				</ul>
+				<hr>
+				<h3><a name="what"></a>What is packet loss?</h3>
+				<p><b>Packet loss</b> describes an error condition in which data packets appear to be transmitted correctly at one end of a connection, but never arrive at the other. This might be because:</p>
+				<ul>
+					<li>network conditions are poor and the packet became damaged in transit;</li>
+					<li>the packet was deliberately dropped at a router because of internet congestion.</li>
+				</ul>
+				<hr>
+				<h3><a name="effect"></a>What is the effect of packet loss?</h3>
+				<p>The main observable effect of packet loss is poor data throughput performance. But packet loss is not the only cause of poor performance, so some care is needed in diagnosing whether packet loss is being experienced.</p>
+				<hr>
+				<h3><a name="diag"></a>Diagnosing packet loss</h3>
+				<p>Packet loss exhibits itself in different ways according to the protocol that is being observed or tested. Certain error conditions might affect one protocol but not others.</p>
+				<p>With <b>UDP</b> (Unreliable Datagram Protocol), used by many online games and streaming media applications, it is impossible to use any system tools to assess whether UDP packets are being lost: only the applications themselves have any knowledge of their network usage. The games or applications might tell you whether they consider they are losing packets.</p>
+				<p>The <b>ICMP</b> (Internet Control Message Protocol) is used by the <a href="latency.html#ping"><b>ping</b></a> and <a href="traceroute.html"><b>traceroute</b></a> commands. The output of a <b>ping</b> command normally finishes with an analysis of packets sent, returned, and lost. Ideally there should be no losses, and a loss rate exceeding 5% is really pretty bad. The output of a <b>traceroute</b> command will show an asterisk in place of a dropped packet. The <b>ping</b> command is a fair way of establishing whether there is reasonable connectivity with a specific remote host, but it does not indicate at which point in the journey things might be going wrong. The <b>traceroute</b> command can sometimes indicate the point in the route at which packet loss occurs, or begins to occur.</p>
+				<p>The <b>TCP</b> (Transmission Control Protocol) is used to carry most important data on the internet, including web pages, e-mail, news posts, and file transfers. TCP guarantees end-to-end delivery, and is self-healing. It does this by detecting errors and recovering, which might involve re-transmitting packets after packet loss. This happens automatically, and the applications using TCP are entirely unaware that errors have occurred and been fixed. The applications cannot therefore inform you of any such error conditions. The only thing you might observe is poor upload or download performance: poorer than your cable modem rate cap would suggest.</p>
+				<p>Although we can't actually count lost packets, we can infer estimates of packet loss by observing statistics of TCP error recovery kept by the operating system.</p>
+				<p>For instance, open a command window and type the following command:</p>
+				<blockquote>
+					<pre class="logns4">C:\&gt;<b>netstat -s -p tcp
+
+</b>TCP Statistics for IPv4
+
+  Active Opens                        = 201
+  Passive Opens                       = 12
+  Failed Connection Attempts          = 0
+  Reset Connections                   = 16
+  Current Connections                 = 1
+  Segments Received                   = 1679
+  <span class="yellbg">Segments Sent                       = 1617</span>
+  <span class="yellbg">Segments Retransmitted              = 2   </span></pre>
+				</blockquote>
+				<p>This shows that, of 1617 packets sent, only 2 had to be retransmitted, which is very good. A retransmission rate higher than a few percent would be poor. Retransmission might occur because:</p>
+				<ul>
+					<li>a packet that this PC sent was lost and never received at the far end; or</li>
+					<li>the packet was received at the far end, but the <b>ACK</b> acknowledgement packet from the far end back to this PC was lost.</li>
+				</ul>
+				<p>These figures are cumulative totals since the last restart, and might therefore include the effects of some problem long since cured. What matters is how the counters are changing now. It would be better when investigating an upload performance problem to do this:</p>
+				<ul>
+					<li>use <b>netstat</b> to record the values of the <b>Sent</b> and <b>Retransmitted</b> counts;</li>
+					<li>perform a large upload, e.g. FTP to some remote FTP server;</li>
+					<li>use <b>netstat</b> to record the new values of the <b>Sent</b> and <b>Retransmitted</b> counts;</li>
+					<li>subtract the earlier counts from the later counts to derive the counts for the upload itself;</li>
+					<li>if the <b>Retransmitted</b> count increase is more than a few percent of the <b>Sent</b> count increase, then there must be some packet loss problem associated with that upload.</li>
+				</ul>
+				<p>For instance, here is an example:</p>
+				<blockquote>
+					<pre class="logns4"><b>Before upload</b>:
+Segments Sent                       = 12506
+Segments Retransmitted              = 485
+&nbsp;
+<b>After upload</b>:
+Segments Sent                       = 14214
+Segments Retransmitted              = 1156
+
+So, segments sent      = 14214 - 12506 = 1708
+Segments retransmitted =  1156 -   485 =  671
+
+Nearly 40% retransmitted.
+</pre>
+				</blockquote>
+				<p>This is a very poor result.</p>
+				<p>Systems other than Windows (e.g. Linux, Mac OS X) have better output to <b class="nowrap">netstat -s -p tcp</b>, and include a count of <b>Duplicates Received</b> as well as <b>Segments Received</b>. A duplicate packet might be received because:</p>
+				<ul>
+					<li>An <b>ACK</b> acknowledgement packet that this PC sent (in response to receiving a data packet from the far end) was lost and not received at the far end, so the far end retransmitted the data packet.</li>
+				</ul>
+				<p>Again, the strategy for investigating a download performance problem should be:</p>
+				<ul>
+					<li>use <b>netstat</b> to record the values of the <b>Received</b> and <b>Duplicate</b> counts;</li>
+					<li>perform a large download, preferably by FTP to avoid web proxy caches;</li>
+					<li>use <b>netstat</b> to record the new values of the <b>Received</b> and <b>Duplicate</b> counts;</li>
+					<li>subtract the earlier counts from the later counts to derive the counts for the download itself;</li>
+					<li>if the <b>Duplicate</b> count increase is more than a few percent of the <b>Received</b> count increase, then there must be some packet loss problem associated with that download.</li>
+				</ul>
+				<hr>
+				<h3><a name="tshoot"></a>Troubleshooting packet loss</h3>
+				<p>There are only a few things under a user's control that can cause packet loss, and be fixable.</p>
+				<p>Things that you can possibly remedy are:</p>
+				<ul>
+					<li>Check that there is not an <a href="ethernet.html#ethernet">ethernet duplex setting mismatch</a> between the PC and the cable modem.</li>
+					<li>Avoid doing network transfers that saturate the upstream rate cap of the cable modem:</li>
+					<ul>
+						<li>Use one of the solutions for avoiding saturation of the upstream rate cap listed in <a href="downup.html">Simultaneous download and upload performance</a>.</li>
+						<li>Ensure that <a href="p2p.html">P2P applications</a> have an upload throttle set below that of the cable modem upstream rate cap;</li>
+						<li>Ensure that <a href="games.html">games</a> have a client rate set below that of the cable modem upstream rate cap;</li>
+						<li>For FTP uploads, use an FTP application (such as <a title="LeechFTP download site" href="http://stud.fh-heilbronn.de/%7ejdebis/leechftp/">LeechFTP</a>) that is capable of throttling the upload rate.</li>
+					</ul>
+					<li>For some obscure routing problems on uploads to distant hosts, packet loss can sometimes be lessened by reducing the PC's MTU setting from the normal 1500 to a smaller value, but this cannot be considered to be a permanent solution as small MTUs lead to general poor performance.</li>
+					<li>If the PC has a ridiculously large TCP Receive Window (RWIN) value, then trivial packet loss on downloads can cause large retransmissions from the remote server (the complete RWIN length might have to be retransmitted), with consequent reduction in performance. The RWIN setting should be only just a bit more than it needs to be from the formula for the minimum RWIN for optimal performance.</li>
+				</ul>
+				<p>The things that you might be able to diagnose but the ISP needs to remedy are:</p>
+				<ul>
+					<li>poor cable signal conditions: see <a href="signal.html">Cable modem diagnostics and signal levels</a>.</li>
+				</ul>
+				<p>Most other packet loss occurs within the internet and is beyond the control of the user.</p>
+				<hr>
+				<div class="ntlns4">
+					<h3><a name="pace"></a>Packet loss in Pace digital TV set top box models 2000 or 4000</h3>
+					<p>A user has reported experiencing packet loss with the Pace models 2000 or 4000 (but not the model 1000) when performing uploads. In his case, he found that a cure was:</p>
+					<ul>
+						<li><b>either</b>: throttling the upload rate to be just less than the upstream rate cap;</li>
+						<li><b>or</b>: setting an MTU of 242 or less (instead of the default 1500) on the network interface connected to the STB. This is a very drastic cure, and not usually to be recommended, because it would normally cripple upload performance on a properly functioning broadband connection. However, if it works for others in these circumstances, it might be worth trying.</li>
+					</ul>
+					<p>To experiment with MTU settings on Windows systems, try <b>Dr&nbsp;TCP</b> from <a title="DrTCP download site" href="http://www.broadbandreports.com/front/drtcp.html">http://www.broadbandreports.com/front/drtcp.html</a>. Use the <b>Adapter Settings</b> pull-down to select the network interface that connects to the cable modem, type the desired MTU in the <b>MTU</b> box, click <b>Save</b>, click <b>Exit</b>, then restart the PC. For more information on <b>Dr&nbsp;TCP</b>, see <a title="Dr TCP documentation" href="http://www.dslreports.com/faq/578">http://www.dslreports.com/faq/578</a>. </p>
+				</div>
+				<hr>
+			<!-- #EndEditable -->
+			<p>Return to <a href="index.html">Index</a>.</p>
+		</body>
+
+	<!-- #EndTemplate -->
+
+</html>
+

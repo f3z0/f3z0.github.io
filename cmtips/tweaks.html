@@ -1,0 +1,236 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+
+<html lang="en">
+
+	<!-- #BeginTemplate "../../cmtips.data/Templates/cmtemp.html" -->
+
+		<head>
+			<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+			<title>Cable Modem Troubleshooting Tips: Networking tweaks</title>
+			<!-- #BeginHeadLocked "" -->
+				<meta name="description" content="Technical tips for troubleshooting a cable modem connection.">
+				<meta name="keywords" content="cable modem, FAQ, broadband, cablemodem, troubleshooting, tips, NTL, NTLworld, ntlhome, Telewest, blueyonder">
+				<meta name="author" content="Robin Walker">
+				<meta name="copyright" content="&copy; 2001-02 Robin Walker">
+				<link href="../favicon.ico" rel="shortcut icon">
+				<link href="mailto:rdhw@cam.ac.uk" rel="author">
+				<link href="copyright.html" rel="copyright">
+				<link href="index.html" rel="index">
+				<link href="cmstyle.css" rel="stylesheet">
+				<script type="text/javascript" language="JavaScript"><!--
+function jsinit() {
+  if (top!=self) top.location.href = self.location.href;
+}
+// -->
+</script>
+			<!-- #EndHeadLocked -->
+		</head>
+
+		<body onload="jsinit()" bgcolor="#eeffff">
+			<h1>Cable Modem Troubleshooting Tips</h1>
+			<hr>
+			<table border="0" cellpadding="0" align="left" summary="Quick links">
+				<tr>
+					<td nowrap bgcolor="#ffffff">
+						<div class="menubox">
+							<a class="sidelink" title="Introduction and Index to articles" href="index.html">Intro&nbsp;&amp;&nbsp;Index</a>.<br>
+							<a class="sidelink" title="History of updates and changes to this site" href="hist.html">Update&nbsp;history</a>.<br>
+							<a class="sidelink" title="Problems with BroadJump Broadband Installer" href="broadjump.html">Installer issues</a>.<br>
+							<a class="sidelink" title="Problems associated with getting a cable modem registered with your cable operator" href="register.html">Registration&nbsp;issues</a>.&nbsp;<br>
+							<a class="sidelink" title="PC network configuration for cable service" href="basicset.html">Network&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Swapping one PC between multiple networks" href="mobile.html">Mobile&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Understanding the flashing lights on the cable modem" href="lights.html">Cable&nbsp;Modem&nbsp;LEDs</a>.<br>
+							<a class="sidelink" title="How to determine various important IP addresses" href="ipaddr.html">IP&nbsp;addresses</a>.<br>
+							<a class="sidelink" title="How to determine various important MAC addresses" href="macaddr.html">MAC addresses</a>.<br>
+							<a class="sidelink" title="What to check if you have no service" href="badip.html">Dead&nbsp;connection</a>.<br>
+							<a class="sidelink" title="Updating your system with the latest patches and fixes" href="sysupdates.html">System&nbsp;updates</a>.<br>
+							<a class="sidelink" title="Tweaking your PC for best cable modem performance" href="tweaks.html">Network&nbsp;tweaks</a>.<br>
+							<a class="sidelink" title="Problems specifically related to the ethernet connection between your PC and the cable modem" href="ethernet.html">Ethernet&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Problems specifically related to a USB connection between the PC and cable modem" href="usb.html">USB&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Procedures and tips specifically for Surfboard cable modems" href="surfboard.html">Surfboard&nbsp;tips</a>.<br>
+							<a class="sidelink" title="Diagnosing your cable modem's connection" href="signal.html">CM&nbsp;diagnostics</a>.<br>
+							<a class="sidelink" title="Quality of service determined by configuration file" href="cmfile.html">CM&nbsp;config&nbsp;file</a>.<br>
+							<a class="sidelink" title="The network structure of a cable modem" href="cmworks.html">CM&nbsp;tech&nbsp;info</a>.<br>
+							<a class="sidelink" title="DHCP-related problems" href="dhcp.html">DHCP&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Understanding DNS and fixing DNS problems" href="dnsname.html">DNS&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Transparent web proxy caches and how to sidestep them" href="trancache.html">Web&nbsp;proxy&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance of streaming media" href="stream.html">Streaming&nbsp;media</a>.<br>
+							<a class="sidelink" title="Settings that affect performance, latency and pings" href="games.html">Gaming&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance; avoiding saturation of upstream" href="p2p.html">P2P&nbsp;file-sharing</a>.<br>
+							<a class="sidelink" title="Work around connection errors" href="seti.html">SETI@home&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect web browsing performance" href="fasterweb.html">Faster&nbsp;web&nbsp;browsing</a>.<br>
+							<a class="sidelink" title="Strategies to get better download speeds" href="fasterftp.html">Faster&nbsp;downloads</a>.<br>
+							<a class="sidelink" title="How to avoid performance hits" href="downup.html">Simul&nbsp;down/uploads</a>.<br>
+							<a class="sidelink" title="How to restore lost connection when you swap PCs connected to the CM" href="swap.html">Swapping&nbsp;PCs&nbsp;on&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Multiple PCs sharing one CM, home LANs, and NAT Routers" href="homelan.html">PCs&nbsp;sharing&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Using dial-up without losing cable connection" href="dialup.html">Simul&nbsp;dialup&nbsp;&amp;&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Problems with some VPN configurations" href="vpn.html">VPN&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Keep your clock correct, for ever, from cable time" href="timesync.html">Time&nbsp;sync</a>.<br>
+							<a class="sidelink" title="Avoiding virus and trojan infections" href="virus.html">Virus&nbsp;security</a>.<br>
+							<a class="sidelink" title="Configuring firewalls for cable connection" href="security.html">Firewall&nbsp;security</a>.<br>
+							<a class="sidelink" title="Limitations of some speed tests" href="speed.html">Speed&nbsp;testing</a>.<br>
+							<a class="sidelink" title="Understanding, diagnosing, and fixing latency and ping problems" href="latency.html">Latency issues</a>.<br>
+							<a class="sidelink" title="How to perform a traceroute, and how they can mislead" href="traceroute.html">Traceroute</a>.<br>
+							<a class="sidelink" title="Understanding and diagnosing packet loss" href="loss.html">Packet loss</a>.<br>
+							<a class="sidelink" href="frontpage.html">FrontPage tips</a>.<br>
+							<a class="sidelink" title="How to obtain technical support" href="techsupp.html">NTL/BY&nbsp;Tech&nbsp;Support</a>.</div>
+					</td>
+					<td width="18">&nbsp;</td>
+				</tr>
+			</table>
+			<!-- #BeginEditable "main" -->
+				<h2><a name="tweaks"></a>Networking tweaks</h2>
+				<ul>
+					<li><a href="#dialtw">Remove dial-up tweaks</a></li>
+					<li><a href="#cabletw">Install cable tweaks</a></li>
+					<li><a href="#cfg">Network configuration tweaks</a> <span class="flash">&nbsp;New 2002 Aug 17, updated Aug 31&nbsp;</span></li>
+				</ul>
+				<hr>
+				<h3><a name="dialtw"></a>Remove dial-up tweaks</h3>
+				<p>If you have previously installed networking tweaks for dial-up modem performance (you might not know you had installed them if your dial-up ISP installation did it for you), you <b>must</b> remove them in order to use the cable modem service. The timings of cable modems are quite different to those of dial-up modems, and certain dial-up tweaks (such as reduced <b>MTU</b> size) will substantially degrade cable modem performance: a virgin Windows ethernet configuration would perform better on cable modem than one which has had dial-up tweaks installed. In extreme cases, or where you have forgotten how to remove the tweaks, re-installation of Windows (a simple re-install, not a re-format) has cured the problem of performance degradation: boot from the Windows system CD-ROM or associated boot diskette. You will need diskettes or CD-ROMs for any special drivers you also need to re-install.</p>
+				<p>Actually, although a full re-installation of Windows 9x/ME will remove old unwanted tweaks, there is a slightly faster procedure for the confident Windows user. In the control panel <b>Network</b>, in the<b> Properties</b> panel, remove all network adapters (green icons), exit, and allow Windows to restart. It will re-discover all network adapters, and re-install them with fresh settings. You will need your Windows system CD-ROM, and diskettes or CD-ROMs for any drivers required for your network adapters.</p>
+				<hr>
+				<h3><a name="cabletw"></a>Install cable tweaks</h3>
+				<p>A good site for determining whether any tweaking is necessary or desirable is <a href="http://www.dslreports.com/tweaks" title="DSLReports">http://www.dslreports.com/tweaks</a> (take the Tweak test: on the results page, declare your connection be be via <b>Normal</b>), but be aware that this site is mainly aimed at xDSL users, and some advice, such as that concerned with PPPoE, does not apply to cable modem users. The only Windows networking tweak which has significant benefit for cable modem users is to increase the TCP Receive Window (RWIN). The RWIN tweak will be more significant to Windows 9x users than to Windows ME/2000/XP or Mac users, who have better default settings.</p>
+				<p>A site which has good technical information on tweaking cable modem networking for both Windows and Macs (and also debunks many of the myths) is <a href="http://cable-dsl.home.att.net/" title="Navas Cable Modem/DSL Tuning Guide">http://cable-dsl.home.att.net/</a>. See also <a href="http://www.speedguide.net/Cable_modems/" title="Cable Modems &amp; xDSL Resources">http://www.speedguide.net/Cable_modems/</a> (which unfortunately also propagates some of the urban myths), but has a useful collection of pre-packaged downloadable cable tweaks at <a href="http://www.speedguide.net/Cable_modems/cable_patches.shtml" title="Cable Modems &amp; xDSL Speed Patches and Programs">http://www.speedguide.net/Cable_modems/cable_patches.shtml</a>.</p>
+				<p>The necessary <b>RWIN</b> size for best performance is discussed in the article on <a href="traceroute.html#traceroute"><b>Traceroute</b></a>. The RWIN tweak might make little difference to web browsing performance, because the ISP's transparent caches are very close to your PC, and so the default RWIN setting will be fine. <b>Windows 2000/XP</b> has an adaptive TCP Receive Window, and does not need tweaking.</p>
+				<p>The optimal <b>MTU</b> size for cable connections is 1500 bytes, leading to an optimal <b>MSS</b> size of 1460 bytes. If the tweak test shows a smaller MTU/MSS, then this might indicate a dial-up tweak that needs to be removed. Smaller than optimal MTU/MSS sizes will significantly damage cable performance.</p>
+				<p>If your system is Windows 95, 98, or 98SE, you might benefit from the fix downloadable from: <a href="http://support.microsoft.com/support/kb/articles/Q236/9/26.asp" title="MS KnowledgeBase Q236926">http://support.microsoft.com/support/kb/articles/Q236/9/26.asp</a>. This fix is not for any other version of Windows.</p>
+				<p>Apple Mac users can tweak their network settings with the shareware <b><a href="http://www.sustworks.com/" title="Sustainable Softworks">IPNetTuner</a></b>, which comes with a pre-defined cable modem tweak configuration. The tweaks last for the current session only: the system reverts to defaults when it restarts or when the TCP/IP stack is deactivated and reactivated, such as on a location switch or re-boot.</p>
+				<p>I recommend that you make tweaking the <b>last</b> thing you do, after you have corrected any other faults. Get your system working properly first with a standard configuration, before you try the tweaks.</p>
+				<p>See also the article on <a href="fasterweb.html#fasterweb"><b>Getting Faster Web Browsing</b></a> for web browser tweaks.</p>
+				<hr>
+				<h3><a name="cfg"></a>Network configuration tweaks</h3>
+				<p>This section applies primarily if your PC is connected directly to the cable modem: these recommendations are much less important, and maybe even undesirable, if your PC is part of a LAN connected to a NAT router.</p>
+				<h4>Ethernet interface duplex setting</h4>
+				<p>See article <a href="ethernet.html#ethernet">Ethernet card: duplex setting</a>.</p>
+				<h4>Disable or uninstall unnecessary network components</h4>
+				<p>Default PC configurations often include network clients, services, and protocols which are of no use on a direct cable network connection. Many of them can generate network traffic, such as search probes, putting needless traffic on the upstream, which can cause latency problems for other more important traffic from your PC. Remember: these changes should only be made if the PC is directly connected to the cable modem: an intervening NAT router will stop this needless traffic anyway.</p>
+				<p><b>Windows 2000/XP</b>:</p>
+				<ul>
+					<li>Open control panel <b>Network Connections</b>.</li>
+					<li>Identify the icon for the network interface connecting to the cable modem, right-click it, and select <b>Properties</b>.</li>
+					<li>The central scrollable box lists all installed network components. The check-box to the left of the component name will be checked if this component is active on this network interface. A component can be disabled on this interface only by unchecking the check-box. Alternatively, a component can be globally uninstalled from every network and dial-up interface in the PC by clicking its name to select it, and then clicking <b>Uninstall</b>.</li>
+					<li>The following components might be worth disabling:</li>
+					<ul>
+						<li><b>File and Printer Sharing for Microsoft Networks</b>: this is both a security risk and a source of unnecessary network traffic. It should be <b>disabled</b> unless you are an expert and know what you are doing.</li>
+						<li><b>Client for Microsoft Networks</b>: should be <b>disabled</b> unless you wish to mount drives from a remote PC on the Internet using Microsoft file sharing.</li>
+						<li><b>Client Service for NetWare</b>: should be <b>disabled</b>.</li>
+						<li><b>Service Advertising Protocol</b>: should be <b>disabled</b>.</li>
+						<li><b>SAP Agent</b>: should be <b>disabled</b>.</li>
+						<li><b>NetBEUI Protocol</b>: should be <b>disabled</b>.</li>
+						<li><b>NWLink NetBIOS</b>: should be <b>disabled</b>.</li>
+						<li><b>NWLink IPX/SPX/NetBIOS Compatible Transport Protocol</b>: should be <b>disabled</b>.</li>
+						<li><b>iVLAN Protocol</b>: should be <b>disabled</b>.</li>
+						<li><b>AppleTalk Protocol</b>: should be <b>disabled</b>.</li>
+						<li><b>DLC Protocol</b>: should be <b>disabled</b>.</li>
+					</ul>
+					<li>The following components, if present, should <b>not</b> be disabled:</li>
+					<ul>
+						<li><b>QoS Packet Scheduler</b>: this is harmless and should be left enabled.</li>
+						<li><b>Network Monitor Driver</b>: this is used by the Performance Monitor, is harmless, and should be left enabled.</li>
+						<li><b>Internet Protocol (TCP/IP)</b>: this is essential and must be enabled.</li>
+					</ul>
+					<li>Optimise the remaining network configuration by clicking the name <b>Internet Protocol (TCP/IP)</b> (not its check box) and then click <b>Properties</b>:</li>
+					<ul>
+						<li>Click the button <b>Advanced...</b>:</li>
+						<ul>
+							<li>Click tab <b>DNS</b>:</li>
+							<ul>
+								<li>Uncheck <b>Register this connection's addresses in DNS</b>.</li>
+							</ul>
+							<li>Click tab <b>WINS</b>:</li>
+							<ul>
+								<li>Select <b>Disable NetBIOS over TCP/IP</b>, unless either:</li>
+								<ul>
+									<li><b>Client for Microsoft Networks</b> is <b>enabled</b> <i>and</i> you wish to mount drives from remote Windows 9x/ME systems; or</li>
+									<li><b>File and Printer Sharing for Microsoft Networks</b> is <b>enabled</b> <i>and</i> you wish remote Windows 9x/ME users to mount your shared resources.</li>
+								</ul>
+								<li>Disabling NetBIOS over TCP/IP is also a worthwhile security improvement.</li>
+							</ul>
+							<li>Click <b>OK</b> to close <b>Advanced TCP/IP Settings</b>.</li>
+						</ul>
+						<li>Click <b>OK</b> to close <b>Internet Protocol (TCP/IP) Properties</b>.</li>
+					</ul>
+					<li>Click <b>OK</b> to close the <b>Connection Properties</b>.</li>
+					<li>[XP only] Disable <b>SSDP Discovery Service</b>: Right-click <b>My Computer</b> and select <b>Manage</b>:</li>
+					<ul>
+						<li>In the left-hand box, expand <b>Services and Applications</b>, then select <b>Services</b>.</li>
+						<li>In the right-hand box, scroll down to find <b>SSDP Discovery Service</b>, and double-click it.</li>
+						<ul>
+							<li>Set <b>Startup type</b> to <b>Disabled</b>.</li>
+							<li>Click <b>Stop</b>.</li>
+							<li>Click <b>OK</b> to close <b>SSDP Discovery Service Properties</b>.</li>
+						</ul>
+						<li>Close <b>Computer Management</b>.</li>
+					</ul>
+				</ul>
+				<p><b>Win 95/98/ME</b>:</p>
+				<ul>
+					<li>Open control panel <b>Network</b>.</li>
+					<li>The central scrollable box lists all installed network components. From amongst the components with green adapter icons, identify the network interface that connects to the cable modem. We shall refer to the name of that interface as <b>[cable interface]</b> below.</li>
+					<li>With a single-click, select the component with the green adapter icon entitled <b>[cable interface]</b>.</li>
+					<li>Click the button <b>Properties...</b></li>
+					<ul>
+						<li>Click tab <b>Bindings</b>:</li>
+						<li>Uncheck every protocol listed <b>except</b> these (if present):</li>
+						<ul>
+							<li><b>TCP/IP -&gt; [cable interface]</b></li>
+							<li><b>Internet Connection Sharing (protocol) -&gt; [cable interface]</b></li>
+						</ul>
+						<li>Click <b>OK</b> to close <b>[cable interface] Properties</b>.</li>
+					</ul>
+					<li>With a single click, select the protocol component with the plug-and-wires icon entitled <b>TCP/IP&nbsp;-&gt;&nbsp;[cable&nbsp;interface]</b>.</li>
+					<li>Click the button <b>Properties...</b></li>
+					<ul>
+						<li>Click tab <b>Bindings</b>.</li>
+						<li>The following clients and services might be worth disabling by unchecking the check box beside their name:</li>
+						<ul>
+							<li><b>File and printer sharing for Microsoft Networks</b>: this is both a security risk and a source of unnecessary network traffic. It should be <b>disabled</b> unless you are an expert and know what you are doing.</li>
+							<li><b>Client for Microsoft Networks</b>: should be <b>disabled</b> unless you wish to mount drives from a remote PC on the Internet using Microsoft file sharing.</li>
+							<li>all other clients or services listed in the bindings should be <b>disabled</b>.</li>
+						</ul>
+						<li>Click <b>OK</b> to close <b>TCP/IP Properties</b>.</li>
+					</ul>
+					<li>If you have only one network card, then instead of unbinding the clients and services from one instance of the TCP/IP protocol as above, you may instead select with a single click the component with the blue icon entitled <b>File and printer sharing for Microsoft Networks</b> and click <b>Remove</b>, and again for <b>Client for Microsoft Networks</b>. However, removing the Client might leave you with problems in saving passwords for various features.</li>
+					<li>Click <b>OK</b> to close the <b>Network</b> control panel, and allow Windows to restart.</li>
+				</ul>
+				<p><b>Apple Mac OS 8.x/9.x</b>: if the ethernet port is connected directly to the cable modem, disable <b>AppleTalk</b> protocol on the ethernet port as follows:</p>
+				<ul>
+					<li>Open control panel <b>AppleTalk</b>:</li>
+					<ul>
+						<li><b>EITHER:</b></li>
+						<ul>
+							<li>set the pull-down <b>Connect via:</b> to some port other than the one connected to the cable modem;</li>
+						</ul>
+						<li><b>OR:</b></li>
+						<ul>
+							<li>If an <b>Options</b> button is not visible, pull down the <b>Edit</b> menu, select <b>User Mode</b>, and select <b>Advanced</b>, click <b>OK</b>.</li>
+							<li>Click the button <b>Options...</b>.</li>
+							<ul>
+								<li>Select <b>Inactive</b></li>
+								<li>Click <b>OK</b></li>
+							</ul>
+						</ul>
+						<li>Close the control panel.</li>
+					</ul>
+				</ul>
+				<p><b>Apple Mac OS X</b>: if the ethernet port is connected directly to the cable modem, disable <b>AppleTalk</b> protocol on the ethernet port as follows:</p>
+				<ul>
+					<li>Pull down the <b>Apple</b> menu and select <b>System Preferences...</b></li>
+					<li>Click <b>Network</b>.</li>
+					<li>In the pull-down <b>Show:</b> select the interface in use;</li>
+					<li>Click tab <b>AppleTalk</b>;</li>
+					<li>Uncheck <b>Make AppleTalk Active</b>;</li>
+					<li>Close System Preferences.</li>
+				</ul>
+				<hr>
+			<!-- #EndEditable -->
+			<p>Return to <a href="index.html">Index</a>.</p>
+		</body>
+
+	<!-- #EndTemplate -->
+
+</html>
+

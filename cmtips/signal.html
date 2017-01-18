@@ -1,0 +1,1365 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+
+<html lang="en">
+
+	<!-- #BeginTemplate "../../cmtips.data/Templates/cmtemp.html" -->
+
+		<head>
+			<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+			<title>Cable Modem Troubleshooting Tips: CM diagnostics and signal levels</title>
+			<!-- #BeginHeadLocked "" -->
+				<meta name="description" content="Technical tips for troubleshooting a cable modem connection.">
+				<meta name="keywords" content="cable modem, FAQ, broadband, cablemodem, troubleshooting, tips, NTL, NTLworld, ntlhome, Telewest, blueyonder">
+				<meta name="author" content="Robin Walker">
+				<meta name="copyright" content="&copy; 2001-02 Robin Walker">
+				<link href="../favicon.ico" rel="shortcut icon">
+				<link href="mailto:rdhw@cam.ac.uk" rel="author">
+				<link href="copyright.html" rel="copyright">
+				<link href="index.html" rel="index">
+				<link href="cmstyle.css" rel="stylesheet">
+				<script type="text/javascript" language="JavaScript"><!--
+function jsinit() {
+  if (top!=self) top.location.href = self.location.href;
+}
+// -->
+</script>
+			<!-- #EndHeadLocked -->
+		</head>
+
+		<body onload="jsinit()" bgcolor="#eeffff">
+			<h1>Cable Modem Troubleshooting Tips</h1>
+			<hr>
+			<table border="0" cellpadding="0" align="left" summary="Quick links">
+				<tr>
+					<td nowrap bgcolor="#ffffff">
+						<div class="menubox">
+							<a class="sidelink" title="Introduction and Index to articles" href="index.html">Intro&nbsp;&amp;&nbsp;Index</a>.<br>
+							<a class="sidelink" title="History of updates and changes to this site" href="hist.html">Update&nbsp;history</a>.<br>
+							<a class="sidelink" title="Problems with BroadJump Broadband Installer" href="broadjump.html">Installer issues</a>.<br>
+							<a class="sidelink" title="Problems associated with getting a cable modem registered with your cable operator" href="register.html">Registration&nbsp;issues</a>.&nbsp;<br>
+							<a class="sidelink" title="PC network configuration for cable service" href="basicset.html">Network&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Swapping one PC between multiple networks" href="mobile.html">Mobile&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Understanding the flashing lights on the cable modem" href="lights.html">Cable&nbsp;Modem&nbsp;LEDs</a>.<br>
+							<a class="sidelink" title="How to determine various important IP addresses" href="ipaddr.html">IP&nbsp;addresses</a>.<br>
+							<a class="sidelink" title="How to determine various important MAC addresses" href="macaddr.html">MAC addresses</a>.<br>
+							<a class="sidelink" title="What to check if you have no service" href="badip.html">Dead&nbsp;connection</a>.<br>
+							<a class="sidelink" title="Updating your system with the latest patches and fixes" href="sysupdates.html">System&nbsp;updates</a>.<br>
+							<a class="sidelink" title="Tweaking your PC for best cable modem performance" href="tweaks.html">Network&nbsp;tweaks</a>.<br>
+							<a class="sidelink" title="Problems specifically related to the ethernet connection between your PC and the cable modem" href="ethernet.html">Ethernet&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Problems specifically related to a USB connection between the PC and cable modem" href="usb.html">USB&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Procedures and tips specifically for Surfboard cable modems" href="surfboard.html">Surfboard&nbsp;tips</a>.<br>
+							<a class="sidelink" title="Diagnosing your cable modem's connection" href="signal.html">CM&nbsp;diagnostics</a>.<br>
+							<a class="sidelink" title="Quality of service determined by configuration file" href="cmfile.html">CM&nbsp;config&nbsp;file</a>.<br>
+							<a class="sidelink" title="The network structure of a cable modem" href="cmworks.html">CM&nbsp;tech&nbsp;info</a>.<br>
+							<a class="sidelink" title="DHCP-related problems" href="dhcp.html">DHCP&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Understanding DNS and fixing DNS problems" href="dnsname.html">DNS&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Transparent web proxy caches and how to sidestep them" href="trancache.html">Web&nbsp;proxy&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance of streaming media" href="stream.html">Streaming&nbsp;media</a>.<br>
+							<a class="sidelink" title="Settings that affect performance, latency and pings" href="games.html">Gaming&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance; avoiding saturation of upstream" href="p2p.html">P2P&nbsp;file-sharing</a>.<br>
+							<a class="sidelink" title="Work around connection errors" href="seti.html">SETI@home&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect web browsing performance" href="fasterweb.html">Faster&nbsp;web&nbsp;browsing</a>.<br>
+							<a class="sidelink" title="Strategies to get better download speeds" href="fasterftp.html">Faster&nbsp;downloads</a>.<br>
+							<a class="sidelink" title="How to avoid performance hits" href="downup.html">Simul&nbsp;down/uploads</a>.<br>
+							<a class="sidelink" title="How to restore lost connection when you swap PCs connected to the CM" href="swap.html">Swapping&nbsp;PCs&nbsp;on&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Multiple PCs sharing one CM, home LANs, and NAT Routers" href="homelan.html">PCs&nbsp;sharing&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Using dial-up without losing cable connection" href="dialup.html">Simul&nbsp;dialup&nbsp;&amp;&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Problems with some VPN configurations" href="vpn.html">VPN&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Keep your clock correct, for ever, from cable time" href="timesync.html">Time&nbsp;sync</a>.<br>
+							<a class="sidelink" title="Avoiding virus and trojan infections" href="virus.html">Virus&nbsp;security</a>.<br>
+							<a class="sidelink" title="Configuring firewalls for cable connection" href="security.html">Firewall&nbsp;security</a>.<br>
+							<a class="sidelink" title="Limitations of some speed tests" href="speed.html">Speed&nbsp;testing</a>.<br>
+							<a class="sidelink" title="Understanding, diagnosing, and fixing latency and ping problems" href="latency.html">Latency issues</a>.<br>
+							<a class="sidelink" title="How to perform a traceroute, and how they can mislead" href="traceroute.html">Traceroute</a>.<br>
+							<a class="sidelink" title="Understanding and diagnosing packet loss" href="loss.html">Packet loss</a>.<br>
+							<a class="sidelink" href="frontpage.html">FrontPage tips</a>.<br>
+							<a class="sidelink" title="How to obtain technical support" href="techsupp.html">NTL/BY&nbsp;Tech&nbsp;Support</a>.</div>
+					</td>
+					<td width="18">&nbsp;</td>
+				</tr>
+			</table>
+			<!-- #BeginEditable "main" -->
+				<h2>Cable Modem diagnostics and signal levels:</h2>
+				<ul>
+					<li>Signal levels: <a href="#caution">a caution</a> <span class="flash">&nbsp;New 2002 Sep 7&nbsp;</span></li>
+					<li><a href="#chans">Upstream and Downstream channels</a> <span class="flash">&nbsp;New 2002 Sep 7&nbsp;</span></li>
+					<li><a href="#symps">Symptoms of poor signal levels</a>: what to expect <span class="flash">&nbsp;New 2002 Sep 7&nbsp;</span></li>
+					<li><a href="#reboot">Cable modem spontaneously re-booting</a>: other causes</li>
+					<li><a href="#goodlevs">Desirable signal levels</a>: for acceptable service <span class="flash">&nbsp;New 2002 Sep 7&nbsp;</span></li>
+					<li><a href="#advdiags">Advanced diagnostics</a>: for the techie-minded <span class="flash">&nbsp;New 2002 Sep 7&nbsp;</span></li>
+					<li><a href="#signal">How to discover your cable modem signal levels</a> <span class="flash">&nbsp;New 2002 Sep 7&nbsp;</span></li>
+					<li><a href="#nocmdiag">Inability to connect to cable modem diagnostic address</a>: what to check</li>
+					<li><a href="#docsdiag">DocsDiag diagnostics</a>: typical report <span class="flash">&nbsp;New 2002 Sep 7&nbsp;</span></li>
+					<li><a href="#sbdiags">Surfboard diagnostics</a>: how to read <span class="flash">&nbsp;New 2002 Sep 7&nbsp;</span></li>
+					<li><a href="#cmlog">Surfboard event log</a>: what's important and what's not</li>
+					<li><a href="#tfdiags">3Com HomeConnect (Tailfin) diagnostics</a>: how to read <span class="flash">&nbsp;New 2002 Sep 7&nbsp;</span></li>
+					<li><a href="#tflog">3Com HomeConnect (Tailfin) event log</a>: how to read <span class="flash">&nbsp;New 2002 Sep 7&nbsp;</span></li>
+					<li><a href="#cmxdiag">3Com CMX diagnostics</a>: how to read</li>
+					<li><a href="#teradiag">Terayon TeraJet diagnostics</a>: how to read</li>
+					<li><a href="#ntlhmdiags">ntl:home 100/120 (Ambit) diagnostics</a>: how to read</li>
+					<li><a href="#pacediag">Pace digital TV set-top-box</a> cable modem diagnostics</li>
+				</ul>
+				<hr>
+				<h3><a name="caution"></a>Signal levels: a caution</h3>
+				
+				
+				
+				
+				
+				
+				
+				First, a word of caution. Reading the power levels of the signals to and from the cable modem is rather like taking a child's temperature to see how feverish they are. You wouldn't call for a doctor's visit if the temperature were only slightly above normal with no other symptoms, but you might watch out for other symptoms appearing. If the child is very ill, it would be exhibiting other symptoms as well as a fever, and then you might be worried.
+
+				<p>So also with signal levels: they are a diagnostic aid, but you wouldn't request a visit from an ISP's service technician on the strength of a suspect signal level alone: there would need also to be service problems of the sort that might be caused by poor signal conditions.</p>
+				<hr>
+				<h3><a name="chans"></a>Upstream and Downstream channels</h3>
+				<p>Data communication between your cable modem and the ISP's network is split into two:</p>
+				<ul>
+					<li>The <b>Downstream</b> channel carries data from the ISP's head end (UBR) to your cable modem;</li>
+					<li>The <b>Upstream</b> channel carries data from your cable modem to the ISP's head end (UBR).</li>
+				</ul>
+				<p>These two channels are on very different frequencies on the cable, and each has their own signal level and noise level.</p>
+				<p>The <b>downstream</b> channel looks just like a normal digital TV channel, and occupies a standard TV channel slot in the frequency spectrum, between 91 to 857&nbsp;MHz (DOCSIS) or between 112 to 858&nbsp;MHz (EuroDOCSIS). The downstream channel broadcasts downstream data for every cable modem in the area served by the UBR. Cable modems discover the downstream channel by searching for a data-carrying digital TV channel when they boot up, or by remembering what frequency was used last time.</p>
+				<p>Downstream frequencies known to be in use are:</p>
+				<div align="center">
+					<table border="1" cellspacing="2" cellpadding="0">
+						<tr class="ntlns4">
+							<td>&nbsp;NTL original areas</td>
+							<td>&nbsp;DOCSIS</td>
+							<td>&nbsp;402750000 Hz&nbsp;</td>
+						</tr>
+						<tr class="ntlns4">
+							<td nowrap>&nbsp;NTL ex-C&amp;W areas (exc Westminster)&nbsp;</td>
+							<td nowrap>&nbsp;EuroDOCSIS&nbsp;</td>
+							<td>&nbsp;586750000 Hz&nbsp;</td>
+						</tr>
+						<tr class="byns4">
+							<td>&nbsp;Blueyonder</td>
+							<td>&nbsp;DOCSIS</td>
+							<td>&nbsp;331000000 Hz&nbsp;</td>
+						</tr>
+					</table>
+				</div>
+				<p>For every downstream channel, there might be up to six <b>upstream</b> channels on which cable modems send data to the UBR. These channels are normally allocated to frequencies below 42 MHz (DOCSIS) or below 65 MHz (EuroDOCSIS). Your cable modem discovers the upstream frequencies by listening on the downstream channel for Upstream Channel Descriptor (UCD) packets. The UBR's service area might be physically segmented so that not all upstream channels are available on all segments. The cable modem will choose (or be allocated to) one of the available upstream channels at your particular location.</p>
+				<hr>
+				<h3><a name="symps"></a>Symptoms of poor signal levels</h3>
+				<p>If cable signal levels become unacceptably poor, the LEDs on the cable modem will start indicating problems:</p>
+				<ul>
+					<li><b>3Com CMX</b>: <b>Cable Modem Status</b> goes out or flashes.</li>
+					<li><b>3Com HomeConnect (Tailfin)</b>: <b>Link Status</b> goes out or flashes.</li>
+					<li><b>Surfboard:</b> the <b>Receive</b> light goes out or flashes for downstream problems; the <b>Send</b> light goes out or flashes for upstream problems.</li>
+					<li><b>Terayon TeraJet</b>: the <b>Cable</b> light goes out or flashes.</li>
+					<li><b>ntl:home (Ambit)</b>: the <b>SYNC</b> light goes out or flashes for downstream problems; the <b>RDY</b> light goes out or flashes for upstream problems.</li>
+					<li><b>Pace digital TV set top boxes</b>: the middle light goes out or flashes.</li>
+				</ul>
+				<p>If the above occur, an immediate call to your ISP's technical support is justified. There is no point trying to get the PC working while the above conditions persist.</p>
+				<p>Alternatively, in conditions of poor signal levels, the cable modem might spontaneously reboot. Other possible causes of spontaneous reboots are given <a href="#reboot">below</a>.</p>
+				<p>When signal levels are poor but not poor enough to provoke the above symptoms, you might observe degraded throughput, or <a href="loss.html">packet loss</a>, or poor <a href="latency.html">latency</a>, or failure to acquire or renew a <a href="dhcp.html">DHCP lease</a>. But poor signal levels are not the only cause of these symptoms, so some diagnosis is required before you blame the signal levels.</p>
+				<hr>
+				<h3><a name="reboot"></a>Cable modem spontaneously re-booting</h3>
+				<p>If the cable modem is spontaneously re-booting, and there is no evidence of signal-related problems, then you should check on electrical conditions near to the cable modem. Possible causes of these problems are:</p>
+				<ul>
+					<li>The cable modem itself is faulty.</li>
+					<li>Mains wiring to the cable modem is faulty or intermittent.</li>
+					<li>Mains spikes arising from e.g. vacuum cleaners, power tools, heating thermostats, refrigerator thermostats.</li>
+					<li>Electromagnetic Interference (EMI), e.g. mobile phone, local radio transmitter.</li>
+				</ul>
+				<p>There are plenty of reports of mobile phones disrupting cable modems if kept too close.</p>
+				<hr>
+				<h3><a name="goodlevs"></a>Desirable signal levels</h3>
+				<p>For diagnostic purposes, the cable modem can measure and report the <b>Downstream Received Power</b> and the <b>Downstream Signal-to-Noise Ratio</b> (SNR). The <b>SNR</b> is important because if there is too much noise on the cable, the data cannot be decoded correctly, even with downstream power levels within acceptable limits. If the SNR is good enough so that the cable modem is working correctly, the exact power level, even if slightly outside normal ranges, <i>does not matter</i>.</p>
+				<p><b>Downstream SNR</b>: should be <b>30&nbsp;dB</b> or higher: the higher the better. As the SNR decreases below 30&nbsp;dB, performance will steadily decrease, and errors will increase. The cable modem might stop working properly if the SNR drops below <b>23.5&nbsp;dB</b>.</p>
+				<p><b>Downstream Received Power</b>: the DOCSIS specification requires cable modems to function correctly with downstream power levels in the range <b>-15 dBmV</b> to <b>+15 dBmV</b>: power readings at or close to those extremes are likely to be unacceptable. However, when connected to a real-life CATV network, a cable modem might be functional over a narrower range than this. Accordingly, cable ISPs will specify an even narrower target range when commissioning their network: this target range will differ according to ISP.</p>
+				<div align="center">
+					<table border="1" cellspacing="2" cellpadding="0">
+						<tr>
+							<td>&nbsp;</td>
+							<th>&nbsp;Target Commissioning Range&nbsp;</th>
+							<th>&nbsp;Wider Working Range&nbsp;</th>
+						</tr>
+						<tr class="ntlns4">
+							<td nowrap>&nbsp;NTL original areas</td>
+							<td nowrap>
+								<div align="center">
+									
+									
+									
+									
+									
+									
+									&nbsp;<b>-2.5 dBmV</b> to <b>+2.5 dBmV</b></div>
+							</td>
+							<td nowrap>
+								<div align="center">
+									
+									
+									
+									
+									
+									
+									&nbsp;somewhat wider than that!&nbsp;</div>
+							</td>
+						</tr>
+						<tr class="ntlns4">
+							<td nowrap>&nbsp;NTL ex-C&amp;W areas&nbsp;</td>
+							<td nowrap>
+								<div align="center">
+									
+									
+									
+									
+									
+									
+									&nbsp;<b>-6 dBmV</b> to <b>-3 dBmV</b></div>
+							</td>
+							<td nowrap>
+								<div align="center">
+									
+									
+									
+									
+									
+									
+									&nbsp;<b>-12 dBmV</b> to <b>-3 dBmV</b></div>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<p>Provided the Downstream SNR is acceptable, the downstream power should be satisfactory if your cable modem reports a figure either within these specified ranges or close to them.</p>
+				<p>If a cable modem reports a downstream receive power of exactly <b>0.0&nbsp;dB</b>, this means that measurement of downstream power is disabled, and no information is available. In this case, you will need to judge downstream quality by SNR alone.</p>
+				<p><b>Upstream Transmit Power</b>: the cable modem's <b>Upstream Transmit Power</b> (or <b>return power</b>) is set by commands from the UBR so that the UBR hears the same signal level from all cable modems on that upstream channel. Because of different cable losses for each cable modem in the area, each cable modem will tend to settle onto a different upstream transmit power level. The better the return path is, the lower the upstream transmit power will be.</p>
+				<p>The upstream transmit power will lie within the range <b>+8</b> to <b>+58&nbsp;dBmV</b>, with many ISPs specifying a target commissioning level below <b>+55&nbsp;dBmV</b>. Values in the forties are the most common. Many cable modems are unable to transmit any more powerfully than <b>+58&nbsp;dBmV</b>. One cannot tell how far this is below the figure that the UBR would need to see a strong enough signal at its end to maintain satisfactory performance, so a figure as high as <b>+58&nbsp;dBmV</b> is normally a sign of an unacceptable return path. If other problem symptoms are also present, an upstream transmit power of +58&nbsp;dBmV would constitute valid supporting evidence for requesting technical support from a cable ISP.</p>
+				<p>The upstream SNR can be sensed only at the UBR, so cannot be discovered by end-users.</p>
+				<p>The external cable infrastructure is affected by weather conditions, so it is normal to see power levels fluctuating slowly with temperature. If your cable signal conditions are marginal, the CM might stop working in certain weather conditions, and recover in others.</p>
+				<p>However, rapidly fluctuating power levels might be a sign of a failing amplifier in the ISP's network, or a bad cable connection, and should normally be investigated.</p>
+				<hr>
+				<h3><a name="advdiags"></a>Advanced diagnostics</h3>
+				<p>Cable modems maintain counters of various error conditions, some of which can be more definite indicators of signal problems than the power and SNR measurements. Only a few models of cable modem report these counters in the diagnostic web pages available to end-users, but the advanced diagnostics can usually be read by the DocsDiag program (unless the ISP has denied the use of SNMP to the end-user), using its <b>-v</b> verbose keyword.</p>
+				<p>All the error counters are cumulative counts of errors since the last cable modem restart. Therefore, some non-zero counts might relate to short-lived problems which cured themselves long ago. What matters is whether the counters are increasing <i>now</i>. To sense this, you should take the advanced diagnostics twice, and look at the differences in the counters.</p>
+				<p>The downstream data transmitted from the UBR is split into <i>codewords</i> (usually between 16 and 256 bytes). Each codeword is packaged with extra <b>Forward Error Correction</b> (FEC) data bits, which enables the cable modem to reconstruct the original codeword if no more than a few bits of it are in error when received. The algorithm used for generating the FEC bits and correcting the received codeword is known as <b>Reed-Solomon</b>. Here is an extract from a verbose DocsDiag report:</p>
+				<blockquote>
+					<pre class="logns4">System up time                       = 2 days 00h 17m 32.48s
+SigQu: received without error        = 3451610121 codewords
+SigQu: correctable errors            = 2560 codewords
+SigQu: uncorrectable errors          = 0 codewords</pre>
+				</blockquote>
+				<p>and the same report 23 minutes later:</p>
+				<blockquote>
+					<pre class="logns4">System up time                       = 2 days 00h 41m 08.63s
+SigQu: received without error        = 3496202395 codewords
+SigQu: correctable errors            = 2658 codewords
+SigQu: uncorrectable errors          = 0 codewords</pre>
+				</blockquote>
+				<p>The <b>received without error</b> count is the number of codewords received on the downstream channel (whether destined for this cable modem or not) with no errors detected by the FEC system. This counter increases very rapidly, and exhausts the capacity of a 32-bit integer after only a few hours, after which it starts from zero again. It can however be safely used when taking differences between two successive readings a few minutes apart. In the above example, in 23 minutes, the CM has received <tt><b>3496202395 - 3451610121 = 44592274</b></tt> perfect codewords.</p>
+				<p>The <b>correctable errors</b> count is the number of codewords which were detected to be damaged but could be repaired by the FEC system. In a perfect world, this would be zero. In the above example, in 23 minutes, the CM has detected <tt><b>2658 - 2560 = 98</b></tt> faulty codewords which could be corrected by FEC. This low rate of error (roughly 2 per million) can be tolerated.</p>
+				<p>The <b>uncorrectable errors</b> count is the number of codewords which were detected to be damaged beyond possibility of repair by the FEC system. If this count is increasing, then downstream signal conditions are unacceptable, no matter how good the SNR and power figures look. In the above example, the current rate of uncorrectable codewords is zero, which is acceptable. Indeed, no uncorrectable errors have been seen in the last 2 days.</p>
+				<p>If the <b>T3 time-out</b> counter is incrementing, in the absence of any downstream codeword errors, this is an indicator of upstream problems.</p>
+				<hr>
+				<h3><a name="signal"></a>How to discover your cable modem signal levels</h3>
+				<p>Many models of cable modem provide diagnostic information on web pages which can be read at address <a title="Surfboard diagnostics address" href="http://192.168.100.1/">http://192.168.100.1/</a>. Details specific to certain models will be discussed below. The following models are known <b>not</b> to provide diagnostics on web pages:</p>
+				<ul>
+					<li>3Com CMX (try DocsDiag instead)</li>
+					<li>Terayon TeraJet (try DocsDiag instead)</li>
+					<li>Pace digital TV set top boxes (view the <b>User Information</b> TV screen instead)</li>
+				</ul>
+				<p>If you are unable to browse the above address, see the article <a href="#nocmdiag">Inability to connect to cable modem diagnostic address</a> below.</p>
+				<p>For brands of cable modem which do not have diagnostics on web pages, see <b><a title="Program for viewing cable modem diagnostics" href="http://homepage.ntlworld.com/robin.d.h.walker/docsdiag/">DocsDiag</a></b> for reading DOCSIS diagnostics.</p>
+				<hr>
+				<h3><a name="nocmdiag"></a>Inability to connect to cable modem diagnostic address</h3>
+				<p>If you cannot connect to the diagnostic address 192.168.100.1 given above, check the following:</p>
+				<ul>
+					<li>if you have set up an explicit web proxy, ensure that you have included the cable modem address in the proxy exclusion list. See <b><a href="trancache.html#sidestep">How to sidestep the transparent web caches</a></b> for an example of setting an exclusion, or turn off web proxying for the duration.</li>
+					<li>if you have just swapped computers on the cable modem, see <b><a href="swap.html#swap">Swapping computers on the cable modem</a></b>.</li>
+					<li>if you are using a NAT router between your PC and the cable modem, ensure that the router's own configuration will route data for 192.168.100.1 out of the WAN port towards the cable modem.</li>
+					<li>For many models of cable modem (and for the Surfboard or Tailfin when they are not online to the cable network), you must temporarily manually configure your computer to have an IP address in the same sub-net as the cable modem diagnostic address. For instance, if your cable modem address is 192.168.100.1, you would configure your IP address to be <b>192.168.100.2</b>. Remember to return your configuration to &quot;automatic&quot; DHCP working afterwards before you try going online to the network.</li>
+				</ul>
+				<hr>
+				<h2><a name="docsdiag"></a>DocsDiag diagnostics</h2>
+				<p>A typical default <a href="../docsdiag/index.html">DocsDiag</a> report looks like this:</p>
+				<blockquote>
+					<pre class="logns4">General Instrument SB3100 Cable Modem: Hardware version: 1; OS: VxWorks 5.3.1; Software version: 3.2.9p
+
+System up time                       = 2 days 04h 56m 22.63s
+Ethernet multiple-collision errs.1   = 16
+Downstream channel ID                = 3
+Downstream channel frequency         = 402750000 Hz
+Downstream received signal power     = <span class="yellbg">0.0 dBmV</span> (or not supported)
+Upstream channel ID                  = 2
+Upstream channel frequency           = 40783269 Hz
+QoS max upstream bandwidth           = 128000 bps
+QoS max downstream bandwidth         = 600000 bps
+SigQu: Signal to Noise Ratio         = <span class="yellbg">34.7 dB</span>
+Cable modem status                   = Registration complete
+Upstream transmit signal power       = <span class="yellbg">55.0 dBmV</span>
+Date and Time                        = 2002-09-07,19:42:57.0+00:00
+Configuration filename               = mota4100-silver.cm</pre>
+				</blockquote>
+				<p>To include the advanced diagnostics, use the keyword <b class="nowrap">-v</b>. To print the event log, use the keyword <b class="nowrap">-log</b>.</p>
+				<hr>
+				<h2><a name="sbdiags"></a>Surfboard diagnostics</h2>
+				<p>Send your web browser to <a title="Surfboard internal diagnostics" href="http://192.168.100.1/">http://192.168.100.1/</a> and click the <b>Signal</b> tab, or go directly to <a title="Surfboard signal diagnostic page" href="http://192.168.100.1/signal.html">http://192.168.100.1/signal.html</a>. You will see a page similar to:</p>
+				<table border="1" cellspacing="0" cellpadding="8" align="center">
+					<tr>
+						<th bgcolor="#736B08"><font color="#FFFFFF">Downstream </font></th>
+						<th bgcolor="#736B08"><font color="#FFFFFF">Value</font></th>
+					</tr>
+					<tr>
+						<td>Frequency</td>
+						<td>402750000 Hz Locked</td>
+					</tr>
+					<tr>
+						<td>Signal to Noise Ratio</td>
+						<td><span class="yellbg">34 dB</span></td>
+					</tr>
+					<tr>
+						<td>QAM</td>
+						<td>64</td>
+					</tr>
+					<tr>
+						<td>Network Access Control Object</td>
+						<td>ON</td>
+					</tr>
+					<td>Power Level</td>
+					<td><span class="yellbg">0 dBmV
+</span>
+						<table width="300" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td align="LEFT"><small>The Downstream Power Level reading is a snapshot taken at the time this page was requested. Please Reload/Refresh this Page for a new reading </small></td>
+							</tr>
+						</table>
+					</td>
+					</TR>
+				</table>
+				<p></p>
+				<table border="1" cellspacing="0" cellpadding="8" align="center">
+					<tr>
+						<th bgcolor="#736B08"><font color="#FFFFFF">Upstream</font></th>
+						<th bgcolor="#736B08"><font color="#FFFFFF">Value</font></th>
+					</tr>
+					<tr>
+						<td>Channel ID</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td>Frequency</td>
+						<td>40783269 Hz Ranged</td>
+					</tr>
+					<tr>
+						<td>Ranging Service ID</td>
+						<td>159</td>
+					</tr>
+					<tr>
+						<td>Symbol Rate</td>
+						<td>1.280 Msym/s</td>
+					</tr>
+					<tr>
+						<td>Power Level</td>
+						<td><span class="yellbg">55 dBmV</span></td>
+					</tr>
+				</table>
+				<p>The power levels are <span class="yellbg">highlit</span> above. The downstream power level and SNR will be valid only if the downstream frequency is shown to be <b>Locked</b>. The upstream power level will be valid only if the upstream frequency is shown to be <b>Ranged</b>.</p>
+				<hr>
+				<h2><a name="cmlog"></a>Surfboard event log</h2>
+				<p>Surfboard users can view the cable modem event log by sending a web browser to <a title="Surfboard diagnostics address" href="http://192.168.100.1/logs.html">http://192.168.100.1/logs.html</a> or by clicking on the <b>Logs</b> tab in the diagnostic pages. The log is useful when diagnosing sporadic problems, and can reveal the reason for the cable modem having previously gone offline. Not every line in the log represents an error, even if it is flagged as an error. Interpreting the log is not easy.</p>
+				<p>The log is presented in reverse chronological order, so the most recent log entry is at the top. Each entry in the log is timestamped in the format <b>YYMMDDhhmmss</b> in GMT. The timestamp is replaced by asterisks if the cable modem has not yet acquired the time from the UBR.</p>
+				<p>Here's a not entirely abnormal re-boot sequence, which should be read from the bottom up:</p>
+				<pre class="log">010404174626 7-Information F502.1  Bridge Forwarding Enabled.
+010404174626 7-Information F502.3  Bridge Learning Enabled.
+010404174626 7-Information B518.0  Baseline Privacy is skipped
+010404174626 7-Information I500.0  Registration Completed
+010404174626 7-Information I0.0    REG-RSP Registration Response
+010404174626 7-Information I0.0    REG-REQ Registration Request
+010404174626 7-Information D509.0  Retrieved TFTP Config <span class="yellbg">silver.cm</span> SUCCESS
+010404174626 7-Information D507.0  Retrieved Time....... SUCCESS
+************ 7-Information D511.0  Retrieved DHCP .......... SUCCESS
+************ 5-Warning     D520.2  DHCP Attempt# 1 BkOff: 4s Tot DSC:1 OFF:1 REQ:1 ACK:1
+************ 7-Information D0.0    DHCP CM Net Configuration download and Time of Day
+************ 7-Information T500.0  Acquired Upstream .......... SUCCESS
+************ 8-Debug       T503.1  Acquire US with status OK, powerLevel 48, tempSid 16
+************ 8-Debug       T505.0  Acquired Upstream with status OK
+************ 7-Information T501.0  Acquired Downstream (403000000 Hz)........ SUCCESS
+************ 8-Debug       T509.0  Acquired DS with status OK, DS Freq 403000000, US Id 3
+************ 7-Information H501.18 HFC: UCD Symbol Rate change.
+************ 7-Information H501.17 HFC: UCD Minislot size change.
+************ 8-Debug       T509.0  Acquired DS with status NO FEC lock, DS Freq 143000000, US Id 0
+  [snipped many similar lines]
+************ 8-Debug       T509.0  Acquired DS with status NO FEC lock, DS Freq 403000000, US Id 0
+************ 4-Error       M506.0  Invalid scan limits. Scan will use entire range.
+************ 7-Information I510.0  *** BOOTING *** SB3100-3.2.9-SCM-NOSHELL</pre>
+				<p>Note the name of the configuration file <span class="yellbg">flagged</span> above on the D509.0 line. See <a href="cmfile.html#cmfile">Cable Modem configuration file</a> for more about this file.</p>
+				<p>In some cases, after (i.e. above) the F502.1, the cable modem will go on to attempt to load a firmware update by TFTP. Errors flagged during this process should not be a source of concern for the end-user. Here is an example:</p>
+				<pre class="log">010404145522 4-Error       X501.35 Unit Update Failed.
+010404145522 7-Information F502.1  Bridge Forwarding Enabled.
+010404145522 4-Error       X501.43 Unit Update Failed. Access Violation returned from TFTP server.
+010404145519 7-Information F502.2  Bridge Forwarding Disabled.
+010404145519 7-Information X500.0  Attempting Unit Update</pre>
+				<p>The X501.43 error above should not be happening, but will not be affecting data service other than delaying the end of the re-boot sequence (by 3 seconds in this case). Here is another case with a longer delay of 2 minutes at the end of the boot sequence:</p>
+				<pre class="log">010409205631 4-Error       X501.35 Unit Update Failed.
+010409205631 7-Information F502.1  Bridge Forwarding Enabled.
+010409205631 4-Error       X501.38 Unit Update Error. TFTP transfer timed out after 16 read requests.
+010409205425 7-Information F502.2  Bridge Forwarding Disabled.
+010409205425 7-Information X500.0  Attempting Unit Update</pre>
+				<p>In the next example, the X501.28 is not an error at all: it is simply that the firmware update offered by the network is not intended for this model of cable modem, and has therefore been correctly declined:</p>
+				<pre class="log">010419191646 4-Error       X501.35 Unit Update Failed.
+010419191646 7-Information F502.1  Bridge Forwarding Enabled.
+010419191645 4-Error       X501.28 Unit Update - Not updating. This image is not for this platform.
+010419191645 7-Information F502.2  Bridge Forwarding Disabled.
+010419191645 7-Information X500.0  Attempting Unit Update</pre>
+				<p>Log entries of events affecting the data service are flagged <b>Critical</b>, <b>Alert</b>, or <b>Emergency</b>, for instance:</p>
+				<pre class="log">010331125025 7-Information H501.6  HFC: TRC SYNC Recovery OK 
+010331125024 3-Critical    H501.4  HFC: LOST TRC SYNC- trying to recover</pre>
+				<p>The above shows a transient downstream signal problem, which was recovered from one second later. Other possible serious service-affecting errors are:</p>
+				<pre class="log">************ 3-Critical    H501.9  HFC: T1 Timer Expired
+************ 3-Critical    H501.7  HFC: T2 Timer Expired
+************ 2-Alert       T507.0  Received Async Error Range Failed
+************ 3-Critical    H501.8  HFC: T4 Timer Expired
+************ 3-Critical    H501.16 HFC: FEC LOCK recovery failed</pre>
+				<p>The above, if repeated frequently, all indicate serious signal problems on the CATV system, which would need attention from your local cable operator. In severe cases you might also see:</p>
+				<pre class="log">************ 7-Information H501.2  HFC: Shutting Downstream Down
+************ 8-Debug       T503.1  Acquire US with status NO UCD for US, powerLevel 0, tempSid 0</pre>
+				<p>With the H501.2, the cable modem is announcing that previous errors are so severe that it is now giving up. Following (i.e. above) the H501.2 event, the entire re-boot sequence will be executed, and this will appear as a substantial loss of service, with much flashing of lights.</p>
+				<hr>
+				<h2><a name="tfdiags"></a>3Com HomeConnect (Tailfin) diagnostics</h2>
+				<p>Send your web browser to <a title="Tailfin diags (old)" href="http://149.112.50.65/">http://149.112.50.65/</a> for early firmware versions, or <a title="Tailfin diagnostics" href="http://192.168.100.1/">http://192.168.100.1/</a> for recent firmware versions. Firmware can be automatically updated by your cable operator down the cable, so by the time you read this, most Tailfins will have been updated to use the new address. Click on the <b>Session Status</b> link. The downstream and upstream power levels are displayed. To view the downstream SNR, see the event log below.</p>
+				<hr>
+				<h2><a name="tflog"></a>3Com HomeConnect (Tailfin) event log</h2>
+				<p>Send your web browser to <a title="Tailfin diags (old)" href="http://149.112.50.65/">http://149.112.50.65/</a> for early firmware versions, or <a title="Tailfin diagnostics" href="http://192.168.100.1/">http://192.168.100.1/</a> for recent firmware versions. Firmware can be automatically updated by your cable operator down the cable, so by the time you read this, most Tailfins will have been updated to use the new address. Click the link to the log page, which is implemented with an embedded Java applet. A typical log output might look like this, reading from the top downwards:</p>
+				<pre class="logns4">2 0:0:2.0 1\1\1970 +0:0 ROOT 1 Cable Interface MAC Addr:    00:01:03:4B:0C:6F
+2 0:0:2.0 1\1\1970 +0:0 ROOT 1 Ethernet Interface MAC Addr: 00:01:03:4B:0C:70
+2 0:0:2.0 1\1\1970 +0:0 ROOT 1 USB Interface MAC Addr:      00:01:03:4B:0C:71
+2 0:0:2.0 1\1\1970 +0:0 ROOT 1 Serial Number: HHP24B0C6F 
+2 0:0:2.0 1\1\1970 +0:0 ROOT 1 Initializing Audio...
+2 0:0:2.0 1\1\1970 +0:0 ROOT 1 Sound is disable.
+2 0:0:2.0 1\1\1970 +0:0 ROOT 1 Default volume is 3.
+2 0:0:2.0 1\1\1970 +0:0 ROOT 1 Entering Normal Operation Mode!
+2 0:0:2.0 1\1\1970 +0:0 ROOT 1 ********************************************************
+ 	   	CM RESET REASON ID       
+2 0:0:2.0 1\1\1970 +0:0 ROOT 1 ********************************************************
+3 0:0:3.0 1\1\1970 +0:0 cmmr 1    ***** CMM ***** Acquiring Freq 0609000000 Hz
+4 0:0:4.0 1\1\1970 +0:0 bcmr 1 Downstream Information
+4 0:0:4.0 1\1\1970 +0:0 bcmr 1 Tuner Freq    : 609.0000 MHz
+4 0:0:4.0 1\1\1970 +0:0 bcmr 1 CurFreqErr    : 000000
+4 0:0:4.0 1\1\1970 +0:0 bcmr 1 Symbol Rate   : 5.056941 MHz
+4 0:0:4.0 1\1\1970 +0:0 bcmr 1 Lock Threshold: 20.50 dB
+4 0:0:4.0 1\1\1970 +0:0 bcmr 1 <span class="yellbg">SNR Value     : 33.46 dB</span>
+4 0:0:4.0 1\1\1970 +0:0 bcmr 1 QAM mode      : 64
+4 0:0:4.0 1\1\1970 +0:0 bcmr 1 Interleave Depth : 32,4,32
+4 0:0:4.0 1\1\1970 +0:0 bcmr 1 QAM and FEC locked
+4 0:0:4.0 1\1\1970 +0:0 bcmr 1 Uncorrectable Errors: 0 
+4 0:0:4.0 1\1\1970 +0:0 bcmr 1 <span class="yellbg">Downstream Power Level:   3.1</span> 
+4 0:0:4.0 1\1\1970 +0:0 bcmr 1 Acquiring Time Sync
+5 0:0:5.0 1\1\1970 +0:0 cmmr 1 Upstream symbol rate:  2.560 MHz
+5 0:0:5.0 1\1\1970 +0:0 cmmr 1 Upstream center frequency: 37.200 MHz
+6 0:0:6.0 1\1\1970 +0:0 bcmr 1 Course sync check is valid
+6 0:0:6.0 1\1\1970 +0:0 bcmr 1 Fine sync check is valid
+6 0:0:6.0 1\1\1970 +0:0 cmmr 1    CMM Primary SID updated: 0 
+6 0:0:6.0 1\1\1970 +0:0 cmmr 1 Prog UsChanId: 04 ChgCnt: 1D
+6 0:0:6.0 1\1\1970 +0:0 cmmr 1  Setting power level to 27.0
+6 0:0:6.0 1\1\1970 +0:0 cmmr 1 Range Request sent at 27.0 power level
+6 0:0:6.0 1\1\1970 +0:0 cmmr 1 mcns: power level adjust (1/4 dB) = 016
+6 0:0:6.0 1\1\1970 +0:0 cmmr 1 <span class="yellbg"> Setting power level to 31.0</span>
+6 0:0:6.0 1\1\1970 +0:0 cmmr 1 mcns: timing adjust = 0x09f8
+6 0:0:6.0 1\1\1970 +0:0 cmmr 1    CMM Primary SID updated: 1db 
+6 0:0:6.0 1\1\1970 +0:0 cmmr 1    CMM Unicast SID updated: 1db in US Queue idx: 0 
+6 0:0:6.0 1\1\1970 +0:0 cmmr 1    ***** CMM ***** Start Unicast Ranging TS=00000AE9
+7 0:0:7.0 1\1\1970 +0:0 cmmr 1    CMM Unicast SID updated: 1db in US Queue idx: 0 
+7 0:0:7.0 1\1\1970 +0:0 cmmr 1    ***** CMM ***** Ranging Complete, MslotCnt: 005F1066
+7 0:0:7.0 1\1\1970 +0:0 dhcp 1 Sending DHCP message
+8 0:0:8.0 1\1\1970 +0:0 netp 1 Sending DHCP message
+8 0:0:8.0 1\1\1970 +0:0 netp 1 Sent DHCPREQUEST and entering requesting state !
+8 0:0:8.0 1\1\1970 +0:0 netp 1 Configuration file acquired from DHCP ACK pdu
+8 0:0:8.0 1\1\1970 +0:0 netp 1 DHCP server provided 1 gateway router(s)
+8 0:0:8.0 1\1\1970 +0:0 netp 1 Successfully added default route 
+8 0:0:8.0 1\1\1970 +0:0 netp 1  to Cable
+8 0:0:8.0 1\1\1970 +0:0 netp 1 Successfully added static route to gateway
+8 0:0:8.0 1\1\1970 +0:0 netp 1 DHCP -- DHCP process complete(DHCPACK received) 0xff
+8 0:0:8.0 1\1\1970 +0:0 netp 1 	TimeOffset			= 0
+8 0:0:8.0 1\1\1970 +0:0 netp 1 	IP address lease time 		= 345600 seconds
+8 0:0:8.0 1\1\1970 +0:0 netp 1 DHCP state => Address acquisition successful
+8 0:0:8.0 1\1\1970 +0:0 netp 1 Adding IP address to Cable port successful !
+8 22:51:57.0 7\22\2002 +0:0 cmmr 1    ***** CMM ***** Config File Processing Complete: MslotCnt: 005F1FB1
+9 22:51:58.0 7\22\2002 +0:0 cmmr 1    CMM Primary SID updated: 1db 
+9 22:51:58.0 7\22\2002 +0:0 cmmr 1    CMM Unicast SID updated: 1db in US Queue idx: 0 
+11 22:52:0.0 7\22\2002 +0:0 cmmr 1 MCNS Upstream Statistics
+11 22:52:0.0 7\22\2002 +0:0 cmmr 1 Ref Freq:      25.000 MHz
+11 22:52:0.0 7\22\2002 +0:0 cmmr 1 Tx Freq :      37.200 MHz
+11 22:52:0.0 7\22\2002 +0:0 cmmr 1 Symbol Rate:    2.560 MHz
+11 22:52:0.0 7\22\2002 +0:0 cmmr 1 Tx QAM mode:   QPSK
+11 22:52:0.0 7\22\2002 +0:0 cmmr 1 Tx Channel ID: 0x04
+11 22:52:0.0 7\22\2002 +0:0 cmmr 1    ***** CMM ***** MAC Registration Complete, MslotCnt: 00600C8F
+11 22:52:0.0 7\22\2002 +0:0 cmmr 1 ********** START FORWARDING DONE| **********
+12 22:52:1.0 7\22\2002 +0:0 fdsp 1 sound_play_file connect22.wav volume = 3
+12 22:52:1.0 7\22\2002 +0:0 fdsp 1 Successfully added route to CPE</pre>
+				<p>The columns are: seconds elapsed since boot, time of day, date, timezone offset, task name, trace level, and message. Signal-related information is highlit above.</p>
+				<hr>
+				<h2><a name="cmxdiag"></a>3Com CMX diagnostics</h2>
+				<p>The 3Com CMX does not have a diagnostics web page, but does have a serial communication port on which it produces a log. To read this log, connect your PC's serial port to the CMX's serial port with a <b>null modem cable</b> (or <b>laplink</b> cable). Launch a terminal emulator such as <b>Hyperterminal</b>, and set the serial communication parameters to <b>38400 bps, 8 data bits, No parity, 1 stop bit</b>. (You might need to experiment to find the correct flow-control settings to avoid data over-run and a corrupt log view). Power the CMX off and on again, and watch the log stream by as it configures itself. The information in the log includes the signal levels, as described above. The log is produced only during the boot process, and when the CMX is recovering from errors.</p>
+				<p>For a potential solution for reading diagnostics while in service, see <b><a title="Program for viewing cable modem diagnostics" href="http://homepage.ntlworld.com/robin.d.h.walker/docsdiag/">DocsDiag</a></b>.</p>
+				<hr>
+				<h2><a name="teradiag"></a>Terayon TeraJet diagnostics</h2>
+				<p>There are no diagnostics available to the end-user via a web browser. For a potential solution by other means, see <b><a title="Program for viewing cable modem diagnostics" href="http://homepage.ntlworld.com/robin.d.h.walker/docsdiag/">DocsDiag</a></b>. The default settings of DocsDiag do not work with the Terayon: use the <b>Recipe for use of DocsDiag with the ISP-side address of the cable modem</b> given in the documentation.</p>
+				<hr>
+				<h2><a name="ntlhmdiags"></a>ntl:home 100/120 (Ambit) diagnostics</h2>
+				<p>Send your web browser to <b><a title="ntl:home diagnostics pages" href="http://192.168.100.1/">http://192.168.100.1/</a></b>. When challenged, enter userid <b>root</b> and password <b>root</b>. Not all these diagnostic screens will be present on all models.</p>
+				<p>The first diagnostic screen looks like this:</p>
+				<div align="center">
+					<table border="5">
+						<tr>
+							<td colspan="2" bgcolor="#FFFFCC" height="40">
+								<p align="center"><b><font size="4" color="#0000FF">Cable Modem Configuration</font></b></p>
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="50%"><font color="#993399">Type : Ambit ETH/USB Combo Cable Modem</font></td>
+							<td bgcolor="#D4D4D4" width="50%"><font color="#993399">Cable modem : Ambit Cable Modem</font></td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="50%"><font color="#993399">MAC address : 00:d0:59:04:48:26</font></td>
+							<td bgcolor="#D4D4D4" width="50%"><font color="#993399">IP address : 172.30.106.182</font></td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="50%"><font color="#993399">Serial number : 00D059044826</font></td>
+							<td bgcolor="#D4D4D4" width="50%"><font color="#993399">Board ID : T60C309.10.01_NTL</font></td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="50%"><font color="#993399">Software version : 2.22.3208</font></td>
+							<td bgcolor="#D4D4D4" width="50%"><font color="#993399">Hardware version : 1.8</font></td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="50%"><font color="#993399">Boot Code version : 3.11.1</font></td>
+							<td nowrap bgcolor="#D4D4D4" width="50%"><font color="#993399">Web Based Configuration Pages version : 1.0.1&nbsp;</font></td>
+						</tr>
+						<tr>
+							<td nowrap bgcolor="#D4D4D4" width="50%"><font color="#993399">USB AdaptorName : Ambit USB Cable Modem&nbsp;</font></td>
+							<td bgcolor="#D4D4D4" width="50%"><font color="#993399">USB MAC address : 00:d0:59:04:48:27</font></td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="50%"><font color="#993399">USB vendor ID : 0bb2</font></td>
+							<td bgcolor="#D4D4D4" width="50%"><font color="#993399">USB product ID : 6098</font></td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="50%"><font color="#993399">Downstream SNR : <span class="yellbg">34.38 dB</span></font></td>
+							<td bgcolor="#D4D4D4" width="50%"><font color="#993399">Upstream Transmit Power Level : <span class="yellbg">50.25 dBmv</span></font></td>
+						</tr>
+					</table>
+				</div>
+				<p>The most important signal diagnostics above are <b>Downstream SNR</b> and <b>Upstream Transmit Power Level</b>. For acceptable ranges, see the discussion above in the Surfboard section.</p>
+				<a name="ntlcmsta"></a><!--#AGL.wrap(rdhw ;2002.06.23 16:50;;)At <a href="http://192.168.100.1/P_status.htm">http://192.168.100.1/P_status.htm</a>:
+-->
+				<div align="center">
+					<table border="5">
+						<tr>
+							<td colspan="2" bgcolor="#FFFFCC" width="100%" height="40">
+								<p align="center"><font size="4" color="#0000FF"><b>Cable Modem Status</b></font></p>
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="50%"><font color="#993399">Task</font></td>
+							<td bgcolor="#D4D4D4" width="50%"><font color="#993399">Status</font></td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="50%"><font color="#993399">Search for a Downstream Channel</font></td>
+							<td bgcolor="#D4D4D4" width="50%"><font color="#993399">Done</font></td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="50%"><font color="#993399">Search for a Upstream Channel</font></td>
+							<td bgcolor="#D4D4D4" width="50%"><font color="#993399">Done</font></td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="50%"><font color="#993399">Obtain Upstream Parameters</font></td>
+							<td bgcolor="#D4D4D4" width="50%"><font color="#993399">Done</font></td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="50%"><font color="#993399">Establish IP Connectivity using DHCP</font></td>
+							<td bgcolor="#D4D4D4" width="50%"><font color="#993399">Done</font></td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="50%"><font color="#993399">Establish Time Of Day</font></td>
+							<td bgcolor="#D4D4D4" width="50%"><font color="#993399">Done</font></td>
+						</tr>
+						<tr>
+							<td nowrap bgcolor="#D4D4D4" width="50%"><font color="#993399">Transfer Operational Parameters through TFTP&nbsp;</font></td>
+							<td bgcolor="#D4D4D4" width="50%"><font color="#993399">Done</font></td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="50%"><font color="#993399">Register Connection</font></td>
+							<td bgcolor="#D4D4D4" width="50%"><font color="#993399">Done</font></td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="50%"><font color="#993399">Initialize BPI</font></td>
+							<td nowrap bgcolor="#D4D4D4" width="50%"><font color="#993399">Not Enable&nbsp;</font></td>
+						</tr>
+						<tr>
+							<td colspan="2" bgcolor="#D4D4D4" width="100%"><font color="#0000FF"><a href="#ntldnsta">Downstream Status</a></font></td>
+						</tr>
+						<tr>
+							<td colspan="2" bgcolor="#D4D4D4" width="100%"><font color="#0000FF"><a href="#ntlupsta">Upstream Status</a></font></td>
+						</tr>
+						<tr>
+							<td colspan="2" bgcolor="#D4D4D4" width="100%"><font color="#993399">Upstream Burst Descriptor</font></td>
+						</tr>
+					</table>
+				</div>
+				<p>The above is normal for an NTL cable connection. If the cable modem has failed to connect properly to the cable network, fewer of the tasks will be registered as <b>Done</b>. The first one not showing as <b>Done</b> will be the task that is failing. It is not a problem for <b>BPI</b> to be showing as not enabled.</p>
+				<a name="ntldnsta"></a><!--#AGL.wrap(rdhw ;2002.06.23 16:51;;)At <a href="http://192.168.100.1/P_downstatus.htm">http://192.168.100.1/P_downstatus.htm</a>:
+-->
+				<div align="center">
+					<table border="5">
+						<tr>
+							<td bgcolor="#FFFFCC" width="100%" height="40">
+								<p align="center"><font size="4" color="#0000FF"><b>Downstream Status</b></font></p>
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="100%"><font color="#993399">Downstream Lock : Locked</font></td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="100%"><font color="#993399">Downstream Frequency : 402750000 Hz</font></td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="100%"><font color="#993399">Downstream Modulation : 64 QAM</font></td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="100%"><font color="#993399">Downstream Interleave Depth : 32</font></td>
+						</tr>
+						<tr>
+							<td nowrap bgcolor="#D4D4D4" width="100%"><font color="#993399">Downstream Receive Power Level : <span class="yellbg">2.99 dBmv</span>&nbsp;</font></td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="100%"><font color="#0000FF"><a href="#ntlcmsta">Cable Modem Status</a></font></td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="100%"><font color="#0000FF"><a href="#ntlupsta">Upstream Status</a></font></td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="100%"><font color="#993399">Upstream Burst Descriptor</font></td>
+						</tr>
+					</table>
+				</div>
+				<p>This shows more technical information on the downstream channel, including the <b>Downstream Receive Power Level</b>. For acceptable ranges, see the Surfboard discussion above.</p>
+				<a name="ntlupsta"></a><!--#AGL.wrap(rdhw ;2002.06.23 16:51;;)At <a href="http://192.168.100.1/P_upstatus.htm">http://192.168.100.1/P_upstatus.htm</a>:
+-->
+				<div align="center">
+					<table border="5">
+						<tr>
+							<td bgcolor="#FFFFCC" width="100%" height="40">
+								<p align="center"><font size="4" color="#0000FF"><b>Upstream Status</b></font></p>
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="100%"><font color="#993399">Upstream Channel ID : 3</font></td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="100%"><font color="#993399">Upstream Symbol Rate : 1280 ksym/sec&nbsp;</font></td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="100%"><font color="#993399">Upstream Frequency : 39184000 Hz</font></td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="100%"><font color="#993399">Upstream Mini-Slot Size : 8</font></td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="100%"><font color="#0000FF"><a href="#ntlcmsta">Cable Modem Status</a></font></td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="100%"><font color="#0000FF"><a href="#ntldnsta">Downstream Status</a></font></td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="100%"><font color="#993399">Upstream Burst Descriptor</font></td>
+						</tr>
+					</table>
+				</div>
+				<p>This shows more technical information on the upstream channel. There is nothing here that is affected by signal quality. Note that the Upstream Symbol Rate is shown as 1280 ksym/sec. With QPSK modulation on the upstream giving 2 bits per symbol, this equates to 2560 kbits/sec. With the cable modem having an upstream rate of 128 kbits/sec (see below), this means that one upstream channel can support only 20 cable modems without congestion if those modems are all sending as fast as they can. The screen given by <b>Upstream Burst Descriptor</b> is too technical to be of interest to end users.</p>
+				<!--#AGL.wrap(rdhw ;2002.06.23 16:51;;)
+				At <a href="http://192.168.100.1/P_operation.htm">http://192.168.100.1/P_operation.htm</a>:
+-->
+				<div align="center">
+					<table border="5">
+						<tr>
+							<td bgcolor="#FFFFCC" width="100%" height="40">
+								<p align="center"><font size="4" color="#0000FF"><b>Operation Configuration</b></font></p>
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="100%"><font color="#993399">Network Access : Enabled</font></td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="100%"><font color="#993399">Maximum Downstream Data Rate : <span class="yellbg">600000 bps</span></font></td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="100%"><font color="#993399">Maximum Upstream Data Rate : <span class="yellbg">128000 bps</span></font></td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="100%"><font color="#993399">Maximum Upstream Channel Burst : Not Present</font></td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="100%"><font color="#993399">Modem Capability : Concatenation Disabled, Fragametation Disabled, PHS Disabled&nbsp;</font></td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="100%"><font color="#993399">Maximum Number of CPEs : 1</font></td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="100%"><font color="#993399">BPI : Disabled</font></td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="100%"><font color="#993399">Software Upgrade Server : 62.253.189.100</font></td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="100%"><font color="#993399">Software Upgrade File Name : ram.bin</font></td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="100%"><font color="#993399">Software Upgrade AdminStatus : allowProvisioningUpgrade</font></td>
+						</tr>
+						<tr>
+							<td bgcolor="#D4D4D4" width="100%"><font color="#993399">Software Upgrade OperStatus : other</font></td>
+						</tr>
+					</table>
+				</div>
+				<p>In <b>Operation Configuration</b>, the items of interest are <b>Maximum Downstream Data Rate</b> and <b>Maximum Upstream Data Rate</b>: these are the cable modem rate caps. The settings shown above are typical of the NTL 600kbps service for stand-alone cable modems.</p>
+				<!--#AGL.wrap(rdhw ;2002.06.23 16:51;;)
+				At <a href="http://192.168.100.1/P_rate.htm">http://192.168.100.1/P_rate.htm</a>:
+-->
+				<div align="center">
+					<table border="5">
+						<tr>
+							<td colspan="4" bgcolor="#FFFFCC" width="100%" height="40">
+								<p align="center"><font size="4" color="#0000FF"><b>Interface Rate</b></font></p>
+							</td>
+						</tr>
+						<tr>
+							<td align="center" width="25%"></td>
+							<td align="center" nowrap bgcolor="#D4D4D4" width="25%"><font color="#993399">&nbsp;Packet Num&nbsp;</font></td>
+							<td align="center" nowrap bgcolor="#D4D4D4" width="25%"><font color="#993399">&nbsp;Time (Sec)&nbsp;</font></td>
+							<td align="center" nowrap bgcolor="#D4D4D4" width="25%"><font color="#993399">&nbsp;Packet Rate&nbsp;</font></td>
+						</tr>
+						<tr>
+							<td align="center" bgcolor="#D4D4D4" width="25%"><font color="#993399">Ethernet / In</font></td>
+							<td align="center" bgcolor="#D4D4D4" width="25%"><font color="#993399">244</font></td>
+							<td align="center" bgcolor="#D4D4D4" width="25%"><font color="#993399">27525</font></td>
+							<td align="center" bgcolor="#D4D4D4" width="25%"><font color="#993399">0.008865</font></td>
+						</tr>
+						<tr>
+							<td align="center" nowrap bgcolor="#D4D4D4" width="25%"><font color="#993399">&nbsp;Ethernet / Out&nbsp;</font></td>
+							<td align="center" bgcolor="#D4D4D4" width="25%"><font color="#993399">691</font></td>
+							<td align="center" bgcolor="#D4D4D4" width="25%"><font color="#993399">27525</font></td>
+							<td align="center" bgcolor="#D4D4D4" width="25%"><font color="#993399">0.025104</font></td>
+						</tr>
+						<tr>
+							<td align="center" bgcolor="#D4D4D4" width="25%"><font color="#993399">Cable / In</font></td>
+							<td align="center" bgcolor="#D4D4D4" width="25%"><font color="#993399">19281</font></td>
+							<td align="center" bgcolor="#D4D4D4" width="25%"><font color="#993399">27525</font></td>
+							<td align="center" bgcolor="#D4D4D4" width="25%"><font color="#993399">0.700490</font></td>
+						</tr>
+						<tr>
+							<td align="center" bgcolor="#D4D4D4" width="25%"><font color="#993399">Cable / Out</font></td>
+							<td align="center" bgcolor="#D4D4D4" width="25%"><font color="#993399">33</font></td>
+							<td align="center" bgcolor="#D4D4D4" width="25%"><font color="#993399">27525</font></td>
+							<td align="center" bgcolor="#D4D4D4" width="25%"><font color="#993399">0.001199</font></td>
+						</tr>
+						<tr>
+							<td align="center" bgcolor="#D4D4D4" width="25%"><font color="#993399">USB / In</font></td>
+							<td align="center" bgcolor="#D4D4D4" width="25%"><font color="#993399">0</font></td>
+							<td align="center" bgcolor="#D4D4D4" width="25%"><font color="#993399">27525</font></td>
+							<td align="center" bgcolor="#D4D4D4" width="25%"><font color="#993399">0.000000</font></td>
+						</tr>
+						<tr>
+							<td align="center" bgcolor="#D4D4D4" width="25%"><font color="#993399">USB / Out</font></td>
+							<td align="center" bgcolor="#D4D4D4" width="25%"><font color="#993399">0</font></td>
+							<td align="center" bgcolor="#D4D4D4" width="25%"><font color="#993399">27525</font></td>
+							<td align="center" bgcolor="#D4D4D4" width="25%"><font color="#993399">0.000000</font></td>
+						</tr>
+						<tr>
+							<td colspan="4" align="center" bgcolor="#D4D4D4" width="100%"><input onclick="alert('This is a dummy button')" type="button" name="Reset" value=" Reset "></td>
+						</tr>
+					</table>
+				</div>
+				<p>This screen is refreshed every second, and shows the number of packets sent and received on each interface.</p>
+				<a name="ntllog"></a><!--#AGL.wrap(rdhw ;2002.06.23 16:52;;)At <a href="http://192.168.100.1/P_log.htm">http://192.168.100.1/P_log.htm</a>:-->
+				<div align="center">
+					<table border="5">
+						<tr>
+							<td colspan="7" bgcolor="#FFFFCC" height="40">
+								<p align="center"><font size="4" color="#0000FF"><b>Event Log</b></font></p>
+							</td>
+						</tr>
+						<tr>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">Index</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">First Time</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">Last Time</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">Counts</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">Level</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">ID</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">Text</font></td>
+						</tr>
+						<tr>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">10</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">2002-05-07 06:23:13</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">2002-05-07 06:23:13</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">1</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">information</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">113</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">Link Up</font></td>
+						</tr>
+						<tr>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">3</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">2002-05-02 21:49:07</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">2002-05-06 22:56:26</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">13</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">notice</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">95</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">E101.0 TFTP <span class="yellbg">ntlhm100-silver.cm</span> from 3EFD8003</font></td>
+						</tr>
+						<tr>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">4</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">2002-05-02 21:49:07</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">2002-05-06 22:56:26</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">4</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">notice</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">94</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">TFTP success (80 bytes)</font></td>
+						</tr>
+						<tr>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">5</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">2002-05-02 21:49:07</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">2002-05-06 22:56:26</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">3</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">information</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">110</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">Cold Start</font></td>
+						</tr>
+						<tr>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">9</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">2002-05-06 22:56:26</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">2002-05-06 22:56:26</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">1</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">notice</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">126</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">Registration OK</font></td>
+						</tr>
+						<tr>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">2</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">2000-08-17 22:52:23</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">2002-05-04 23:05:18</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">7</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">notice</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">125</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">SNMP Event: SNMP agent Start.</font></td>
+						</tr>
+						<tr>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">8</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">2002-05-04 16:22:02</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">2002-05-04 16:22:02</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">1</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">information</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">111</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">Warm Start</font></td>
+						</tr>
+						<tr>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">1</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">2000-08-17 22:52:22</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">2002-05-02 21:59:37</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">4</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">error</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">26</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">R02.0 No Ranging Response received, T3 time-out</font></td>
+						</tr>
+						<tr>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">7</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">2002-05-02 21:49:54</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">2002-05-02 21:57:42</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">9</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">error</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">83</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">D06.0 TFTP Request Failed, No Response/No Server or configuration file NOT FOUND.</font></td>
+						</tr>
+						<tr>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">6</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">2002-05-02 21:49:27</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">2002-05-02 21:56:26</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">6</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">information</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">80</font></td>
+							<td align="center" bgcolor="#D4D4D4"><font color="#993399">D04.1 Time of Day Request sent no Response received</font></td>
+						</tr>
+					</table>
+				</div>
+				<p>The <b>Event Log</b> screen is refreshed every 10 seconds. It is presented in reverse chronological order of <b>Last Time</b>, so the most recent event is at the top. Unlike the Surfboard log, events with the same <b>ID</b>s are combined into a single entry, with a date range between the first and most recent incidences, and a repeat count. Note that the event with <b>ID 95</b> will show the name of the <a href="cmfile.html">cable modem configuration file</a> in use.</p>
+				<p>For troubleshooting information on the ntl:100 cable modem, see <a title="ntl:100 online manual" href="http://www.ntlworld.com/help/manual/100Manual.htm">http://www.ntlworld.com/help/manual/100Manual.htm</a>.</p>
+				<hr>
+				<div class="ntlns4">
+					<h2><a name="pacediag"></a>Pace digital TV set-top box cable modem diagnostics</h2>
+					<p>This article relates to the Pace digital cable TV set top boxes, with integrated DOCSIS cable modem, as used in ex-Cable &amp; Wireless franchises of NTL. This article does <b>not</b> apply to the Pace digital cable TV set top boxes used in other NTL franchises, as the cable modem in those STBs is not DOCSIS-compatible, and cannot therefore be used on NTL networks.</p>
+					<p>If the central LED is steadily lit, the STB is in full two-way contact with the head-end (UBR), and so cable modem service might be functional. If it is flashing, the STB/CM is in the process of locking  onto the UBR, and the CM service will not be functional, until the LED goes steady.</p>
+					<p>During normal viewing, diagnostic information is available by pressing in turn: <b>Page up</b>, <b>Page Down</b>, <b>Blue</b> on the remote. This <b>User Information</b> page will vary slightly according to software level and STB model. This page needs to be scrolled to view the entire contents: use the <b>cursor</b> control on the remote, or the <b>Page up</b>, <b>Page Down</b> buttons.</p>
+					<div align="center">
+						<div class="paceout2">
+							<p class="wh" align="left">&nbsp;USER INFORMATION:<br>
+								
+								
+								
+								
+								
+								
+								&nbsp;Network ID : 41060<br>
+								
+								
+								
+								
+								
+								
+								&nbsp;STB IP Address : 10.17.68.199<br>
+								
+								
+								
+								
+								
+								
+								&nbsp;CA IPPV Status : SUCCESSFUL<br>
+								
+								
+								
+								
+								
+								
+								&nbsp;SNR : 31.0dB<br>
+								
+								
+								
+								
+								
+								
+								&nbsp;Pre RS Errors : 0 per 0.5s<br>
+								
+								
+								
+								
+								
+								
+								&nbsp;Post RS Errors : 0 per 0.5s<br>
+								
+								
+								
+								
+								
+								
+								&nbsp;AGC Signal Level : 400<br>
+								
+								
+								
+								
+								
+								
+								&nbsp;RF Channel : 69<br>
+								
+								
+								
+								
+								
+								
+								&nbsp;Total Channels : 87<br>
+								
+								
+								
+								
+								
+								
+								&nbsp;TS Streams : 21<br>
+								
+								
+								
+								
+								
+								
+								&nbsp;Total Services : 166<br>
+								
+								
+								
+								
+								
+								
+								&nbsp;Volume : +0<br>
+								
+								
+								
+								
+								
+								
+								&nbsp;Return Power : 50dBmV<br>
+								
+								
+								
+								
+								
+								
+								&nbsp;SC Serial Num: xx xxxx xxxx xx<br>
+								
+								
+								
+								
+								
+								
+								&nbsp;Credit : 3200<br>
+								
+								
+								
+								
+								
+								
+								&nbsp;Hardware Type: DiTV1000<br>
+								
+								
+								
+								
+								
+								
+								&nbsp;Hardware version: P1.3<br>
+								
+								
+								
+								
+								
+								
+								&nbsp;Software Version: P1.53.25d.CR2<br>
+								
+								
+								
+								
+								
+								
+								&nbsp;Card Status: 5<br>
+								
+								
+								
+								
+								
+								
+								&nbsp;QOS: silver.cm<br>
+								
+								
+								
+								
+								
+								
+								&nbsp;Timers : T1:0,T2:0,T3:0,T4:0,<br>
+								
+								
+								
+								
+								
+								
+								&nbsp;Reset:0,Sync:1<br>
+								<br>
+								
+								
+								
+								
+								
+								
+								&nbsp;Press 'OK' to view event log or<br>
+								
+								
+								
+								
+								
+								
+								&nbsp;red button to cancel.</p>
+						</div>
+					</div>
+					<p>If the <b>STB IP Address</b> is absent, neither the cable modem nor the Interactive TV service will be operational. The lines from <b>SNR</b> down to <b>RF Channel</b> give diagnostic information about the current digital TV MPEG downstream channel: the <b>SNR</b> should be <b>30dB</b> or higher; <b>Pre RS Errors</b> should be zero or very small; <b>Post RS Errors</b> should ideally be zero. The <b>Return Power</b> should be lower than <b>58dBmV</b>, otherwise there might be a return path problem. <b>QOS</b> gives the name of the <a href="cmfile.html">cable modem configuration file</a>, depending on the package you have subscribed to: a value of <b>nobia.cm</b> indicates that cable modem service is not enabled at this STB. <b>Timers</b> count various cable modem DOCSIS protocol error conditions: they should all be steady and not increasing very often. At this screen, pressing <b>OK</b> will display the event log:</p>
+					<div align="center">
+						<div class="paceout2">
+							<p class="wh" align="left">&nbsp;EVENT LOG:<br>
+								
+								
+								
+								
+								
+								
+								&nbsp;<br>
+								
+								
+								
+								
+								
+								
+								&nbsp;172&nbsp;&nbsp;CM operational<br>
+								
+								
+								
+								
+								
+								
+								&nbsp;16&nbsp;&nbsp;Tuning parameters corrupt<br>
+								
+								
+								
+								
+								
+								
+								&nbsp;18&nbsp;&nbsp;Reboot<br>
+								
+								
+								
+								
+								
+								
+								&nbsp;16&nbsp;&nbsp;Tuning parameters corrupt<br>
+								
+								
+								
+								
+								
+								
+								&nbsp;18&nbsp;&nbsp;Reboot<br>
+								
+								
+								
+								
+								
+								
+								&nbsp;262&nbsp;&nbsp;FP Reset key press<br>
+								
+								
+								
+								
+								
+								
+								&nbsp;detected<br>
+								
+								
+								
+								
+								
+								
+								&nbsp;173&nbsp;&nbsp;Periodic Ranging Fail<br>
+								
+								
+								
+								
+								
+								
+								&nbsp;172&nbsp;&nbsp;CM operational<br>
+								
+								
+								
+								
+								
+								
+								&nbsp;<br>
+								
+								
+								
+								
+								
+								
+								&nbsp;Press red button to cancel</p>
+						</div>
+					</div>
+					<p>This log is in reverse chronological order, and should be read from the bottom upwards. Press <b>Red</b> to return to normal viewing.</p>
+					<p>No method has yet been found for end-users to view on their PC the diagnostics of the cable modem embedded in the Pace digital TV set-top-box. If you know otherwise, please e-mail me.</p>
+					<p>Fuller cable modem diagnostic information is available via the TV screen when the STB is in engineering mode. As a customer, you do not need to enter the Engineering Menus for any purpose: the <b>User Information</b> screen described above is all you need to know for diagnosing or reporting fault conditions to your ISP. Unskilled use of the Engineering Menus is dangerous because it is very easy accidentally to change some of the configuration data, which might result in permanent loss of service. If you have fully absorbed and understood that warning, then proceed as follows:</p>
+					<ul>
+						<li>Re-boot the STB by:</li>
+						<ul>
+							<li>either: power off and on again;</li>
+							<li>or: press <b>OK</b>, <b>Left</b>, <b>TV</b> on the front of the STB.</li>
+						</ul>
+						<li>As the STB re-boots, hold down the <b>Up</b> &amp; <b>Down</b> buttons on the STB.</li>
+						<li>Browse through the pages by using the <b>Left</b> &amp; <b>Right</b> buttons on the remote or STB.</li>
+						<li>Pressing any key other than <b>Left</b> or <b>Right</b> might damage your STB configuration.</li>
+					</ul>
+					<p><b>Page 2:</b></p>
+					<div align="center">
+						<div class="paceout2">
+							<p class="wh" align="left">&nbsp;&nbsp;HARDWARE ADDRESSING:</p>
+							<table width="100%" border="0" cellspacing="3" cellpadding="0">
+								<tr>
+									<td class="pacein0" nowrap width="40%">&nbsp;Network ID</td>
+									<td class="pacein1" nowrap>&nbsp;41 060</td>
+								</tr>
+								<tr>
+									<td class="pacein0" nowrap width="40%">&nbsp;MAC Address</td>
+									<td class="pacein1" nowrap>&nbsp;00-50-94-09-B9-0E</td>
+								</tr>
+								<tr>
+									<td class="pacein0" nowrap width="40%">&nbsp;Nagra Serial Code</td>
+									<td class="pacein1" nowrap>&nbsp;12&nbsp;&nbsp;02 0E 16</td>
+								</tr>
+								<tr>
+									<td class="pacein0" nowrap width="40%">&nbsp;Hardware Version</td>
+									<td class="pacein1" nowrap>&nbsp;P1.3</td>
+								</tr>
+								<tr>
+									<td class="pacein0" nowrap width="40%">&nbsp;Manufacturer ID</td>
+									<td class="pacein1" nowrap>&nbsp;PACE</td>
+								</tr>
+								<tr>
+									<td class="pacein0" nowrap width="40%">&nbsp;Code Release Version</td>
+									<td class="pacein1" nowrap>&nbsp;P1.53.22D.CR2</td>
+								</tr>
+								<tr>
+									<td class="pacein0" nowrap width="40%">&nbsp;Build Date</td>
+									<td class="pacein1" nowrap>&nbsp;Made on Feb 12 2001, 12:56:03</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<p>Here the <b>HFC MAC Address</b> might be needed when communicating with Tech Support.</p>
+					<p><b>Page 3</b>:</p>
+					<div align="center">
+						<div class="paceout2">
+							<p class="wh" align="left">&nbsp;&nbsp;MCNS IP ADDRESSING:</p>
+							<table width="100%" border="0" cellspacing="3" cellpadding="0">
+								<tr>
+									<td class="pacein0" nowrap width="50%">&nbsp;STB IP</td>
+									<td class="pacein1" nowrap>&nbsp;10.17.68.199</td>
+								</tr>
+								<tr>
+									<td class="pacein0" nowrap width="50%">&nbsp;DNS Server IP</td>
+									<td class="pacein1" nowrap>&nbsp;0.0.0.0</td>
+								</tr>
+								<tr>
+									<td class="pacein0" nowrap width="50%">&nbsp;Subnet Mask IP</td>
+									<td class="pacein1" nowrap>&nbsp;255.255.248.0</td>
+								</tr>
+								<tr>
+									<td class="pacein0" nowrap width="50%">&nbsp;Default Gateway IP</td>
+									<td class="pacein1" nowrap>&nbsp;10.17.64.1</td>
+								</tr>
+								<tr>
+									<td class="pacein0" nowrap width="50%">&nbsp;Quality of Service</td>
+									<td class="pacein1" nowrap>&nbsp;silver.cm</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<p>The <b>STB IP</b> is the private ISP-side IP address of the cable modem. <b>Quality of Service</b> shows the name of the configuration file downloaded into the cable modem. If cable modem service is available in this area but not configured in this STB, it shows <b>no-bia.cm</b>. If cable modem service is not available in this area, it might show <b>bronze.cm</b> by default. See <a href="cmfile.html#cmfile">Cable Modem configuration file</a> below for more about this file.</p>
+					<p><b>Page 11</b> is a better version of the event log, with dates and times of each event.</p>
+					<p><b>Page 13:</b></p>
+					<div align="center">
+						<div class="paceout2">
+							<p class="wh" align="left">&nbsp;&nbsp;MCNS DOWNSTREAM:</p>
+							<table width="100%" border="0" cellspacing="3" cellpadding="0">
+								<tr>
+									<td class="pacein0" nowrap width="35%">&nbsp;Channel Frequency</td>
+									<td class="pacein1" nowrap width="30%">586.750MHz</td>
+									<td class="pacein0" nowrap width="20%">&nbsp;&nbsp;Annex</td>
+									<td class="pacein1" nowrap>B</td>
+								</tr>
+								<tr>
+									<td class="pacein0" nowrap width="35%">&nbsp;Symbol Rate</td>
+									<td class="pacein1" nowrap width="30%">5.056MSym/s</td>
+									<td class="pacein0" nowrap width="20%">&nbsp;&nbsp;Modulation</td>
+									<td class="pacein1" nowrap>64QAM</td>
+								</tr>
+								<tr>
+									<td class="pacein0" nowrap width="35%">&nbsp;AGC &#150; Tuner</td>
+									<td class="pacein1" nowrap width="30%">32466</td>
+									<td width="20%">&nbsp;</td>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td class="pacein0" nowrap width="35%">&nbsp;AGC &#150; IF</td>
+									<td class="pacein1" nowrap width="30%">788</td>
+									<td width="20%">&nbsp;</td>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td class="pacein0" nowrap width="35%">&nbsp;AGC &#150; Combined</td>
+									<td class="pacein1" nowrap width="30%">129</td>
+									<td width="20%">&nbsp;</td>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td class="pacein0" nowrap width="35%">&nbsp;SNR Estimate</td>
+									<td class="pacein1" nowrap width="30%">33.4dB</td>
+									<td class="pacein2" colspan="2" nowrap>SNR OK</td>
+								</tr>
+								<tr>
+									<td class="pacein0" nowrap width="35%">&nbsp;Pre RS Error Rate</td>
+									<td class="pacein1" nowrap width="30%">0 per 0.5s</td>
+									<td class="pacein2" colspan="2" nowrap>Data OK</td>
+								</tr>
+								<tr>
+									<td class="pacein0" nowrap width="35%">&nbsp;Post RS Error Rate</td>
+									<td class="pacein1" nowrap width="30%">0 per 0.5s</td>
+									<td class="pacein2" colspan="2" nowrap>Data OK</td>
+								</tr>
+								<tr>
+									<td class="pacein0" nowrap width="35%">&nbsp;Carrier Offset</td>
+									<td class="pacein1" nowrap width="30%">0kHz</td>
+									<td width="20%">&nbsp;</td>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td class="pacein0" nowrap width="35%">&nbsp;Lock Status</td>
+									<td class="pacein1" nowrap width="30%">Locked</td>
+									<td class="pacein2" colspan="2" nowrap>Locked</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<p>This page shows the quality of the cable modem downstream. The Signal to Noise Ratio <b>SNR Estimate</b> should ideally be above 30dB, although it might be possible to maintain service with an <b>SNR</b> down to as poor as 23.5dB. More revealing are the <b>Error Rates</b>. These are continuously monitoring the entire data stream from the UBR, not just the packets destined for your PC. <b>Pre RS Error Rate</b> shows the error rate before Reed-Solomon error correction: this count should be zero or low. <b>Post RS Error Rate</b> shows the uncorrectable error rate, and a non-zero figure is indicative of problems with downstream reception. <b>Lock Status</b> must be <b>Locked</b> for the cable modem to work. Note the green boxes confirming that the data shown represent acceptable values.</p>
+					<p><b>Page 14:</b></p>
+					<div align="center">
+						<div class="paceout2">
+							<p class="wh" align="left">&nbsp;&nbsp;MCNS UPSTREAM:</p>
+							<table width="100%" border="0" cellspacing="3" cellpadding="0">
+								<tr>
+									<td class="pacein0" nowrap width="40%">&nbsp;Channel Frequency</td>
+									<td class="pacein1" nowrap>35.984MHz</td>
+								</tr>
+								<tr>
+									<td class="pacein0" nowrap width="40%">&nbsp;Symbol Rate</td>
+									<td class="pacein1" nowrap>1.280MSym/s</td>
+								</tr>
+								<tr>
+									<td class="pacein0" nowrap width="40%">&nbsp;Power Level</td>
+									<td class="pacein1" nowrap>50dBmV</td>
+								</tr>
+								<tr>
+									<td class="pacein0" nowrap width="40%">&nbsp;Modem Up-time</td>
+									<td class="pacein1" nowrap>00days 00hrs 02mins 37secs</td>
+								</tr>
+								<tr>
+									<td class="pacein0" nowrap width="40%">&nbsp;Assigned SID</td>
+									<td class="pacein1" nowrap>94</td>
+								</tr>
+							</table>
+							<table width="100%" border="0" cellspacing="3" cellpadding="0">
+								<tr>
+									<td class="wh" colspan="6">&nbsp;Cable Modem MAC Counters</td>
+								</tr>
+								<tr>
+									<td class="pacein0" width="18%">&nbsp;T1</td>
+									<td class="pacein1" width="15%">&nbsp;0</td>
+									<td class="pacein0" width="18%">&nbsp;T2</td>
+									<td class="pacein1" width="15%">&nbsp;0</td>
+									<td class="pacein0" width="18%">&nbsp;T3</td>
+									<td class="pacein1">&nbsp;0</td>
+								</tr>
+								<tr>
+									<td class="pacein0" width="18%">&nbsp;T4</td>
+									<td class="pacein1" width="15%">&nbsp;0</td>
+									<td class="pacein0" width="18%">&nbsp;Reset</td>
+									<td class="pacein1" width="15%">&nbsp;0</td>
+									<td class="pacein0" width="18%">&nbsp;Sync Loss</td>
+									<td class="pacein1">&nbsp;0</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<p>This shows the state of the cable modem upstream. The data on this screen will probably be meaningless unless Page 13's lock status was <b>Locked</b>. On Page 14, the <b>Power Level</b> should be less than 58dBmV: a level of 58dBmV or more indicates a poor return path in the cable system, and the UBR might not be able to receive data from this cable modem correctly. The <b>Counters</b> count failures of the handshaking protocols between the cable modem and the UBR. Some of these failures can be recovered from, but with loss of performance. Ideally these counters should not be increasing. They might contain non-zero values arising from past problems now cleared.</p>
+					<p>Return to normal viewing by going to page 10 and pressing <b>TV</b>.</p>
+					<p>Thanks to Rob James and Peter Hoyle for help with Pace screen information.</p>
+				</div>
+				<hr>
+			<!-- #EndEditable -->
+			<p>Return to <a href="index.html">Index</a>.</p>
+		</body>
+
+	<!-- #EndTemplate -->
+
+</html>
+

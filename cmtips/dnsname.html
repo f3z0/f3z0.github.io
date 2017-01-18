@@ -1,0 +1,930 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+
+<html lang="en">
+
+	<!-- #BeginTemplate "../../cmtips.data/Templates/cmtemp.html" -->
+
+		<head>
+			<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+			<title>Cable Modem Troubleshooting Tips: DNS issues</title>
+			<!-- #BeginHeadLocked "" -->
+				<meta name="description" content="Technical tips for troubleshooting a cable modem connection.">
+				<meta name="keywords" content="cable modem, FAQ, broadband, cablemodem, troubleshooting, tips, NTL, NTLworld, ntlhome, Telewest, blueyonder">
+				<meta name="author" content="Robin Walker">
+				<meta name="copyright" content="&copy; 2001-02 Robin Walker">
+				<link href="../favicon.ico" rel="shortcut icon">
+				<link href="mailto:rdhw@cam.ac.uk" rel="author">
+				<link href="copyright.html" rel="copyright">
+				<link href="index.html" rel="index">
+				<link href="cmstyle.css" rel="stylesheet">
+				<script type="text/javascript" language="JavaScript"><!--
+function jsinit() {
+  if (top!=self) top.location.href = self.location.href;
+}
+// -->
+</script>
+			<!-- #EndHeadLocked -->
+		</head>
+
+		<body onload="jsinit()" bgcolor="#eeffff">
+			<h1>Cable Modem Troubleshooting Tips</h1>
+			<hr>
+			<table border="0" cellpadding="0" align="left" summary="Quick links">
+				<tr>
+					<td nowrap bgcolor="#ffffff">
+						<div class="menubox">
+							<a class="sidelink" title="Introduction and Index to articles" href="index.html">Intro&nbsp;&amp;&nbsp;Index</a>.<br>
+							<a class="sidelink" title="History of updates and changes to this site" href="hist.html">Update&nbsp;history</a>.<br>
+							<a class="sidelink" title="Problems with BroadJump Broadband Installer" href="broadjump.html">Installer issues</a>.<br>
+							<a class="sidelink" title="Problems associated with getting a cable modem registered with your cable operator" href="register.html">Registration&nbsp;issues</a>.&nbsp;<br>
+							<a class="sidelink" title="PC network configuration for cable service" href="basicset.html">Network&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Swapping one PC between multiple networks" href="mobile.html">Mobile&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Understanding the flashing lights on the cable modem" href="lights.html">Cable&nbsp;Modem&nbsp;LEDs</a>.<br>
+							<a class="sidelink" title="How to determine various important IP addresses" href="ipaddr.html">IP&nbsp;addresses</a>.<br>
+							<a class="sidelink" title="How to determine various important MAC addresses" href="macaddr.html">MAC addresses</a>.<br>
+							<a class="sidelink" title="What to check if you have no service" href="badip.html">Dead&nbsp;connection</a>.<br>
+							<a class="sidelink" title="Updating your system with the latest patches and fixes" href="sysupdates.html">System&nbsp;updates</a>.<br>
+							<a class="sidelink" title="Tweaking your PC for best cable modem performance" href="tweaks.html">Network&nbsp;tweaks</a>.<br>
+							<a class="sidelink" title="Problems specifically related to the ethernet connection between your PC and the cable modem" href="ethernet.html">Ethernet&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Problems specifically related to a USB connection between the PC and cable modem" href="usb.html">USB&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Procedures and tips specifically for Surfboard cable modems" href="surfboard.html">Surfboard&nbsp;tips</a>.<br>
+							<a class="sidelink" title="Diagnosing your cable modem's connection" href="signal.html">CM&nbsp;diagnostics</a>.<br>
+							<a class="sidelink" title="Quality of service determined by configuration file" href="cmfile.html">CM&nbsp;config&nbsp;file</a>.<br>
+							<a class="sidelink" title="The network structure of a cable modem" href="cmworks.html">CM&nbsp;tech&nbsp;info</a>.<br>
+							<a class="sidelink" title="DHCP-related problems" href="dhcp.html">DHCP&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Understanding DNS and fixing DNS problems" href="dnsname.html">DNS&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Transparent web proxy caches and how to sidestep them" href="trancache.html">Web&nbsp;proxy&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance of streaming media" href="stream.html">Streaming&nbsp;media</a>.<br>
+							<a class="sidelink" title="Settings that affect performance, latency and pings" href="games.html">Gaming&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance; avoiding saturation of upstream" href="p2p.html">P2P&nbsp;file-sharing</a>.<br>
+							<a class="sidelink" title="Work around connection errors" href="seti.html">SETI@home&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect web browsing performance" href="fasterweb.html">Faster&nbsp;web&nbsp;browsing</a>.<br>
+							<a class="sidelink" title="Strategies to get better download speeds" href="fasterftp.html">Faster&nbsp;downloads</a>.<br>
+							<a class="sidelink" title="How to avoid performance hits" href="downup.html">Simul&nbsp;down/uploads</a>.<br>
+							<a class="sidelink" title="How to restore lost connection when you swap PCs connected to the CM" href="swap.html">Swapping&nbsp;PCs&nbsp;on&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Multiple PCs sharing one CM, home LANs, and NAT Routers" href="homelan.html">PCs&nbsp;sharing&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Using dial-up without losing cable connection" href="dialup.html">Simul&nbsp;dialup&nbsp;&amp;&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Problems with some VPN configurations" href="vpn.html">VPN&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Keep your clock correct, for ever, from cable time" href="timesync.html">Time&nbsp;sync</a>.<br>
+							<a class="sidelink" title="Avoiding virus and trojan infections" href="virus.html">Virus&nbsp;security</a>.<br>
+							<a class="sidelink" title="Configuring firewalls for cable connection" href="security.html">Firewall&nbsp;security</a>.<br>
+							<a class="sidelink" title="Limitations of some speed tests" href="speed.html">Speed&nbsp;testing</a>.<br>
+							<a class="sidelink" title="Understanding, diagnosing, and fixing latency and ping problems" href="latency.html">Latency issues</a>.<br>
+							<a class="sidelink" title="How to perform a traceroute, and how they can mislead" href="traceroute.html">Traceroute</a>.<br>
+							<a class="sidelink" title="Understanding and diagnosing packet loss" href="loss.html">Packet loss</a>.<br>
+							<a class="sidelink" href="frontpage.html">FrontPage tips</a>.<br>
+							<a class="sidelink" title="How to obtain technical support" href="techsupp.html">NTL/BY&nbsp;Tech&nbsp;Support</a>.</div>
+					</td>
+					<td width="18">&nbsp;</td>
+				</tr>
+			</table>
+			<!-- #BeginEditable "main" -->
+				<h2>Domain Name System (DNS)</h2>
+				<ul>
+					<li><a href="#what">What is DNS</a>?</li>
+					<li><a href="#which">Which are my DNS servers</a>?</li>
+					<li><a href="#lookup">DNS Lookups</a>: doing them manually</li>
+					<li><a href="#tshoot">DNS troubleshooting</a>: some tips for common problems</li>
+					<li><a href="#dnsfw">DNS and firewalls</a>: common problems</li>
+					<li><a href="#dyndns">Dynamic DNS</a>: a fixed name for your broadband PC</li>
+					<li><a href="#dnsname">Decoding your DNS name</a>: finding your UBR location <span class="flash">&nbsp;Updated 2003 Feb 16&nbsp;</span></li>
+				</ul>
+				<hr>
+				<h3><a name="what"></a>What is DNS?</h3>
+				<p><b>DNS</b> stands for Domain Name System.</p>
+				<p>Every computer on the internet has a unique <a href="ipaddr.html">Internet Protocol (IP) address</a>, such as <b>62.253.162.30</b>. But it is difficult for humans to relate to such numeric addresses. We prefer to use names which embody some meaning, such as <b>www.ntlworld.com</b>. These names are referred to as <b>DNS names</b>.</p>
+				<p>The DNS provides a translation service from user-friendly <b>DNS names</b> to <b>IP addresses</b>, and vice-versa. Data routing on the internet uses IP addresses, and knows nothing of DNS names. Human users mainly use the DNS names, and only occasionally come across IP addresses. The first phase of setting up an internet connection is therefore a <b>DNS lookup</b> to translate the DNS name given by the human user to an IP address that the internet can use.</p>
+				<p>This translation service is provided by special computers on the internet called <b>DNS Servers</b>. Each ISP usually provides its own DNS Servers for its customers. Because you can't use DNS names until you have a working DNS service, the DNS servers have to be identified by their IP addresses. Because the DNS service is so crucial, it is normal for ISPs to provide more than one DNS server, so that the DNS service can continue even if one DNS server fails. So the network configuration of a PC usually includes two or three IP addresses of DNS servers.</p>
+				<p>To save customers the burden of having to configure these DNS server addresses themselves, the DNS configuration is normally automatically distributed to PCs as part of the <a href="dhcp.html">DHCP process</a>.</p>
+				<p>It might seem at first that there ought to be a one-to-one correspondence between IP addresses and DNS names. But in fact, one DNS name can translate to multiple IP addresses, and multiple DNS names can translate to the same IP address. For instance, to assist in load-balancing, the DNS name <b>news.cable.ntlworld.com</b> translates to a list of many IP addresses, each one of which can supply the same news service. And often hundreds of vanity web sites have DNS names which all translate to the same IP address, so that all the web sites can be hosted on the same web server.</p>
+				<hr>
+				<h3><a name="which"></a>Which are my DNS servers?</h3>
+				<p>See <a href="ipaddr.html#dnsip">Finding the DNS server address(es)</a>.</p>
+				<hr>
+				<h3><a name="lookup"></a>DNS Lookups</h3>
+				<p>When you give a DNS name to any application, it is automatically looked up in the DNS and converted to an IP address. For instance, if you send your web browser to <b>http://www.ntlworld.com/</b> the host name <b>www.ntlworld.com</b> is automatically translated to <b>62.253.162.30</b> inside the web browser: you don't have to do anything special to make this happen, and you never find out what the IP address is.</p>
+				<p>Sometimes, you just want to look up a DNS name and find its IP address, or vice-versa. Most versions of Unix, Linux, Mac OS X, and Windows NT/2000/XP support the <b>nslookup</b> command. Open a command window and type the command <b><tt>nslookup</tt></b> followed by the DNS name or IP address that you want looked up. For instance:</p>
+				<blockquote>
+					<pre class="logns4">C:\&gt;<b>nslookup www.ntlworld.com
+</b>Server:  cache1.ntli.net
+Address:  194.168.4.100
+&nbsp;
+Non-authoritative answer:
+Name:    www.ntlworld.com
+Address:  62.253.162.30</pre>
+				</blockquote>
+				<p>The first two lines of output tell you which DNS server is providing the answers; the last two lines give the DNS name and IP address being sought. You would get the same output from <tt><b>nslookup 62.253.162.30</b></tt>, which would find the DNS name for that IP address. If you type <tt><b>nslookup</b></tt> without any parameters, you get into an interactive version: you can escape from it by typing <tt><b>exit</b></tt>. For full information on the <b>nslookup</b> command see <a title="Microsoft Knowledgebase Q200525" href="http://support.microsoft.com/default.aspx?scid=KB;EN-US;q200525">http://support.microsoft.com/default.aspx?scid=KB;EN-US;q200525</a>.</p>
+				<p>In <b>Windows 95/98/ME</b>, the command <tt><b>tracert</b></tt> has the useful side-effect of always doing a DNS lookup on the given parameter, and displaying both the original and the lookup in the first line of output. You can cancel the rest of the output by typing <b>Ctrl-C</b>. For instance:</p>
+				<blockquote>
+					<pre class="logns4">C:\&gt;<b>tracert www.ntlworld.com
+</b>&nbsp;
+Tracing route to www.ntlworld.com [62.253.162.30]</pre>
+				</blockquote>
+				<p>You would get the same output from <tt><b>tracert 62.253.162.30</b></tt>, so you can use <b>tracert</b> to do lookups in both directions.</p>
+				<p><b>Apple Mac OS 8.x/9.x</b> users can perform DNS lookups with utilities such as <a href="http://www.interarchy.com/">Interarchy</a> or <a href="http://www.sustworks.com/">IPNetMonitor</a>.</p>
+				<hr>
+				<h3><a name="tshoot"></a>DNS troubleshooting</h3>
+				<p>Sometimes, getting a DNS lookup error is the first symptom of having lost your broadband connection, so check that you still have a connection before delving any further. A simple test is to attempt a <b><a href="traceroute.html">traceroute</a></b> or <b><a href="latency.html">ping</a></b> to the DNS server(s) themselves; see <a href="ipaddr.html#dnsip">Finding the DNS server address(es)</a>.</p>
+				<p>If, while browsing the web, you receive a web page which says simply <b>DNS error</b>, then this is most likely a fault with a web proxy cache (transparent or explicit), and not a DNS error at all. You might be able to work around this problem by <a href="trancache.html#sidestep">configuring an explicit web proxy</a>.</p>
+				<p>You can check whether a DNS error is real, or the invention of a web proxy, by looking up the sought host name in the DNS system yourself. For instance, if you were having difficulty browsing the URL <b>http://www.fredbloggs.com/somepage.html</b>, you would try looking up <b>www.fredbloggs.com</b> in the DNS system; see <a href="#lookup">DNS Lookups</a> above. If you get a reply, there is not a problem with the DNS system. The reply will tell you whether the DNS name exists or not.</p>
+				<p>In Internet Explorer for Windows, a genuine DNS lookup error yields a dummy page which starts <b>The page cannot be displayed</b>, and finishes with the lines:</p>
+				<blockquote>
+					<p class="logns4">Cannot find server or DNS Error<br>
+						
+						
+						
+						
+						
+						
+						Internet Explorer</p>
+				</blockquote>
+				
+				
+				
+				
+				
+				
+				Other browsers produce a popup error dialog. The most common cause of such a DNS error is typing a mis-spelt URL, or following a link to a site which no longer exists.
+
+				<p>An ISP's DNS servers can cache lookups from DNS names to IP addresses, and vice-versa, for as long as specified by the owner of the DNS name. If the association between names and addresses changes, and the original owner did not reduce the allowed cache time in advance, then it can take a day or more for an ISP's DNS server to catch up with external changes. There is nothing that you can easily do to work around this. Experts can use the advanced interactive facilities of <b>nslookup</b> to force the lookup to be done by the <b>Authoritative server</b>, thus bypassing the ISP's DNS caches. However, in the case of web sites which are virtual hosts on shared web servers, sending a web browser to the IP address of the site will not work, as the web server requires the name of the site in the request in order to know which virtual site to serve in reply.</p>
+				<hr>
+				<h3><a name="dnsfw"></a>DNS and firewalls</h3>
+				<p>It is possible for DNS servers to be quite slow to reply to lookup requests. If your operating system abandons the lookup, but the DNS server eventually replies after all, the reply packet can be logged as an unexpected probe by some personal firewall programs. If you discover your firewall is logging apparent probes from addresses which turn out to be DNS servers, do not be alarmed. You can probably <a href="security.html#fwconfig">configure your firewall</a> not to log such late replies, for instance by configuring the DNS servers as trusted hosts.</p>
+				<hr>
+				<h3><a name="dyndns"></a>Dynamic DNS</h3>
+				<p>Because the IP address of your broadband connection is allocated by DHCP, it is subject to change from time to time without notice. If you leave your PC on continuously, with the object of connecting to it from elsewhere, or offering a public service, you cannot reliably use or advertise its IP address. One solution is to subscribe to a <b>Dynamic DNS</b> service. This service allocates to you a DNS name (different to the one that your ISP allocates). From time to time your PC communicates with the Dynamic DNS server, letting it know the current IP address to associate with your Dynamic DNS name. When your PC's IP address changes, the Dynamic DNS name will be updated to point to the new IP address, and this change should propagate around the world in a few minutes, because the permitted DNS cache time is kept short. By connecting to your PC using its Dynamic DNS name, a caller will always get connected to the current IP address.</p>
+				<p>There are very many providers of Dynamic DNS services. Here are some lists of providers and sources of information:</p>
+				<ul>
+					<li><a href="http://www.technopagan.org/dynamic/">http://www.technopagan.org/dynamic/</a></li>
+					<li><a href="http://www.geocities.com/kiore_nz/">http://www.geocities.com/kiore_nz/</a></li>
+					<li><a href="http://dmoz.org/Computers/Software/Internet/Servers/Address_Management/Dynamic_DNS_Services/">http://dmoz.org/Computers/Software/Internet/Servers/Address_Management/Dynamic_DNS_Services/</a></li>
+					<li><a href="http://dns.highsynth.com/">http://dns.highsynth.com/</a></li>
+				</ul>
+				<p>Your PC (or NAT router) has to run special software to update the Dynamic DNS servers.</p>
+				<hr>
+				<h3><a name="dnsname"></a>Decoding your DNS name</h3>
+				<p>For every IP address allocated to a cable customer's PC, there is an associated DNS name. With certain ISPs, the DNS name can tell you which core router and UBR your cable is fed from.</p>
+				<p>First find your <b>WAN</b> IP address: see <a href="ipaddr.html#ipaddr">What's my IP address</a>? Then look up that IP address in the DNS as described in <a href="#lookup">DNS Lookups</a> above, to find the corresponding DNS name.</p>
+				<div class="ntlns4">
+					<p>With <b>NTL</b>, if the returned name includes the string <b>no-dns-yet</b> or <b>not-set-yet</b> this means that NTL have not yet configured custom DNS names in your area. Otherwise, the discovered name can be decoded as follows. Suppose the returned DNS name was:</p>
+					<blockquote>
+						<pre><b>pc1-papw1-2-cust173.cmbg.cable.ntl.com</b></pre>
+					</blockquote>
+					<ul>
+						<li><b>.cable.ntl.com</b> is common to all NTL stand-alone cable modem customers;<br>
+							<b>.broadband.ntl.com</b> is common to all NTL digital TV STB customers, and might become common to all broadband customers in due course.</li>
+						<li><b>cmbg</b> is an abbreviation of the location of the core router, in this case <b>Cambridge</b>.</li>
+						<li><b>papw</b> is an abbreviation of the location of the UBR, in this case <b>Papworth</b>.</li>
+						<li><b>papw1-2</b> shows that this user is connected via cable <b>2</b> of UBR <b>1</b>.</li>
+						<li><b>pc1</b> (or <b>public1</b> in some areas) shows that the IP address is from the first sub-net range of addresses allocated to this interface in this UBR. It would be <b>pc2</b> (or <b>public2</b>) for the second range of IP addresses, and so on. The <b>pc</b> is replaced by <b>ur</b> if your cable modem is currently unregistered.</li>
+						<li><b>cust173</b> shows the address within that sub-net (the same as the final component of the IP address).</li>
+					</ul>
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						<caption><b>Selected area abbreviations known on NTL network</b></caption>
+						<tr>
+							<td valign="top">
+								<table border="1" cellspacing="0" cellpadding="0">
+									<tr>
+										<td>&nbsp;&nbsp;&nbsp;</td>
+										<td>addl</td>
+										<td>Addlestone</td>
+									</tr>
+									<tr>
+										<td>and</td>
+										<td>ando</td>
+										<td>Andover</td>
+									</tr>
+									<tr>
+										<td>ash</td>
+										<td>ashf</td>
+										<td>Ashford</td>
+									</tr>
+									<tr>
+										<td>bag</td>
+										<td>bagu</td>
+										<td>Baguley</td>
+									</tr>
+									<tr>
+										<td>bel</td>
+										<td>blfs</td>
+										<td>Belfast</td>
+									</tr>
+									<tr>
+										<td>&nbsp;&nbsp;&nbsp;</td>
+										<td>bxly</td>
+										<td>Bexleyheath</td>
+									</tr>
+									<tr>
+										<td>big</td>
+										<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+										<td>Biggleswade</td>
+									</tr>
+									<tr>
+										<td>bir</td>
+										<td>brhm</td>
+										<td>Birmingham</td>
+									</tr>
+									<tr>
+										<td>&nbsp;&nbsp;&nbsp;</td>
+										<td>blbn</td>
+										<td>Blackburn</td>
+									</tr>
+									<tr>
+										<td>bre</td>
+										<td>brnt</td>
+										<td>Brentford</td>
+									</tr>
+									<tr>
+										<td>&nbsp;&nbsp;&nbsp;</td>
+										<td>brig</td>
+										<td rowspan="2">Brighton</td>
+									</tr>
+									<tr>
+										<td>btn</td>
+										<td>brtn</td>
+									</tr>
+									<tr>
+										<td>bri</td>
+										<td>bstl</td>
+										<td>Bristol</td>
+									</tr>
+									<tr>
+										<td>bro</td>
+										<td>bmly</td>
+										<td>Bromley</td>
+									</tr>
+									<tr>
+										<td>&nbsp;&nbsp;&nbsp;</td>
+										<td>burn</td>
+										<td>Burnley</td>
+									</tr>
+									<tr>
+										<td>cam</td>
+										<td>cmbg</td>
+										<td>Cambridge</td>
+									</tr>
+									<tr>
+										<td>cdf</td>
+										<td>cdif</td>
+										<td>Cardiff</td>
+									</tr>
+									<tr>
+										<td>che</td>
+										<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+										<td>Cheshunt</td>
+									</tr>
+									<tr>
+										<td>col</td>
+										<td>colc</td>
+										<td>Colchester</td>
+									</tr>
+									<tr>
+										<td>cos</td>
+										<td>cosh</td>
+										<td>Cosham</td>
+									</tr>
+									<tr>
+										<td>cov</td>
+										<td>cove</td>
+										<td>Coventry</td>
+									</tr>
+								</table>
+							</td>
+							<td valign="top">
+								<table border="1" cellspacing="0" cellpadding="0">
+									<tr>
+										<td>dar</td>
+										<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+										<td>Darlington</td>
+									</tr>
+									<tr>
+										<td>&nbsp;&nbsp;&nbsp;</td>
+										<td>drby</td>
+										<td>Derby</td>
+									</tr>
+									<tr>
+										<td>dub</td>
+										<td>dbln</td>
+										<td>Dublin</td>
+									</tr>
+									<tr>
+										<td>edi</td>
+										<td>edin</td>
+										<td>Edinburgh</td>
+									</tr>
+									<tr>
+										<td>eps</td>
+										<td>epso</td>
+										<td>Epsom</td>
+									</tr>
+									<tr>
+										<td>gri</td>
+										<td>grim</td>
+										<td>Grimsby</td>
+									</tr>
+									<tr>
+										<td>gui</td>
+										<td>glfd</td>
+										<td>Guildford</td>
+									</tr>
+									<tr>
+										<td>&nbsp;&nbsp;&nbsp;</td>
+										<td>hamh</td>
+										<td>Hammersmith</td>
+									</tr>
+									<tr>
+										<td>&nbsp;&nbsp;&nbsp;</td>
+										<td>hava</td>
+										<td>Havant</td>
+									</tr>
+									<tr>
+										<td>hem</td>
+										<td>heml</td>
+										<td>Hemel Hempstead</td>
+									</tr>
+									<tr>
+										<td>her</td>
+										<td>herm</td>
+										<td rowspan="2">Hersham</td>
+									</tr>
+									<tr>
+										<td>&nbsp;&nbsp;&nbsp;</td>
+										<td>hers</td>
+									</tr>
+									<tr>
+										<td>&nbsp;&nbsp;&nbsp;</td>
+										<td>horn</td>
+										<td>Horndean</td>
+									</tr>
+									<tr>
+										<td>hud</td>
+										<td>hudd</td>
+										<td>Huddersfield</td>
+									</tr>
+									<tr>
+										<td>&nbsp;&nbsp;&nbsp;</td>
+										<td>ipsw</td>
+										<td>Ipswich</td>
+									</tr>
+									<tr>
+										<td>lng</td>
+										<td>lang</td>
+										<td>Langley</td>
+									</tr>
+									<tr>
+										<td>lee</td>
+										<td>leed</td>
+										<td>Leeds</td>
+									</tr>
+									<tr>
+										<td>lei</td>
+										<td>leic</td>
+										<td>Leicester</td>
+									</tr>
+									<tr>
+										<td>&nbsp;&nbsp;&nbsp;</td>
+										<td>lwhm</td>
+										<td>Lewisham</td>
+									</tr>
+									<tr>
+										<td>lic</td>
+										<td>lich</td>
+										<td>Lichfield</td>
+									</tr>
+									<tr>
+										<td>lin</td>
+										<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+										<td>Lincoln</td>
+									</tr>
+								</table>
+							</td>
+							<td valign="top">
+								<table border="1" cellspacing="0" cellpadding="0">
+									<tr>
+										<td>lis</td>
+										<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+										<td>Lisburn</td>
+									</tr>
+									<tr>
+										<td>ldr</td>
+										<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+										<td>Londonderry</td>
+									</tr>
+									<tr>
+										<td>ltn</td>
+										<td>lutn</td>
+										<td>Luton</td>
+									</tr>
+									<tr>
+										<td>man</td>
+										<td>mant</td>
+										<td>Manchester</td>
+									</tr>
+									<tr>
+										<td>dal</td>
+										<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+										<td>Mapperley</td>
+									</tr>
+									<tr>
+										<td>mid</td>
+										<td>midd</td>
+										<td>Middlesbrough</td>
+									</tr>
+									<tr>
+										<td>mnf</td>
+										<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+										<td>Mansfield</td>
+									</tr>
+									<tr>
+										<td>nwp</td>
+										<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+										<td>Newport</td>
+									</tr>
+									<tr>
+										<td>nth</td>
+										<td>nrth</td>
+										<td>Northampton</td>
+									</tr>
+									<tr>
+										<td>nfd</td>
+										<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+										<td>Northfield</td>
+									</tr>
+									<tr>
+										<td>&nbsp;&nbsp;&nbsp;</td>
+										<td>nrwh</td>
+										<td>Norwich</td>
+									</tr>
+									<tr>
+										<td>not</td>
+										<td>nott</td>
+										<td>Nottingham</td>
+									</tr>
+									<tr>
+										<td>&nbsp;&nbsp;&nbsp;</td>
+										<td>oldh</td>
+										<td>Oldham</td>
+									</tr>
+									<tr>
+										<td>osr</td>
+										<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+										<td>Oswin Road</td>
+									</tr>
+									<tr>
+										<td>oxf</td>
+										<td>oxfd</td>
+										<td>Oxford</td>
+									</tr>
+									<tr>
+										<td>&nbsp;&nbsp;&nbsp;</td>
+										<td>papw</td>
+										<td>Papworth Everard</td>
+									</tr>
+									<tr>
+										<td>pet</td>
+										<td>pete</td>
+										<td>Peterborough</td>
+									</tr>
+									<tr>
+										<td>&nbsp;&nbsp;&nbsp;</td>
+										<td>pool</td>
+										<td>Poole</td>
+									</tr>
+									<tr>
+										<td>pop</td>
+										<td>popl</td>
+										<td>Poplar</td>
+									</tr>
+									<tr>
+										<td>por</td>
+										<td>port</td>
+										<td>Portsmouth</td>
+									</tr>
+								</table>
+							</td>
+							<td valign="top">
+								<table border="1" cellspacing="0" cellpadding="0">
+									<tr>
+										<td>rdg</td>
+										<td>rdng</td>
+										<td>Reading</td>
+									</tr>
+									<tr>
+										<td>&nbsp;&nbsp;&nbsp;</td>
+										<td>reig</td>
+										<td>Reigate</td>
+									</tr>
+									<tr>
+										<td>ren</td>
+										<td>renf</td>
+										<td>Renfrew</td>
+									</tr>
+									<tr>
+										<td>&nbsp;&nbsp;&nbsp;</td>
+										<td>roch</td>
+										<td>Rochdale</td>
+									</tr>
+									<tr>
+										<td>&nbsp;&nbsp;&nbsp;</td>
+										<td>runc</td>
+										<td>Runcorn</td>
+									</tr>
+									<tr>
+										<td>&nbsp;&nbsp;&nbsp;</td>
+										<td>salf</td>
+										<td>Salford</td>
+									</tr>
+									<tr>
+										<td>&nbsp;&nbsp;&nbsp;</td>
+										<td>seac</td>
+										<td>Seacroft</td>
+									</tr>
+									<tr>
+										<td>ssh</td>
+										<td>shep</td>
+										<td>Shepshed</td>
+									</tr>
+									<tr>
+										<td>sot</td>
+										<td>sout</td>
+										<td>Southampton</td>
+									</tr>
+									<tr>
+										<td>stf</td>
+										<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+										<td>Stafford</td>
+									</tr>
+									<tr>
+										<td>&nbsp;&nbsp;&nbsp;</td>
+										<td>seve</td>
+										<td>Stevenage</td>
+									</tr>
+									<tr>
+										<td>stk</td>
+										<td>stok</td>
+										<td>Stockton-on-Tees</td>
+									</tr>
+									<tr>
+										<td>&nbsp;&nbsp;&nbsp;</td>
+										<td>wrsd</td>
+										<td>Sunderland</td>
+									</tr>
+									<tr>
+										<td>swa</td>
+										<td>swan</td>
+										<td>Swansea</td>
+									</tr>
+									<tr>
+										<td>swi</td>
+										<td>swin</td>
+										<td>Swindon</td>
+									</tr>
+									<tr>
+										<td>war</td>
+										<td>warw</td>
+										<td>Warwick</td>
+									</tr>
+									<tr>
+										<td>wat</td>
+										<td>wtfd</td>
+										<td>Watford</td>
+									</tr>
+									<tr>
+										<td>win</td>
+										<td>winn</td>
+										<td>Winnersh</td>
+									</tr>
+									<tr>
+										<td>wod</td>
+										<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+										<td>Woodborough</td>
+									</tr>
+									<tr>
+										<td>yrk</td>
+										<td>york</td>
+										<td>York</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="byns4">
+					<p>With <b>blueyonder</b>, a lookup of IP address 62.31.235.113 will yield a DNS name of:</p>
+					<blockquote>
+						<pre><b>pc-62-31-235-113-se.blueyonder.co.uk</b></pre>
+					</blockquote>
+					<p>which can be decoded as follows:</p>
+					<ul>
+						<li><b>.blueyonder.co.uk</b> is common to all customers of blueyonder.</li>
+						<li><b>-se</b> identifies the area: see table below.</li>
+						<li><b>pc-62-31-235-113</b> repeats the IP addess within the DNS name.</li>
+					</ul>
+					<table border="0" cellpadding="0" cellspacing="5" width="100%">
+						<caption><b>Area codes on Blueyonder network</b></caption>
+						<tr>
+							<td valign="top">
+								<table border="1" cellpadding="0" cellspacing="0">
+									<caption><b>London N</b></caption>
+									<tr>
+										<td>CA</td>
+										<td>&nbsp;Camden</td>
+									</tr>
+									<tr>
+										<td>EN</td>
+										<td>&nbsp;Enfield</td>
+									</tr>
+									<tr>
+										<td>HR</td>
+										<td>&nbsp;Harringey</td>
+									</tr>
+									<tr>
+										<td>HW</td>
+										<td>&nbsp;Hackney</td>
+									</tr>
+								</table>
+								<br>
+								<table border="1" cellpadding="0" cellspacing="0">
+									<caption><b>London W</b></caption>
+									<tr>
+										<td>HY</td>
+										<td>&nbsp;Hayes&nbsp;</td>
+									</tr>
+								</table>
+								<br>
+								<table border="1" cellpadding="0" cellspacing="0">
+									<caption><b>London S</b></caption>
+									<tr>
+										<td>CR</td>
+										<td>&nbsp;Croydon</td>
+									</tr>
+									<tr>
+										<td>MO</td>
+										<td>&nbsp;Mortlake</td>
+									</tr>
+									<tr>
+										<td>NM</td>
+										<td nowrap>&nbsp;New Malden</td>
+									</tr>
+								</table>
+								<br>
+								<table border="1" cellpadding="0" cellspacing="0">
+									<caption><b>London SE</b></caption>
+									<tr>
+										<td>BA</td>
+										<td>&nbsp;Basildon</td>
+									</tr>
+									<tr>
+										<td>CH</td>
+										<td>&nbsp;Chelmsford</td>
+									</tr>
+									<tr>
+										<td>GL</td>
+										<td>&nbsp;Gillingham</td>
+									</tr>
+									<tr>
+										<td>MA</td>
+										<td>&nbsp;Maidstone</td>
+									</tr>
+									<tr>
+										<td>SE</td>
+										<td>&nbsp;Southend</td>
+									</tr>
+									<tr>
+										<td>TL</td>
+										<td nowrap>&nbsp;Tilbury/Grays</td>
+									</tr>
+								</table>
+							</td>
+							<td valign="top">
+								<table border="1" cellpadding="0" cellspacing="0">
+									<caption><b>Midlands</b></caption>
+									<tr>
+										<td>BR</td>
+										<td>&nbsp;Bromsgrove</td>
+									</tr>
+									<tr>
+										<td>DU</td>
+										<td>&nbsp;Dudley</td>
+									</tr>
+									<tr>
+										<td>SA</td>
+										<td>&nbsp;Sandwell</td>
+									</tr>
+									<tr>
+										<td>TF</td>
+										<td>&nbsp;Telford</td>
+									</tr>
+									<tr>
+										<td>WA</td>
+										<td>&nbsp;Walsall</td>
+									</tr>
+									<tr>
+										<td>WV</td>
+										<td>&nbsp;Wolverhampton</td>
+									</tr>
+								</table>
+								<br>
+								<table border="1" cellpadding="0" cellspacing="0">
+									<caption><b>Birmingham</b></caption>
+									<tr>
+										<td>CW</td>
+										<td nowrap>&nbsp;Chelmsley Wood</td>
+									</tr>
+									<tr>
+										<td>HB</td>
+										<td>&nbsp;Harborne</td>
+									</tr>
+									<tr>
+										<td>KI</td>
+										<td>&nbsp;King's Norton</td>
+									</tr>
+									<tr>
+										<td>PB</td>
+										<td nowrap>&nbsp;Perry Barr/Witton</td>
+									</tr>
+									<tr>
+										<td>SC</td>
+										<td>&nbsp;Sutton Coldfield</td>
+									</tr>
+									<tr>
+										<td>SM</td>
+										<td>&nbsp;Small Heath</td>
+									</tr>
+									<tr>
+										<td>SO</td>
+										<td>&nbsp;Solihull</td>
+									</tr>
+								</table>
+								<br>
+								<table border="1" cellpadding="0" cellspacing="0">
+									<caption><b>South West</b></caption>
+									<tr>
+										<td>AZ</td>
+										<td>&nbsp;Aztec West</td>
+									</tr>
+									<tr>
+										<td>BT</td>
+										<td>&nbsp;Bath</td>
+									</tr>
+									<tr>
+										<td>HF</td>
+										<td>&nbsp;Hawkfield</td>
+									</tr>
+									<tr>
+										<td>NA</td>
+										<td>&nbsp;Newton Abbot</td>
+									</tr>
+									<tr>
+										<td>NL</td>
+										<td>&nbsp;Nailsea</td>
+									</tr>
+									<tr>
+										<td>SL</td>
+										<td nowrap>&nbsp;Staple Hill (Chapel)</td>
+									</tr>
+									<tr>
+										<td>ST</td>
+										<td>&nbsp;Staverton</td>
+									</tr>
+									<tr>
+										<td>TR</td>
+										<td>&nbsp;Trowbridge</td>
+									</tr>
+								</table>
+							</td>
+							<td valign="top">
+								<table border="1" cellpadding="0" cellspacing="0">
+									<caption><b>North East</b></caption>
+									<tr>
+										<td>FN</td>
+										<td>&nbsp;Benwell</td>
+									</tr>
+									<tr>
+										<td>GA</td>
+										<td>&nbsp;Gateshead</td>
+									</tr>
+									<tr>
+										<td>JA</td>
+										<td>&nbsp;Jarrow</td>
+									</tr>
+									<tr>
+										<td>NY</td>
+										<td>&nbsp;New York</td>
+									</tr>
+								</table>
+								<br>
+								<table border="1" cellpadding="0" cellspacing="0">
+									<caption><b>North West</b></caption>
+									<tr>
+										<td>BL</td>
+										<td>&nbsp;Blackpool</td>
+									</tr>
+									<tr>
+										<td>KN</td>
+										<td>&nbsp;Knowsley</td>
+									</tr>
+									<tr>
+										<td>LP</td>
+										<td>&nbsp;Liverpool</td>
+									</tr>
+									<tr>
+										<td>PR</td>
+										<td>&nbsp;Preston</td>
+									</tr>
+									<tr>
+										<td>SP</td>
+										<td>&nbsp;Southport</td>
+									</tr>
+									<tr>
+										<td>WI</td>
+										<td>&nbsp;Wigan</td>
+									</tr>
+								</table>
+								<br>
+								<table border="1" cellpadding="0" cellspacing="0">
+									<caption><b>Yorkshire</b></caption>
+									<tr>
+										<td>BF</td>
+										<td>&nbsp;Bradford</td>
+									</tr>
+									<tr>
+										<td>BN</td>
+										<td>&nbsp;Barnsley</td>
+									</tr>
+									<tr>
+										<td>DO</td>
+										<td>&nbsp;Doncaster</td>
+									</tr>
+									<tr>
+										<td>HA</td>
+										<td>&nbsp;Halifax</td>
+									</tr>
+									<tr>
+										<td>RO</td>
+										<td>&nbsp;Rotherham</td>
+									</tr>
+									<tr>
+										<td>SH</td>
+										<td>&nbsp;Sheffield</td>
+									</tr>
+									<tr>
+										<td>WK</td>
+										<td>&nbsp;Wakefield</td>
+									</tr>
+								</table>
+							</td>
+							<td valign="top">
+								<table border="1" cellpadding="0" cellspacing="0">
+									<caption><b>Scotland</b></caption>
+									<tr>
+										<td>CC</td>
+										<td>&nbsp;Castlecary</td>
+									</tr>
+									<tr>
+										<td>DB</td>
+										<td>&nbsp;Dumbarton</td>
+									</tr>
+									<tr>
+										<td>DN</td>
+										<td>&nbsp;Dundee</td>
+									</tr>
+									<tr>
+										<td>ED</td>
+										<td>&nbsp;Edinburgh</td>
+									</tr>
+									<tr>
+										<td>GR</td>
+										<td>&nbsp;Glenrothes</td>
+									</tr>
+									<tr>
+										<td>LL</td>
+										<td>&nbsp;Linlithgow</td>
+									</tr>
+									<tr>
+										<td>LV</td>
+										<td>&nbsp;Livingston</td>
+									</tr>
+									<tr>
+										<td>PE</td>
+										<td>&nbsp;Perth</td>
+									</tr>
+									<tr>
+										<td>UD</td>
+										<td>&nbsp;Uddington</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<hr>
+			<!-- #EndEditable -->
+			<p>Return to <a href="index.html">Index</a>.</p>
+		</body>
+
+	<!-- #EndTemplate -->
+
+</html>
+

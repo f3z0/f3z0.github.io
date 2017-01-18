@@ -1,0 +1,360 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+
+<html lang="en">
+
+	<!-- #BeginTemplate "../../cmtips.data/Templates/cmtemp.html" -->
+
+		<head>
+			<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+			<title>Cable Modem Troubleshooting Tips</title>
+			<!-- #BeginHeadLocked "" -->
+				<meta name="description" content="Technical tips for troubleshooting a cable modem connection.">
+				<meta name="keywords" content="cable modem, FAQ, broadband, cablemodem, troubleshooting, tips, NTL, NTLworld, ntlhome, Telewest, blueyonder">
+				<meta name="author" content="Robin Walker">
+				<meta name="copyright" content="&copy; 2001-02 Robin Walker">
+				<link href="../favicon.ico" rel="shortcut icon">
+				<link href="mailto:rdhw@cam.ac.uk" rel="author">
+				<link href="copyright.html" rel="copyright">
+				<link href="index.html" rel="index">
+				<link href="cmstyle.css" rel="stylesheet">
+				<script type="text/javascript" language="JavaScript"><!--
+function jsinit() {
+  if (top!=self) top.location.href = self.location.href;
+}
+// -->
+</script>
+			<!-- #EndHeadLocked -->
+		</head>
+
+		<body onload="jsinit()" bgcolor="#eeffff">
+			<h1>Cable Modem Troubleshooting Tips</h1>
+			<hr>
+			<table border="0" cellpadding="0" align="left" summary="Quick links">
+				<tr>
+					<td nowrap bgcolor="#ffffff">
+						<div class="menubox">
+							<a class="sidelink" title="Introduction and Index to articles" href="index.html">Intro&nbsp;&amp;&nbsp;Index</a>.<br>
+							<a class="sidelink" title="History of updates and changes to this site" href="hist.html">Update&nbsp;history</a>.<br>
+							<a class="sidelink" title="Problems with BroadJump Broadband Installer" href="broadjump.html">Installer issues</a>.<br>
+							<a class="sidelink" title="Problems associated with getting a cable modem registered with your cable operator" href="register.html">Registration&nbsp;issues</a>.&nbsp;<br>
+							<a class="sidelink" title="PC network configuration for cable service" href="basicset.html">Network&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Swapping one PC between multiple networks" href="mobile.html">Mobile&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Understanding the flashing lights on the cable modem" href="lights.html">Cable&nbsp;Modem&nbsp;LEDs</a>.<br>
+							<a class="sidelink" title="How to determine various important IP addresses" href="ipaddr.html">IP&nbsp;addresses</a>.<br>
+							<a class="sidelink" title="How to determine various important MAC addresses" href="macaddr.html">MAC addresses</a>.<br>
+							<a class="sidelink" title="What to check if you have no service" href="badip.html">Dead&nbsp;connection</a>.<br>
+							<a class="sidelink" title="Updating your system with the latest patches and fixes" href="sysupdates.html">System&nbsp;updates</a>.<br>
+							<a class="sidelink" title="Tweaking your PC for best cable modem performance" href="tweaks.html">Network&nbsp;tweaks</a>.<br>
+							<a class="sidelink" title="Problems specifically related to the ethernet connection between your PC and the cable modem" href="ethernet.html">Ethernet&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Problems specifically related to a USB connection between the PC and cable modem" href="usb.html">USB&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Procedures and tips specifically for Surfboard cable modems" href="surfboard.html">Surfboard&nbsp;tips</a>.<br>
+							<a class="sidelink" title="Diagnosing your cable modem's connection" href="signal.html">CM&nbsp;diagnostics</a>.<br>
+							<a class="sidelink" title="Quality of service determined by configuration file" href="cmfile.html">CM&nbsp;config&nbsp;file</a>.<br>
+							<a class="sidelink" title="The network structure of a cable modem" href="cmworks.html">CM&nbsp;tech&nbsp;info</a>.<br>
+							<a class="sidelink" title="DHCP-related problems" href="dhcp.html">DHCP&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Understanding DNS and fixing DNS problems" href="dnsname.html">DNS&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Transparent web proxy caches and how to sidestep them" href="trancache.html">Web&nbsp;proxy&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance of streaming media" href="stream.html">Streaming&nbsp;media</a>.<br>
+							<a class="sidelink" title="Settings that affect performance, latency and pings" href="games.html">Gaming&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance; avoiding saturation of upstream" href="p2p.html">P2P&nbsp;file-sharing</a>.<br>
+							<a class="sidelink" title="Work around connection errors" href="seti.html">SETI@home&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect web browsing performance" href="fasterweb.html">Faster&nbsp;web&nbsp;browsing</a>.<br>
+							<a class="sidelink" title="Strategies to get better download speeds" href="fasterftp.html">Faster&nbsp;downloads</a>.<br>
+							<a class="sidelink" title="How to avoid performance hits" href="downup.html">Simul&nbsp;down/uploads</a>.<br>
+							<a class="sidelink" title="How to restore lost connection when you swap PCs connected to the CM" href="swap.html">Swapping&nbsp;PCs&nbsp;on&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Multiple PCs sharing one CM, home LANs, and NAT Routers" href="homelan.html">PCs&nbsp;sharing&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Using dial-up without losing cable connection" href="dialup.html">Simul&nbsp;dialup&nbsp;&amp;&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Problems with some VPN configurations" href="vpn.html">VPN&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Keep your clock correct, for ever, from cable time" href="timesync.html">Time&nbsp;sync</a>.<br>
+							<a class="sidelink" title="Avoiding virus and trojan infections" href="virus.html">Virus&nbsp;security</a>.<br>
+							<a class="sidelink" title="Configuring firewalls for cable connection" href="security.html">Firewall&nbsp;security</a>.<br>
+							<a class="sidelink" title="Limitations of some speed tests" href="speed.html">Speed&nbsp;testing</a>.<br>
+							<a class="sidelink" title="Understanding, diagnosing, and fixing latency and ping problems" href="latency.html">Latency issues</a>.<br>
+							<a class="sidelink" title="How to perform a traceroute, and how they can mislead" href="traceroute.html">Traceroute</a>.<br>
+							<a class="sidelink" title="Understanding and diagnosing packet loss" href="loss.html">Packet loss</a>.<br>
+							<a class="sidelink" href="frontpage.html">FrontPage tips</a>.<br>
+							<a class="sidelink" title="How to obtain technical support" href="techsupp.html">NTL/BY&nbsp;Tech&nbsp;Support</a>.</div>
+					</td>
+					<td width="18">&nbsp;</td>
+				</tr>
+			</table>
+			<!-- #BeginEditable "main" -->
+				<h2>Introduction and Index</h2>
+				<p>This site covers some of the technical issues which can arise when troubleshooting a cable modem connection (including broadband via digital TV set top box) on the NTLworld and Telewest Blueyonder services in the UK and Ireland. Information specific to <span class="ntl">NTL has a green background</span>, and information specific to <span class="by">Blueyonder has a blue background</span>. Otherwise, information not on one of those backgrounds should be valid for most cable operators world-wide, although appropriate allowances might need to be made to adjust for local circumstances. Much of the information on this site is also applicable to other forms of broadband connection, such as ADSL, but ADSL-specific issues are not addressed.</p>
+				<p>Please send feedback to Robin Walker, rdhw&#64;cam.ac.uk</p>
+				<p>The URL <a title="Original source URL" href="http://homepage.ntlworld.com/robin.d.h.walker/cmtips/index.html">http://homepage.ntlworld.com/robin.d.h.walker/cmtips/index.html</a> points to the most recent update of this site, should you be reading a printed or mirrored version. See the <a href="copyright.html">copyright statement</a>.</p>
+				<p><i>Scroll down for the complete contents list.<br clear="all">
+					</i></p>
+				<h3>Articles on this site:</h3>
+				<ul>
+					<li><a href="broadjump.html">Installer issues</a> (BroadJump, Virtual Truck, Correct Connect):</li>
+					<ul>
+						<li><a href="broadjump.html#unaol">Uninstall AOL software</a>.</li>
+						<li><a href="broadjump.html#ambit98">Windows 98 First Edition and ntl:home 100 (Ambit) cable modem</a>.</li>
+						<li><a href="broadjump.html#vtruck">Problem with Virtual Truck every restart</a>.</li>
+						<li><a href="broadjump.html#without">Doing without the Broadband Installer</a>.</li>
+						<li><a href="broadjump.html#ccerrs">Correct Connect issues</a>.</li>
+						<li><a href="broadjump.html#nocc">Doing without Correct Connect</a>.</li>
+					</ul>
+					<li><a href="register.html">Registration issues</a>:</li>
+					<ul>
+						<li><a href="register.html#macreg">Modem MAC pre-registration</a>: before first use</li>
+						<li><a href="register.html#pcreg">PC network interface MAC pre-registration</a>: before first use.</li>
+						<li class="ntlns4"><a href="register.html#pacereg">First connection to digital TV set top box</a>: client MAC registration</li>
+						<li class="ntlns4"><a href="register.html#ntlreg">Post-installation registration</a> for NTLworld account</li>
+					</ul>
+					<li>Network configuration setup for the PC:</li>
+					<ul>
+						<li><a href="basicset.html#basicset">Basic Network Settings</a> for network configuration of the PC</li>
+						<li><a href="basicset.html#win2k">Windows 2000</a> and <a href="basicset.html#winxp">XP setup</a> details</li>
+						<li><a href="basicset.html#internetopt">Internet Options setup</a> for all versions of Windows</li>
+						<li><a href="basicset.html#xpfw">Windows XP built-in firewall</a>: try disabling it at first</li>
+						<li><a href="basicset.html#mac9">Mac OS 8.x-9.x</a> setup</li>
+						<li><a href="basicset.html#macx">Mac OS X</a> setup</li>
+					</ul>
+					<li><a href="mobile.html#mobile">Mobile configuration</a>: notebook swapping between work and home</li>
+					<li><a href="lights.html">Flashing lights</a> on the cable modem and what they mean</li>
+					<ul>
+						<li><a href="lights.html#activity">Cable modem data activity light keeps flashing</a></li>
+						<li><a href="lights.html#ltsb">Surfboard 3100 or 4100</a> lights</li>
+						<li><a href="lights.html#lttf">3Com Tailfin</a> lights</li>
+						<li><a href="lights.html#ltcmx">3Com CMX</a> lights</li>
+						<li><a href="lights.html#lttj">Terayon TeraJet 210</a> lights</li>
+						<li><a href="lights.html#ltntl100">ntl:home 100/120</a> (Ambit) lights</li>
+						<li><a href="lights.html#ltpace">Pace digital STB</a> lights</li>
+					</ul>
+					<li><a href="ipaddr.html">Finding IP addresses</a>:</li>
+					<ul>
+						<li><a href="ipaddr.html#ipaddr">What's my IP address</a>? - how to discover your IP address</li>
+						<li><a href="ipaddr.html#wanip">What's my WAN IP address</a>? - if you are behind a NAT router</li>
+						<li><a href="ipaddr.html#gateway">Default Gateway address</a> - how to discover</li>
+						<li><a href="ipaddr.html#cmip">Finding the cable modem's address</a></li>
+						<li><a href="ipaddr.html#ubrip">Finding the UBR address</a>: how to identify your UBR</li>
+						<li><a href="ipaddr.html#dnsip">Finding the DNS server address(es)</a>:</li>
+						<li><a href="ipaddr.html#dhcpip">Finding the DHCP server address</a>:</li>
+						<li><a href="ipaddr.html#webpr">Finding the transparent web proxy cache address</a>.</li>
+					</ul>
+					<li><a href="macaddr.html">Finding MAC addresses</a>:</li>
+					<ul>
+						<li><a href="macaddr.html#macpc">Finding the MAC address of the PC's network interface</a>;</li>
+						<li><a href="macaddr.html#machfc">Finding the HFC MAC address of the cable modem</a>;</li>
+						<li><a href="macaddr.html#macother">Finding the MAC address of any other PC on the LAN</a>;</li>
+						<li><a href="macaddr.html#macwan">Finding the MAC address of the WAN port of a router</a>;</li>
+						<li><a href="macaddr.html#macclone">Cloning a MAC address into the WAN port of a router</a>.</li>
+					</ul>
+					<li><a href="badip.html">No connectivity at all</a> - what and how to check</li>
+					<ul>
+						<li><a href="badip.html#noconn">Trouble-shooting lack of connectivity</a>.</li>
+						<li><a href="badip.html#ip0000">Strange IP address 0.0.0.0</a></li>
+						<li><a href="badip.html#ip169">Strange IP address 169.254.xxx.xxx</a></li>
+						<li><a href="badip.html#ip192">Strange IP address 192.168.100.xxx</a></li>
+						<li class="ntlns4"><a href="badip.html#ntltempip">IP address xxx.xxx.xxx.248 to xxx.xxx.xxx.253</a></li>
+						<li class="ntlns4"><a href="badip.html#ip10">Strange IP address 10.xxx.xxx.xxx</a></li>
+						<li><a href="badip.html#ipnorm">In-service IP address, but no service</a>.</li>
+						<li><a href="badip.html#retry">Re-trying for a new DHCP lease</a>.</li>
+					</ul>
+					<li><a href="sysupdates.html#sysupdates">System updates and patches</a> important for cable connections.</li>
+					<li><a href="tweaks.html">Networking tweaks</a> that affect performance or latency</li>
+					<ul>
+						<li><a href="tweaks.html#dialtw">Remove dial-up tweaks</a></li>
+						<li><a href="tweaks.html#cabletw">Install cable tweaks</a></li>
+						<li><a href="tweaks.html#cfg">Network configuration tweaks</a></li>
+					</ul>
+					<li><a href="ethernet.html">Ethernet</a> issues:</li>
+					<ul>
+						<li><a href="ethernet.html#xover">Ethernet cable</a>: straight-through or cross-over?</li>
+						<li><a href="ethernet.html#automdix">Auto-MDIX ports</a>: take either sort of cable.</li>
+						<li><a href="ethernet.html#ethdrive">Ethernet drivers</a>: updates.</li>
+						<li><a href="ethernet.html#ethernet">Ethernet card duplex setting</a>: affecting packet-loss and performance.</li>
+						<li><a href="ethernet.html#ambit">ntl:home 100/120 (Ambit) duplex setting</a>.</li>
+						<li><a href="ethernet.html#semidup">Does semi-duplex mean I can't download and upload at the same time</a>?</li>
+					</ul>
+					<li><a href="usb.html#usb">USB</a> issues:</li>
+					<ul>
+						<li><a href="usb.html#usbvsenet">USB vs ethernet: the pros and cons</a>.</li>
+						<li><a href="usb.html#usbswap">Swapping USB to ethernet and vice-versa</a>.</li>
+						<li><a href="usb.html#usbdrivers">Latest USB cable modem drivers and installation procedure</a>.</li>
+						<li><a href="usb.html#usbchip">USB chipset driver updates</a>.</li>
+						<li><a href="usb.html#xpusb">Windows XP and USB sleep/standby problems</a>.</li>
+					</ul>
+					<li><a href="surfboard.html">Surfboard</a> tips:</li>
+					<ul>
+						<li>The Surfboard <a href="surfboard.html#config">Configuration web page</a>.</li>
+						<li><a href="surfboard.html#plan">Frequency Plan</a> setting.</li>
+						<li><a href="surfboard.html#cmethip">CM Ethernet IP Address</a> setting.</li>
+						<li><a href="surfboard.html#upid">Upstream Channel ID</a>: get possibly better latency.</li>
+						<li><a href="surfboard.html#freq">Downstream Frequency</a>: get faster restarts.</li>
+						<li><a href="surfboard.html#dhcp">DHCP Server</a>: for use when CATV service is down.</li>
+						<li><a href="surfboard.html#driver">Driver</a> download.</li>
+						<li>Signal Diagnostics and Event Log are on the <a href="signal.html">CM Diagnostics</a> page.</li>
+					</ul>
+					<li><a href="signal.html">Cable modem signal levels</a>: how to read, and how they affect performance and packet-loss</li>
+					<ul>
+						<li>Signal levels: <a href="signal.html#caution">a caution</a></li>
+						<li><a href="signal.html#chans">Upstream and Downstream channels</a></li>
+						<li><a href="signal.html#symps">Symptoms of poor signal levels</a>: what to expect</li>
+						<li><a href="signal.html#reboot">Cable modem spontaneously re-booting</a>: other causes</li>
+						<li><a href="signal.html#goodlevs">Desirable signal levels</a>: for acceptable service</li>
+						<li><a href="signal.html#advdiags">Advanced diagnostics</a>: for the techie-minded</li>
+						<li><a href="signal.html#signal">How to discover your cable modem signal levels</a></li>
+						<li><a href="signal.html#nocmdiag">Inability to connect to cable modem diagnostic address</a>: what to check</li>
+						<li><a href="signal.html#docsdiag">DocsDiag diagnostics</a>: typical report</li>
+						<li><a href="signal.html#sbdiags">Surfboard diagnostics</a>: how to read</li>
+						<li><a href="signal.html#cmlog">Surfboard event log</a>: what's important and what's not</li>
+						<li><a href="signal.html#tfdiags">3Com HomeConnect (Tailfin) diagnostics</a>: how to read</li>
+						<li><a href="signal.html#tflog">3Com HomeConnect (Tailfin) event log</a>: how to read</li>
+						<li><a href="signal.html#cmxdiag">3Com CMX diagnostics</a>: how to read</li>
+						<li><a href="signal.html#teradiag">Terayon TeraJet diagnostics</a>: how to read</li>
+						<li><a href="signal.html#ntlhmdiags">ntl:home 100/120 (Ambit) diagnostics</a>: how to read</li>
+						<li><a href="signal.html#pacediag">Pace digital TV set-top-box</a> cable modem diagnostics</li>
+					</ul>
+					<li><a href="cmfile.html#cmfile">Cable modem configuration file</a>: quality of service</li>
+					<li><a href="cmworks.html#cmworks">How the cable modem works</a>: tech info</li>
+					<li><a href="dhcp.html">DHCP</a> issues:</li>
+					<ul>
+						<li><a href="dhcp.html#what">What is DHCP</a>?</li>
+						<li><a href="dhcp.html#why">Why use DHCP</a>?</li>
+						<li><a href="dhcp.html#which">Which are my DHCP servers</a>?</li>
+						<li><a href="dhcp.html#long">How long will I keep my IP address</a>?</li>
+						<li><a href="dhcp.html#dhcp">DHCP problem-solving</a>.</li>
+						<li><a href="dhcp.html#lease">Requesting a new DHCP lease manually</a>.</li>
+						<li><a href="dhcp.html#macprob">Apple Mac OS 8.6/9.x DHCP problems</a>.</li>
+						<li><a href="dhcp.html#how">How does DHCP work</a>?</li>
+						<li><a href="dhcp.html#dhcpmulti">Keeping the same IP address in multi-boot machines</a>.</li>
+					</ul>
+					<li><a href="dnsname.html">DNS</a> issues:</li>
+					<ul>
+						<li><a href="dnsname.html#what">What is DNS</a>?</li>
+						<li><a href="dnsname.html#which">Which are my DNS servers</a>?</li>
+						<li><a href="dnsname.html#lookup">DNS Lookups</a>: doing them manually</li>
+						<li><a href="dnsname.html#tshoot">DNS troubleshooting</a>: some tips for common problems</li>
+						<li><a href="dnsname.html#dnsfw">DNS and firewalls</a>: common problems</li>
+						<li><a href="dnsname.html#dyndns">Dynamic DNS</a>: a fixed name for your broadband PC</li>
+						<li><a href="dnsname.html#dnsname">Decoding your DNS name</a>: finding your UBR location</li>
+					</ul>
+					<li><a href="trancache.html">Web Proxy issues</a>:
+						<ul>
+							<li><a href="trancache.html#trancache">Transparent web proxy caches</a>: what they do</li>
+							<li><a href="trancache.html#mycache">Which is my web cache</a>? - identifying the address of the web proxy</li>
+							<li><a href="trancache.html#refreshstale">Stale pages in a proxy web cache</a>: how to refresh</li>
+							<li><a href="trancache.html#sidestep">Sidestepping the transparent web proxy caches</a>: how to set explicit proxies
+								<ul>
+									<li><a href="trancache.html#iew">Setting an explicit web proxy in Internet Explorer for Windows</a></li>
+									<li><a href="trancache.html#iem">Setting an explicit web proxy in Internet Explorer for Macintosh</a></li>
+									<li><a href="trancache.html#macosx103">Setting an explicit web proxy in Mac OS 10.3 for Safari or Internet Explorer</a> 
+									<li><a href="trancache.html#ns">Setting an explicit web proxy in Netscape or Mozilla</a>
+									<li><a href="trancache.html#firefox">Setting an explicit web proxy in Firefox</a> 
+								</ul>
+							</li>
+							<li><a href="trancache.html#ntl">NTL web proxy caches</a>: list by centre <span class="flash">&nbsp;Updated 2006 Apr 23&nbsp;</span>
+							<li><a href="trancache.html#by">Blueyonder web proxy caches</a>: list
+							<li><a href="trancache.html#authoring">Web authoring</a> tips for being cache-aware
+						</ul>
+					</li>
+					<li><a href="stream.html#stream">Streaming media</a>:</li>
+					<ul>
+						<li><a href="stream.html#perf">Performance issues</a></li>
+						<li><a href="stream.html#nat">Streaming protocols and Firewalls or NAT routers</a></li>
+						<li><a href="stream.html#inktomi">Streaming protocols and Inktomi Traffic Servers</a></li>
+						<ul>
+							<li><a href="stream.html#rpwin">Real Player on Windows</a> - work-around</li>
+							<li><a href="stream.html#rpmac">Real Player on Macintosh</a> - work-around</li>
+							<li><a href="stream.html#wmp">Windows Media Player</a> - work-around</li>
+							<li><a href="stream.html#wmpmac">Windows Media Player for Mactintosh</a> - no work-around!</li>
+						</ul>
+						<li><a href="stream.html#stproxy">Finding the Streaming Media Proxy</a></li>
+					</ul>
+					<li><a href="games.html#games">On-line games</a>: settings that affect performance, lag times, and pings</li>
+					<li><a href="p2p.html#p2p">Peer-to-Peer file sharing</a>: settings that affect performance</li>
+					<ul>
+						<li><a href="p2p.html#fasttrack">KaZaA, Grokster</a> configuration</li>
+						<li><a href="p2p.html#gnutella">Gnutella, MorpheusPE, BearShare, LimeWire</a> configuration</li>
+						<li><a href="p2p.html#winmx">WinMX</a> configuration</li>
+						<li><a href="p2p.html#edonkey">eDonkey2000</a> configuration</li>
+					</ul>
+					<li><a href="seti.html#seti">SETI@home issues</a>: work around connection errors</li>
+					<li><a href="fasterweb.html#fasterweb">Faster web browsing</a>: settings that affect performance</li>
+					<li><a href="fasterftp.html#fasterftp">Faster downloads</a>: strategies to get good speeds</li>
+					<li><a href="downup.html">Simultaneous download and upload</a>: how to avoid performance hits</li>
+					<ul>
+						<li><a href="downup.html#winbw">Windows bandwidth limiting</a> solutions</li>
+						<li><a href="downup.html#linux">Linux Wonder Shaper</a> solution</li>
+						<li><a href="downup.html#throttled">Mac OS X throttled</a> solution</li>
+					</ul>
+					<li><a href="swap.html#swap">Swapping PCs on the cable modem</a>: how to restore lost connection</li>
+					<li><a href="homelan.html">Sharing a cable modem</a> between multiple PCs and Home LANs:</li>
+					<ul>
+						<li><a href="homelan.html#homelan">More than one computer on the cable modem</a>;</li>
+						<li><a href="homelan.html#probs">NAT routers: common problems</a>;</li>
+						<li><a href="homelan.html#natisp">NAT router setup for various ISPs</a>;</li>
+						<li><a href="homelan.html#natapp">NAT router setup for special applications</a>;</li>
+						<li><a href="homelan.html#icsmap">Microsoft ICS port-forward mapping</a>;</li>
+						<li><a href="homelan.html#power">ICS and other software routers: power management</a>;</li>
+						<li><a href="homelan.html#natupnp">Universal Plug-and-Play NAT traversal</a>;</li>
+						<li><a href="homelan.html#natbad">NAT-unfriendly applications and protocols</a>.</li>
+					</ul>
+					<li><a href="dialup.html#dialup">Simultaneous dial-up modem and cable modem</a>: setting default route</li>
+					<li><a href="vpn.html#vpn">VPN issues</a>: some problems</li>
+					<li><a href="timesync.html#timesync">Time Synchronisation</a>: keep your clock correct, for ever, from cable time.</li>
+					<li><a href="virus.html#virus">Security and viruses</a>: avoiding infection.</li>
+					<li><a href="security.html#security">Security and firewalls</a>: how to protect your PC(s) from intrusion.</li>
+					<ul>
+						<li><a href="security.html#persfire">Personal firewalls</a>: the downside</li>
+						<li><a href="security.html#stealth">Stealth-mode firewalls considered harmful</a>: avoiding stealth</li>
+						<li><a href="security.html#fwconfig">Personal firewall configuration</a> for cable modem service</li>
+						<ul>
+							<li><a href="security.html#fwspecific">Firewall configuration notes</a> on specific setups</li>
+							<ul>
+								<li><a href="security.html#fwnat">Firewall on a PC behind a NAT router</a></li>
+								<li><a href="security.html#fwza">ZoneAlarm</a></li>
+								<li><a href="security.html#fwmcafee">McAfee Firewall</a></li>
+								<li><a href="security.html#fwmspr">Microsoft Proxy Server v2</a></li>
+								<li><a href="security.html#fwipch">ipchains</a></li>
+							</ul>
+						</ul>
+						<li><a href="security.html#fwapps">Problems with certain applications and firewalls</a>: special settings needed</li>
+						<li><a href="security.html#fwnotbad">Network traffic not to get worried about</a>: non-malicious traffic</li>
+						<li><a href="security.html#fwubr">Why the UBR address is important in firewall configuration</a>: tech info</li>
+					</ul>
+					<li><a href="speed.html#speed">Speed Tests</a>: limitations and comparisons</li>
+					<ul>
+						<li><a href="speed.html#kilobytes">KiloBytes-per-sec or kilobits-per-sec</a>: not just times eight</li>
+						<li><a href="speed.html#slowcable">My cable modem is as slow as my dial-up modem!</a>: when and when not</li>
+					</ul>
+					<li><a href="latency.html">Latency issues</a>: understanding, diagnosing, fixing.</li>
+					<ul>
+						<li><a href="latency.html#what">What is Latency</a>?</li>
+						<li><a href="latency.html#ping">How can Latency be measured</a>? - the <b>ping</b> command.</li>
+						<li><a href="latency.html#docsis">Latency in DOCSIS cable modem systems</a>.</li>
+						<li><a href="latency.html#fixes">Troubleshooting latency problems</a>.</li>
+					</ul>
+					<li><a href="traceroute.html#traceroute">Traceroute</a>: how to perform one, and how they can mislead</li>
+					<ul>
+						<li>How <a href="traceroute.html#tracehow">traceroute works</a></li>
+						<li>How <a href="traceroute.html#tracemis">traceroute can mislead</a></li>
+						<li><a href="traceroute.html#tracentl">Misleading traceroutes</a> to certain NTL servers</li>
+						<li><a href="traceroute.html#speedtrace">Traceroute</a>: how to speed it up in Windows</li>
+						<li><a href="traceroute.html#revtrace">Reverse traceroute</a>: how to get one back to your PC</li>
+						<li><a href="traceroute.html#revroute">Partial return route</a> using ping</li>
+					</ul>
+					<li><a href="loss.html">Packet Loss</a>: understanding, diagnosing, fixing.</li>
+					<ul>
+						<li><a href="loss.html#what">What is packet loss</a>?</li>
+						<li><a href="loss.html#effect">What is the effect of packet loss</a>?</li>
+						<li><a href="loss.html#diag">Diagnosing packet loss</a>.</li>
+						<li><a href="loss.html#tshoot">Troubleshooting packet loss</a>.</li>
+						<li><a href="loss.html#pace">Packet loss in Pace digital TV set top box models 2000 or 4000</a>.</li>
+					</ul>
+					<li><a href="frontpage.html">FrontPage</a>: using with servers not supporting FrontPage Extensions.</li>
+					<li><a href="techsupp.html#techsupp">Cable modem technical support</a>: how to obtain <span class="flash">&nbsp;Updated 2006 Apr 23&nbsp;</span></li>
+				</ul>
+				<hr>
+			<!-- #EndEditable -->
+			<p>Return to <a href="index.html">Index</a>.</p>
+		</body>
+
+	<!-- #EndTemplate -->
+
+</html>
+

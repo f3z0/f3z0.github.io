@@ -1,0 +1,359 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+
+<html lang="en">
+
+	<!-- #BeginTemplate "../../cmtips.data/Templates/cmtemp.html" -->
+
+		<head>
+			<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+			<title>Cable Modem Troubleshooting Tips: Streaming media issues</title>
+			<!-- #BeginHeadLocked "" -->
+				<meta name="description" content="Technical tips for troubleshooting a cable modem connection.">
+				<meta name="keywords" content="cable modem, FAQ, broadband, cablemodem, troubleshooting, tips, NTL, NTLworld, ntlhome, Telewest, blueyonder">
+				<meta name="author" content="Robin Walker">
+				<meta name="copyright" content="&copy; 2001-02 Robin Walker">
+				<link href="../favicon.ico" rel="shortcut icon">
+				<link href="mailto:rdhw@cam.ac.uk" rel="author">
+				<link href="copyright.html" rel="copyright">
+				<link href="index.html" rel="index">
+				<link href="cmstyle.css" rel="stylesheet">
+				<script type="text/javascript" language="JavaScript"><!--
+function jsinit() {
+  if (top!=self) top.location.href = self.location.href;
+}
+// -->
+</script>
+			<!-- #EndHeadLocked -->
+		</head>
+
+		<body onload="jsinit()" bgcolor="#eeffff">
+			<h1>Cable Modem Troubleshooting Tips</h1>
+			<hr>
+			<table border="0" cellpadding="0" align="left" summary="Quick links">
+				<tr>
+					<td nowrap bgcolor="#ffffff">
+						<div class="menubox">
+							<a class="sidelink" title="Introduction and Index to articles" href="index.html">Intro&nbsp;&amp;&nbsp;Index</a>.<br>
+							<a class="sidelink" title="History of updates and changes to this site" href="hist.html">Update&nbsp;history</a>.<br>
+							<a class="sidelink" title="Problems with BroadJump Broadband Installer" href="broadjump.html">Installer issues</a>.<br>
+							<a class="sidelink" title="Problems associated with getting a cable modem registered with your cable operator" href="register.html">Registration&nbsp;issues</a>.&nbsp;<br>
+							<a class="sidelink" title="PC network configuration for cable service" href="basicset.html">Network&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Swapping one PC between multiple networks" href="mobile.html">Mobile&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Understanding the flashing lights on the cable modem" href="lights.html">Cable&nbsp;Modem&nbsp;LEDs</a>.<br>
+							<a class="sidelink" title="How to determine various important IP addresses" href="ipaddr.html">IP&nbsp;addresses</a>.<br>
+							<a class="sidelink" title="How to determine various important MAC addresses" href="macaddr.html">MAC addresses</a>.<br>
+							<a class="sidelink" title="What to check if you have no service" href="badip.html">Dead&nbsp;connection</a>.<br>
+							<a class="sidelink" title="Updating your system with the latest patches and fixes" href="sysupdates.html">System&nbsp;updates</a>.<br>
+							<a class="sidelink" title="Tweaking your PC for best cable modem performance" href="tweaks.html">Network&nbsp;tweaks</a>.<br>
+							<a class="sidelink" title="Problems specifically related to the ethernet connection between your PC and the cable modem" href="ethernet.html">Ethernet&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Problems specifically related to a USB connection between the PC and cable modem" href="usb.html">USB&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Procedures and tips specifically for Surfboard cable modems" href="surfboard.html">Surfboard&nbsp;tips</a>.<br>
+							<a class="sidelink" title="Diagnosing your cable modem's connection" href="signal.html">CM&nbsp;diagnostics</a>.<br>
+							<a class="sidelink" title="Quality of service determined by configuration file" href="cmfile.html">CM&nbsp;config&nbsp;file</a>.<br>
+							<a class="sidelink" title="The network structure of a cable modem" href="cmworks.html">CM&nbsp;tech&nbsp;info</a>.<br>
+							<a class="sidelink" title="DHCP-related problems" href="dhcp.html">DHCP&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Understanding DNS and fixing DNS problems" href="dnsname.html">DNS&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Transparent web proxy caches and how to sidestep them" href="trancache.html">Web&nbsp;proxy&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance of streaming media" href="stream.html">Streaming&nbsp;media</a>.<br>
+							<a class="sidelink" title="Settings that affect performance, latency and pings" href="games.html">Gaming&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance; avoiding saturation of upstream" href="p2p.html">P2P&nbsp;file-sharing</a>.<br>
+							<a class="sidelink" title="Work around connection errors" href="seti.html">SETI@home&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect web browsing performance" href="fasterweb.html">Faster&nbsp;web&nbsp;browsing</a>.<br>
+							<a class="sidelink" title="Strategies to get better download speeds" href="fasterftp.html">Faster&nbsp;downloads</a>.<br>
+							<a class="sidelink" title="How to avoid performance hits" href="downup.html">Simul&nbsp;down/uploads</a>.<br>
+							<a class="sidelink" title="How to restore lost connection when you swap PCs connected to the CM" href="swap.html">Swapping&nbsp;PCs&nbsp;on&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Multiple PCs sharing one CM, home LANs, and NAT Routers" href="homelan.html">PCs&nbsp;sharing&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Using dial-up without losing cable connection" href="dialup.html">Simul&nbsp;dialup&nbsp;&amp;&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Problems with some VPN configurations" href="vpn.html">VPN&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Keep your clock correct, for ever, from cable time" href="timesync.html">Time&nbsp;sync</a>.<br>
+							<a class="sidelink" title="Avoiding virus and trojan infections" href="virus.html">Virus&nbsp;security</a>.<br>
+							<a class="sidelink" title="Configuring firewalls for cable connection" href="security.html">Firewall&nbsp;security</a>.<br>
+							<a class="sidelink" title="Limitations of some speed tests" href="speed.html">Speed&nbsp;testing</a>.<br>
+							<a class="sidelink" title="Understanding, diagnosing, and fixing latency and ping problems" href="latency.html">Latency issues</a>.<br>
+							<a class="sidelink" title="How to perform a traceroute, and how they can mislead" href="traceroute.html">Traceroute</a>.<br>
+							<a class="sidelink" title="Understanding and diagnosing packet loss" href="loss.html">Packet loss</a>.<br>
+							<a class="sidelink" href="frontpage.html">FrontPage tips</a>.<br>
+							<a class="sidelink" title="How to obtain technical support" href="techsupp.html">NTL/BY&nbsp;Tech&nbsp;Support</a>.</div>
+					</td>
+					<td width="18">&nbsp;</td>
+				</tr>
+			</table>
+			<!-- #BeginEditable "main" -->
+				<h2><a name="stream"></a>Streaming media </h2>
+				<p>This page applies to applications for playing streaming media, such as <b>Real Player</b>, <b>Windows Media Player</b>, <b>QuickTime Player</b>.</p>
+				<ul>
+					<li><a href="#perf">Performance issues</a>.</li>
+					<li><a href="#nat">Streaming protocols and Firewalls or NAT routers</a>.</li>
+					<li><a href="#inktomi">Streaming protocols and Inktomi Traffic Servers</a>. <span class="flash">&nbsp;Updated 2003 Jan 22&nbsp;</span></li>
+					<ul>
+						<li><a href="#rpwin">Real Player on Windows</a> - work-around</li>
+						<li><a href="#rpmac">Real Player on Macintosh</a> - work-around</li>
+						<li><a href="#wmp">Windows Media Player</a> - work-around <span class="flash">&nbsp;New 2003 Jan 22&nbsp;</span></li>
+						<li><a href="#wmpmac">Windows Media Player for Mactintosh</a> - no work-around!</li>
+					</ul>
+					<li><a href="#stproxy">Finding the Streaming Media Proxy</a>.</li>
+				</ul>
+				<hr>
+				<h3><a name="perf"></a>Performance issues</h3>
+				<p>Players for streaming media, such as <b>Real Player</b>, <b>Windows Media Player</b>, <b>QuickTime Player</b> have options in their preferences settings for telling them the bandwidth of your network connection. By default, they usually assume a slow dial-up modem connection. You should set this preference option to the available value equal to (or next less than) your downstream bandwidth. For instance, if your nominal downstream bandwidth is 512 kbps, and the nearest options available are <b>T1</b> (too high) and <b>Dual-ISDN</b> (too low), then select <b>Dual-ISDN</b>, as being the highest option less than 512 kbps. The exception is the Windows version of Microsoft <b>Media Player 7</b>, where you should check <b>Detect my connection speed</b> (not available in Mac version).</p>
+				<p>For instance, on a 512 kbps or better download broadband connection, configure <b>RealOne Player</b> as follows:</p>
+				<ul>
+					<li>In <b>RealOne Player</b>, pull down the <b>Tools</b> menu, and select <b>Preferences...</b></li>
+					<ul>
+						<li>In the left-hand <b>Category</b> panel, click <b>Connection</b>.</li>
+						<li>In the right-hand <b>Connection</b> panel:</li>
+						<li>In the <b>Normal</b> pull-down, select <b>DSL/Cable (400 Kbps and above)</b>.</li>
+						<li>In the <b>Maximum</b> pull-down, select <b>DSL/Cable (400 Kbps and above)</b>.</li>
+						<li>Click <b>OK</b> to close <b>Preferences</b>.</li>
+					</ul>
+				</ul>
+				<hr>
+				<h3><a name="nat"></a>Streaming protocols and Firewalls or NAT routers</h3>
+				<p>Some streaming protocols do not work if you have a firewall, or if your PC is behind a NAT router (either a physical router or ICS). In the preferences for the above streaming players, you can usually specify which protocol options to allow or deny:</p>
+				<ul>
+					<li><b>Multicast</b> is the most efficient, but is unlikely to work on a cable connection.</li>
+					<li><b>UDP</b> is the next most efficient, but:</li>
+					<ul>
+						<li>requires UDP ports to be opened in any firewall; and</li>
+						<li>requires UDP port-forwarding through any NAT router.</li>
+					</ul>
+					<li><b>TCP</b> is less efficient than UDP, but will work automatically through firewalls and NAT routers without any special configuration.</li>
+					<li><b>HTTP</b> is the least efficient, will always work, but is subject to web proxy cache degradation.</li>
+				</ul>
+				<p>If you are behind a firewall or a NAT router, you might have to:</p>
+				<ul>
+					<li><b>either</b>: configure your player to restrict UDP to specified port numbers; configure your firewall to open those ports, and/or configure your NAT router to port-forward those ports. See <a title="Special applications port list" href="http://www.practicallynetworked.com/sharing/app_port_list.htm">http://www.practicallynetworked.com/sharing/app_port_list.htm</a> for lists of default ports that require to be forwarded for each steaming protocol. Some cheap firewalls might not have the ability to be configured to open specific port numbers.</li>
+					<li><b>or</b>: turn off UDP protocol options in your streaming player preferences;</li>
+				</ul>
+				<p>For example, to prevent <b>RealOne Player for Windows</b> from attempting to use the UDP protocol:</p>
+				<ul>
+					<li>In <b>RealOne Player</b> (original or v2.0), pull down the <b>Tools</b> menu, and select <b>Preferences...</b></li>
+					<ul>
+						<li>In the left-hand <b>Category</b> panel, click the <b>[+]</b> beside <b>Connection</b>.</li>
+						<li>In the expanded list, click <b>Network Transports</b>.</li>
+						<li>In the right-hand <b>Network Transports</b> panel, check the box <b>Manually configure connections settings</b>.</li>
+						<li>Click <b>PNA Settings</b>.</li>
+						<ul>
+							<li>Click <b>Reset to Recommended</b>, then:</li>
+							<li>Uncheck <b>Attempt to use Multicast for live content</b>.</li>
+							<li>Uncheck <b>Attempt to use UDP for all content</b>.</li>
+							<li>Click <b>OK</b> to exit <b>PNA Transport Settings</b>.</li>
+						</ul>
+						<li>Click <b>RTSP Settings</b>.</li>
+						<ul>
+							<li>Click <b>Reset to Recommended</b>, then:</li>
+							<li>Uncheck <b>Attempt to use Multicast for live content</b>.</li>
+							<li>Uncheck <b>Attempt to use UDP for all content</b>.</li>
+							<li>Click <b>OK</b> to exit <b>RTSP Transport Settings</b>.</li>
+						</ul>
+						<li>Click <b>OK </b>to close <b>Preferences</b>.</li>
+					</ul>
+				</ul>
+				<ul>
+					<li>In the older <b>RealPlayer 8</b>, pull down the <b>View</b> menu, and select <b>Preferences...</b></li>
+					<ul>
+						<li>Click tab <b>Transport</b>.</li>
+						<li>Check <b>Use specified transports:</b></li>
+						<li>Click <b>RTSP Settings...</b></li>
+						<ul>
+							<li>Uncheck <b>Attempt to use Multicast for live content</b>.</li>
+							<li>Uncheck <b>Attempt to use UDP </b>(etc).</li>
+							<li>Click <b>OK</b> to exit <b>RTSP Transport Settings</b>.</li>
+						</ul>
+						<li>Click <b>PNA Settings...</b></li>
+						<ul>
+							<li>Uncheck <b>Attempt to use Multicast for live content</b>.</li>
+							<li>Uncheck <b>Attempt to use UDP</b> (etc).</li>
+							<li>Click <b>OK</b> to exit <b>PNA Transport Settings</b>.</li>
+						</ul>
+						<li>Click <b>OK</b> to close <b>Preferences</b>.</li>
+					</ul>
+				</ul>
+				<p>Now the player will attempt to use only TCP and HTTP protocols, which should work through firewalls and NAT routers without special configuration. These preferences will apply also to the Real Player plug-in for web browsers.</p>
+				<p><b>Real Player 8 for Macintosh</b> is able to recover from non-working UDP and fall back to TCP without special configuration.</p>
+				<hr>
+				<h2><a name="inktomi"></a>Streaming protocols and Inktomi Traffic Servers</h2>
+				<p>Some ISPs use Inktomi Traffic Servers to cache streaming protocol data in a similar way to how they use them as a transparent web proxy cache. The interception of streaming protocol data is meant to be transparent, but for some reasons (not understood) <b>Real Player</b> does not work correctly for some sources (it appears to work for RTSP, but not for PNA protocols), and <b>Windows Media Player</b> does not work correctly for some sources (MMS protocol). Consult the following work-arounds for possible fixes:</p>
+				<ul>
+					<li><a href="#rpwin">Real Player on Windows</a> - work-around</li>
+					<li><a href="#rpmac">Real Player on Macintosh</a> - work-around</li>
+					<li><a href="#wmp">Windows Media Player</a> - work-around</li>
+					<li><a href="#wmpmac">Windows Media Player for Mactintosh</a> - no work-around! </li>
+				</ul>
+				<hr>
+				<h3><a name="rpwin"></a>Real Player on Windows - work-around</h3>
+				<p>On <b>Windows</b>, the symptom of this problem is:</p>
+				<p><b>either</b> an error dialogue from the RealPlayer web browser plug-in saying:</p>
+				<blockquote>
+					<p class="logns4"><b>A General Error has occurred</b>.</p>
+				</blockquote>
+				<p><b>or</b> an error dialogue from the RealOne Player application saying:</p>
+				<blockquote>
+					<p class="logns4"><b>Connection to server has been lost. You may be experiencing network problems</b>.</p>
+				</blockquote>
+				<p>Configure <b>Real Player for Windows</b> to work around this Inktomi problem as follows:</p>
+				<ul>
+					<li>Discover the address of a local streaming media proxy: see <a href="#stproxy">Finding the Streaming Media Proxy</a> below.</li>
+					<li>Discover the version of <b>Real Player</b> you have by pulling down the <b>Help</b> menu and selecting <b>About RealOne Player</b>.</li>
+					<li>Configure <b>Real Player</b> according to the version you have:</li>
+				</ul>
+				<ul>
+					<li>In <b>RealOne Player v2.0</b>, pull down the <b>Tools</b> menu, and select <b>Preferences...</b></li>
+					<ul>
+						<li>In the left-hand <b>Category</b> panel, click the <b>[+]</b> beside <b>Connection</b>.</li>
+						<li>In the expanded list, click <b>Proxy</b>.</li>
+						<li>In the right-hand <b>Proxy</b> panel, under <b>Streaming Settings</b>, click <b>Change Settings...</b>.</li>
+						<ul>
+							<li>Under <b>PNA and RTSP Proxies</b>, check <b>Use Proxies:</b></li>
+							<li>In the row <b>PNA</b>:</li>
+							<ul>
+								<li>In the box <b>Proxy address</b>, enter the name of the streaming media proxy.</li>
+								<li>In the box <b>Port</b>, enter <b>1090</b>.</li>
+							</ul>
+							<li class="ntlns4"><i>[only if found to be necessary: In the row <b>RTSP</b>:</i></li>
+							<ul>
+								<li class="ntlns4"><i>In the box <b>Proxy address</b>, enter the name of the streaming media proxy.</i></li>
+								<li class="ntlns4"><i>In the box <b>Port</b>, enter <b>9231</b>.]</i></li>
+							</ul>
+							<li>[only if found to be necessary: Under <b>HTTP Proxy</b>, click <b>Use Proxy:</b></li>
+							<ul>
+								<li>In the box <b>Proxy address</b>, enter the name of the streaming media proxy or any other web proxy.</li>
+								<li>In the box <b>Port</b>, enter <b>8080</b>.]</li>
+							</ul>
+							<li>In the box <b>Do not use proxy for:</b>, enter <b>192.168.*</b></li>
+							<li>Click <b>OK</b> to exit <b>Streaming Proxy Settings</b>.</li>
+						</ul>
+						<li>Click <b>OK</b> to close <b>Preferences</b>.</li>
+					</ul>
+				</ul>
+				<ul>
+					<li>In <b>RealOne Player</b> (original), pull down the <b>Tools</b> menu, and select <b>Preferences...</b></li>
+					<ul>
+						<li>In the left-hand <b>Category</b> panel, click the <b>[+]</b> beside <b>Connection</b>.</li>
+						<li>In the expanded list, click <b>Proxy</b>.</li>
+						<li>In the right hand <b>Proxy</b> panel, check the box <b>PNA proxy</b>.</li>
+						<ul>
+							<li>In the box <b>Proxy address</b>, enter the name of the streaming media proxy.</li>
+							<li>In the box <b>Port</b>, enter <b>1090</b>.</li>
+						</ul>
+						<li class="ntlns4"><i>[only if found to be necessary: check the box <b>RTSP proxy</b>.</i></li>
+						<ul>
+							<li class="ntlns4"><i>In the box <b>Proxy address</b>, enter the name of the streaming media proxy.</i></li>
+							<li class="ntlns4"><i>In the box <b>Port</b>, enter <b>9231</b>.]</i></li>
+						</ul>
+						<li>[only if found to be necessary: Under <b>HTTP Proxy</b>, click the radio button <b>Use proxy</b>.</li>
+						<ul>
+							<li>In the box <b>Proxy address</b>, enter the name of the streaming media proxy or any other web proxy.</li>
+							<li>In the box <b>Port</b>, enter <b>8080</b>.]</li>
+						</ul>
+						<li>In the box <b>Do not use proxy for</b>, enter <b>192.168.*</b></li>
+						<li>Click <b>OK</b> to close <b>Preferences</b>.</li>
+					</ul>
+				</ul>
+				<ul>
+					<li>In the older <b>RealPlayer 8</b>, pull down the <b>View</b> menu, and select <b>Preferences...</b></li>
+					<ul>
+						<li>Click tab <b>Proxy</b>.</li>
+						<li>Check the box <b>Use PNA proxy:</b></li>
+						<ul>
+							<li>In the box, enter the name of the streaming media proxy.</li>
+							<li>In the box <b>Port</b>, enter <b>1090</b>.</li>
+						</ul>
+						<li class="ntlns4"><i>[only if found to be necessary: Check the box <b>Use RTSP proxy:</b></i></li>
+						<ul>
+							<li class="ntlns4"><i>In the box, enter the name of the streaming media proxy.</i></li>
+							<li class="ntlns4"><i>In the box <b>Port</b>, enter <b>9231</b>.]</i></li>
+						</ul>
+						<li>[only if found to be necessary: Under <b>HTTP Options</b>, check the radio button <b>Manually configure HTTP proxy</b>.</li>
+						<ul>
+							<li>In the box <b>Proxy Server</b>, enter the name of the streaming media proxy.</li>
+							<li>In the bix <b>Port</b>, enter <b>8080</b>.]</li>
+						</ul>
+						<li>In the box <b>Do not use proxy for</b>, enter <b>192.168.*</b></li>
+						<li>Click <b>OK</b> to close <b>Preferences</b>.</li>
+					</ul>
+				</ul>
+				<p>Now the player will explicitly send all requests via the selected Traffic Server. These preferences will apply also to the RealPlayer plug-in for web browsers.</p>
+				<p>If your PC is firewalled or behind a NAT router then you might also have to disable the UDP protocol under <b>PNA Transport Settings</b> as described in the previous section.</p>
+				<p>If after making this configuration, you receive an error dialogue from the RealOne Player saying:</p>
+				<blockquote>
+					<p class="logns4"><b>Requested file not found. The link you followed may be outdated or inaccurate</b>.</p>
+				</blockquote>
+				<p>then the chosen Traffic Server does not support <b>PNA proxy</b>, or it is temporarily broken. You should try the above configuration again, specifying a different Traffic Server within your ISP's network, preferably one at your regional centre, otherwise one at a different regional centre.</p>
+				<p>[<b>Technical note</b>: the use of port <b>1090</b> for <b>PNA proxy</b> replaces the normal Real Player usage of port <b>7070</b> for <b>PNA</b>].</p>
+				<p>For more information about <b>Real Player</b> and firewalls, see <a title="Real Player technical support" href="http://service.real.com/firewall/">http://service.real.com/firewall/</a>. </p>
+				<hr>
+				<h3><a name="rpmac"></a>Real Player on Macintosh - work-around</h3>
+				<p>On <b>Macintosh</b>, the symptom of this problem is:</p>
+				<p><b>either</b> an error dialogue from the <b>RealPlayerG2</b> web browser plug-in saying:</p>
+				<blockquote>
+					<p class="log"><b>Unable to connect to server. Check network transport settings or run auto-configure</b>.</p>
+				</blockquote>
+				<p><b>or</b> an error dialogue from the <b>RealPlayer</b> application saying:</p>
+				<blockquote>
+					<p class="log"><b>Connection to server could not be established. You may be experiencing network problems</b>.</p>
+				</blockquote>
+				<p>Configure <b>Real Player 8 for Macintosh</b> to work around this Inktomi problem as follows:</p>
+				<ul>
+					<li>First discover the address of a local streaming media proxy: see <a href="#stproxy">Finding the Streaming Media Proxy</a> below.</li>
+					<li>In <b>Real Player</b>, pull down the <b>View</b> menu, and select <b>Preferences...</b></li>
+					<ul>
+						<li>In <b>Preferences</b>, click the right-arrow until the tab <b>Proxy</b> appears.</li>
+						<li>Click the tab <b>Proxy</b>.</li>
+						<li>Check the box <b>Use PNA proxy:</b>.</li>
+						<ul>
+							<li>In the next box, enter the name of your streaming media proxy.</li>
+							<li>In the box <b>Port:</b>, enter <b>1090</b>.</li>
+						</ul>
+						<li>Click the radio button <b>Manually configure HTTP proxy</b>.</li>
+						<ul>
+							<li>In the box <b>Proxy server:</b>, enter the name of your streaming media proxy.</li>
+							<li>In the box <b>Port:</b>, enter <b>8080</b>.</li>
+						</ul>
+						<li>In the box <b>Do not use proxy for</b>, enter <b>192.168.*</b></li>
+						<li>Click <b>OK</b> to close <b>Preferences</b>.</li>
+					</ul>
+				</ul>
+				<p>These preferences will apply also to the <b>RealPlayerG2</b> plug-in for web browsers.</p>
+				<hr>
+				<h3><a name="wmp"></a>Windows Media Player - work-around</h3>
+				<p>Configure <b>Windows Media Player</b> as follows to work around a failure to play media over the MMS protocol via Inktomi traffic servers:</p>
+				<ul>
+					<li>In Windows Media Player, pull down the <b>Tools</b> menu and select <b>Options...</b></li>
+					<ul>
+						<li>Click the tab <b>Network</b>.</li>
+						<li>Under <b>Streaming proxy settings</b>, select <b>MMS</b>, then click <b>Configure</b>.</li>
+						<ul>
+							<li>Select <b>Use the following proxy server:</b>.</li>
+							<li>In the box <b>Address:</b> enter the address of a streaming media proxy.</li>
+							<li>Leave <b>Port:</b> set to <b>1755</b>.</li>
+							<li>Leave other boxes unchecked/blank.</li>
+							<li>Click <b>OK</b>.</li>
+						</ul>
+						<li>Click <b>OK</b>.</li>
+					</ul>
+				</ul>
+				<hr>
+				<h3><a name="wmpmac"></a>Windows Media Player for Macintosh - no work-around</h3>
+				<p>There is no method of setting an MMS proxy in Windows Media Player for Macintosh 7.1.</p>
+				<hr>
+				<h2><a name="stproxy"></a>Finding the Streaming Media Proxy</h2>
+				<p>The default streaming media proxy might not be the same server as the transparent web proxy cache (see <b><a href="trancache.html#mycache">Which is my web cache?</a></b>). Nevertheless, sometimes the transparent web proxy can act also as a streaming media proxy. In cases where it can, use it. But sometimes it cannot, and you need to discover an alternative local streaming media proxy.</p>
+				<p>To discover the default streaming media proxy under <b>Windows</b>, launch a web browser, launch <b>RealOne Player</b>, and launch a <b>command window</b>. In the web browser, navigate to a site which contains links to Real Player clips that use the RTSP protocol (for instance, at the site <a title="BBC News" href="http://news.bbc.co.uk/">http://news.bbc.co.uk/</a>, the links to <b>BBC News 24</b> and <b>BBC One TV news</b> use RTSP). While the RTSP clip is playing in <b>RealOne Player</b>, enter the command <b>netstat -a</b> in the command window, and look for an <b>ESTABLISHED</b> TCP connection to a host using a remote port other than <b>80</b> or <b>554</b>: a port often seen used is <b>9231</b>. This host will be the default streaming media proxy.</p>
+				<div class="ntlns4">
+					<p>If the above procedure does not yield a working streaming media proxy, NTL users can experiment to find one as follows. First find the default transparent web proxy (see <b><a href="trancache.html#mycache">Which is my web cache?</a></b>). It will have a name of the form</p>
+					<blockquote>
+						<pre>inktomi<b>N</b>-<b>XXX</b>.server.ntl.com</pre>
+					</blockquote>
+					<p>where <b>N</b> is a number, and <b>XXX</b> is a code for the local data centre. Try various values for <b>N</b> until you find one that works as a streaming media proxy.</p>
+				</div>
+				<hr>
+			<!-- #EndEditable -->
+			<p>Return to <a href="index.html">Index</a>.</p>
+		</body>
+
+	<!-- #EndTemplate -->
+
+</html>
+

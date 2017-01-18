@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+
+<html lang="en">
+
+	<!-- #BeginTemplate "../../cmtips.data/Templates/cmtemp.html" -->
+
+		<head>
+			<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+			<title>Cable Modem Troubleshooting Tips: Speed Tests</title>
+			<!-- #BeginHeadLocked "" -->
+				<meta name="description" content="Technical tips for troubleshooting a cable modem connection.">
+				<meta name="keywords" content="cable modem, FAQ, broadband, cablemodem, troubleshooting, tips, NTL, NTLworld, ntlhome, Telewest, blueyonder">
+				<meta name="author" content="Robin Walker">
+				<meta name="copyright" content="&copy; 2001-02 Robin Walker">
+				<link href="../favicon.ico" rel="shortcut icon">
+				<link href="mailto:rdhw@cam.ac.uk" rel="author">
+				<link href="copyright.html" rel="copyright">
+				<link href="index.html" rel="index">
+				<link href="cmstyle.css" rel="stylesheet">
+				<script type="text/javascript" language="JavaScript"><!--
+function jsinit() {
+  if (top!=self) top.location.href = self.location.href;
+}
+// -->
+</script>
+			<!-- #EndHeadLocked -->
+		</head>
+
+		<body onload="jsinit()" bgcolor="#eeffff">
+			<h1>Cable Modem Troubleshooting Tips</h1>
+			<hr>
+			<table border="0" cellpadding="0" align="left" summary="Quick links">
+				<tr>
+					<td nowrap bgcolor="#ffffff">
+						<div class="menubox">
+							<a class="sidelink" title="Introduction and Index to articles" href="index.html">Intro&nbsp;&amp;&nbsp;Index</a>.<br>
+							<a class="sidelink" title="History of updates and changes to this site" href="hist.html">Update&nbsp;history</a>.<br>
+							<a class="sidelink" title="Problems with BroadJump Broadband Installer" href="broadjump.html">Installer issues</a>.<br>
+							<a class="sidelink" title="Problems associated with getting a cable modem registered with your cable operator" href="register.html">Registration&nbsp;issues</a>.&nbsp;<br>
+							<a class="sidelink" title="PC network configuration for cable service" href="basicset.html">Network&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Swapping one PC between multiple networks" href="mobile.html">Mobile&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Understanding the flashing lights on the cable modem" href="lights.html">Cable&nbsp;Modem&nbsp;LEDs</a>.<br>
+							<a class="sidelink" title="How to determine various important IP addresses" href="ipaddr.html">IP&nbsp;addresses</a>.<br>
+							<a class="sidelink" title="How to determine various important MAC addresses" href="macaddr.html">MAC addresses</a>.<br>
+							<a class="sidelink" title="What to check if you have no service" href="badip.html">Dead&nbsp;connection</a>.<br>
+							<a class="sidelink" title="Updating your system with the latest patches and fixes" href="sysupdates.html">System&nbsp;updates</a>.<br>
+							<a class="sidelink" title="Tweaking your PC for best cable modem performance" href="tweaks.html">Network&nbsp;tweaks</a>.<br>
+							<a class="sidelink" title="Problems specifically related to the ethernet connection between your PC and the cable modem" href="ethernet.html">Ethernet&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Problems specifically related to a USB connection between the PC and cable modem" href="usb.html">USB&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Procedures and tips specifically for Surfboard cable modems" href="surfboard.html">Surfboard&nbsp;tips</a>.<br>
+							<a class="sidelink" title="Diagnosing your cable modem's connection" href="signal.html">CM&nbsp;diagnostics</a>.<br>
+							<a class="sidelink" title="Quality of service determined by configuration file" href="cmfile.html">CM&nbsp;config&nbsp;file</a>.<br>
+							<a class="sidelink" title="The network structure of a cable modem" href="cmworks.html">CM&nbsp;tech&nbsp;info</a>.<br>
+							<a class="sidelink" title="DHCP-related problems" href="dhcp.html">DHCP&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Understanding DNS and fixing DNS problems" href="dnsname.html">DNS&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Transparent web proxy caches and how to sidestep them" href="trancache.html">Web&nbsp;proxy&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance of streaming media" href="stream.html">Streaming&nbsp;media</a>.<br>
+							<a class="sidelink" title="Settings that affect performance, latency and pings" href="games.html">Gaming&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance; avoiding saturation of upstream" href="p2p.html">P2P&nbsp;file-sharing</a>.<br>
+							<a class="sidelink" title="Work around connection errors" href="seti.html">SETI@home&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect web browsing performance" href="fasterweb.html">Faster&nbsp;web&nbsp;browsing</a>.<br>
+							<a class="sidelink" title="Strategies to get better download speeds" href="fasterftp.html">Faster&nbsp;downloads</a>.<br>
+							<a class="sidelink" title="How to avoid performance hits" href="downup.html">Simul&nbsp;down/uploads</a>.<br>
+							<a class="sidelink" title="How to restore lost connection when you swap PCs connected to the CM" href="swap.html">Swapping&nbsp;PCs&nbsp;on&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Multiple PCs sharing one CM, home LANs, and NAT Routers" href="homelan.html">PCs&nbsp;sharing&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Using dial-up without losing cable connection" href="dialup.html">Simul&nbsp;dialup&nbsp;&amp;&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Problems with some VPN configurations" href="vpn.html">VPN&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Keep your clock correct, for ever, from cable time" href="timesync.html">Time&nbsp;sync</a>.<br>
+							<a class="sidelink" title="Avoiding virus and trojan infections" href="virus.html">Virus&nbsp;security</a>.<br>
+							<a class="sidelink" title="Configuring firewalls for cable connection" href="security.html">Firewall&nbsp;security</a>.<br>
+							<a class="sidelink" title="Limitations of some speed tests" href="speed.html">Speed&nbsp;testing</a>.<br>
+							<a class="sidelink" title="Understanding, diagnosing, and fixing latency and ping problems" href="latency.html">Latency issues</a>.<br>
+							<a class="sidelink" title="How to perform a traceroute, and how they can mislead" href="traceroute.html">Traceroute</a>.<br>
+							<a class="sidelink" title="Understanding and diagnosing packet loss" href="loss.html">Packet loss</a>.<br>
+							<a class="sidelink" href="frontpage.html">FrontPage tips</a>.<br>
+							<a class="sidelink" title="How to obtain technical support" href="techsupp.html">NTL/BY&nbsp;Tech&nbsp;Support</a>.</div>
+					</td>
+					<td width="18">&nbsp;</td>
+				</tr>
+			</table>
+			<!-- #BeginEditable "main" -->
+				<h2>On this page:</h2>
+				<ul>
+					<li><a href="#speed">Speed Tests</a>: limitations and comparisons</li>
+					<li><a href="#kilobytes">KiloBytes-per-sec or kilobits-per-sec</a>: not just times eight</li>
+					<li><a href="#slowcable">My cable modem is as slow as my dial-up modem!</a>: when and when not</li>
+				</ul>
+				<h2><a name="speed"></a>Speed Tests</h2>
+				<p>Some users feel the need to test how fast their cable modem is at downloading or uploading. To answer this need, several speed testing sites have sprung up, mostly in the USA. The problem is, none of these tests measure the actual speed of your cable modem: what they measure is the bandwidth between your cable modem and the test site itself, subject to a maximum cut-off at the speed of the modem. The bandwidth between two points on the Internet is determined by the hop in the path (see <b><a href="traceroute.html#traceroute">Traceroute</a></b>) which has the least available spare capacity, and if that limiting bandwidth is less than that of the cable modem, then that is the reading that the speed test will return. This figure might or might not be typical of speeds you could expect to see from other sites, or at other times, depending on where and when the bottleneck is.</p>
+				<p>If you are fortunate enough to choose a test site where the available free bandwidth on all hops is greater than the speed of your cable modem, then the test site will indeed measure the speed of your cable modem, which is then the limiting bottleneck. But you knew what that was anyway, so you are not learning much.</p>
+				<p>Be aware that many <i>upload</i> speed tests are invalidated by the presence of the <a href="trancache.html#trancache">transparent web proxy cache</a>, so you should disregard those upload results.</p>
+				<p>Pay no attention to download speeds reported by Microsoft Internet Explorer, because it will be downloading the start of the file while you are still choosing a download directory and filename, so it often reports impossibly high transfer rates immediately after you click <b>OK</b>.</p>
+				<p>For testing download speeds on a UK broadband connection provided by <span class="ntl">NTL</span> or <span class="by">Blueyonder</span>, or an ADSL connection via British Telecom, a downloadable speed tester is available from <a href="http://www.vantage.pwp.blueyonder.co.uk/" title="ISP Speed Test Wizard - test your UK broadband connection">http://www.vantage.pwp.blueyonder.co.uk/</a>. <span class="by">This is the recommended speed test for making reports to blueyonder technical support</span>.</p>
+				<p>Speed test web sites fall into two broad categories:</p>
+				<ul>
+					<li><b>Java applets</b> embedded in a web page:</li>
+					<ul>
+						<li><b>Pro:</b> they usually use a port other than 80 for carrying the test data, and so the effect of proxy web caches is avoided.</li>
+						<li><b>Pro:</b> they usually produce more accurate estimates than other types.</li>
+						<li><b>Con:</b> they do not copy the received data to disk, so they produce optimistic estimates of download speeds, as the delays introduced by disk systems are not taken into account.</li>
+						<li><b>Con:</b> most of these test sites are in the USA, even if they have a <b>.uk</b> host name, and transatlantic links are usually congested, as are USA backbones.</li>
+					</ul>
+				</ul>
+				<ul>
+					<li><b>JavaScript</b> timing of a large web page download:</li>
+					<ul>
+						<li><b>Con:</b> the web download is slowed by the web proxy cache, so speed figures will reflect those of HTTP downloads, but be pessimistic for FTP downloads.</li>
+						<li><b>Con:</b> web browsers do such complex tasks during downloads that JavaScript timings are unreliable.</li>
+						<li><b>Pro:</b> the web browser does copy the downloaded web page to its internal cache on disk, so the slowing effect of disk systems is taken into account.</li>
+						<li><b>Con:</b> most of these test sites are in the USA, even if they have a <b>.uk</b> host name, and transatlantic links are usually congested, as are USA backbones.</li>
+						<li><b>Con:</b> most JavaScript tests fail to take into account that the first few tens of kilobytes of a web page will pass through the cable modem at high speed, before the capping algorithm cuts in, and so give absurdly over-optimistic estimates of download speeds.</li>
+					</ul>
+				</ul>
+				<p>Good examples of Java applet test sites are:</p>
+				<ul>
+					<li><a href="http://www.dslreports.com/stest" title="DSLReports Speed Test">http://www.dslreports.com/stest</a> in the USA;</li>
+					<li><a title="Speed test at ADSLguide UK" href="http://www.adslguide.org.uk/tools/speedtest.asp">http://www.adslguide.org.uk/tools/speedtest.asp</a> in the UK.</li>
+				</ul>
+				<p>There are many poor JavaScript test sites. Many of the test pages are too short to properly exercise the rate capping of a cable modem. All of them I have seen fail to train the cable modem's rate capping before starting the timings. So I've written a cheap and cheerful JavaScript speed test myself, and you can try it at <a href="http://homepage.ntlworld.com/robin.d.h.walker/speedtest.html" title="Speed test from NTL server">http://homepage.ntlworld.com/robin.d.h.walker/speedtest.html</a>. It sends a large quantity of data to get the cable modem rate-capping steadied down, and then takes four sequential speed readings, so that you appreciate how variable these results are. If you have <b>ZoneAlarm</b>, turn off <b>Ad Blocking</b> before running this test, because Ad Blocking seems to have a bug that stops this test working correctly.</p>
+				<h3><a name="kilobytes"></a>KiloBytes-per-sec or kilobits-per-sec?</h3>
+				<p>Modem speeds are rated in kilobits per second. The best dial-up modems have download speeds of 56 kbps (kilobits per second). A typical cable modem has a download speed of 512 kbps. It takes 8 bits to code one byte (character), so one might expect 512 kbps to be equivalent to 64 kBytes per second. Things are not that simple.</p>
+				<p>First, when used in measuring communication speeds in bits per second, the prefix <b>kilo-</b> means 1000. For instance, the maximum download speed of a 56 kbps dial-up modem is 56000 bps. A cable modem download cap of 512 kbps means 512000 bps, not 512*1024 bps. In contrast, when used in measuring computer file sizes in bytes, the prefix <b>kilo-</b> is commonly taken to mean 1024 = 2<sup>10</sup>. So you cannot translate from kbps to kBytes per second just by dividing by 8.</p>
+				<p>Next, the maximum amount of real user data that can be accommodated in one data packet is 1460 bytes. Then there are 20 bytes of TCP overhead, plus 20 bytes of IP overhead, plus 18 bytes of MAC overhead, making 1518 bytes to be transmitted to carry 1460 bytes, a 4% overhead. Then between each packet there will be an inter-packet gap of indeterminate size.</p>
+				<p>So at a true transmission rate of 512 kbps, the apparent user data rate will be significantly below 64 kBytes per sec, because both the above effects will reduce the equivalent rate in kBytes per sec. The maximum sustained data download rate you can expect is 512 * 1000/1024 * 1460/1518 * 1/8 = 60 kBytes/sec, and not 64 as a simple division by 8 might suggest.</p>
+				<p class="ntlns4">With NTL stand-alone cable modems, the download cap for the <b>silver</b> service is in fact 600 kbps. The maximum data rate you can expect from this is 600 * 1000/1024 * 1460/1518 * 1/8 = 70 kBytes/sec, and not 75 as a simple division by 8 might suggest.</p>
+				<p>Speed tests measure real data rates in kBytes per second, because that is all they can do. Any figure they give for equivalent transmission speed in kbits per second will be an estimate calculated from the measured data rate in kBytes per second.</p>
+				<h3><a name="slowcable"></a>My cable modem is as slow as my dial-up modem!</h3>
+				<p>Yes, this is entirely possible in particular cases. The speed of an internet link is as slow as the slowest hop. It won't get any faster just because you buy a faster modem, unless it was the dial-up modem which had previously been the slowest hop: then you will see a speed increase. So if you used to get a poor 500 bytes/sec from a dial-up modem, you will continue to get a poor 500 bytes/sec from a cable modem in the same circumstances. If the dial up modem had previously been saturated, then the cable modem will give a better speed: but not necessarily as high as the rated speed of your service - that would depend on the rest of the internet.</p>
+				<p>However, it should never be the case that a cable modem is <b>slower</b> than a dial-up modem in the same circumstances. If you suspect that this might be happening, you should check some of the tips earlier in this document, particularly:</p>
+				<ul>
+					<li><a href="ethernet.html#ethernet">ethernet duplex</a> settings;</li>
+					<li>removal of previous <a href="tweaks.html#tweaks">dial-up networking tweaks</a> (particularly MTU size);</li>
+					<li><a href="signal.html#signal">cable modem signal</a> levels.</li>
+				</ul>
+				<hr>
+			<!-- #EndEditable -->
+			<p>Return to <a href="index.html">Index</a>.</p>
+		</body>
+
+	<!-- #EndTemplate -->
+
+</html>
+

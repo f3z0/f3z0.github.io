@@ -1,0 +1,238 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+
+<html lang="en">
+
+	<!-- #BeginTemplate "../../cmtips.data/Templates/cmtemp.html" -->
+
+		<head>
+			<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+			<title>Cable Modem Troubleshooting Tips: Traceroute</title>
+			<!-- #BeginHeadLocked "" -->
+				<meta name="description" content="Technical tips for troubleshooting a cable modem connection.">
+				<meta name="keywords" content="cable modem, FAQ, broadband, cablemodem, troubleshooting, tips, NTL, NTLworld, ntlhome, Telewest, blueyonder">
+				<meta name="author" content="Robin Walker">
+				<meta name="copyright" content="&copy; 2001-02 Robin Walker">
+				<link href="../favicon.ico" rel="shortcut icon">
+				<link href="mailto:rdhw@cam.ac.uk" rel="author">
+				<link href="copyright.html" rel="copyright">
+				<link href="index.html" rel="index">
+				<link href="cmstyle.css" rel="stylesheet">
+				<script type="text/javascript" language="JavaScript"><!--
+function jsinit() {
+  if (top!=self) top.location.href = self.location.href;
+}
+// -->
+</script>
+			<!-- #EndHeadLocked -->
+		</head>
+
+		<body onload="jsinit()" bgcolor="#eeffff">
+			<h1>Cable Modem Troubleshooting Tips</h1>
+			<hr>
+			<table border="0" cellpadding="0" align="left" summary="Quick links">
+				<tr>
+					<td nowrap bgcolor="#ffffff">
+						<div class="menubox">
+							<a class="sidelink" title="Introduction and Index to articles" href="index.html">Intro&nbsp;&amp;&nbsp;Index</a>.<br>
+							<a class="sidelink" title="History of updates and changes to this site" href="hist.html">Update&nbsp;history</a>.<br>
+							<a class="sidelink" title="Problems with BroadJump Broadband Installer" href="broadjump.html">Installer issues</a>.<br>
+							<a class="sidelink" title="Problems associated with getting a cable modem registered with your cable operator" href="register.html">Registration&nbsp;issues</a>.&nbsp;<br>
+							<a class="sidelink" title="PC network configuration for cable service" href="basicset.html">Network&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Swapping one PC between multiple networks" href="mobile.html">Mobile&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Understanding the flashing lights on the cable modem" href="lights.html">Cable&nbsp;Modem&nbsp;LEDs</a>.<br>
+							<a class="sidelink" title="How to determine various important IP addresses" href="ipaddr.html">IP&nbsp;addresses</a>.<br>
+							<a class="sidelink" title="How to determine various important MAC addresses" href="macaddr.html">MAC addresses</a>.<br>
+							<a class="sidelink" title="What to check if you have no service" href="badip.html">Dead&nbsp;connection</a>.<br>
+							<a class="sidelink" title="Updating your system with the latest patches and fixes" href="sysupdates.html">System&nbsp;updates</a>.<br>
+							<a class="sidelink" title="Tweaking your PC for best cable modem performance" href="tweaks.html">Network&nbsp;tweaks</a>.<br>
+							<a class="sidelink" title="Problems specifically related to the ethernet connection between your PC and the cable modem" href="ethernet.html">Ethernet&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Problems specifically related to a USB connection between the PC and cable modem" href="usb.html">USB&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Procedures and tips specifically for Surfboard cable modems" href="surfboard.html">Surfboard&nbsp;tips</a>.<br>
+							<a class="sidelink" title="Diagnosing your cable modem's connection" href="signal.html">CM&nbsp;diagnostics</a>.<br>
+							<a class="sidelink" title="Quality of service determined by configuration file" href="cmfile.html">CM&nbsp;config&nbsp;file</a>.<br>
+							<a class="sidelink" title="The network structure of a cable modem" href="cmworks.html">CM&nbsp;tech&nbsp;info</a>.<br>
+							<a class="sidelink" title="DHCP-related problems" href="dhcp.html">DHCP&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Understanding DNS and fixing DNS problems" href="dnsname.html">DNS&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Transparent web proxy caches and how to sidestep them" href="trancache.html">Web&nbsp;proxy&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance of streaming media" href="stream.html">Streaming&nbsp;media</a>.<br>
+							<a class="sidelink" title="Settings that affect performance, latency and pings" href="games.html">Gaming&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance; avoiding saturation of upstream" href="p2p.html">P2P&nbsp;file-sharing</a>.<br>
+							<a class="sidelink" title="Work around connection errors" href="seti.html">SETI@home&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect web browsing performance" href="fasterweb.html">Faster&nbsp;web&nbsp;browsing</a>.<br>
+							<a class="sidelink" title="Strategies to get better download speeds" href="fasterftp.html">Faster&nbsp;downloads</a>.<br>
+							<a class="sidelink" title="How to avoid performance hits" href="downup.html">Simul&nbsp;down/uploads</a>.<br>
+							<a class="sidelink" title="How to restore lost connection when you swap PCs connected to the CM" href="swap.html">Swapping&nbsp;PCs&nbsp;on&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Multiple PCs sharing one CM, home LANs, and NAT Routers" href="homelan.html">PCs&nbsp;sharing&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Using dial-up without losing cable connection" href="dialup.html">Simul&nbsp;dialup&nbsp;&amp;&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Problems with some VPN configurations" href="vpn.html">VPN&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Keep your clock correct, for ever, from cable time" href="timesync.html">Time&nbsp;sync</a>.<br>
+							<a class="sidelink" title="Avoiding virus and trojan infections" href="virus.html">Virus&nbsp;security</a>.<br>
+							<a class="sidelink" title="Configuring firewalls for cable connection" href="security.html">Firewall&nbsp;security</a>.<br>
+							<a class="sidelink" title="Limitations of some speed tests" href="speed.html">Speed&nbsp;testing</a>.<br>
+							<a class="sidelink" title="Understanding, diagnosing, and fixing latency and ping problems" href="latency.html">Latency issues</a>.<br>
+							<a class="sidelink" title="How to perform a traceroute, and how they can mislead" href="traceroute.html">Traceroute</a>.<br>
+							<a class="sidelink" title="Understanding and diagnosing packet loss" href="loss.html">Packet loss</a>.<br>
+							<a class="sidelink" href="frontpage.html">FrontPage tips</a>.<br>
+							<a class="sidelink" title="How to obtain technical support" href="techsupp.html">NTL/BY&nbsp;Tech&nbsp;Support</a>.</div>
+					</td>
+					<td width="18">&nbsp;</td>
+				</tr>
+			</table>
+			<!-- #BeginEditable "main" -->
+				<h2>On this page:</h2>
+				<ul>
+					<li><a href="#traceroute">Traceroute</a>: how to perform one, and how it can mislead</li>
+					<li>How <a href="#tracehow">traceroute works</a></li>
+					<li>How <a href="#tracemis">traceroute can mislead</a></li>
+					<li><a href="#tracentl">Misleading traceroutes</a> to certain NTL servers</li>
+					<li><a href="#speedtrace">Traceroute</a>: how to speed it up in Windows</li>
+					<li><a href="#revtrace">Reverse traceroute</a>: how to get one back to your PC</li>
+					<li><a href="#revroute">Partial return route</a> using ping <span class="flash">&nbsp;New 2002 Aug 26&nbsp;</span></li>
+				</ul>
+				<hr>
+				<h2><a name="traceroute"></a>Traceroute</h2>
+				<p>The traceroute tool is a valuable aid to network troubleshooting. It also is the most commonly misinterpreted diagnostic tool, capable of raising false alarms when nothing is wrong, and equally capable of showing no problems when quite a lot is wrong.</p>
+				<p>Before using traceroute, ensure that your network connection is idle (no download or upload), and that there is no background activity which might put traffic on your network connection. Any network traffic on a rate-capped service such as a cable modem will cause spuriously slow timings in traceroute.</p>
+				<p>To use the traceroute tool in Windows, open a permanent command-line window. In Windows 9x/ME, make the window 50 lines high by giving the command <b>mode con co80,50</b>. In Windows 2K/XP, stretch the window by dragging its bottom margin. Now give the command <b>tracert</b> followed by the DNS name or IP number of the host to which you wish to discover the route. Here is an example:<br clear="all">
+				</p>
+				<pre class="log">C:\&gt;<b>tracert www.uu.net</b>
+
+Tracing route to www.uu.net [208.243.117.123]
+over a maximum of 30 hops:
+
+  1    14 ms   &lt;10 ms    14 ms  172.19.83.254
+  2    14 ms   &lt;10 ms   &lt;10 ms  ren-cam2-a-fa41.inet.ntl.com [62.252.131.69]
+  3   426 ms   494 ms    55 ms  ren-core-a-pos1000.inet.ntl.com [62.252.128.149]
+  4     *       27 ms    28 ms  win-bb-a-atm100-808.inet.ntl.com [62.253.187.130]
+  5   110 ms   110 ms   124 ms  mae-east-gw1-atm410-1.inet.ntl.com [194.168.118.238]
+  6   151 ms   138 ms   137 ms  902.Serial3-1-1.GW1.TCO1.ALTER.NET [157.130.33.57]
+  7   124 ms   124 ms   123 ms  717.GW1.TCO3.customer.ALTER.NET [157.130.32.206]
+  8   123 ms   138 ms   151 ms  uu123.web.uu.net [208.243.117.123]
+
+Trace complete.</pre>
+				<p>Each line is labelled with a hop number. Three probes were sent for each hop, and the round trip times (RTT), there and back, for each probe is given in milliseconds (thousandths of a second). If a probe is sent and no reply is received, the RTT is replaced with an asterisk. The IP number of the replying router is given on the extreme right, and if that IP number could be resolved to a DNS name, that is shown too. The final line is for the host given in the command.</p>
+				<p><b>Apple Mac OS X 8.x/9.x</b> users can perform traceroutes with utilities such as WhatRoute (on the Mac OS 9.1 CDROM), <a href="http://www.interarchy.com/">Interarchy</a> or <a href="http://www.sustworks.com/">IPNetMonitor</a>.</p>
+				<p>Under <b>Linux</b> and <b>Mac OS X</b>, the command is spelt <b>traceroute</b>.</p>
+				<hr>
+				<h3><a name="tracehow"></a>How traceroute works</h3>
+				<p>All IP packets are initially sent with a Time-To-Live (TTL) field set to a suitable number. Each time an IP packet passes through an IP router, its TTL is reduced by one. When the TTL reaches zero, the packet is discarded. This strategy is to prevent IP packets circulating endlessly on the internet in the event of a router misconfiguration leading to a circular route.</p>
+				<p>Each traceroute query is sent with a very small TTL. When the query's TTL reaches zero, instead of being totally discarded, an ICMP TTL-exceeded warning packet is returned to the sending address, where the traceroute program is waiting to time its return. For the first hop, the TTL is initialised to one, three queries are sent and timed. Then the initial TTL is increased by one, three queries sent and timed, and so on. This repeats until the IP number that replies to the query does so with an echo instead of an ICMP TTL-exceeded. This indicates that it is the sought host, rather than an intermediate router.</p>
+				<hr>
+				<h3><a name="tracemis"></a>How traceroute can mislead</h3>
+				<ol>
+					<li>Windows PCs have poor clocks, and are incapable of measuring with a resolution of a millisecond. Study of the RTTs above will show they are strongly quantised to be close to multiples of 6.8&nbsp;ms. This means that slight differences in RTTs can either (a) show an apparent 7&nbsp;ms jump, or (b) show no change at all. But nothing inbetween. Windows 2000 appears to have an even worse resolution of 10&nbsp;ms. Windows XP seems better than all previous versions.</li>
+					<li>The route displayed is only the outward route taken by the probes. It is impossible to infer by what route the replies came back. It is possible for the return route to be different to the outward route, and involve a different number of hops. It is possible for every router shown to have a different return path to the sender. It is even possible for each of the three replies from one single router to take a different return path to the sender. Those different return routes will add their own different contributions to the RTTs shown. This can lead to sudden steps in RTT up or down compared with the previous hop or the next hop, or to inconsistencies between the three RTT figures for one router.</li>
+					<li>Modern routers give priority to real data packets, and very low priority to returning TTL-exceeded ICMP packets. So RTTs on intermediate routers can be anomalously high, such as those shown on hop 3 above. Routers can drop these packets altogether, as in hop 4. In both cases, reasonable RTTs and lack of packet loss on all the subsequent queries which must have passed through these routers in order to produce results for later hops show that the routers at hops 3 and 4 are in reasonable working order. The RTTs on the final line will be more reliable, because they are echoes from the traced host, rather than a router. <b>The RTT on the final line is the only one that matters when checking latency times to game servers etc.</b></li>
+					<li>The speed of light in fibre or copper cables adds significantly to the RTTs on long hops. This is called <b>propagation delay</b>. Using the most optimistic assumptions, every 100 miles of cable will add at least 1&nbsp;ms to the RTT, and in practice much more, as the signal has to pass through repeater amplifiers on the way, each delaying the signal. In practice, a hop which crosses the Atlantic will cost at least 80&nbsp;ms in RTT. Thus, in the above example, hop 4 is in Winnersh UK, and hop 5 is in Washington DC, USA, so a sudden increase in RTT is normal.</li>
+					<li><b>Large RTTs do not necessarily mean poor performance</b>. The TCP pacing algorithms are quite capable of maintaining optimal traffic volume over very long paths, <b>provided</b> your TCP Receive Window (RWIN) is large enough (see <b><a href="tweaks.html#tweaks">Networking tweaks</a></b>). The Receive Window must be of size in bytes <b>at least </b>equal to the product of your rated download speed in bytes per second (512 kbps = 64000 bytes per second) times the RTT on the path in seconds. The consequence of the TCP Receive Window being even a little too small is a catastrophic reduction in throughput, as the TCP pacing algorithm is destroyed. In the above example, to get good FTP downloads from <b>www.uu.net</b> (with a worst-case RTT of 151 msecs), you would need a Receive Window of at least 64000*0.151 = 9664 bytes. This is larger than the default Windows 9x setting, so you will get poor speeds on an untweaked system. Windows ME/2000 and Macs will be fine. If you want to maintain download performance while simultaneously uploading, you need to add to the RTT the likely delay that an ACK packet suffers while waiting for an upload packet to be transmitted (1518 bytes at 128 kbps, say 100 msecs to be safe).</li>
+					<li><b>Small RTTs do not necessarily mean good performance</b>. It is possible for a path to give low RTTs even when it is close to saturation, or suffering packet loss.</li>
+					<li>Some routers by design do not respond to traceroute queries. These will give a row of three asterisks and no address, but the trace might recover at a later point and start giving results again. In particular, it will eventually show the target host.</li>
+					<li>Some corporates block all traceroute queries at their firewall. In this case, the traceroute will give rows of three asterisks for ever, and never reach the target host.</li>
+					<li>Never blame a router for something which can be adequately explained by congestion on the cable to the router from the previous hop.</li>
+				</ol>
+				<p>Given all these provisos, you might wonder what use traceroute is. Well, it does reliably discover the outward route. But you should be extremely careful about inferring network problems from traceroute reports. Certainly, on its own, traceroute is not a reliable measure of packet loss, as it tries only three times to each hop. However, if indications of packet loss (asterisks) start at a particular hop and continue for every hop thereafter, then this is indicative of packet loss starting at the first affected hop, or the cable leading to it from the previous (good) hop.</p>
+				<hr>
+				<div class="ntlns4">
+					<h3><a name="tracentl"></a>Misleading traceroutes to certain NTL servers</h3>
+					<p>Traceroutes to certain NTL servers always look wrong when there is nothing in fact wrong. For instance:</p>
+					<pre>C:\WINDOWS&gt;tracert www.ntl.com
+
+Tracing route to www.ntl.com [212.250.5.110]
+over a maximum of 30 hops:
+
+  1    18 ms    19 ms    72 ms  172.16.231.254
+  2    17 ms    15 ms    14 ms  cam-cam1-a-fa00.inet.ntl.com [62.253.129.1]
+  3    21 ms    13 ms    15 ms  cam-core-a-pos200.inet.ntl.com [62.253.128.133]
+  4    27 ms    24 ms    25 ms  lng-bb-a-atm100-808.inet.ntl.com [62.253.187.42]
+  5    21 ms    28 ms    24 ms  gfd-bb-a-so-110-0.inet.ntl.com [62.253.188.246]
+  6    27 ms    46 ms    24 ms  gfd-dc-a-ge400.inet.ntl.com [62.253.188.154]
+  7    23 ms    29 ms    62 ms  gfd-alder-fa10.inet.ntl.com [194.168.2.1]
+  8    21 ms    23 ms    20 ms  62.252.0.98
+  9     *        *        *     Request timed out.
+ 10     *        *        *     Request timed out.
+ 11     *        *        *     Request timed out.
+ 12     *        *        *     Request timed out.
+ 13     *        *        *     Request timed out.
+ 14     *        *        *     Request timed out.
+ 15     *        *        *     Request timed out.
+ 16     *        *        *     Request timed out.
+ 17    17 ms     9 ms    24 ms  www.ntl.com [212.250.5.110]
+
+Trace complete.
+</pre>
+					<p>The server at <b>www.ntl.com</b> has a defect in its TCP/IP implementation in that it sets the TTL of an ICMP echo to be the same as the residual TTL of the ICMP query. This means that the ICMP echo will be dropped by some router in the return path, until such time as the originating traceroute program has increased the TTL on the query packet to account for the number of hops in the return path as well as the outward path. This fools the traceroute program into inventing hops 9 to 16, which really don't exist: <b>www.ntl.com</b> is in fact directly connected to the router in hop 8. It is characteristic of this defect that one sees the same number of missing hops (8 in this case) as the number of genuine hops before the gap, assuming the return path is the same as the outward one. There is no evidence of any network problem in the above traceroute.</p>
+				</div>
+				<p class="byns4">Some Blueyonder servers, such as <b>smtp.blueyonder.co.uk</b>, exhibit the same defect.</p>
+				<hr>
+				<h2><a name="speedtrace"></a>Speeding up traceroutes in Windows</h2>
+				<p>In the example traceroute above, the local UBR's private IP address in hop 1 will be slow to appear, because Windows does a reverse DNS lookup on the IP number, but gets no reply from the DNS system, because addresses in the range 172.16.0.0 - 172.31.255.255 and 10.xxx.xxx.xxx are private IP addresses (rather than public internet IP addresses) and are not registered in the DNS system. There will be similar slow responses for all hops with IP addresses in private ranges.</p>
+				<p>You can provide a substitute quick look-up for such addresses as follows.</p>
+				<p>First discover the private IP address of your local UBR: see <a href="ipaddr.html#ubrip">Finding the UBR address</a>. In this example we shall assume it is <b>172.19.83.254</b>.</p>
+				<p>In Windows 9x/ME, copy the file C:\WINDOWS\HOSTS.SAM to C:\WINDOWS\HOSTS. It is difficult to create files with no (hidden) extension after the filename using the Windows graphical interface, so this is best done in an MS-DOS window by giving the commands</p>
+				<pre><b>    cd \WINDOWS
+    copy HOSTS.SAM HOSTS</b></pre>
+				<p>In Windows 9x/ME, open the file <b>C:\WINDOWS\HOSTS</b> in a plain-text editor.</p>
+				<p>In Windows 2000, open the file <b>c:\winnt\system32\drivers\etc\hosts</b> in a plain-text editor.</p>
+				<p>A suitable plain-text editor is the command line <b>edit</b>. Do not use word-processors such as <b>WordPad</b> or <b>Word</b>. <b>NotePad</b> would be fine provided you know how to defeat its tendency to add a hidden <b>.txt</b> extension to filenames when it saves (the trick, in the <b>Save As</b> dialog, is to quote the filename in double-quotes, e.g. <b>&quot;HOSTS&quot;</b>).</p>
+				<p>The last line of the file will look like:</p>
+				<pre><b>127.0.0.1       localhost</b></pre>
+				<p>Add a line after it, so that they look like:</p>
+				<pre><b>127.0.0.1       localhost
+172.19.83.254   My-UBR</b></pre>
+				<p>where the <b>172</b> address you actually use is the one you discovered above. Save the changed file. Make quite sure that it has been saved as a file called <b>hosts</b> or <b>HOSTS</b> with no <b>.txt</b> extension, even when you look at with the <b>dir</b> command. Restart Windows, and try a <b>tracert</b>. You should find that the first hop of a traceroute now looks like:</p>
+				<pre class="log"> 1    14 ms   &lt;10 ms    14 ms  My-UBR [172.19.83.254]</pre>
+				<p>and appears almost instantly. If other hops in the traceroute are also private addresses (in the ranges 192.168.xxx.xxx, 172.xx.xxx.xxx or 10.xxx.xxx.xxx) you can repeat this process for all such addresses to speed up traceroute results, using invented names for them.</p>
+				<hr>
+				<h2><a name="revtrace"></a>Getting reverse traceroutes</h2>
+				<p>Because a traceroute reveals only the outward path, leaving the return path unknown, investigation of networking problems between your PC and a specific host ideally require a traceroute from that host back to your own PC. For normal users, this is not in general possible. The next best thing is to send your web browser to <a title="Traceroute.org" href="http://www.traceroute.org/">www.traceroute.org</a>, choose a site close (in terms of internet topology) to the site under investigation, and run a traceroute back to your PC.</p>
+				<hr>
+				<h2><a name="revroute"></a>Partial reverse routes using ping</h2>
+				<p>It is possible to discover the last 9 routers that packets passed through on their way back to you using the <b>record route</b> feature of the <b>ping</b> command. The options required to select <b>record route</b> vary according to operating system. Here is an example under Windows:</p>
+				<pre class="logns4">C:\&gt;<b>ping -r 9 -a www.dslreports.com</b>
+
+Pinging dslreports.com [209.123.109.175] with 32 bytes of data:
+
+Reply from 209.123.109.175: bytes=32 time=109ms TTL=245
+    Route: cmbg-cmbg-ubr-2-ge20.inet.ntl.com [80.1.202.134] -&gt;
+           cmbg-t2cam1-b-ge-wan31.inet.ntl.com [80.1.201.154] -&gt;
+           cam-t2core-b-pos31.inet.ntl.com [62.253.188.198] -&gt;
+           nth-bb-b.inet.ntl.com [194.145.149.116] -&gt;
+           nth-bb-a.inet.ntl.com [194.145.149.115] -&gt;
+           gfd-bb-b.inet.ntl.com [194.145.149.4] -&gt;
+           gfd-bb-a.inet.ntl.com [194.145.149.3] -&gt;
+           linx-gw1.router.ntli.net [195.66.224.22] -&gt;
+           a1-0-118.core1.ltn.nac.net [209.123.11.218]
+Reply from 209.123.109.175: bytes=32 time=103ms TTL=245
+    Route: cmbg-cmbg-ubr-2-ge10.inet.ntl.com [80.1.202.6] -&gt;
+           cmbg-t2cam1-a-ge-wan31.inet.ntl.com [80.1.201.26] -&gt;
+           cam-t2core-a-pos31.inet.ntl.com [62.253.188.194] -&gt;
+           pop-bb-a.inet.ntl.com [194.145.149.105] -&gt;
+           pop-bb-b.inet.ntl.com [194.145.149.106] -&gt;
+           linx-gw1.router.ntli.net [195.66.224.22] -&gt;
+           a1-0-118.core1.ltn.nac.net [209.123.11.218] -&gt;
+           vlan3.msfc1.oct.nac.net [209.123.109.129] -&gt;
+           www.dslreports.com [209.123.109.175]
+Reply from 209.123.109.175: bytes=32 time=113ms TTL=245
+    Route: cmbg-cmbg-ubr-2-ge20.inet.ntl.com [80.1.202.134] -&gt;
+           cmbg-t2cam1-b-ge-wan31.inet.ntl.com [80.1.201.154] -&gt;
+           cam-t2core-b-pos31.inet.ntl.com [62.253.188.198] -&gt;
+           nth-bb-b.inet.ntl.com [194.145.149.116] -&gt;
+           lee-bb-a.inet.ntl.com [194.145.149.35] -&gt;
+           pop-bb-b.inet.ntl.com [194.145.149.106] -&gt;
+           linx-gw1.router.ntli.net [195.66.224.22] -&gt;
+           a1-0-118.core1.ltn.nac.net [209.123.11.218] -&gt;
+           vlan3.msfc1.oct.nac.net [209.123.109.129]</pre>
+				<p>Note that in the above example, three successive ping replies each took a different return route back to me in my ISP's network. This demonstrates how futile it can be trying to make sense of traceroute timings, because return routes can be so different for successive packets.</p>
+				<p>For <b>Record Route</b> to work, the remote host pinged must support the setting of the <b>Record Route</b> flag in the ping reply: not all hosts support this.</p>
+				<p>Under Unix-derived systems, the option to request a return route is <b class="nowrap">-R</b> rather than <b class="nowrap">-r</b>, but there might be requirements for additional simultaneous options: check <b>man ping</b>. In some distributions (including <b>Mac OS X</b>), the command <b class="nowrap">ping -R</b> is broken and always gives <b>Invalid argument</b>.</p>
+				<p><b>Mac OS X</b> users can request a <b>Record Route</b> using the <b>Trace Route</b> tool of the <b><a title="Sustainable Softworks" href="http://www.sustworks.com/">IPNetMonitorX</a></b> utility: use the pull down option <b>UDP Trace/ICMP Trace/Record Route</b>.</p>
+				<hr>
+			<!-- #EndEditable -->
+			<p>Return to <a href="index.html">Index</a>.</p>
+		</body>
+
+	<!-- #EndTemplate -->
+
+</html>
+

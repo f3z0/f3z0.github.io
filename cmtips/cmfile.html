@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+
+<html lang="en">
+
+	<!-- #BeginTemplate "../../cmtips.data/Templates/cmtemp.html" -->
+
+		<head>
+			<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+			<title>Cable Modem Troubleshooting Tips: Configuration File</title>
+			<!-- #BeginHeadLocked "" -->
+				<meta name="description" content="Technical tips for troubleshooting a cable modem connection.">
+				<meta name="keywords" content="cable modem, FAQ, broadband, cablemodem, troubleshooting, tips, NTL, NTLworld, ntlhome, Telewest, blueyonder">
+				<meta name="author" content="Robin Walker">
+				<meta name="copyright" content="&copy; 2001-02 Robin Walker">
+				<link href="../favicon.ico" rel="shortcut icon">
+				<link href="mailto:rdhw@cam.ac.uk" rel="author">
+				<link href="copyright.html" rel="copyright">
+				<link href="index.html" rel="index">
+				<link href="cmstyle.css" rel="stylesheet">
+				<script type="text/javascript" language="JavaScript"><!--
+function jsinit() {
+  if (top!=self) top.location.href = self.location.href;
+}
+// -->
+</script>
+			<!-- #EndHeadLocked -->
+		</head>
+
+		<body onload="jsinit()" bgcolor="#eeffff">
+			<h1>Cable Modem Troubleshooting Tips</h1>
+			<hr>
+			<table border="0" cellpadding="0" align="left" summary="Quick links">
+				<tr>
+					<td nowrap bgcolor="#ffffff">
+						<div class="menubox">
+							<a class="sidelink" title="Introduction and Index to articles" href="index.html">Intro&nbsp;&amp;&nbsp;Index</a>.<br>
+							<a class="sidelink" title="History of updates and changes to this site" href="hist.html">Update&nbsp;history</a>.<br>
+							<a class="sidelink" title="Problems with BroadJump Broadband Installer" href="broadjump.html">Installer issues</a>.<br>
+							<a class="sidelink" title="Problems associated with getting a cable modem registered with your cable operator" href="register.html">Registration&nbsp;issues</a>.&nbsp;<br>
+							<a class="sidelink" title="PC network configuration for cable service" href="basicset.html">Network&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Swapping one PC between multiple networks" href="mobile.html">Mobile&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Understanding the flashing lights on the cable modem" href="lights.html">Cable&nbsp;Modem&nbsp;LEDs</a>.<br>
+							<a class="sidelink" title="How to determine various important IP addresses" href="ipaddr.html">IP&nbsp;addresses</a>.<br>
+							<a class="sidelink" title="How to determine various important MAC addresses" href="macaddr.html">MAC addresses</a>.<br>
+							<a class="sidelink" title="What to check if you have no service" href="badip.html">Dead&nbsp;connection</a>.<br>
+							<a class="sidelink" title="Updating your system with the latest patches and fixes" href="sysupdates.html">System&nbsp;updates</a>.<br>
+							<a class="sidelink" title="Tweaking your PC for best cable modem performance" href="tweaks.html">Network&nbsp;tweaks</a>.<br>
+							<a class="sidelink" title="Problems specifically related to the ethernet connection between your PC and the cable modem" href="ethernet.html">Ethernet&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Problems specifically related to a USB connection between the PC and cable modem" href="usb.html">USB&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Procedures and tips specifically for Surfboard cable modems" href="surfboard.html">Surfboard&nbsp;tips</a>.<br>
+							<a class="sidelink" title="Diagnosing your cable modem's connection" href="signal.html">CM&nbsp;diagnostics</a>.<br>
+							<a class="sidelink" title="Quality of service determined by configuration file" href="cmfile.html">CM&nbsp;config&nbsp;file</a>.<br>
+							<a class="sidelink" title="The network structure of a cable modem" href="cmworks.html">CM&nbsp;tech&nbsp;info</a>.<br>
+							<a class="sidelink" title="DHCP-related problems" href="dhcp.html">DHCP&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Understanding DNS and fixing DNS problems" href="dnsname.html">DNS&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Transparent web proxy caches and how to sidestep them" href="trancache.html">Web&nbsp;proxy&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance of streaming media" href="stream.html">Streaming&nbsp;media</a>.<br>
+							<a class="sidelink" title="Settings that affect performance, latency and pings" href="games.html">Gaming&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance; avoiding saturation of upstream" href="p2p.html">P2P&nbsp;file-sharing</a>.<br>
+							<a class="sidelink" title="Work around connection errors" href="seti.html">SETI@home&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect web browsing performance" href="fasterweb.html">Faster&nbsp;web&nbsp;browsing</a>.<br>
+							<a class="sidelink" title="Strategies to get better download speeds" href="fasterftp.html">Faster&nbsp;downloads</a>.<br>
+							<a class="sidelink" title="How to avoid performance hits" href="downup.html">Simul&nbsp;down/uploads</a>.<br>
+							<a class="sidelink" title="How to restore lost connection when you swap PCs connected to the CM" href="swap.html">Swapping&nbsp;PCs&nbsp;on&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Multiple PCs sharing one CM, home LANs, and NAT Routers" href="homelan.html">PCs&nbsp;sharing&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Using dial-up without losing cable connection" href="dialup.html">Simul&nbsp;dialup&nbsp;&amp;&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Problems with some VPN configurations" href="vpn.html">VPN&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Keep your clock correct, for ever, from cable time" href="timesync.html">Time&nbsp;sync</a>.<br>
+							<a class="sidelink" title="Avoiding virus and trojan infections" href="virus.html">Virus&nbsp;security</a>.<br>
+							<a class="sidelink" title="Configuring firewalls for cable connection" href="security.html">Firewall&nbsp;security</a>.<br>
+							<a class="sidelink" title="Limitations of some speed tests" href="speed.html">Speed&nbsp;testing</a>.<br>
+							<a class="sidelink" title="Understanding, diagnosing, and fixing latency and ping problems" href="latency.html">Latency issues</a>.<br>
+							<a class="sidelink" title="How to perform a traceroute, and how they can mislead" href="traceroute.html">Traceroute</a>.<br>
+							<a class="sidelink" title="Understanding and diagnosing packet loss" href="loss.html">Packet loss</a>.<br>
+							<a class="sidelink" href="frontpage.html">FrontPage tips</a>.<br>
+							<a class="sidelink" title="How to obtain technical support" href="techsupp.html">NTL/BY&nbsp;Tech&nbsp;Support</a>.</div>
+					</td>
+					<td width="18">&nbsp;</td>
+				</tr>
+			</table>
+			<!-- #BeginEditable "main" -->
+				<h2><a name="cmfile"></a>Cable modem configuration file</h2>
+				<p>The quality of service offered by the cable modem, including the downstream and upstream rate caps, is determined by a <b>configuration file</b> fetched by the cable modem from the ISP's network during the cable modem boot-up sequence. The configuration file also tells the cable modem if there are any firmware updates available for it. These files are invisible to the user: they never reach the PC.</p>
+				<p>A typical cable modem system might offer different qualities of service with configuration file names <b>copper.cm</b>, <b>bronze.cm</b>, <b>silver.cm</b>, <b>gold.cm</b>, and so on.</p>
+				<p>The name of the configuration file in your cable modem can be discovered:</p>
+				<ul>
+					<li>(for Surfboards) by inspection of the <a href="signal.html#cmlog">diagnostic log</a>;</li>
+					<li>(for ntl:home 100/120) by inspection of the <a href="signal.html#ntllog">Event Log</a>;</li>
+					<li>(for Pace digital TV STBs) on <a href="signal.html#pacediag">engineering diagnostic</a> page 3;</li>
+					<li>by use of the <a title="DocsDiag info and download" href="http://homepage.ntlworld.com/robin.d.h.walker/docsdiag/">DocsDiag</a> cable modem diagnostics viewer.</li>
+				</ul>
+				<div class="ntlns4">
+					<p>NTL use the following configuration file names:</p>
+					<ul>
+						<li><b>no-bia.cm</b>: Digital TV set-top boxes in a broadband-enabled area with no broadband internet access.</li>
+						<li><b>noserv.cm</b>: cable modems with no internet access.</li>
+						<li><b>unreg.cm</b>: limited service pending completion of <a href="register.html#ntlreg">registration</a>.</li>
+						<li><b>copper.cm</b>: In stand-alone cable modems: asymmetric 64kbps download, 32kbps upload (this service is no longer sold to new customers). In digital TV set-top-boxes: asymmetric 128kbps download, 64kbps upload.</li>
+						<li><b>bronze.cm</b>: asymmetric 128kbps download, 64kbps upload. Also sometimes seen in digital TV set-top boxes by default in non-broadband-enabled areas.</li>
+						<li><b>silver.cm</b>: asymmetric 600kbps download, 128kbps upload.</li>
+						<li><b>gold.cm</b>: asymmetric 1024kbps download, 256kbps upload.</li>
+					</ul>
+					<p>NTL might also use the following model-specific configuration file names:</p>
+					<table border="1" cellspacing="0" cellpadding="0" align="center">
+						<tr>
+							<td nowrap>&nbsp;</td>
+							<th nowrap>Silver</th>
+							<th nowrap>Bronze</th>
+						</tr>
+						<tr>
+							<th align="left" nowrap>&nbsp;3Com CMX</th>
+							<td nowrap><tt>&nbsp;3comcmxx-silver.cm&nbsp;</tt></td>
+							<td nowrap><tt>&nbsp;3comcmxx-bronze.cm&nbsp;</tt></td>
+						</tr>
+						<tr>
+							<th align="left" nowrap>&nbsp;3Com Tailfin</th>
+							<td nowrap><tt>&nbsp;3comtail-silver.cm</tt></td>
+							<td nowrap><tt>&nbsp;3comtail-bronze.cm</tt></td>
+						</tr>
+						<tr>
+							<th align="left" nowrap>&nbsp;Surfboard&nbsp;3100/4100&nbsp;</th>
+							<td nowrap><tt>&nbsp;mota4100-silver.cm</tt></td>
+							<td nowrap><tt>&nbsp;mota4100-bronze.cm</tt></td>
+						</tr>
+						<tr>
+							<th align="left" nowrap>&nbsp;Terayon Terajet 210</th>
+							<td nowrap><tt>&nbsp;tera210x-silver.cm</tt></td>
+							<td nowrap><tt>&nbsp;tera210x-bronze.cm</tt></td>
+						</tr>
+						<tr>
+							<th align="left" nowrap>&nbsp;ntl:home 100</th>
+							<td nowrap><tt>&nbsp;ntlhm100-silver.cm&nbsp;</tt></td>
+							<td nowrap><tt>&nbsp;ntlhm100-bronze.cm&nbsp;</tt></td>
+						</tr>
+					</table>
+				</div>
+				<div class="byns4">
+					<p>Blueyonder use configuration filenames: </p>
+					<ul>
+						<li><b>docsis.md5</b>: asymmetric 512kbps download, 128kbps upload service.</li>
+						<li><b>cm1024-256.cm</b>: asymmetric 1024kbps download, 256kbps upload.</li>
+						<li><b>cm2048-512.cm</b>: asymmetric 2048kbps download, 512kbps upload (business use). </li>
+					</ul>
+				</div>
+				<hr>
+			<!-- #EndEditable -->
+			<p>Return to <a href="index.html">Index</a>.</p>
+		</body>
+
+	<!-- #EndTemplate -->
+
+</html>
+

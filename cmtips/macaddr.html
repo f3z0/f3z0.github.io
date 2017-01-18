@@ -1,0 +1,350 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+
+<html lang="en">
+
+	<!-- #BeginTemplate "../../cmtips.data/Templates/cmtemp.html" -->
+
+		<head>
+			<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+			<title>Cable Modem Troubleshooting Tips: MAC addresses</title>
+			<!-- #BeginHeadLocked "" -->
+				<meta name="description" content="Technical tips for troubleshooting a cable modem connection.">
+				<meta name="keywords" content="cable modem, FAQ, broadband, cablemodem, troubleshooting, tips, NTL, NTLworld, ntlhome, Telewest, blueyonder">
+				<meta name="author" content="Robin Walker">
+				<meta name="copyright" content="&copy; 2001-02 Robin Walker">
+				<link href="../favicon.ico" rel="shortcut icon">
+				<link href="mailto:rdhw@cam.ac.uk" rel="author">
+				<link href="copyright.html" rel="copyright">
+				<link href="index.html" rel="index">
+				<link href="cmstyle.css" rel="stylesheet">
+				<script type="text/javascript" language="JavaScript"><!--
+function jsinit() {
+  if (top!=self) top.location.href = self.location.href;
+}
+// -->
+</script>
+			<!-- #EndHeadLocked -->
+		</head>
+
+		<body onload="jsinit()" bgcolor="#eeffff">
+			<h1>Cable Modem Troubleshooting Tips</h1>
+			<hr>
+			<table border="0" cellpadding="0" align="left" summary="Quick links">
+				<tr>
+					<td nowrap bgcolor="#ffffff">
+						<div class="menubox">
+							<a class="sidelink" title="Introduction and Index to articles" href="index.html">Intro&nbsp;&amp;&nbsp;Index</a>.<br>
+							<a class="sidelink" title="History of updates and changes to this site" href="hist.html">Update&nbsp;history</a>.<br>
+							<a class="sidelink" title="Problems with BroadJump Broadband Installer" href="broadjump.html">Installer issues</a>.<br>
+							<a class="sidelink" title="Problems associated with getting a cable modem registered with your cable operator" href="register.html">Registration&nbsp;issues</a>.&nbsp;<br>
+							<a class="sidelink" title="PC network configuration for cable service" href="basicset.html">Network&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Swapping one PC between multiple networks" href="mobile.html">Mobile&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Understanding the flashing lights on the cable modem" href="lights.html">Cable&nbsp;Modem&nbsp;LEDs</a>.<br>
+							<a class="sidelink" title="How to determine various important IP addresses" href="ipaddr.html">IP&nbsp;addresses</a>.<br>
+							<a class="sidelink" title="How to determine various important MAC addresses" href="macaddr.html">MAC addresses</a>.<br>
+							<a class="sidelink" title="What to check if you have no service" href="badip.html">Dead&nbsp;connection</a>.<br>
+							<a class="sidelink" title="Updating your system with the latest patches and fixes" href="sysupdates.html">System&nbsp;updates</a>.<br>
+							<a class="sidelink" title="Tweaking your PC for best cable modem performance" href="tweaks.html">Network&nbsp;tweaks</a>.<br>
+							<a class="sidelink" title="Problems specifically related to the ethernet connection between your PC and the cable modem" href="ethernet.html">Ethernet&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Problems specifically related to a USB connection between the PC and cable modem" href="usb.html">USB&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Procedures and tips specifically for Surfboard cable modems" href="surfboard.html">Surfboard&nbsp;tips</a>.<br>
+							<a class="sidelink" title="Diagnosing your cable modem's connection" href="signal.html">CM&nbsp;diagnostics</a>.<br>
+							<a class="sidelink" title="Quality of service determined by configuration file" href="cmfile.html">CM&nbsp;config&nbsp;file</a>.<br>
+							<a class="sidelink" title="The network structure of a cable modem" href="cmworks.html">CM&nbsp;tech&nbsp;info</a>.<br>
+							<a class="sidelink" title="DHCP-related problems" href="dhcp.html">DHCP&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Understanding DNS and fixing DNS problems" href="dnsname.html">DNS&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Transparent web proxy caches and how to sidestep them" href="trancache.html">Web&nbsp;proxy&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance of streaming media" href="stream.html">Streaming&nbsp;media</a>.<br>
+							<a class="sidelink" title="Settings that affect performance, latency and pings" href="games.html">Gaming&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance; avoiding saturation of upstream" href="p2p.html">P2P&nbsp;file-sharing</a>.<br>
+							<a class="sidelink" title="Work around connection errors" href="seti.html">SETI@home&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect web browsing performance" href="fasterweb.html">Faster&nbsp;web&nbsp;browsing</a>.<br>
+							<a class="sidelink" title="Strategies to get better download speeds" href="fasterftp.html">Faster&nbsp;downloads</a>.<br>
+							<a class="sidelink" title="How to avoid performance hits" href="downup.html">Simul&nbsp;down/uploads</a>.<br>
+							<a class="sidelink" title="How to restore lost connection when you swap PCs connected to the CM" href="swap.html">Swapping&nbsp;PCs&nbsp;on&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Multiple PCs sharing one CM, home LANs, and NAT Routers" href="homelan.html">PCs&nbsp;sharing&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Using dial-up without losing cable connection" href="dialup.html">Simul&nbsp;dialup&nbsp;&amp;&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Problems with some VPN configurations" href="vpn.html">VPN&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Keep your clock correct, for ever, from cable time" href="timesync.html">Time&nbsp;sync</a>.<br>
+							<a class="sidelink" title="Avoiding virus and trojan infections" href="virus.html">Virus&nbsp;security</a>.<br>
+							<a class="sidelink" title="Configuring firewalls for cable connection" href="security.html">Firewall&nbsp;security</a>.<br>
+							<a class="sidelink" title="Limitations of some speed tests" href="speed.html">Speed&nbsp;testing</a>.<br>
+							<a class="sidelink" title="Understanding, diagnosing, and fixing latency and ping problems" href="latency.html">Latency issues</a>.<br>
+							<a class="sidelink" title="How to perform a traceroute, and how they can mislead" href="traceroute.html">Traceroute</a>.<br>
+							<a class="sidelink" title="Understanding and diagnosing packet loss" href="loss.html">Packet loss</a>.<br>
+							<a class="sidelink" href="frontpage.html">FrontPage tips</a>.<br>
+							<a class="sidelink" title="How to obtain technical support" href="techsupp.html">NTL/BY&nbsp;Tech&nbsp;Support</a>.</div>
+					</td>
+					<td width="18">&nbsp;</td>
+				</tr>
+			</table>
+			<!-- #BeginEditable "main" -->
+				<h2>MAC addresses</h2>
+				<p>MAC = Medium Access Control.</p>
+				<p>MAC addresses are used as the source and destination addresses for data packets on a LAN. A MAC address is written as 12 hexadecimal characters (0-9, A-F). The grouping of those 12 characters into pairs separated by colons (00:20:40:70:F4:84) or hyphens (00-20-40-70-F4-84) is purely conventional, and is not related to function. Every network device in the world has a unique MAC address. The first 6 characters of the MAC address are unique to the manufacturer of the device. Allocation of MAC addresses is <a title="OUI registration" href="http://standards.ieee.org/regauth/oui/">administered by the IEEE</a> in the USA.</p>
+				<p>For some of the procedures described elsewhere on this site it is necessary for the user to discover various MAC addresses: the instructions for finding the following MAC addresses are listed on this page:</p>
+				<ul>
+					<li><a href="#macpc">Finding the MAC address of the PC's network interface</a>; <span class="flash">&nbsp;Updated 2002 Aug 31&nbsp;</span></li>
+					<li><a href="#machfc">Finding the HFC MAC address of the cable modem</a>;</li>
+					<li><a href="#macother">Finding the MAC address of any other PC on the LAN</a>; <span class="flash">&nbsp;Updated 2002 Aug 31&nbsp;</span></li>
+					<li><a href="#macwan">Finding the MAC address of the WAN port of a router</a>;</li>
+					<li><a href="#macclone">Cloning a MAC address into the WAN port of a router</a>.</li>
+				</ul>
+				<hr>
+				<h2><a name="macpc"></a>Finding the MAC address of a PC's network interface</h2>
+				<p>Each network interface in your PC will have a different MAC address. Some cable ISPs require you to register with them the MAC address of the network interface of the PC/device that is connected to the cable modem. To discover the MAC address of a PC network interface, proceed as follows.</p>
+				<p>First:</p>
+				<ul>
+					<li>If you are using a USB connection between the PC and cable modem, you must already have installed the <a href="usb.html#usb">USB drivers</a>, and connected the USB cable between the cable modem and the PC.</li>
+					<li>If you are using an ethernet connection, you must have connected the ethernet cable between the PC and the cable modem.</li>
+					<li>Ensure the cable modem is powered up and operational.</li>
+				</ul>
+				<p>Next:</p>
+				<ul>
+					<li><b>Win9x/ME</b>: click <b>Start</b>, click <b>Run</b>, enter the command <b><tt>winipcfg</tt></b>. Use the pull-down menu to select the network interface for the cable modem (rather than any PPP dial-up). Look for the line <b>Adapter Address</b>.</li>
+					<li><b>Windows</b> (any version except Win95): open a command window, type the command <b><tt>ipconfig&nbsp;/all</tt></b>. Look for the output section related to the network interface for the cable modem, and look for the line <b>Physical Address</b>:</li>
+				</ul>
+				<blockquote>
+					<blockquote>
+						<pre class="log">2 Ethernet adapter : 
+
+Description . . . . . . . . : Intel DC21041 PCI Ethernet Adapter
+Physical Address. . . . . . : <span class="yellbg">00-60-1D-F6-7E-5C</span>
+DHCP Enabled. . . . . . . . : Yes
+IP Address. . . . . . . . . : 213.107.117.246
+Subnet Mask . . . . . . . . : 255.255.255.0
+Default Gateway . . . . . . : 213.107.117.254
+DHCP Server . . . . . . . . : 62.253.128.3
+Primary WINS Server . . . . :
+Secondary WINS Server . . . :
+Lease Obtained. . . . . . . : 07 26 01 21:22:01
+Lease Expires . . . . . . . : </pre>
+					</blockquote>
+				</blockquote>
+				<ul>
+					<li><b>WinXP</b>:</li>
+					<ul>
+						<li>Open control panel <b>Network Connections</b>.</li>
+						<li>Select the icon for the cable interface, right-click it, and select <b>Status</b>.</li>
+						<ul>
+							<li>Click tab <b>Support</b>.</li>
+							<li>Click button <b>Details</b>.</li>
+							<ul>
+								<li>Look for the line <b>Physical Address</b>.</li>
+								<li>Click <b>Close</b>.</li>
+							</ul>
+							<li>Click <b>Close</b>.</li>
+						</ul>
+						<li>Close the control panel.</li>
+					</ul>
+					<li><b>Apple Mac OS 8.x/9.x</b>:</li>
+					<ul>
+						<li>Pull down the Apple menu, select Control Panels.</li>
+						<li>Open the control panel <b>TCP/IP</b>.</li>
+						<li>If you cannot see a button labelled <b>Info</b>:</li>
+						<ul>
+							<li>Pull down the <b>Edit</b> menu and select <b>User Mode...</b></li>
+							<li>Click <b>Advanced</b>.</li>
+							<li>Click <b>OK</b>.</li>
+						</ul>
+						<li>Click button <b>Info</b>.</li>
+						<ul>
+							<li>Look for the line <b>Hardware address</b>.</li>
+							<li>Click <b>OK</b>.</li>
+						</ul>
+						<li>Close the control panel.</li>
+					</ul>
+					<li><b>Apple Mac OS X</b>: one of the following:</li>
+					<ul>
+						<li>Pull down the Apple menu, select <b>System Preferences</b>, click <b>Network</b>, in the pull-down <b>Show:</b> select the interface required, look for the line <b>Ethernet Address</b> or <b>Airport ID</b>.</li>
+						<li>Open a <b>Terminal</b> window, type the command <tt><b>ifconfig en0</b></tt> (where <tt><b>en0</b></tt> is the interface in use), look for the line <b>ether</b>.</li>
+					</ul>
+				</ul>
+				<hr>
+				<h2><a name="machfc"></a>Finding the HFC MAC Address of the cable modem</h2>
+				<p>HFC = Hybrid Fibre-Coax. This abbreviation refers to the port of the cable modem that connects to the CATV coax cable. Some cable ISPs require you to register with them the HFC MAC address of your cable modem.</p>
+				<p>The HFC MAC address of the cable modem is stamped on the manufacturer's label on the back or underside of the cable modem, or on the label of the box in which the cable modem was sold.</p>
+				<table border="1" cellspacing="0" cellpadding="2" align="center">
+					<caption><b>HFC MAC address identification</b></caption>
+					<tr>
+						<th>Cable Modem model&nbsp;</th>
+						<th>&nbsp;Identifying label&nbsp;</th>
+						<th>Typical address range</th>
+					</tr>
+					<tr>
+						<td>Motorola&nbsp;Surfboard&nbsp;3100&nbsp;</td>
+						<td>HFC MAC ID:</td>
+						<td>00:20:40:xx:xx:xx</td>
+					</tr>
+					<tr>
+						<td>Motorola Surfboard 4100</td>
+						<td>HFC MAC ID:</td>
+						<td>00:20:40:xx:xx:xx<br>
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							00:04:BD:xx:xx:xx<br>
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							00:08:0E:xx:xx:xx</td>
+					</tr>
+					<tr>
+						<td>3Com CMX</td>
+						<td>EA=</td>
+						<td>00:50:DA:xx:xx:xx<br>
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							00:50:04:xx:xx:xx<br>
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							00:01:03:xx:xx:xx<br>
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							00:10:4B:xx:xx:xx</td>
+					</tr>
+					<tr>
+						<td>3Com Tailfin</td>
+						<td>EA=</td>
+						<td>00:50:DA:xx:xx:xx<br>
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							00:01:03:xx:xx:xx<br>
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							00:04:75:xx:xx:xx</td>
+					</tr>
+					<tr>
+						<td>Terayon TeraJet</td>
+						<td>MAC Addr</td>
+						<td>00:E0:6F:xx:xx:xx</td>
+					</tr>
+					<tr>
+						<td>Pace digital STB</td>
+						<td>&nbsp;</td>
+						<td>00:50:94:xx:xx:xx</td>
+					</tr>
+					<tr>
+						<td nowrap>ntl:home 100/120 (Ambit)&nbsp;</td>
+						<td>under barcode</td>
+						<td>00:D0:59:xx.xx.xx</td>
+					</tr>
+				</table>
+				<p>It is not possible to discover the HFC MAC address of the cable modem by use of any commands such as <b><tt>winipcfg</tt></b> or <b><tt>ipconfig</tt></b> on the PC. However, if the cable modem offers <a href="signal.html#signal">diagnostics via a web page</a>, the HFC MAC address might be listed there.</p>
+				<p>Cable modems might have multiple MAC addresses, one for the HFC side (cable TV coax socket), and one for the CPE side (Customer Premises Equipment, the ethernet socket). USB-capable cable modems also have two further MAC addresses: one for the cable modem USB socket, and another for the emulated network interface in the USB driver in the PC. Although it is possible to discover the CPE MAC address(es) of the cable modem, there is no application or procedure that requires them.</p>
+				<hr>
+				<h2><a name="macother"></a>Finding the MAC address of any other PC/device on the LAN</h2>
+				<p>This procedure only works for PCs/devices in the same same IP sub-net as the PC doing the discovery.</p>
+				<p>For <b>Windows</b>:</p>
+				<ul>
+					<li>Open a command window.</li>
+					<li>Type the command <b><tt>ping xxx.xxx.xxx.xxx</tt></b>, where <tt>xxx.xxx.xxx.xxx</tt> is the IP address of the PC/device for which you want to know the MAC address. Ensure that you get at least one reply.</li>
+					<li>Type the command <b><tt>arp -a</tt></b></li>
+					<li>In the column <b>Internet Address</b>, look for the sought IP address, and then in the same line, read the corresponding MAC address from the column <b>Physical Address</b>.</li>
+				</ul>
+				<p>For <b>Apple Mac OS 8.x/9.x</b>, the utility <a title="IPNetTuner from SustWorks" href="http://www.sustworks.com/">IPNetTuner</a> can display the ARP cache of MAC addresses.</p>
+				<p>For <b>Apple Mac OS X</b>:</p>
+				<ul>
+					<li>Open a <b>Terminal</b> window.</li>
+					<li>Type the command <tt><b>ping xxx.xxx.xxx.xxx</b></tt> where <tt>xxx.xxx.xxx.xxx</tt> is the IP address of the PC/device for which you want to learn the MAC address. Ensure that you get at least one reply, and cancel the ping commadn with Ctrl-C.</li>
+					<li>Type the command <tt><b>arp -a</b></tt></li>
+					<li>Each line of output gives the equivalence between an IP address and a MAC address: look for the line with your sought IP address in it.</li>
+				</ul>
+				<hr>
+				<h2><a name="macwan"></a>Finding the MAC address of the WAN port of a router</h2>
+				<p>If you have a NAT router between your PC(s) and the cable modem, and if your cable ISP normally requires you to register the MAC address of your PC's network card, then you will instead need to register the MAC address of the WAN port of your NAT router.</p>
+				<p>To discover the MAC address of the WAN port of your router, please consult the documentation for your router. For instance, the procedure for the Linksys BEFSR41 is:</p>
+				<ul>
+					<li>Send your web browser to the Linksys configuration at <a title="Linksys configuration" href="http://192.168.1.1/">http://192.168.1.1/</a> and quote the password for access;</li>
+					<li>Click tab <b>Status</b>;</li>
+					<li>The WAN MAC address is one of those displayed.</li>
+				</ul>
+				<hr>
+				<h2><a name="macclone"></a>Cloning a MAC address into the WAN port of a router</h2>
+				<p>If you want to insert a NAT router between your PC and the cable modem, you might want to avoid changing the client MAC address that the cable modem connects to, for either of these reasons:</p>
+				<ul>
+					<li>to avoid having to register a new client MAC address with your ISP (if your ISP is one which requires registration of the MAC address of the connected device);</li>
+					<li>to avoid problems with the ISP's DHCP system not immediately issuing a new IP lease when the client MAC address changes (see <a href="swap.html#swap">Swapping computers on the cable modem</a>).</li>
+				</ul>
+				<p>Many NAT routers intended for the domestic market have the ability to <b>clone</b> the PC's MAC address into the MAC address of the WAN port. For best effect, you should do the cloning before you first connect the router to the cable modem. To discover how to clone, please consult the documentation for your router. For instance, the procedure for the Linksys BEFSR41 is:</p>
+				<ul>
+					<li>Discover the MAC address of the PC that you want to clone as in <a href="#macpc">Finding the MAC address of a PC's network interface</a> above.</li>
+					<li>Send your web browser to the Linksys configuration at <a title="Linksys configuration" href="http://192.168.1.1/">http://192.168.1.1/</a> and quote the password for access;</li>
+					<li>Click tab <b>Advanced</b>;</li>
+					<li>Click tab <b>MAC Addr clone</b>;</li>
+					<li>Enter the PC's MAC address, two characters in each of the six boxes.</li>
+					<li>Click <b>Apply</b>.</li>
+				</ul>
+				<p>If the router had already been connected to a cable modem, then after cloning a new MAC address into the WAN port, you must perform the procedures of <a href="swap.html">Swapping computers on the cable modem</a>.</p>
+				<p>With the cloned MAC address in the router's WAN port, then as far as the cable modem is concerned, it is talking to the original PC.</p>
+				<hr>
+			<!-- #EndEditable -->
+			<p>Return to <a href="index.html">Index</a>.</p>
+		</body>
+
+	<!-- #EndTemplate -->
+
+</html>
+

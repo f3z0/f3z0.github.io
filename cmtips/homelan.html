@@ -1,0 +1,246 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+
+<html lang="en">
+
+	<!-- #BeginTemplate "../../cmtips.data/Templates/cmtemp.html" -->
+
+		<head>
+			<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+			<title>Cable Modem Troubleshooting Tips: Sharing a CM</title>
+			<!-- #BeginHeadLocked "" -->
+				<meta name="description" content="Technical tips for troubleshooting a cable modem connection.">
+				<meta name="keywords" content="cable modem, FAQ, broadband, cablemodem, troubleshooting, tips, NTL, NTLworld, ntlhome, Telewest, blueyonder">
+				<meta name="author" content="Robin Walker">
+				<meta name="copyright" content="&copy; 2001-02 Robin Walker">
+				<link href="../favicon.ico" rel="shortcut icon">
+				<link href="mailto:rdhw@cam.ac.uk" rel="author">
+				<link href="copyright.html" rel="copyright">
+				<link href="index.html" rel="index">
+				<link href="cmstyle.css" rel="stylesheet">
+				<script type="text/javascript" language="JavaScript"><!--
+function jsinit() {
+  if (top!=self) top.location.href = self.location.href;
+}
+// -->
+</script>
+			<!-- #EndHeadLocked -->
+		</head>
+
+		<body onload="jsinit()" bgcolor="#eeffff">
+			<h1>Cable Modem Troubleshooting Tips</h1>
+			<hr>
+			<table border="0" cellpadding="0" align="left" summary="Quick links">
+				<tr>
+					<td nowrap bgcolor="#ffffff">
+						<div class="menubox">
+							<a class="sidelink" title="Introduction and Index to articles" href="index.html">Intro&nbsp;&amp;&nbsp;Index</a>.<br>
+							<a class="sidelink" title="History of updates and changes to this site" href="hist.html">Update&nbsp;history</a>.<br>
+							<a class="sidelink" title="Problems with BroadJump Broadband Installer" href="broadjump.html">Installer issues</a>.<br>
+							<a class="sidelink" title="Problems associated with getting a cable modem registered with your cable operator" href="register.html">Registration&nbsp;issues</a>.&nbsp;<br>
+							<a class="sidelink" title="PC network configuration for cable service" href="basicset.html">Network&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Swapping one PC between multiple networks" href="mobile.html">Mobile&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Understanding the flashing lights on the cable modem" href="lights.html">Cable&nbsp;Modem&nbsp;LEDs</a>.<br>
+							<a class="sidelink" title="How to determine various important IP addresses" href="ipaddr.html">IP&nbsp;addresses</a>.<br>
+							<a class="sidelink" title="How to determine various important MAC addresses" href="macaddr.html">MAC addresses</a>.<br>
+							<a class="sidelink" title="What to check if you have no service" href="badip.html">Dead&nbsp;connection</a>.<br>
+							<a class="sidelink" title="Updating your system with the latest patches and fixes" href="sysupdates.html">System&nbsp;updates</a>.<br>
+							<a class="sidelink" title="Tweaking your PC for best cable modem performance" href="tweaks.html">Network&nbsp;tweaks</a>.<br>
+							<a class="sidelink" title="Problems specifically related to the ethernet connection between your PC and the cable modem" href="ethernet.html">Ethernet&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Problems specifically related to a USB connection between the PC and cable modem" href="usb.html">USB&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Procedures and tips specifically for Surfboard cable modems" href="surfboard.html">Surfboard&nbsp;tips</a>.<br>
+							<a class="sidelink" title="Diagnosing your cable modem's connection" href="signal.html">CM&nbsp;diagnostics</a>.<br>
+							<a class="sidelink" title="Quality of service determined by configuration file" href="cmfile.html">CM&nbsp;config&nbsp;file</a>.<br>
+							<a class="sidelink" title="The network structure of a cable modem" href="cmworks.html">CM&nbsp;tech&nbsp;info</a>.<br>
+							<a class="sidelink" title="DHCP-related problems" href="dhcp.html">DHCP&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Understanding DNS and fixing DNS problems" href="dnsname.html">DNS&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Transparent web proxy caches and how to sidestep them" href="trancache.html">Web&nbsp;proxy&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance of streaming media" href="stream.html">Streaming&nbsp;media</a>.<br>
+							<a class="sidelink" title="Settings that affect performance, latency and pings" href="games.html">Gaming&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance; avoiding saturation of upstream" href="p2p.html">P2P&nbsp;file-sharing</a>.<br>
+							<a class="sidelink" title="Work around connection errors" href="seti.html">SETI@home&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect web browsing performance" href="fasterweb.html">Faster&nbsp;web&nbsp;browsing</a>.<br>
+							<a class="sidelink" title="Strategies to get better download speeds" href="fasterftp.html">Faster&nbsp;downloads</a>.<br>
+							<a class="sidelink" title="How to avoid performance hits" href="downup.html">Simul&nbsp;down/uploads</a>.<br>
+							<a class="sidelink" title="How to restore lost connection when you swap PCs connected to the CM" href="swap.html">Swapping&nbsp;PCs&nbsp;on&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Multiple PCs sharing one CM, home LANs, and NAT Routers" href="homelan.html">PCs&nbsp;sharing&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Using dial-up without losing cable connection" href="dialup.html">Simul&nbsp;dialup&nbsp;&amp;&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Problems with some VPN configurations" href="vpn.html">VPN&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Keep your clock correct, for ever, from cable time" href="timesync.html">Time&nbsp;sync</a>.<br>
+							<a class="sidelink" title="Avoiding virus and trojan infections" href="virus.html">Virus&nbsp;security</a>.<br>
+							<a class="sidelink" title="Configuring firewalls for cable connection" href="security.html">Firewall&nbsp;security</a>.<br>
+							<a class="sidelink" title="Limitations of some speed tests" href="speed.html">Speed&nbsp;testing</a>.<br>
+							<a class="sidelink" title="Understanding, diagnosing, and fixing latency and ping problems" href="latency.html">Latency issues</a>.<br>
+							<a class="sidelink" title="How to perform a traceroute, and how they can mislead" href="traceroute.html">Traceroute</a>.<br>
+							<a class="sidelink" title="Understanding and diagnosing packet loss" href="loss.html">Packet loss</a>.<br>
+							<a class="sidelink" href="frontpage.html">FrontPage tips</a>.<br>
+							<a class="sidelink" title="How to obtain technical support" href="techsupp.html">NTL/BY&nbsp;Tech&nbsp;Support</a>.</div>
+					</td>
+					<td width="18">&nbsp;</td>
+				</tr>
+			</table>
+			<!-- #BeginEditable "main" -->
+				<h2>Sharing a cable modem - on this page:</h2>
+				<ul>
+					<li><a href="#homelan">More than one computer on the cable modem</a>; <span class="flash">&nbsp;Updated 2003 Mar 16&nbsp;</span></li>
+					<li><a href="#probs">NAT routers: common problems</a>;</li>
+					<li><a href="#natisp">NAT router setup for various ISPs</a>;</li>
+					<li><a href="#natapp">NAT router setup for special applications</a>;</li>
+					<li><a href="#icsmap">Microsoft ICS port-forward mapping</a>;</li>
+					<li><a href="#power">ICS and other software routers: power management</a>;</li>
+					<li><a href="#natupnp">Universal Plug-and-Play NAT traversal</a>; <span class="flash">&nbsp;Updated 2003 Mar 16&nbsp;</span></li>
+					<li><a href="#natbad">NAT-unfriendly applications and protocols</a>.</li>
+				</ul>
+				<hr>
+				<h2><a name="homelan"></a>More than one computer on the cable modem</h2>
+				<p>Disregard cable modem documentation about being able to support multiple PCs via a hub: with most domestic broadband ISPs (including <span class="ntl">NTL</span>, <span class="by">Blueyonder</span>), you can have only one.</p>
+				<p>If you have more than one computer on a LAN at home, and you want to make the cable modem available to them all, you cannot just plug the cable modem into your LAN hub, because the cable modem will communicate with only one MAC address, and will issue only one IP address via DHCP.</p>
+				<p class="ntlns4">[As an exception to the above statements, the NTL <b>Xbox <i>Live</i></b> service allows <b>two</b> MAC addresses to be served from the cable modem, and thus <b>two</b> IP addresses to be issued via DHCP. A simple hub between the cable modem, the PC, and the Xbox will allow both PC and Xbox online. If you need to connect more than those two devices, read on].</p>
+				<p>If you need to connect more PCs than your cable modem allows, then there are several ways to get all your PCs online:</p>
+				<ol>
+					<li>Kit out one of your PCs with an extra ethernet card, which connects to your LAN hub, while the original (ethernet or USB) interface is connected solely to the cable modem. Then, in the network connection properties of the interface connecting to the cable modem, turn on Microsoft <b>Internet Connection Sharing</b> (ICS), or another NAT routing program, to enable your other PCs to communicate to the cable modem. The disadvantage of this approach is that the ICS/routing PC has to stay online all the time: if it crashes, or has to restart, the other PCs lose their connection. <b>Note:</b> Internet Connection Sharing (ICS) is not available on WinNT, Win95, or Win98 First Edition: ICS was introduced with Win98 Second Edition and all later versions of Windows.</li>
+					<li>Purchase a hardware <b>DSL/Cable Router</b>, such as the <a title="Linksys site" href="http://www.linksys.com/">Linksys</a> BEFSRxx range, the <a title="Netgear site" href="http://www.netgear.com/">Netgear</a> range, or the <a title="SMC site" href="http://www.smc.com/">SMC</a> Barricade. These are dedicated devices with one WAN port which connects to the cable modem, and typically four LAN ports available for PCs. If available, choose a model which supports <a href="#natupnp">Universal Plug-and-Play (UPnP) NAT traversal</a>, as this makes it easier to use certain applications which might othersise require special configuration. Hardware routers are generally less troublesome than software routers.</li>
+					<li>As a variation on the above, the <b>DSL/Cable Router</b> can also support wireless connections, thus eliminating the need for ethernet wiring in the home. Examples include the Linksys BEFW11S4 or the Apple Airport. Wireless cards are also required in the PCs.</li>
+				</ol>
+				<p>In all these cases, the router is the single device to which the cable modem issues the single IP address, and the other PCs communicate with the internet via a process of Network Address Translation (NAT) performed by the router. For connections initiated by the PCs (e.g. web browsing, e-mail, news), this process works almost infallibly. However, for connections initiated by remote computers trying to connect to you (some games, instant messengers, NetMeeting, P2P file-sharing, some real-time streaming protocols), there will be problems because the router receives the incoming call, but does not know to which local PC to pass it (this problem applies even for applications on the ICS machine itself). Hence the need for <b><a href="#natapp">port forwarding</a></b> or <b>port mapping</b>: a NAT router can be configured to recognise that incoming calls on a certain external port should be passed to a nominated local PC. The restriction is that only one local PC can respond to incoming calls on any given external port.</p>
+				<p>An advantageous side effect of using a NAT router is that it becomes a simple firewall by default, because all incoming calls are dropped unless an explicit port-forward is configured.</p>
+				<p>Alternatively, a NAT router can be configured to forward all incoming traffic (that is not already explicitly port-forwarded) to a single local PC, known as the <b>DMZ</b> machine. In this case the DMZ PC will not be firewalled by the NAT router. Using a DMZ is the only way of dealing with certain difficult special applications such as NetMeeting or other applications which use the H.323 protocol.</p>
+				<p>Simple beginners' instructions for home LANs on cable modems are available at <a href="http://www.practicallynetworked.com/sharing/" title="Advice about home LANs and broadband">http://www.practicallynetworked.com/sharing/</a>.</p>
+				<p>At <a href="http://www.broadbandreports.com">BroadbandReports.com</a>, the following support resources are available:</p>
+				<ul>
+					<li><a href="http://www.broadbandreports.com/faq/networking">Networking FAQ</a></li>
+					<li><a href="http://www.broadbandreports.com/forum/sharing">Networking forum</a></li>
+					<li><a href="http://www.broadbandreports.com/faq/linksys/all">Linksys FAQ</a></li>
+					<li><a href="http://www.broadbandreports.com/forum/equip,16">Linksys forum</a></li>
+					<li><a href="http://www.broadbandreports.com/forum/equip,9">Netgear forum</a></li>
+					<li><a href="http://www.dslreports.com/faq/smc">SMC FAQ</a></li>
+					<li><a href="http://www.broadbandreports.com/forum/smc">SMC forum</a></li>
+				</ul>
+				<p class="ntlns4">NTL do not provide technical support for home LANs, but there is a self-help newsgroup at <a href="news://news.cable.ntlworld.com/ntl.discussion.home-networking" title="Newsgroup for home networking">ntl.discussion.home-networking</a>, and a user-written guide at <a href="http://www.networklab.co.uk/cmodem/" title="A Guide to Networking an NTL Cable Modem Service">http://www.networklab.co.uk/cmodem/</a>.</p>
+				<p class="byns4">Blueyonder do not provide technical support for home LANs, but there is a self-help newsgroup at <a href="news://news.blueyonder.co.uk/blueyonder.users.self-help.networking" title="Newsgroup for home networking">blueyonder.users.self-help.networking</a>. The by-Users help page for home LANS is at <a href="http://www.by-users.co.uk/faqs/networking/" title="by-Users: Networking FAQ">http://www.by-users.co.uk/faqs/networking/</a>.</p>
+				<hr>
+				<h2><a name="probs"></a>NAT routers: common problems</h2>
+				<p>When you unplug a PC from the cable modem and plug a NAT router into it instead (or vice-versa), special procedures are required: see <b><a href="swap.html">Swapping computers on the cable modem</a></b>.</p>
+				<p>With ISPs that require the user to configure their PC with a special name (DHCP Client_ID), it is the NAT router that now must be configured with the name.</p>
+				<p>With ISPs that require registration of the MAC address of the device connected to the cable modem, then:</p>
+				<ul>
+					<li><b>either</b>: the <a href="register.html#pcreg">MAC address of the WAN port of the NAT router must be newly registered</a>;</li>
+					<li><b>or</b>: an existing registered MAC address can be <a href="macaddr.html#macclone">cloned into the WAN port of the NAT router</a>.</li>
+				</ul>
+				<p>If you are going to clone a MAC address into the WAN port of the NAT router, you should do so before first connecting it to the cable modem; otherwise the change of MAC address will require the procedures of <a href="swap.html"><b>Swapping computers on the cable modem</b></a>.</p>
+				<p>If you allow the NAT router to allocate private IP addresses to the local client PCs by DHCP, then the ISP's DNS settings will also be relayed to the local client PCs. However, if you allocate IP addresses manually to the local client PCs, then you must also manually configure the clients with DNS servers.</p>
+				<p>Some network applications do not work correctly when on a PC behind a NAT router: you might need to configure <a href="#natapp">port-forwarding</a> in the router.</p>
+				<p>If you have an FTP client on a PC behind certain simple NAT routers, the FTP client might need to be configured to use passive (PASV) mode.</p>
+				<p>It can be very difficult to get an FTP server working on a PC behind a NAT router: it might require special configuration of the FTP server as well as triggered port-forwarding in the router.</p>
+				<hr>
+				<h2><a name="natisp"></a>NAT router setup for various ISPs</h2>
+				<p>For <span class="ntl">NTL</span> and <span class="by">Blueyonder</span>, the default settings of most NAT routers (Obtain IP address automatically) will work out of the box. <span class="by">Blueyonder users</span> might choose to clone an already-registered PC MAC address into the WAN port of the router before use.</p>
+				<p>For some non-UK ISPs, special router configurations are required, see:</p>
+				<ul>
+					<li><a title="Linksys setup for certain ISPs" href="http://www.linksys.com/support/support.asp?spid=69">http://www.linksys.com/support/support.asp?spid=69</a></li>
+					<li><a title="Netgear setup for certain ISPs" href="http://www.netgear-support.com/ts/doc/ispguide.htm">http://www.netgear-support.com/ts/doc/ispguide.htm</a></li>
+					<li><a title="SMC Barricade ISP info" href="http://www.smc.com/index.cfm?sec=Support%26pg=FAQ-Section%26faq_cat=2%26site=c">http://www.smc.com/index.cfm?sec=Support&amp;pg=FAQ-Section&amp;faq_cat=2&amp;site=c</a></li>
+					<li><a title="SMC Barricade ABR ISP info" href="http://www.smc.com/index.cfm?sec=Support%26pg=FAQ-Section%26faq_cat=9%26site=c">http://www.smc.com/index.cfm?sec=Support&amp;pg=FAQ-Section&amp;faq_cat=9&amp;site=c</a></li>
+				</ul>
+				<hr>
+				<h2><a name="natapp"></a>NAT router setup for special applications</h2>
+				<p>To discover what port-forwarding you might need to configure in your NAT router for special applications and games, see:</p>
+				<ul>
+					<li><a href="http://www.practicallynetworked.com/sharing/app_port_list.htm" title="Practically Networked Special Application Port List">http://www.practicallynetworked.com/sharing/app_port_list.htm</a></li>
+					<li><a title="Netgear Special Applications port list" href="http://www.netgear-support.com/ts/doc/port_applications.htm">http://www.netgear-support.com/ts/doc/port_applications.htm</a></li>
+					<li><a title="SMC Barricade special applications" href="http://www.smc.com/index.cfm?sec=Support%26pg=FAQ-Section%26faq_cat=6%26site=c">http://www.smc.com/index.cfm?sec=Support&amp;pg=FAQ-Section&amp;faq_cat=6&amp;site=c</a></li>
+					<li><a title="SMC Barricade AWB special application notes" href="http://www.smc.com/index.cfm?sec=Support%26pg=FAQ-Section%26faq_cat=10%26site=c">http://www.smc.com/index.cfm?sec=Support&amp;pg=FAQ-Section&amp;faq_cat=10&amp;site=c</a></li>
+				</ul>
+				<p> These problems are resolved by UPnP-aware applications and routers: see <a href="#natupnp">UPnP NAT traversal</a>.</p>
+				<hr>
+				<h2><a name="icsmap"></a>Microsoft ICS port-forward mapping</h2>
+				<ul>
+					<li><b>Win98SE/WinME</b>: download the <b>ICS Configuration</b> program from <a title="ICS Configuration download page" href="http://www.practicallynetworked.com/sharing/ics/icsconfiguration.htm">http://www.practicallynetworked.com/sharing/ics/icsconfiguration.htm</a>.</li>
+					<li><b>Win2K</b>: See <a title="ICS port mapping for Win2k" href="http://www.microsoft.com/windows2000/en/professional/help/howto_share_conn_config.htm">http://www.microsoft.com/windows2000/en/professional/help/howto_share_conn_config.htm</a>.</li>
+					<li><b>WinXP</b>: See <a title="How to Manually Open Ports in Internet Connection Firewall in Windows XP (Q308127)" href="http://support.microsoft.com/default.aspx?scid=kb;en-us;Q308127">http://support.microsoft.com/default.aspx?scid=kb;en-us;Q308127</a>, but in Step 7 enter the address of the PC you wish to map connections to.</li>
+				</ul>
+				<hr>
+				<h2><a name="power"></a>ICS and other software routers: power management</h2>
+				<p>If you run a software router such as ICS, you must ensure that the PC running the router does not drop into <b>Standby</b> because of lack of use: if it drops into <b>Standby</b>, all the rest of the LAN will lose their internet connection. You can allow the PC to blank its screen, and spin down its hard disk, but the processor and network interfaces must not go to sleep.</p>
+				<ul>
+					<li>Open control panel <b>Power Options</b>.</li>
+					<li>Set <b>System standby</b> to <b>Never</b>.</li>
+					<li>Set <b>System hibernates</b> to <b>Never</b>.</li>
+					<li>Click <b>OK</b> to close <b>Power Options Properties</b>.</li>
+				</ul>
+				<hr>
+				<h2><a name="natupnp"></a>UPnP NAT traversal</h2>
+				<p>A new technology, <b>Universal Plug-and-Play NAT traversal</b>, is emerging to simplify the setup of consumer-oriented NAT routers. NAT traversal enables UPnP-aware applications to automatically configure a UPnP-aware NAT router so that inward calls to the application are routed to the correct PC on the LAN behind the router. For UPnP NAT traversal to work, all three of the following must be UPnP-aware:</p>
+				<ul>
+					<li>The application;</li>
+					<li>The operating system;</li>
+					<li>The NAT router, or Internet Gateway.</li>
+				</ul>
+				<p>Of operating systems, so far only <b>Windows XP</b> supports UPnP NAT traversal, but the <b>Network Setup Wizard</b> from the XP CD-ROM can install client UPnP NAT traversal support in Windows 98/ME.</p>
+				<p>Examples of applications which support UPnP NAT traversal are:</p>
+				<ul>
+					<li><b>Windows Messenger</b> in <b>Windows XP</b>;</li>
+					<li><b>MSN Messenger</b> v4.5 and higher (with improved support in v5.0);</li>
+					<li><b>MS Game Voice</b> 1.5;</li>
+					<li>Games using the <b>DirectPlay 8</b> interface;</li>
+					<li><b>Windows Media Player v9</b> and above.</li>
+				</ul>
+				<p>When run behind a UPnP-aware NAT router, these applications behave just as if the NAT router were not there: e.g. incoming messages and video calls are automatically received by Messenger. No special router configuration is required by the user.</p>
+				<p>The following NAT routers are known to support UPnP NAT traversal:</p>
+				<ul>
+					<li>The <b>Internet Connection Sharing</b> component of <b>Windows XP</b> or <b>Windows ME</b> (the optional Universal Plug and Play component requires installation in control panel <b>Add or Remove Programs</b>).</li>
+					<li>The 3Com Home Ethernet Gateway 510 if flashed with Amit firmware 1.95u from <a title="Amit firmware" href="http://www.amit.com.tw/download/customer/amit/UP-NBP195D.BIN">http://www.amit.com.tw/download/customer/amit/UP-NBP195D.BIN</a> and instructions from <a title="3Com 510 user comments" href="http://www.practicallynetworked.com/opinions/?pid=291">http://www.practicallynetworked.com/opinions/?pid=291</a>.</li>
+					<li>The <a title="D-Link" href="http://www.dlink.com/">D-Link</a> products below (firmware downloads from <a title="D-Link Tech Support" href="http://support.dlink.com/">http://support.dlink.com/</a>):</li>
+					<ul>
+						<li><a href="http://www.dlink.com/products/broadband/di604/">DI-604 Broadband Router</a> with firmware 2.0f (UPnP withdrawn in firmware 2.02f and 2.03, restored in 2.03g <span class="yellbg">2002 Oct</span>).</li>
+						<li><a href="http://www.dlink.com/products/digitalHome/wireless/11b+/di614+/">DI-614+ Wireless Broadband Router</a> with firmware 2.03g (<span class="yellbg">2002 Oct</span>) or higher.</li>
+						<li><a href="http://www.dlink.com/products/broadband/di713p/">DI-713P Wireless Broadband Router &amp; Print Server</a> with firmware 2.60 (2002 Jun) or higher.</li>
+						<li>DI-714 Wireless Broadband Router with firmware 5.02 (2002 April) or higher.</li>
+						<li><a title="DI-804" href="http://www.dlink.com/products/broadband/di804/">DI-804 Broadband Gateway</a> with firmware 4.68 (2002 Apr) or higher.</li>
+						<li><a href="http://www.dlink.com/products/broadband/di804v/">DI-804V Broadband VPN Router</a>.</li>
+					</ul>
+					<li>The <a href="http://www.linksys.com/">Linksys</a>: <a href="http://www.linksys.com/products/group.asp?grid=23">Cable/DSL routers</a> below with firmware 1.41 or higher, although some problems were not fixed until 1.43 (<span class="yellbg">2002 Sep</span>) or higher (firmware downloads from <a title="Linksys site" href="http://www.linksys.com/">http://www.linksys.com/</a>, click <b>Support</b>, click <b>Downloads</b>, select model, click <b>Firmware</b>):</li>
+					<ul>
+						<li><a href="http://www.linksys.com/products/product.asp?grid=23%26prid=142">BEFSR11 Cable/DSL Router</a>: 1 ethernet port.</li>
+						<li><a href="http://www.linksys.com/products/product.asp?grid=23%26prid=20">BEFSR41 Cable/DSL Router</a>: 4-port ethernet switch.</li>
+						<li><a href="http://www.linksys.com/products/product.asp?grid=23%26prid=160">BEFSU31 Cable/DSL Router</a>: 3-port ethernet switch and 1 USB port.</li>
+						<li><a href="http://www.linksys.com/products/product.asp?grid=23%26prid=433">BEFSX41 Broadband VPN Router</a>: 4-port ethernet switch.</li>
+						<li><a href="http://www.linksys.com/products/product.asp?grid=23%26prid=415">BEFW11S4 Wireless Broadband Router</a>: 4-port ethernet switch and wireless.</li>
+					</ul>
+					<li>The Microsoft broadband base stations, see <a title="Microsoft base stations" href="http://www.microsoft.com/hardware/broadbandnetworking/products.aspx">http://www.microsoft.com/hardware/broadbandnetworking/products.aspx</a>.</li>
+					<li>The <a title="MultiTech" href="http://www.multitech.com/">MultiTech</a>: <a href="http://www.multitech.com/products/SOHO_VPN/">RF550VPN&nbsp;RouteFinderVPN</a> with firmware 4.61 or higher.</li>
+					<li>The <a title="Netgear" href="http://www.netgear.com/">Netgear</a>: <a href="http://www.netgear.com/products/prod_details.asp?prodID=129%26view=">FVS318 Cable/DSL ProSafe VPN Firewall</a> with firmware v1.1 (<span class="yellbg">2002 Sep</span>) or higher.</li>
+					<li>The SMC broadband routers below (firmware downloads from <a title="SMC USA firmware updates" href="http://www.smc.com/index.cfm?sec=Support%26pg=Product-Downloads%26cat=4%26site=c">http://www.smc.com/index.cfm?sec=Support&amp;pg=Product-Downloads&amp;cat=4&amp;site=c</a> or <a title="SMC firmware update index" href="http://www.smc-europe.com/english/support/driver_manual/broad.html">http://www.smc-europe.com/english/support/driver_manual/broad.html</a>):</li>
+					<ul>
+						<li>SMC7004BR/7008BR with firmware 1.95c or higher;</li>
+						<li>SMC7004ABR (5432/5648): UPnP not supported;</li>
+						<li>SMC7004ABR (5702/5703/5756) with firmware 1.42.000 (removed in 1.42.003);</li>
+						<li>SMC7004AWBR with firmware 1.95 or higher;</li>
+						<li>SMC7004VBR/VWBR with firmware 1.20 or higher.</li>
+					</ul>
+					<li>The <a href="http://www.zyxel.com/">ZyXEL</a>: <a href="http://www.zyxel.com/product/model.php?indexcate=1021881127%26indexFlagvalue=1021876908">Prestige P304 Sharing Gateway</a> with firmware V3.60(CO.0)C0 (<span class="yellbg">2002 Sep</span>) or higher.</li>
+				</ul>
+				<p>There is an official list of UPnP-certified devices at <a href="http://www.upnp-ic.org/certification/">http://www.upnp-ic.org/certification/</a>.</p>
+				<p>The list of routers under <b>Use These Routers with Xbox <i>Live</i></b> on <a title="Xbox compatible routers" href="http://www.xbox.com/LIVE/connect/routers.htm">http://www.xbox.com/LIVE/connect/routers.htm</a> appears to be a list of routers that support UPnP NAT traversal with latest firmware. The required firmware levels formerly shown on this page have been removed. </p>
+				<hr>
+				<h2><a name="natbad"></a>NAT-unfriendly applications and protocols</h2>
+				<p>Network Address Translation works by simply re-writing the IP address in the IP header, and/or the port number in the TCP or UDP header, of a data packet. If a network application puts IP addresses or port numbers anywhere else, such as in the user-data section of the packet, then they will not usually be translated, and the application might fail to work correctly if its data passes through a NAT router. Common example of such NAT-unfriendly applications are:</p>
+				<ul>
+					<li>The <b>File Transfer Protocol</b> (FTP);</li>
+					<li>The <b>H.323 protocol</b> as used by <b>NetMeeting</b> etc.</li>
+				</ul>
+				<p>The FTP protocol transmits both IP addresses and port numbers over the FTP control connection when clients and servers tell each other about the setup details for a data transfer connection.</p>
+				<p>NAT routers cannot know about the non-NAT-compliant peculiarities of all possible network application protocols. Nevertheless, where certain application protocols are recognised, their special requirements are dealt with by <b>Application Level Gateway</b> (ALG) support incorporated into the NAT router.</p>
+				<p>For instance, Linksys routers with firmware 1.39 or higher incorporate ALG support which permits FTP clients on the LAN to function in Active PORT-mode when connecting to a remote FTP server on port 21 (only: it is the destination port 21 which triggers the FTP ALG function).</p>
+				<p>If the NAT router does not have ALG support for Active PORT-mode FTP clients, then FTP client applications will only work if they can be configured to use <b>Passive mode</b> (the standard command-line <b>ftp</b> command in Windows cannot use <b>Passive mode</b>). The classic symptom of an Active PORT-mode FTP client failing to work through a NAT router is to be able to log on to the server, but not to be able to get a directory listing.</p>
+				<p>It is even more difficult to get an FTP server working behind a NAT router: see <a title="Linksys setup for FTP servers" href="http://www.linksysftp.org/">http://www.linksysftp.org/</a> for instructions on how to set up an FTP server behind a Linksys router.</p>
+				<p>If the NAT-unfriendly application writes TCP/UDP port numbers into the data stream, but does <b>not</b> write IP addresses into the data stream, and there is no ALG support in the NAT router for this application, then a fix is to configure the application's PC into the DMZ setting of the router. For instance, this will fix the <b>H.323 video protocol</b> used by <b>NetMeeting</b>. </p>
+				<hr>
+			<!-- #EndEditable -->
+			<p>Return to <a href="index.html">Index</a>.</p>
+		</body>
+
+	<!-- #EndTemplate -->
+
+</html>
+

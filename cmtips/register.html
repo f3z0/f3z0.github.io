@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+
+<html lang="en">
+
+	<!-- #BeginTemplate "../../cmtips.data/Templates/cmtemp.html" -->
+
+		<head>
+			<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+			<title>Cable Modem Troubleshooting Tips: Registration issues</title>
+			<!-- #BeginHeadLocked "" -->
+				<meta name="description" content="Technical tips for troubleshooting a cable modem connection.">
+				<meta name="keywords" content="cable modem, FAQ, broadband, cablemodem, troubleshooting, tips, NTL, NTLworld, ntlhome, Telewest, blueyonder">
+				<meta name="author" content="Robin Walker">
+				<meta name="copyright" content="&copy; 2001-02 Robin Walker">
+				<link href="../favicon.ico" rel="shortcut icon">
+				<link href="mailto:rdhw@cam.ac.uk" rel="author">
+				<link href="copyright.html" rel="copyright">
+				<link href="index.html" rel="index">
+				<link href="cmstyle.css" rel="stylesheet">
+				<script type="text/javascript" language="JavaScript"><!--
+function jsinit() {
+  if (top!=self) top.location.href = self.location.href;
+}
+// -->
+</script>
+			<!-- #EndHeadLocked -->
+		</head>
+
+		<body onload="jsinit()" bgcolor="#eeffff">
+			<h1>Cable Modem Troubleshooting Tips</h1>
+			<hr>
+			<table border="0" cellpadding="0" align="left" summary="Quick links">
+				<tr>
+					<td nowrap bgcolor="#ffffff">
+						<div class="menubox">
+							<a class="sidelink" title="Introduction and Index to articles" href="index.html">Intro&nbsp;&amp;&nbsp;Index</a>.<br>
+							<a class="sidelink" title="History of updates and changes to this site" href="hist.html">Update&nbsp;history</a>.<br>
+							<a class="sidelink" title="Problems with BroadJump Broadband Installer" href="broadjump.html">Installer issues</a>.<br>
+							<a class="sidelink" title="Problems associated with getting a cable modem registered with your cable operator" href="register.html">Registration&nbsp;issues</a>.&nbsp;<br>
+							<a class="sidelink" title="PC network configuration for cable service" href="basicset.html">Network&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Swapping one PC between multiple networks" href="mobile.html">Mobile&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Understanding the flashing lights on the cable modem" href="lights.html">Cable&nbsp;Modem&nbsp;LEDs</a>.<br>
+							<a class="sidelink" title="How to determine various important IP addresses" href="ipaddr.html">IP&nbsp;addresses</a>.<br>
+							<a class="sidelink" title="How to determine various important MAC addresses" href="macaddr.html">MAC addresses</a>.<br>
+							<a class="sidelink" title="What to check if you have no service" href="badip.html">Dead&nbsp;connection</a>.<br>
+							<a class="sidelink" title="Updating your system with the latest patches and fixes" href="sysupdates.html">System&nbsp;updates</a>.<br>
+							<a class="sidelink" title="Tweaking your PC for best cable modem performance" href="tweaks.html">Network&nbsp;tweaks</a>.<br>
+							<a class="sidelink" title="Problems specifically related to the ethernet connection between your PC and the cable modem" href="ethernet.html">Ethernet&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Problems specifically related to a USB connection between the PC and cable modem" href="usb.html">USB&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Procedures and tips specifically for Surfboard cable modems" href="surfboard.html">Surfboard&nbsp;tips</a>.<br>
+							<a class="sidelink" title="Diagnosing your cable modem's connection" href="signal.html">CM&nbsp;diagnostics</a>.<br>
+							<a class="sidelink" title="Quality of service determined by configuration file" href="cmfile.html">CM&nbsp;config&nbsp;file</a>.<br>
+							<a class="sidelink" title="The network structure of a cable modem" href="cmworks.html">CM&nbsp;tech&nbsp;info</a>.<br>
+							<a class="sidelink" title="DHCP-related problems" href="dhcp.html">DHCP&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Understanding DNS and fixing DNS problems" href="dnsname.html">DNS&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Transparent web proxy caches and how to sidestep them" href="trancache.html">Web&nbsp;proxy&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance of streaming media" href="stream.html">Streaming&nbsp;media</a>.<br>
+							<a class="sidelink" title="Settings that affect performance, latency and pings" href="games.html">Gaming&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance; avoiding saturation of upstream" href="p2p.html">P2P&nbsp;file-sharing</a>.<br>
+							<a class="sidelink" title="Work around connection errors" href="seti.html">SETI@home&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect web browsing performance" href="fasterweb.html">Faster&nbsp;web&nbsp;browsing</a>.<br>
+							<a class="sidelink" title="Strategies to get better download speeds" href="fasterftp.html">Faster&nbsp;downloads</a>.<br>
+							<a class="sidelink" title="How to avoid performance hits" href="downup.html">Simul&nbsp;down/uploads</a>.<br>
+							<a class="sidelink" title="How to restore lost connection when you swap PCs connected to the CM" href="swap.html">Swapping&nbsp;PCs&nbsp;on&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Multiple PCs sharing one CM, home LANs, and NAT Routers" href="homelan.html">PCs&nbsp;sharing&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Using dial-up without losing cable connection" href="dialup.html">Simul&nbsp;dialup&nbsp;&amp;&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Problems with some VPN configurations" href="vpn.html">VPN&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Keep your clock correct, for ever, from cable time" href="timesync.html">Time&nbsp;sync</a>.<br>
+							<a class="sidelink" title="Avoiding virus and trojan infections" href="virus.html">Virus&nbsp;security</a>.<br>
+							<a class="sidelink" title="Configuring firewalls for cable connection" href="security.html">Firewall&nbsp;security</a>.<br>
+							<a class="sidelink" title="Limitations of some speed tests" href="speed.html">Speed&nbsp;testing</a>.<br>
+							<a class="sidelink" title="Understanding, diagnosing, and fixing latency and ping problems" href="latency.html">Latency issues</a>.<br>
+							<a class="sidelink" title="How to perform a traceroute, and how they can mislead" href="traceroute.html">Traceroute</a>.<br>
+							<a class="sidelink" title="Understanding and diagnosing packet loss" href="loss.html">Packet loss</a>.<br>
+							<a class="sidelink" href="frontpage.html">FrontPage tips</a>.<br>
+							<a class="sidelink" title="How to obtain technical support" href="techsupp.html">NTL/BY&nbsp;Tech&nbsp;Support</a>.</div>
+					</td>
+					<td width="18">&nbsp;</td>
+				</tr>
+			</table>
+			<!-- #BeginEditable "main" -->
+				<h2>Registration issues</h2>
+				<p>Cable ISPs normally require one or more of the following things before service can be provided to your cable modem:</p>
+				<ul>
+					<li>The ISP might require you to pre-register the HFC MAC address of your cable modem with them. <span class="ntl">NTL require this, but the process is now largely automated, so you might not realise it</span>.</li>
+					<li>The ISP might require you to pre-register the MAC address of your PC's network interface with them. <span class="by">Blueyonder require this</span>.<span class="ntl"> NTL require this if service is provided through a digital TV set-top box, but the process is automated</span>.</li>
+					<li>The ISP might require you to configure your PC to have a certain name, provided by them. No UK ISP requires this, but some non-UK ISPs do. This name will be used as a Client_ID when the PC requests a DHCP lease from the ISP.</li>
+				</ul>
+				<h2>On this page:</h2>
+				<ul>
+					<li><a href="#macreg">Modem HFC MAC pre-registration</a>: before first use.</li>
+					<li><a href="#pcreg">PC network interface MAC pre-registration</a>: before first use.</li>
+					<li><a href="#pacereg">First connection to digital TV set top box</a>: client MAC registration. <span class="flash">&nbsp;Updated 2003 Jan 7&nbsp;</span></li>
+					<li><a href="#ntlreg">Post-installation NTL registration</a>: for NTLworld acount.</li>
+				</ul>
+				<hr>
+				<h2><a name="macreg"></a>Modem MAC pre-registration</h2>
+				<p>If your cable ISP requires you to let them know the HFC MAC address of your cable modem, see <a href="macaddr.html#machfc">Finding the HFC MAC Address of the cable modem</a>, then communicate it to your ISP as they require.</p>
+				<div class="ntlns4">
+					<p><b>NTL note:</b> As of June 2001, NTL are operating an automated cable modem registration procedure that eliminates the need to communicate the HFC MAC address of the cable modem to them before the cable modem will work. Please follow whatever instructions NTL sent you in their Welcome letter. You will not need to know your HFC MAC address for the <a href="#ntlreg">online registration procedure</a>, but you might need to know it when requesting <a href="techsupp.html#techsupp">technical support</a>.</p>
+					<p>As from mid-April 2001, unregistered cable modems are automatically given a limited cable modem service: the cable modem has an <b>unreg.cm</b> <a href="cmfile.html#cmfile">configuration file</a>, with only limited bandwidths, limited on-line time, and no ability to browse anywhere other than NTL's auto-registration site. They will be given IP addresses in the range <b>xxx.xxx.xxx.248</b> to <b>xxx.xxx.xxx.253</b>. These customers do not get full service until they have completed their <a href="#ntlreg">registration online</a>. This auto-recognition procedure works only for cable modems having <a href="macaddr.html#machfc">HFC MAC addresses</a> identifying them as one of the supported models on the NTL network:</p>
+					<ul>
+						<li>3Com CMX</li>
+						<li>3Com Tailfin</li>
+						<li>Motorola Surfboard 3100</li>
+						<li>Mototola Surfboard 4100</li>
+						<li>Terayon TeraJet 210</li>
+						<li>ntl:home 100 or 120 (Ambit)</li>
+					</ul>
+					<!--					<p>Under the pre-June 2001 registration procedure for non-ex-C&amp;W franchise areas, which is still used occasionally for support-assisted registrations, the &quot;ethernet&quot; address which has to be registered with NTL is the <b>HFC MAC address</b> of the cable modem itself, and not the MAC address of your PC's network interface card (this differs from practice on Blueyonder and in the ADSL world). The registration should be done by telephone to the Customer Services division of your local NTL franchise, so that your billing can be adjusted, and the HFC MAC address provisioned in the cable system. Cable modem service recurrent charges start from the time of this registration. MAC registration cannot be done by NTL Technical Support, nor by posting on a support newsgroup.</p> -->
+					<p>In NTL ex-C&amp;W franchise areas, cable modem service is provided through the Pace digital TV set-top-boxes. These STBs are allocated a <a href="cmfile.html#cmfile">configuration file</a> <b>no-bia.cm</b> until you request and are granted broadband service. STB users (unlike stand-alone cable modem users) have to register the MAC address of the network interface of the device connected to the STB before that device can be used with the cable connection. They may register up to five different MAC addresses, but can use only one at a time (see <a href="swap.html#swap">Swapping PCs on the cable modem</a>).</p>
+					<p>The registration process is completed after you are on-line with your cable modem, using a web browser as described below in <a href="#ntlreg"><b>Post-Installation Registration</b></a>.</p>
+				</div>
+				<hr>
+				<h2><a name="pcreg"></a>PC network interface MAC pre-registration</h2>
+				<p>If your ISP requires you to tell them the MAC address of your PC's network interface, then see <a href="macaddr.html#macpc">Finding the MAC address of a PC's network interface</a>, then communicate it to your ISP as they require. If you use a router, you should tell them the <a href="macaddr.html#macwan">MAC address of the router's WAN port</a> instead.</p>
+				<p class="ntlns4"><b>NTL</b> users receiving broadband service through a digital TV set-top box, please see <a href="#pacereg">First connection to Pace set top box on NTL</a> below.</p>
+				<p class="byns4"><b>Blueyonder</b> users have to register the MAC address of the network interface of the device connected to the cable modem before that device can be used with the cable connection. They may register up to five different MAC addresses, but can use only one at a time (see <a href="swap.html#swap">Swapping PCs on the cable modem</a> below). MAC registration can be done online (via any connection, not just a cable one) through the Self Care web site: <a href="http://help.blueyonder.co.uk/selfcare/" title="Blueyonder self-care">http://help.blueyonder.co.uk/selfcare/</a>, or, if that is not working, by telephone to Tech Support on 0800 953 2000. If you are using a NAT router connected to the cable modem, you need to register only the MAC address of the WAN port of the router, and not the MAC addresses of each PC connected to the LAN ports of the router.</p>
+				<hr>
+				<div class="ntlns4">
+					<h2><a name="pacereg"></a>First connection to set top box on NTL</h2>
+					<p>The first time each PC (or router) connects to the cable modem port of a digital TV set top box (STB) on the NTL cable network, then (having re-booted the STB) you should launch a web browser (which <b>must</b> have <b>JavaScript enabled</b>) and attempt to connect to any simple web site (one which does not have any &quot;<b>/</b>&quot; characters in its URL). You will be redirected to a special registration site for customer PC MAC addresses: if not, try sending the browser to <b>start.ntl</b>. Follow the instructions on the display, and enter a unique name by which this PC will be known to this STB.</p>
+					<p>It is necessary to repeat this procedure if you connect to the STB another PC (or router) which has never previously been registered with this STB. Once a PC (or router) has been registered with the STB, you only need to re-boot the STB when swapping to it.</p>
+					<p>If the device you have just connected to the STB is a router, then you should perform the registration procedure via a web browser in one of the LAN clients of the router, although it will be the MAC address of the WAN port of the router that you will be registering, not that of the PC running the browser. When you have completed the MAC registration page (or you are asked to close the browser and restart), restart the <b>router</b> (or make it request a new DHCP lease), not the PC.</p>
+					<p>This process of registering the client MAC address is quite separate from the registration of the cable modem HFC MAC address with the ISP.</p>
+					<p>Note that the MAC registration screen is only available to devices whose MAC address has not been previously registered. Once the MAC address has been registered, it is never possible to get back to the MAC registration screen. The site <b>start.ntl</b> does not actually exist. </p>
+				</div>
+				<hr>
+				<div class="ntlns4">
+					<h2><a name="ntlreg"></a>Post-installation NTL registration</h2>
+					<div class="ntlns4">
+						<p>You must have received an ntl:home Welcome letter containing:</p>
+						<ul>
+							<li>for stand-alone cable modem users: a PIN number and username;</li>
+							<li>for digital TV set top box users: a PID number and password.</li>
+						</ul>
+						<p>These enable you to register online for ntlworld ISP services such as e-mail and web space. Cable modem users are not permitted access to the internet (apart from the registration server) until this registration has been completed.</p>
+						<h3>Registration within the Broadband Installer CD-ROM</h3>
+						
+						
+						
+						Normally, the registration for ntlworld ISP services is performed within the Broadband Installation procedure on the CD-ROM. The registration procedure starts with quoting a serial number:
+
+						<ul>
+							<li>for stand-alone cable modem users, the serial number is <b>ntl-ct8-cj486</b>.</li>
+							<li>for digital TV set top box users, the serial number is <b>ntl-ct8-cb487</b>.</li>
+						</ul>
+						<p>You are then prompted for the other data from your Welcome letter. If at this stage, the registration fails to complete (e.g. because of failures within the network or registration servers), you need to return later to complete the registration manually, as below. In the meantime, you will not be able to access any part of the internet apart from the registration server URL given below. If it is inaccessible, keep trying until it is working.</p>
+					</div>
+					<div class="ntlns4">
+						<h3>Manual Auto-Registration procedure</h3>
+					</div>
+					<p>In order to complete the registration of your cable modem or set top box, and to register for ntlworld username and ISP services, make sure that your PC is using your cable modem connection (not dial-up), then launch your web browser, which <b>must</b> have <b>JavaScript enabled</b>. If your web-browser hangs or gives an error page when launched, this might be because it is trying to connect to a home page which is disallowed until you have completed this registration: just click <b>Stop</b>. Send your web browser to <a href="https://autoreg.autoregister.net/start.html" title="NTL cable modem registration">https://autoreg.autoregister.net/start.html</a> (note the <b>https</b> rather than http) and follow the on-screen instructions. When asked for a Serial Number:</p>
+					<ul>
+						<li>for stand-alone cable modem users, the serial number is <b class="nowrap">ntl-ct8-cb485</b>.</li>
+						<li>for digital TV set top box users, the serial number is <b>ntl-ct8-cb487</b>.</li>
+					</ul>
+					<p>There will be a long pause while the registration system verifies the identity of your cable modem: if this never finishes, this might be because your browser does not have <b>JavaScript enabled</b>. You are then asked for other data from your Welcome letter (be sure to maintain the correct upper-case and lower-case distinction). Then follow the on-screen instructions.</p>
+					<p>After successful online registration, it is then necessary to power the cable modem off and on again (do not mistake the SB4100 front standby button for a power button) to load the proper <a href="cmfile.html#cmfile">configuration file</a> and obtain the intended class of service, and then re-boot your PC. You will know when you get a final configuration when your PC gets given an IP address outside the <a href="badip.html#ntltempip">temporary ranges</a>. Surfboard users can check the class of service they have obtained by viewing the <a href="signal.html#cmlog">cable modem log</a> after the re-boot.</p>
+					<!--					<h3>Old Auto-Registration procedure</h3>
+					<p>[You must have pre-registered your HFC MAC address by telephone to your local franchise]. Quote the 11-character Serial Number: <b class="nowrap">ntl-ct7-cb484</b> - it is the same for everyone (unlike the dial-up service). If you already have an ntlworld account, you can retain your existing account, but you should still go through this cable modem registration so that NTL can associate your username with your cable modem MAC address.</p>
+					<p>During this registration, you are asked to enter your NTL account number as a 7 or 9 digit number. This can cause difficulties. For instance, despite the page asking for a 7 or 9 digit number, it only works for me when I quote an 8-digit number with a leading zero! If your account number looks like <b>234567/1</b> then try entering both <b>2345671</b> and <b>23456701</b>. If you have more than one NTL account number, you should use the one for your residential Cable TV service, or, if you have no Cable TV, the one for your residential telephone service. If the account number has hyphens, treat the hyphens as if they were not there.</p>
+					<p>It is rumoured that if you do not go through this registration procedure to associate your modem MAC address with your account, some NTL franchises might eventually cut you off, after some months.</p>
+--></div>
+				<hr>
+			<!-- #EndEditable -->
+			<p>Return to <a href="index.html">Index</a>.</p>
+		</body>
+
+	<!-- #EndTemplate -->
+
+</html>
+

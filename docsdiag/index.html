@@ -1,0 +1,529 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+
+<html lang="en">
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+		<title>DocsDiag - DOCSIS cable modem diagnostics</title>
+		<meta name="description" content="DocsDiag - a diagnostic program for DOCSIS cable modems">
+		<meta name="keywords" content="cable modem, cablemodem, DOCSIS, diagnostics, docsdiag">
+		<meta name="author" content="Robin Walker">
+		<meta name="copyright" content="&copy; 2001-02 Robin Walker">
+		<link href="../favicon.ico" rel="shortcut icon">
+		<link rel="author" href="mailto:rdhw@cam.ac.uk">
+		<link rel="home" href="/">
+		<link rel="up" href="/">
+		<style type="text/css"><!-- 
+a:link    {color: #0000CC; text-decoration: underline}
+a:active  {color: #FF0000; text-decoration: underline}
+a:visited {color: #660099; text-decoration: underline}
+a:hover   {color: #FF0000; text-decoration: none; background-color: Khaki }
+
+body  { font-size: 14px; font-family: Verdana, Arial, Helvetica, sans-serif }
+p { font-size: 14px; font-family: Verdana, Arial, Helvetica, sans-serif }
+ul { font-size: 14px; font-family: Verdana, Arial, Helvetica, sans-serif }
+li { font-size: 14px; font-family: Verdana, Arial, Helvetica, sans-serif }
+caption  { font-size: 14px; font-family: Verdana, Arial, Helvetica, sans-serif }
+td  { font-size: 14px; font-family: Verdana, Arial, Helvetica, sans-serif }
+th  { font-size: 14px; font-family: Verdana, Arial, Helvetica, sans-serif }
+pre  { font-size: 14px; font-family: "Courier New", Courier, Monaco, monospace }
+h1  { font-size: 24px; font-family: Verdana, Arial, Helvetica, sans-serif }
+h2  { font-size: 20px; font-family: Verdana, Arial, Helvetica, sans-serif }
+h3  { font-size: 17px; font-family: Verdana, Arial, Helvetica, sans-serif }
+tt  { font-size: 14px; font-family: "Courier New", Courier, Monaco, monospace }
+.flash { color: red; background-color: yellow }
+.nowrap { white-space: nowrap }
+.ntl  { background-color: #9f9 }
+.ntlns4 { background-color: #9f9; border: none }
+.by  { background-color: #9cf }
+.log  { background-color: #ffc }
+.logns4   { background-color: #ffc; border: none }
+.yellbg { background-color: #ff0 }
+.yellns4  { background-color: yellow; border: none }
+--></style>
+		<script language="JavaScript" type="text/javascript"><!--
+function jsinit() {
+  if (top!=self) top.location.href = self.location.href;
+}
+// -->
+</script>
+	</head>
+
+	<body onload="jsinit()" bgcolor="#eeffff">
+		<h1>DocsDiag - DOCSIS cable modem diagnostics</h1>
+		<hr>
+		<p><b>Mirrored Backup:</b> Please note that this is a mirrored backup of the content originally found at http://homepage.ntlworld.com/robin.d.h.walker/docsdiag/ authored by Robin D.H Walker. As ntlworld is dead and the information herein valuable, a restoration of the original website seemed a must. -<a href="http://github.com/f3z0/">f3z0</a></p>
+		<p><b>DocsDiag</b> is a program for reading diagnostic data from DOCSIS cable modems. It should work with <b>any</b> DOCSIS-compliant cable modem that has SNMP access available to the end-user. It will be of primary benefit to end-users with cable modems that do not offer diagnostics via web pages.</p>
+		<p><b>DocsDiag</b> is a text-mode console program without any graphical user interface. It will run on any platform that supports Java console applications.</p>
+		<div class="yellns4">
+			<p><b>Many models of cable modem do not work with the default settings of DocsDiag. Before using DocsDiag for the first time, please read the recipes for:</b></p>
+			<ul>
+				<li><b>specific models (<a href="#cmx">3Com CMX</a>) of cable modem;</b></li>
+				<li><b>a <a href="#generic">generic</a> cable modem, for all other brands;</b></li>
+				<li><b>using the <a href="#ispside">ISP-side address</a> of the cable modem;</b></li>
+				<li><b>using the <a href="#custside">customer-side address</a> of the cable modem.</b></li>
+			</ul>
+			<p><b>If you have a firewall, you might need to disable it.</b></p>
+		</div>
+		<h3>Contents of this page:</h3>
+		<ul>
+			<li><a href="#download">Download instructions</a>.</li>
+			<li><a href="#reqs">Requirements</a>.</li>
+			<li><a href="#runwin">To run under Windows</a>.</li>
+			<li><a href="#runjre">To run under any platform supporting the Java Run-time Environment</a>.</li>
+			<li><a href="#parms">Parameters - specification</a>.</li>
+			<li><a href="#typicalop">Typical output</a>.</li>
+			<li><a href="#plans">Future plans</a>.</li>
+			<li><a href="#problems">Known problems</a>.</li>
+			<li><a href="#history">Version Change History</a>.</li>
+			<li><a href="#acks">Acknowledgements, Information Sources</a>.</li>
+			<li><a href="#support">Feedback and Support</a>.</li>
+			<li><a href="#cmx">Recipe for use of DocsDiag with a 3Com CMX cable modem</a>.</li>
+			<li><a href="#ispside">Recipe for use of DocsDiag with the ISP-side address of the cable modem</a>.</li>
+			<li><a href="#custside">Recipe for use of DocsDiag with the customer-side address of the cable modem</a>.</li>
+			<li><a href="#generic">Recipe for use of DocsDiag with a generic cable modem</a>.</li>
+			<li><a href="#cispdis">How to tell if your cable ISP has disabled SNMP</a>.</li>
+		</ul>
+		<hr>
+		<h3><a name="download"></a>Download instructions</h3>
+		<p>DocsDiag is supplied as a <b>.zip</b> archive.</p>
+		<p>Download the latest version <b>030720</b> here: <a href="../docsdiag/docsdiag_030720.zip" title="Download docsdiag.zip here">docsdiag.zip</a> (check: length 77,553 bytes).</p>
+		<p>After download, the <b>.zip</b> file must be expanded. If you have Windows ME or XP, this can be done by right-clicking <b>docsdiag.zip</b>, and selecting <b>Extract all...</b>. Otherwise, you will need an un-zip utility such as the free <a title="Get Stuffit Expander" href="http://www.aladdinsys.com/">Stuffit Expander for Windows</a>. (Although Windows ME and XP allow you to look inside a compressed folder, do not try to use the files from inside the compressed folder: extract them first).</p>
+		<p>The extracted files comprise <b>docsdiag.jar</b> (which contains the <b>DoscDiag</b> program, used on all platforms) plus some helper files (for Windows only). Do not attempt to expand the <b>docsdiag.jar</b> file into its component parts.</p>
+		<hr>
+		<h3><a name="reqs"></a>Requirements</h3>
+		<p>A DOCSIS-compliant cable modem. Not all cable modems are DOCSIS ones.</p>
+		<p>Java runtime support for Java 1.1.x or higher. This appears to be available on all versions of Windows that have IE4 or higher installed, except that Windows XP users might need to install Java runtime support: see <a href="index.html#xpjava">below</a>. Other platforms might need to install <b>Java Runtime Support</b> from <a title="Sun's Java site" href="http://java.sun.com/">Sun</a>.</p>
+		<p>Firewalls and NAT routers must allow traffic to/from UDP port 161 (SNMP) of the IP address being diagnosed, or in the case of <b class="nowrap">-ubrip</b>, to/from UDP port 161 of all addresses searched. <b>You might need to disable or uninstall your firewall</b> if you cannot configure it to allow this.</p>
+		<p>The cable operator must permit SNMP read access to cable modems with community string &quot;public&quot;. If the cable operator has changed the community string, then <b>DocsDiag</b> will not work unless you can tell it what the new community string is.</p>
+		<p>No other significant upload or download traffic during use, such as might cause UDP traffic to be lost or delayed.</p>
+		<hr>
+		<h3><a name="runwin"></a>To run under Windows:</h3>
+		<p>Open the folder containing the unzipped files.</p>
+		<p>To run <b>DocsDiag</b> without any parameters, just double-click <b>2kXP-run</b> (on Windows 2000/XP) or <b>9xME-run</b> (on Windows 9x/ME). Thats it!</p>
+		<p>To run <b>DocsDiag</b> with parameters, double-click <b>2kXP-win</b> (on Windows 2000/XP) or <b>9xME-win</b> (on Windows 9x/ME). This will open a command window with the current directory automatically set to the directory containing <b>docsdiag.jar</b>.</p>
+		<p>To run DocsDiag under the <a href="http://www.microsoft.com/java/" title="Download the Microsoft VM if you don't have it">Microsoft Virtual Machine</a>, type the command:</p>
+		<blockquote>
+			<pre><b>jview /cp docsdiag.jar docsdiag  </b><i>parameters</i></pre>
+		</blockquote>
+		<p>If you wish to save the output to file, add a redirection at the very end of the line, such as:</p>
+		<blockquote>
+			<pre><b>jview /cp docsdiag.jar docsdiag  </b><i>parameters</i><b>  &gt;results.txt</b></pre>
+		</blockquote>
+		<p>where the <tt><i>parameters</i></tt> to use are documented <a href="#parms">below</a>.</p>
+		<!--#AGL.wrap(rdhw ;2002.03.10 23:06;;)<p>A user has supplied a batch file to automate some DocsDiag usage under Windows: see <a href="http://www.overcoolers.net/docsdiagbat/" title="DocsDiagBAT">http://www.overcoolers.net/docsdiagbat/</a>.</p>-->
+		<p><a name="xpjava"></a><b>Note for Windows XP users:</b> XP as installed does not include the <b>jview</b> command. It was available for a short period as part of Windows XP Service Pack 1, but was later removed from SP1. It currently cannot be easily obtained from Microsoft. If your XP system does not include the <b>jview</b> command, you should download and use the Sun Java 2 Runtime Environment - see below.</p>
+		<hr>
+		<h3><a name="runjre"></a>To run on platforms supporting the Sun Java Runtime Environment:</h3>
+		<p>Under the Sun <a href="http://java.sun.com/products/jdk/1.1/jre/index.html" title="Download the JRE v1.1.8">Java Runtime Environment</a> v1.1.x, type the command:</p>
+		<blockquote>
+			<pre><b>jre -cp docsdiag.jar docsdiag  </b><i>parameters</i></pre>
+		</blockquote>
+		<p>Under the Sun <a href="http://java.sun.com/j2se/1.4/" title="Download J2RE v1.4">Java 2 Runtime Environment</a>, type the command:</p>
+		<blockquote>
+			<pre><b>java -jar docsdiag.jar  </b><i>parameters</i></pre>
+		</blockquote>
+		<hr>
+		<h3><a name="parms"></a>Parameters</h3>
+		<blockquote>
+			<table border="1" cellpadding="2" cellspacing="0">
+				<tr>
+					<td nowrap valign="top"><b>-v</b></td>
+					<td>verbose output: IP/MAC addresses and error counters also displayed. This is a worthwhile improvement on the default output, but is longer.</td>
+				</tr>
+				<tr>
+					<td nowrap valign="top"><b>-vv</b></td>
+					<td>very verbose output: for all data relevant to cable modems.</td>
+				</tr>
+				<tr>
+					<td nowrap valign="top"><b>-vvv</b></td>
+					<td>very very verbose output: for a full MIB walk.</td>
+				</tr>
+				<tr>
+					<td nowrap valign="top"><b>-log</b></td>
+					<td>also print the cable modem event log.</td>
+				</tr>
+				<tr>
+					<td nowrap valign="top"><b>-cmip &lt;ipaddr&gt;</b></td>
+					<td>cable modem IP address <b class="nowrap">&lt;ipaddr&gt;</b>. Defaults to trying some well-known customer-side cable modem IP addresses, in particular <b class="nowrap">192.168.100.1</b>. If <b class="nowrap">&lt;ipaddr&gt;</b> looks like a private ISP-side address, then one of <b class="nowrap">-cmmac</b> or <b class="nowrap">-cmser</b> is also required.</td>
+				</tr>
+				<tr>
+					<td nowrap valign="top"><b>-cmmac &lt;MACaddr&gt;&nbsp;</b></td>
+					<td>cable modem HFC MAC address, from the label on the cable modem, as a string of 12 hexadecimal digits, with optional separators hyphen, colon, or period to break the digits into groups as you wish. Only required if <b class="nowrap">&lt;ipaddr&gt;</b> is a private ISP-side address, or if <b class="nowrap">-ubrip</b> is used. This is used as evidence that the user has authority to access the cable modem. <b class="nowrap">-cmmac</b> and <b class="nowrap">-cmser</b> are alternatives, either will do.</td>
+				</tr>
+				<tr>
+					<td nowrap valign="top"><b>-cmser &lt;serial&gt;</b></td>
+					<td>cable modem serial number, as a string of letters and numbers. Only required if <b class="nowrap">&lt;ipaddr&gt;</b> is a private ISP-side address, or if <b class="nowrap">-ubrip</b> is used. This is used as evidence that the user has authority to access the cable modem. <b class="nowrap">-cmmac</b> and <b class="nowrap">-cmser</b> are alternatives, either will do.</td>
+				</tr>
+				<tr>
+					<td nowrap valign="top"><b>-ubrip &lt;ubraddr&gt;</b></td>
+					<td>requests a search of all cable modems attached to the local UBR (head-end) interface with private IP address <b class="nowrap">&lt;ubraddr&gt;</b>, searching for a match with the data given either in <b class="nowrap">-cmmac</b> or in <b class="nowrap">-cmser</b>. This can take a long time. Be very careful to quote the UBR's private address precisely correctly: see instructions below for discovering it, and examples in the <a href="#ispside">ISP-side recipe</a> below. Must be used with one of <b class="nowrap">-cmmac</b>, <b class="nowrap">-cmser</b>, <b class="nowrap">-srchup</b>.</td>
+				</tr>
+				<tr>
+					<td nowrap valign="top"><a name="netw"></a><b>-netw &lt;int&gt;</b></td>
+					<td>the <b class="nowrap">-ubrip</b> search will be of length 2 to the power <b class="nowrap">&lt;int&gt;</b> IP addresses, where <b class="nowrap">&lt;int&gt;</b> is in the range 4 to 16. Defaults to <b>11</b>.</td>
+				</tr>
+				<tr>
+					<td nowrap valign="top"><b>-traffic</b></td>
+					<td>Analyses the traffic usage on each downstream and upstream of the UBR. See further instructions below.</td>
+				</tr>
+				<tr>
+					<td nowrap valign="top"><a name="srpt"></a><b>-srpt &lt;int&gt;</b></td>
+					<td>the number of times an SNMP request will be sent to each address in the <b class="nowrap">-ubrip</b> search before giving up. Default <b>1</b>. Increasing this parameter might solve failures to find the cable modem when line conditions are difficult.</td>
+				</tr>
+				<tr>
+					<td nowrap valign="top"><b>-sto &lt;int&gt;</b></td>
+					<td>the timout in milliseonds that DocsDiag will wait for a reply to each request in the <b class="nowrap">-ubrip</b> search. Default <b>500</b>.</td>
+				</tr>
+				<tr>
+					<td nowrap valign="top"><b>-rrpt &lt;int&gt;</b></td>
+					<td>the number of times an SNMP request will be sent when reading data before giving up. Default <b>3</b>.</td>
+				</tr>
+				<tr>
+					<td nowrap valign="top"><b>-rto &lt;int&gt;</b></td>
+					<td>the timeout in milliseconds that DocsDiag will wait for a reply to each read request. Default <b>1000</b>.</td>
+				</tr>
+				<tr>
+					<td nowrap valign="top"><b>-community &lt;string&gt;&nbsp;</b></td>
+					<td>sets the community string used for SNMP read requests. The default is <b>public</b>.</td>
+				</tr>
+				<tr>
+					<td nowrap valign="top"><b>-walk &lt;OID&gt;</b></td>
+					<td>suppress normal cable modem output, and perform a MIB walk based on <b class="nowrap">&lt;OID&gt;</b> in dotted decimal.</td>
+				</tr>
+				<tr>
+					<td nowrap valign="top"><b>-nodecode</b></td>
+					<td>suppress normal interpretation of OIDs and object values.</td>
+				</tr>
+			</table>
+		</blockquote>
+		<p>Example of use with parameters:</p>
+		<blockquote>
+			<pre><b>jview /cp docsdiag.jar docsdiag -vv &gt;results.txt
+&nbsp;
+jview /cp docsdiag.jar docsdiag -cmip 172.25.123.98 -cmmac 002040789ABC
+
+jview /cp docsdiag.jar docsdiag -ubrip 172.25.123.254 -cmmac 002040789ABC</b></pre>
+		</blockquote>
+		<p>DOCSIS cable modems have two possible IP addresses that can be used with <b class="nowrap">-cmip</b>, one for the customer-side interface, and one for the ISP-side interface. For more information on this, see <a href="../cmtips/ipaddr.html#cmip" title="Finding the cable modem's IP address">../cmtips/ipaddr.html#cmip</a>. <span class="ntl">The ISP-side address cannot be used in ex-C&amp;W regions of NTL.</span></p>
+		<p>Before using the <b class="nowrap">-ubrip</b> option, you might need to uninstall any firewall you have on your PC. The <b class="nowrap">-ubrip</b> option will only work if the cable modem is online to the cable operator's network. <span class="ntl">The <b class="nowrap">-ubrip</b> option cannot be used in ex-C&amp;W regions of NTL.</span> The UBR private IP address to use as value to the <b class="nowrap">-ubrip</b> parameter can be discovered from the results of the first hop of a traceroute to anywhere: see <a href="../cmtips/ipaddr.html#ubrip" title="How to find the UBR address using traceroute">../cmtips/ipaddr.html#ubrip</a>. See the <a href="#ispside">ISP-side recipe</a> below for an example. The <b class="nowrap">-ubrip</b> parameter usually requires a private IP address in the range <b class="nowrap">10.xxx.xxx.xxx</b> or <b class="nowrap">172.yy.xxx.xxx</b> (where <b>yy</b> is in the range 16-31), and <b class="nowrap">-ubrip</b> is unlikely to work with other values. The <b class="nowrap">-ubrip</b> option will output one character per cable modem checked while it is searching, which can take several minutes, depending on the values of <b><span class="nowrap">-netw</span></b>, <b><span class="nowrap">-srpt</span></b>, and <b><span class="nowrap">-sto</span></b>. The character will be:</p>
+		<ul>
+			<li><b>X</b> for a cable modem found and eliminated from the search;</li>
+			<li><b>U</b> for the UBR itself which is skipped without probing;</li>
+			<li><b>E</b> for an SNMP error (the device found is probably not a cable modem);</li>
+			<li><b>I</b> for a network input/outut error;</li>
+			<li><b>S</b> for a socket error on attempting to open an SNMP connection;</li>
+			<li><b>H</b> for a host error (bad address);</li>
+			<li>a dot for no-response (time-out).</li>
+		</ul>
+		<p>If all you see are rows of unbroken dots with not a single <b>X</b>, then it possible that your cable operator has filtered out SNMP access to its network, and <b>DocsDiag</b> will be no help to you: see <b><a href="#cispdis">How to tell if your cable ISP has disabled SNMP</a></b> below.</p>
+		<p>You should need to use the <b class="nowrap">-ubrip</b> search only once: it will finish by telling you the ISP-side address of your cable modem, so that you can use the faster <b class="nowrap">-cmip</b> option in the future.</p>
+		<p>To analyse traffic usage on the cable network of your UBR, use the syntax:</p>
+		<blockquote>
+			<pre><b>jview /cp docsdiag.jar docsdiag -traffic</b></pre>
+		</blockquote>
+		<p>This will try to read the search range data from your cable modem. It will be able to do this if DocsDiag can normally read data from your cable modem without special options. If it fails to read the search range, it will say so, and you should then try the syntax:</p>
+		<blockquote>
+			<pre><b>jview /cp docsdiag.jar docsdiag -ubrip 172.25.123.254 -traffic</b></pre>
+		</blockquote>
+		<p>where the <b>-ubrip</b> address is discovered as described above. <span class="ntl">The <b class="nowrap">-traffic</b> option cannot be used in ex-C&amp;W regions of NTL.</span></p>
+		<p><b>Warning:</b> some cable operators might consider the use of <b class="nowrap">-ubrip</b> to be a breach of their AUP. Proceed at your own risk.</p>
+		<p>The <b class="nowrap">-netw</b> parameter enables you to specify the length of the search, as a power of 2. <b class="nowrap">-netw</b> defaults to 11 (to search 2048 addresses): you can over-ride this default if you need to. The &quot;right&quot; value of <b class="nowrap">-netw</b> is the size of the sub-net in which the UBR and ISP-side cable modem addresses lie, but this is not knowable in advance of first use [and Java cannot test the sub-net size in a platform-independent way].</p>
+		<hr>
+		<h3><a name="typicalop"></a>Typical output</h3>
+		<blockquote>
+			<pre class="logns4">DocsDiag v020414 Copyright 2001-2 Robin Walker rdhw@cam.ac.uk
+
+General Instrument SB3100 Cable Modem: Hardware version: 1; OS: VxWorks 5.3.1; Software version: 3.2.9p
+
+Downstream channel ID                = 3
+Downstream channel frequency         = 403000000 Hz
+Downstream received signal power     = 0.0 dBmV (or not supported)
+Upstream channel ID                  = 2
+Upstream channel frequency           = 35984000 Hz
+QoS max upstream bandwidth           = 128000 bps
+QoS max downstream bandwidth         = 600000 bps
+SigQu: Signal to Noise Ratio         = 33.8 dB
+Cable modem status                   = Registration complete
+Upstream transmit signal power       = 54.0 dBmV
+Date and Time                        = 2002-04-14,21:18:12.00+00:00
+Configuration filename               = mota4100-silver.cm</pre>
+		</blockquote>
+		<p>This is an example of typical output for a particular brand of cable modem, and is not indicative of acceptable values. There will be differences between brands, and between ISPs. For an explanation of the acceptability of the noise and signal levels, please see <a href="../cmtips/signal.html" title="Cable modem troubleshooting tips: signal strengths">../cmtips/signal.html</a>. Please do <b>not</b> post <b>just</b> these results and ask <b>&quot;Are these OK?&quot;</b> on support forums: this utility is provided as an aid to diagnosing pre-existing problems, not as a source of problems in itself. With the error counters shown in the verbose modes, the important thing is not so much their absolute value (which might be due to problems fixed long ago), but the rate at which they are now increasing: so you might need to take two sets of readings and compare the counters.</p>
+		<p>A typical <b>-traffic</b> report looks like:</p>
+		<blockquote class="logns4">
+			<pre>UBR 172.30.111.254 at 2002 Jul 14, 17:48
+
+Channel   Freq     Max  Usage  Users  Min  Ave  Max
+           MHz    kbps   kbps          ms   ms   ms
+Dnstr 3  402.75? 30342   6897    529   23   55  260
+Upstr 1   32.8    2560    713    157   39   67  220
+Upstr 2   36.0    2560    132     82   23   44  201
+Upstr 3   39.2    2560    408    128   34   50  260
+Upstr 4   32.8    2560    109     84   36   43  110
+Upstr 5   40.8    2560    142     33   32   42  100
+Upstr 6   34.4    2560    230     45   33   47   90
+
+Note: timings include one hop on your up/downstream
+and at least one on target up/downstream.</pre>
+		</blockquote>
+		<p>This is a typical example and is not indicative of acceptable values. Normal recommendations are that there should be no more than 200 users per upstream channel.</p>
+		<hr>
+		<h3><a name="plans"></a>Future plans</h3>
+		<ul>
+			<li>report IP and MAC address information, better collated than at present.</li>
+			<li>post version for Macintosh as an executable.</li>
+			<li>Counter64 support.</li>
+		</ul>
+		<hr>
+		<h3><a name="problems"></a>Known Problems</h3>
+		<ul>
+			<li class="ntl">DocsDiag does not work with the Pace digital set top box used by NTL in some regions to provide cable modem service. To read diagnostics from this STB see: <a title="How to read Pace STB diagnostics" href="../cmtips/signal.html#pacediag">../cmtips/signal.html#pacediag</a></li>
+			<li class="ntl">DocsDiag options <b class="nowrap">-ubrip</b> and <b class="nowrap">-traffic</b>, and ISP-side cable modem addresses cannot be used in ex-C&amp;W regions of NTL.</li>
+			<li>DocsDiag does not work with non-DOCSIS cable modems. It never will. The following modems are known <b>not</b> to be DOCSIS cable modems, and DocsDiag will <b>not</b> work with them:</li>
+			<ul>
+				<li>Terayon TeraPro series (TeraJets are DOCSIS-compatible)</li>
+				<li>Motorola CyberSURFR series.</li>
+			</ul>
+		</ul>
+		<hr>
+		<h3><a name="history"></a>Change History</h3>
+		<p><b>030720</b>: Fixed ASN.1 library for various integer overflow problems, some of which caused an exception if an OID component appeared negative in 32-bit integers. Fixed a class exception in the decoding of docsDevFilterPolicyPtr.</p>
+		<p><b>030216</b>: Improved <b class="nowrap">-traffic</b> report option so that, if it can, it reads its configuration information directly from the user's cable modem (this means that it is no longer normally necessary to quote <b class="nowrap">-ubrip</b> or <b class="nowrap">-netw</b> options with <b class="nowrap">-traffic</b>). Changed <b class="nowrap">-netw</b> to default to <b>11</b> independent of the value of <b class="nowrap">-ubrip</b>. Added decoding for Scientific Atlanta objects (root only). Added decoding for IP Pause objects. Syntax of <b class="nowrap">-cmmac</b> option now permits separators hyphen, colon, or period to break the hexadecimal characters into groups.</p>
+		<p><b>020927</b>: Fixed(?) an OutOfBoundsException in the <b>-traffic</b> option.</p>
+		<p><b>2002 Aug 29/30</b>: Documentation only updated.</p>
+		<p><b>020714</b>: Experimental version: added option <b class="nowrap">-traffic</b> and withdrew <b class="nowrap">-srchup</b>. The traffic report includes, for each downstream and upstream channel: the maximum capacity, the current traffic load, and the number of cable modems connected. Current traffic load figures are lower-bound estimates, and might not be a true picture: if they are systematically wrong, they are likely to be wrong in the same way for all channels. Round-trip times of the enquiries include one hop on your local upstream/downstream and one hop (plus perhaps an ARP) on the target upstream/downstream. Cable modems which do not respond will not be included in the totals.</p>
+		<p><b>020705</b>: Experimental version: added option <b class="nowrap">-srchup</b>. When used with <b>-ubrip</b>, counts the number of cable modems on each upstream frequency of the UBR. Cable modems which do not respond will not be included in the totals.</p>
+		<p><b>020604</b>: Fixed problem introduced in 020505 causing refusal to read SNMP from public IP addresses.</p>
+		<p><b>020505</b>: Added parameters <b class="nowrap">-rrpt</b> (read repeat count) and <b class="nowrap">-rto</b> (read time-out) to control SNMP read requests. Extensive internal changes to ensure that, while reading from one cable modem, only one local UDP port is used.</p>
+		<p><b>020428</b>: Added parameters <b class="nowrap">-srpt</b> (search repeat count) and <b class="nowrap">-sto</b> (search time-out) to control the <b class="nowrap">-ubrip</b> search. Increased the default for <b class="nowrap">-netw</b> to 11. Added system uptime to the default report. Corrected the format of SNMP date/time strings (deciseconds, not centiseconds). Started optimising the code for string handling to reduce memory churn and garbage collection. Added warning message if the <b class="nowrap">-ubrip</b> parameter is not within a private IP range. Added decoding for Host and Lanman objects.</p>
+		<p><b>020421</b>: Fixed unintended display of ethernet errors at beginning of <b class="nowrap">-vvv</b> report introduced in 020414. Added microreflections to <b class="nowrap">-v</b> report. Added decoding for some DOCSIS 2.0 objects. BPI object names prefixed with <b>BPI</b>. Surfboard private object names prefixed with <b>SB</b>. The old experimental <b>docsdev</b> object names prefixed with <b>Exptl</b> to distinguish them from the final versions. Some internal changes in preparation for Counter64 decoding.</p>
+		<p>2002 Apr 19: this documentation page revised, giving the recipes titles more descriptive of their function.</p>
+		<p><b>020414</b>: In the default, <b class="nowrap">-v</b>, and <b class="nowrap">-vv</b> reports, if ethernet error counts are non-zero, they are included in the output, so that user-side network problems (such as duplex negotiation) can be diagnosed. In the <b class="nowrap">-v</b> and <b class="nowrap">-vv</b> reports, absent MAC addresses are no longer listed. Some helper batch files added to simplify use under the Windows GUI, and the delivery package changed to be a ZIP file.</p>
+		<p><b>020324</b>: Added decoding for AT objects and some further IP, TCP, and UDP objects. Suppressed printing of newlines as the last significant character of octet-strings when rendered as display strings in the output for undecoded objects. Attempted automatic recognition of character strings used as indices inside OIDs.</p>
+		<p>2002 Feb 10: added documentation to this page on <a href="#cispdis">How to tell if your cable ISP has disabled SNMP</a>.</p>
+		<p><b>011209</b>: Added decoding for IP routes, ICMP, TCP, UDP, SNMP, dot1dBridge objects.</p>
+		<p><b>011208</b>: Fixed problem with combination of <b class="nowrap">-ubrip</b> and <b class="nowrap">-cmser</b> on certain recent models of cable modem. Added the downstream and upstream IDs to the standard and <b>-v</b> verbose reports. Added to the <b class="nowrap">-vv</b> very-verbose report the private MIB walk for ELSA cable modems. Added option <b class="nowrap">-tech</b> to restore the OID index suffices normally suppressed for simplicity.</p>
+		<p><b>011014:</b> Fixed bug causing SNMP response error status to be ignored if SNMP error index was zero (believed to finally fix bug previously thought fixed in 011007). Added upstream timing offset to the <b class="nowrap">-v</b> verbose report. Added to the <b class="nowrap">-vv</b> very-verbose report private MIB walks for Com21, Thomson Consumer Electronics (RCA), and Conexant chipset cable modems. Added decoding for the root (only) of the private MIBs for Cisco and Conexant. Added remark that 0.0dBmV receive power might mean that power measurement is not supported.</p>
+		<p><b>011007:</b> Fixed bug causing DocsDiag to loop or give a Java Class Cast Exception upon receiving an SNMP error during a MIB walk. Added mini-slot transmission usage to the <b class="nowrap">-v</b> verbose report. Added options <b class="nowrap">-nodecode</b> and <b class="nowrap">-walk</b> for specialist use. Added decoding for further IfMIB objects.</p>
+		<p><b>010802:</b> Suppressed error message <b>SnmpConnection: response: wrong request id</b>. Fixed a possible instability arising from SNMP reply runt packets. Added decoding for the LED on the Com21 DOXport DP1110.</p>
+		<p><b>010715:</b> Added decoding of Ethernet and USB objects, finished decoding of BPI+ objects. Added the USB objects to the <b class="nowrap">-vv</b> report.</p>
+		<p><b>010714:</b> Added option <b class="nowrap">-netw</b> to specify the length of the <b class="nowrap">-ubrip</b> search. Added decoding of ASN1 data types from their raw values to the normal SNMP usage.</p>
+		<p><b>010701:</b> Added system up time to <b class="nowrap">-v</b> and <b class="nowrap">-vv</b> reports. Added decoding for some BPI+ objects.</p>
+		<p><b>010630:</b> fixed a significant bug which (when run on the Windows platform) resulted in any of the bytes hex 81, 8D, 8E, 8F, 90, 9D, 9E being displayed as 3F in octet strings. This also affected use of <b class="nowrap">-cmmac</b> when verifying or searching for MAC addresses, as <b class="nowrap">-cmmac</b> was matching against an octet string. Added decoding for most Interface and IP properties, and a few Tailfin proprietary properties. Date &amp; time added to reports for automatic time-stamping of pasted copies. Simple display of MAC and IP addresses added to the verbose reports.</p>
+		<p><b>010622:</b> fixed the omission of testing six IP addresses with <b class="nowrap">-ubrip</b>. Added <b class="nowrap">-community</b> option.</p>
+		<p><b>010611:</b> current version re-posted with internal version number in sync with this history.</p>
+		<p><b>010610:</b> fixed bug with zero-length strings introduced in 010609. Extended the CMX recipe to suggest a method for those with Linksys routers between their PC and the CMX.</p>
+		<p><b>010609:</b> added option <b class="nowrap">-log</b> to print the cable modem event log. Added decoding of docsDevFilter objects. Checked syntax of <b class="nowrap">-cmmac</b> parameter values. Extended this documentation page in respect of the CMX recipe.</p>
+		<p><b>010606:</b> Fixed incomplete decoding of some CMX properties. Other minor changes. Otherwise most changes have been to this documentation page.</p>
+		<p>2001 June 4: version 010603 was re-posted with a modified JAR manifest to support usage under J2RE.</p>
+		<p><b>010603</b>: added option <b class="nowrap">-ubrip</b> to search all local cable modems for a match with data provided. Added <b class="nowrap">-cmser</b> as an alternative to <b>-cmmac</b> for search and verification.</p>
+		<p><b>010602</b>: deal with modems (such as the CMX) that support the old experimental docsDev MIB instead of the standard one. Add <b class="nowrap">-vvv</b> option for a full MIB walk. Increase timeouts from 500ms to 1000ms and repeat up to three attempts per SNMP request. Added transmit retry counters to the verbose <b class="nowrap">-v</b> report.</p>
+		<p>2001 May 31: version 010530 was remounted as a ZIP file instead of a JAR file, to work around this web server not having a correct MIME-type mapping for JAR files.</p>
+		<p><b>010530</b>: added ability to use ISP-side private IP addresses, on condition that the user can show evidence of authority to access this private address by being able to quote the HFC MAC address of the cable modem, with the <b class="nowrap">-cmmac</b> parameter.</p>
+		<p><b>010529</b>: first posted version, as a beta release for comment.</p>
+		<hr>
+		<h3><a name="acks"></a>Acknowledgements</h3>
+		<p>I acknowledge with thanks the <a href="http://i31www.ira.uka.de/~sd/mgmt" title="JMGMT download page">JMGMT</a> library by <a href="http://home.time4you.de/ibt/ibt/home/doerr/start.html" title="Sven's home page">Sven D&ouml;rr</a>.</p>
+		<h3>Information sources</h3>
+		<p>DOCSIS specifications from <a href="http://www.cablemodem.com/specifications.html" title="Cable Labs">http://www.cablemodem.com/specifications.html</a>.<br>
+			RFC 2669 (DOCSIS Cable Device MIB) from <a href="http://www.ietf.org/rfc/rfc2669.txt" title="DOCSIS Cable Device MIB">http://www.ietf.org/rfc/rfc2669.txt</a>.<br>
+			RFC 2670 (DOCSIS RF Interface MIB) from <a href="http://www.ietf.org/rfc/rfc2670.txt" title="DOCSIS Radio Freq Interface MIB">http://www.ietf.org/rfc/rfc2670.txt</a>.<br>
+			RFC 3083 (DOCSIS Baseline Privacy Interface MIB) from <a href="http://www.ietf.org/rfc/rfc3083.txt" title="DOCSIS Baseline Privacy Interface MIB">http://www.ietf.org/rfc/rfc3083.txt</a>.<br>
+			IP over Cable Data Network Working Group Internet Drafts from <a href="http://www.ietf.org/html.charters/ipcdn-charter.html" title="ipcdn IETF Working Group">http://www.ietf.org/html.charters/ipcdn-charter.html</a>.</p>
+		<hr>
+		<h3><a name="support"></a>Feedback and Support</h3>
+		<p>Please e-mail all feedback or support queries to: rdhw@cam.ac.uk</p>
+		<p>Before you e-mail me, check that your problem is not that your cable ISP has disabled use of SNMP: see <b><a href="#cispdis">How to tell if your cable ISP has disabled SNMP</a></b> below.</p>
+		<p>If you e-mail me concerning failure of DocsDiag to find your cable modem, please include:</p>
+		<ul>
+			<li>a copy/paste of the original command line and the DocsDiag output for a <b>-ubrip</b> search;</li>
+			<li>a copy/paste of a traceroute to somewhere outside your network via your cable modem connection;</li>
+			<li>the brand and model of your cable modem.</li>
+		</ul>
+		<p>Back to <a href="../" title="Return to index">my index</a>.</p>
+		<h3>How you can help</h3>
+		<ul>
+			<li>if you have any private MIBs for certain models of cable modem, please e-mail them to me. I do not need the public DOCSIS MIBs. Private MIBs will enable me to improve the <b>-vv</b> output.</li>
+			<li>please e-mail me the <b>-vvv</b> output for any model of cable modem except those on this list: 3Com CMX/Tailfin, Com21 DP111, ELSA, Motorola SurfBoards, ntl:home 100 (Ambit), RCA DCM 235/245, Samsung Inforanger, Terayon Terajet 210, Toshiba PCX 1000 and 1100U. Scrutiny of this output will enable me to spot any extras that might need incorporating in the <b>-vv</b> output for that model.</li>
+		</ul>
+		<hr>
+		<hr>
+		<h3><a name="cmx"></a>Recipe for use of DocsDiag with 3Com CMX</h3>
+		<p>The 3Com CMX has no customer-side IP address, so we are forced to use the ISP-side private IP address, which can be specifically determined from the CMX log.</p>
+		<p>Refer to <a title="Finding the HFC MAC address" href="../cmtips/macaddr.html#machfc">../cmtips/macaddr.html#machfc</a> for instructions on finding the HFC MAC address from the label on the modem.</p>
+		<p>Refer to <a href="../cmtips/signal.html#cmxdiag" title="Troubleshooting Tips">../cmtips/signal.html#cmxdiag</a> for instructions on viewing the CMX log. (If you are unable to view the CMX log, then try the <a href="#ispside">ISP-side</a> recipe below instead, with the direct <a href="#lanroute">on-LAN route</a> fix below). One of the entries in the CMX log is its own ISP-side private IP address:</p>
+		<pre class="logns4">DHCP -- DHCP process complete(DHCPACK received) 0xff
+		
+        Cable Modem IP Address          = <span class="yellbg">172.18.149.159</span>
+        Cable Modem Subnet Mask         = 255.255.252.0</pre>
+		<p>Use the above information with DocsDiag as follows:</p>
+		<blockquote>
+			<pre><b>jview /cp docsdiag.jar docsdiag -cmip <i>172.18.149.159</i> -cmmac <i>00104B012345</i></b></pre>
+		</blockquote>
+		<p>where <b class="nowrap">-cmip</b> introduces the private IP address from the log (replace <b><i><tt>172.18.149.159</tt></i></b> with the address you discovered in the log) and <b class="nowrap">-cmmac</b> introduces the HFC MAC address from the label, without the group separators (replace <b><i><tt>00104B012345</tt></i></b> with the address from your label). If this command gives the error message <b>&quot;Host ... not responding&quot;</b> then try adding a direct on-LAN route to the network containing the cable modem IP address, as follows.</p>
+		<h4><a name="lanroute"></a>The direct on-LAN route fix for 3Com CMX cable modems</h4>
+		<p>This will work <b>only</b> if the PC is directly connected to the cable modem, with no intervening router or firewall. Convert the CM IP address to its network base address as follows:</p>
+		<ul>
+			<li>if the <b>Subnet Mask</b> from the CMX log above is <span class="nowrap">255.255.255.0</span>, just alter the fourth component of the CMX IP address to zero.</li>
+			<li>if the <b>Subnet Mask</b> from the CMX log above is <span class="nowrap">255.255.254.0</span>, take the third component of the CMX IP address, and round it down (if necessary) to the nearest multiple of 2. Alter the fourth component to zero.</li>
+			<li>if the <b>Subnet Mask</b> from the CMX log above is <span class="nowrap">255.255.252.0</span>, take the third component of the CMX IP address, and round it down (if necessary) to the nearest multiple of 4. Alter the fourth component to zero.</li>
+			<li>if the <b>Subnet Mask</b> from the CMX log above is <span class="nowrap">255.255.248.0</span>, take the third component of the CMX IP address, and round it down (if necessary) to the nearest multiple of 8. Alter the fourth component to zero.</li>
+			<li>if you came here from the ISP-side recipe, start with the UBR address instead of the CMX IP address, assume a sub-net mask of <span class="nowrap">255.255.248.0</span>, and calculate the network base address according to the rule in the bullet-point previous to this one.</li>
+		</ul>
+		<p>Then give the command (shown here in the syntax for Windows):</p>
+		<blockquote>
+			<pre><b>route add <i>nnn.nnn.nnn.0</i> mask <i>kkk.kkk.kkk.0</i> <i>xxx.xxx.xxx.xxx</i></b></pre>
+		</blockquote>
+		<p>where <b class="nowrap"><i><tt>xxx.xxx.xxx.xxx</tt></i></b> is the IP address of your own PC (see <a href="../cmtips/ipaddr.html#ipaddr" title="What's my IP address?">../cmtips/ipaddr.html#ipaddr</a> for how to find it), <tt><b class="nowrap"><i>nnn.nnn.nnn.0</i></b></tt> is the base address of the network containing your CM ISP-side IP address, as calculated above, and <tt><b class="nowrap"><i>kkk.kkk.kkk.0</i></b></tt> is the sub-net mask copied from the CMX log above (it might be <b class="nowrap"><tt>255.255.248.0</tt></b> or <b class="nowrap"><tt>255.255.252.0</tt></b>). Other platforms will have their own syntax to achieve the same effect. You might now find that the <b>docsdiag</b> command line works. This fix is cable modem specific: it works with CMXs but not necessarily with any others.</p>
+		<p>For those with routers connected to their CMX cable modem, it might be possible to configure the router to create the direct route in an analogous way. Unfortunately, no way has yet been discovered of configuring the Linksys series routers to create a direct route on the WAN interface (please e-mail me with the recipe if you make it work with the CMX).</p>
+		<!--		<p>For instance, with a Linksys, try this (and e-mail me if it works):</p>
+		<ul>
+			<li>Send your web browser to the Linksys configuration page.</li>
+			<li>Click <b>Advanced</b>.</li>
+			<li>Click <b>Static Routing</b>.</li>
+			<li>In the boxes <b>Destination LAN IP</b> enter the network base address calculated above (e.g. <b>172.18.148.0</b>).</li>
+			<li>In the boxes <b>Subnet Mask</b> enter <b>255.255.252.0</b></li>
+			<li>In the boxes <b>Default Gateway</b> enter <b>0.0.0.0</b></li>
+			<li>In the drop-down <b>interface</b> select <b>WAN</b></li>
+			<li>Click <b>Apply</b></li>
+		</ul> -->
+		<hr>
+		<h3><a name="ispside"></a>Recipe for use of DocsDiag with the ISP-side address of the cable modem</h3>
+		<p>This recipe can be used with any brand of DOCSIS cable modem (unless the cable operator has prevented use of SNMP).</p>
+		<p class="ntlns4">This ISP-side recipe will not work with cable modems in the ex-C&amp;W regions of NTL.</p>
+		<p>This ISP-side recipe only works if the cable modem is online to the cable operator's network. If the cable modem has failed to connect to the network, try the <a href="#custside">customer-side recipe</a> instead.</p>
+		<p>The advantage of the ISP-side recipe over the customer-side recipe is that the ISP-side recipe can be executed while your PC is in normal on-line service (even via a local NAT router), whereas the customer-side recipe requires the PC to be given a special static IP address, and to be connected directly to the cable modem, not via a router.</p>
+		<p>Before proceeding, you might need to disable or uninstall any firewall that you might have, if the firewall would interfere with SNMP traffic to/from private IP ranges.</p>
+		<p>Refer to <a title="Finding the HFC MAC address" href="../cmtips/macaddr.html#machfc">../cmtips.html#macreg</a> for instructions on finding the HFC MAC address from the label on the modem.</p>
+		<p>Refer to <a href="../cmtips/ipaddr.html#ubrip" title="Finding the UBR address by means of traceroute">../cmtips/ipaddr.html#ubrip</a> for instructions on how to do a traceroute to find the UBR's private IP address. For example, do a traceroute to anywhere, and note the IP address returned from the first hop:</p>
+		<blockquote>
+			<pre class="logns4">C:\&gt;tracert www.uu.net
+
+Tracing route to www.uu.net [208.243.117.123]
+over a maximum of 30 hops:
+
+1    14 ms   &lt;10 ms    14 ms  <span class="yellbg">172.19.83.254</span>
+2    14 ms   &lt;10 ms   &lt;10 ms  ren-cam2-a-fa41.inet.ntl.com [62.252.131.69]
+3   426 ms   494 ms    55 ms  ren-core-a-pos1000.inet.ntl.com [62.252.128.149]
+4     *       27 ms    28 ms  win-bb-a-atm100-808.inet.ntl.com [62.253.187.130]
+5   110 ms   110 ms   124 ms  mae-east-gw1-atm410-1.inet.ntl.com [194.168.118.238]
+6   151 ms   138 ms   137 ms  902.Serial3-1-1.GW1.TCO1.ALTER.NET [157.130.33.57]
+7   124 ms   124 ms   123 ms  717.GW1.TCO3.customer.ALTER.NET [157.130.32.206]
+8   123 ms   138 ms   151 ms  uu123.web.uu.net [208.243.117.123]</pre>
+		</blockquote>
+		<p>If the IP address from the first hop is in the private range <b class="nowrap">10.xxx.xxx.xxx</b> or <b class="nowrap">172.yy.xxx.xxx</b> (where <b>yy</b> is in the range 16-31), then it will be the private IP address of the customer-facing interface of the UBR, which is the one we want: it will also be the gateway address for the ISP-side private IP addresses of all the cable modems connected to this UBR interface. <b>If, instead, this line contains a normal public IP address</b> (such as the default gateway address for your PC), <b>then you will not be able to proceed directly with this recipe</b>: but you might be able to use the <a href="#sniffer">packet-sniffer method</a> below to discover the private IP address of the UBR.</p>
+		<p>To repeat: the <b>-ubrip</b> parameter normally requires a value which is a private IP address in the range <b class="nowrap">10.xxx.xxx.xxx</b> or <b class="nowrap">172.yy.xxx.xxx</b>, and it is unlikely to work with anything else.</p>
+		<p>Use the above information with DocsDiag as follows:</p>
+		<blockquote>
+			<pre><b>jview /cp docsdiag.jar docsdiag -ubrip <i>172.19.83.254</i> -cmmac <i>00E06F012345</i></b></pre>
+		</blockquote>
+		<p>where <b class="nowrap">-ubrip</b> introduces the IP address copied from the first hop of the traceroute (replace <b><i><tt>172.19.83.254</tt></i></b> with your value) and <b class="nowrap">-cmmac</b> introduces the HFC MAC address from the label, without the group separators (replace <b><i><tt>00E06F012345</tt></i></b> with your value). You may modify the length of the search with the <b class="nowrap">-netw</b> parameter. You may expect the search to take several minutes. Once this search has discovered your ISP-side IP address, it will tell you what the ISP-side address is, so that you can use it in future directly with <b class="nowrap">-cmip</b>, and you need not run this search again.</p>
+		<p>If the search fails after lines of unbroken dots, then maybe:</p>
+		<ul>
+			<li>your cable operator has locked out use of SNMP on the cable modems (see <a href="#cispdis">below</a>), or</li>
+			<li>the cable modem is not online to the cable network, or</li>
+			<li>the <b class="nowrap">-ubrip</b> value was incorrect, or</li>
+			<li>the search was too short (see <b class="nowrap">-netw</b> parameter <a href="#netw">above</a>).</li>
+		</ul>
+		<p>If the search fails after a mix of dots and Xs, then SNMP is working, but maybe:</p>
+		<ul>
+			<li>the <b class="nowrap">-cmmac</b> value was incorrect, or</li>
+			<li>the critical SNMP request/reply was lost (see <b class="nowrap">-srpt</b> parameter <a href="#srpt">above</a>), or</li>
+			<li>the search was too short (see <b class="nowrap">-netw</b> parameter <a href="#netw">above</a>).</li>
+		</ul>
+		<p><b>Note for 3Com CMX owners:</b> if you try this recipe with a 3Com CMX, it might need the same direct <a href="#lanroute">on-LAN route</a> fix from the CMX recipe above, in order to get a response from your own cable modem. You can use the UBR address as the starting point from which to compute the base network address. For instance, in the above case, UBR address <b>172.19.83.254</b> leads to a network base address of <b>172.19.80.0</b> with mask <b>255.255.248.0</b>. However, setting up the direct route will block communication with every other cable modem on the network, apart from your own CMX. So during the search, you will see rows of unbroken dots until it finds your own CMX. Be patient!</p>
+		<h4><a name="sniffer"></a>Using a packet-sniffer to ascertain DocsDiag parameters</h4>
+		<p>If a traceroute does not reveal the private IP address of the UBR, then you might be able to discover the correct information from packet-sniffing. This is not the place for a packet-sniffing tutorial: this discussion will assume familiarity with the basics of packet-sniffing. Connect a packet sniffer to your cable modem, re-boot the cable modem, and watch the traffic seen coming from the cable network. You might see many <b>ARP</b> requests, which will not help you. You might see, at low frequency, a few <b>BootP/DHCP</b> replies (UDP from source port 67 broadcast to destination port 68). These will be of two types: those destined for customer PCs (no use to us) and those destined for cable modems themselves, which we want. The ones destined for cable modems themselves are distinguished by having data in the <b>Boot File Name</b> field of the <b>BootP</b> reply. In such a packet, you can then discover data as follows:</p>
+		<ul>
+			<li>DHCP option code 3 data will be the UBR address needed for <b class="nowrap">-ubrip</b>.</li>
+			<li>DHCP option code 1 data will be the sub-net mask for the cable modem sub-net, from which you can calculate a value for <b class="nowrap">-netw</b>. For instance, a mask of 252.252.248.0 gives <b class="nowrap">-netw 11</b>, because the mask has 11 zero binary digits at the right-hand end.</li>
+		</ul>
+		<p>If you do not see any <b>BootP/DHCP</b> replies, look instead for any <b>ARP</b> replies (your network and cable modem might or might not permit these to pass through the modem). Search for an <b>ARP</b> reply that contains your own cable modem's <b>HFC MAC</b> address: in the packet you will discover the ISP-side IP address of your cable modem (as needed for <b class="nowrap">-cmip</b>) and the IP address of the UBR (as needed for <b class="nowrap">-ubrip</b>).</p>
+		<hr>
+		<h3><a name="custside"></a>Recipe for use of DocsDiag with the customer-side address of the cable modem</h3>
+		<p>This recipe works with any brand of DOCSIS cable modem that has SNMP active on the customer-side IP address of <b class="nowrap">192.168.100.1</b>, unless the cable ISP has disabled SNMP. This recipe will not work for a 3Com CMX, as that does not have a customer side IP address.</p>
+		<p>Most cable modems should have SNMP active on the customer-side IP address of <b class="nowrap">192.168.100.1</b>, and therefore ought to work with <b>DocsDiag</b> without the need for <b class="nowrap">-cmip</b> or <b class="nowrap">-ubrip</b>. But many brands of cable modem do not receive the requests from <b>DocsDiag</b>, because 192.168.100.1 is not on the same sub-net as the WAN IP address allocated to you by DHCP from your cable operator, so your PC routes the packets for 192.168.100.1 to the IP default gateway address (head-end UBR), where they get lost.</p>
+		<p>Some specific brands of cable modem (e.g. Motorola SURFboard, 3Com Tailfin) take special action to sniff passing traffic from the user's PC, and intercept packets addressed to 192.168.100.1, so they appear to do the right thing even when the rules of IP routing are broken, but even this magic fails unless those cable modems have successfully connected to the cable operator's network.</p>
+		<p>There are a number of ways of fixing this sub-net mismatch to make <b>DocsDiag</b> work, but as I don't have an example of this class of cable modem to play with, I shall have to make a few suggestions and hope that some cable-modem owners will let me know by e-mail which ones worked for them.</p>
+		<p>The advantage of the following methods over the <a href="#ispside">ISP-side recipe</a> is that the following methods should work even when the cable modem is not online to the cable operator's network. The disadvantage (of Method 1 at least) is that the PC has to be taken out of normal DHCP service to be given a special static IP address.</p>
+		<p>All the methods below require reconfiguration of the device connected directly to the cable modem. That device might be your PC (if you have no NAT router), or it might be a NAT router. I will refer below to <b><i>the device</i></b>, meaning whatever <b><i>device</i></b> is the one connected directly to the cable modem.</p>
+		<p><b>Method 1:</b> For a temporary period, reconfigure <b><i>the device</i></b> so that it no longer uses DHCP to pick up a WAN address, and configure <b><i>the device</i></b> to have a static IP address in the same sub-net as the cable modem, for instance <b class="nowrap">192.168.100.xxx</b> where <b>xxx</b> is in the range 2 to 254, with a sub-net mask of <b class="nowrap">255.255.255.0</b>, and default gateway <b class="nowrap">192.168.100.1</b>. Restart <b><i>the device</i></b> if necessary.</p>
+		<p>On your PC, open a command window, and try</p>
+		<blockquote>
+			<pre><b>ping 192.168.100.1</b></pre>
+		</blockquote>
+		<p>If the <b>ping</b> does not get a reply, then something is wrong, so double-check everything: re-boot cable modem, re-boot PC. If the <b>ping</b> worked, try <b>DocsDiag</b> without any parameters. This should now work. If <b>ping</b> works but <b>DocsDiag</b> doesn't, the most likely reason is that your cable ISP has disabled SNMP; see <b><a href="#cispdis">How to tell if your cable ISP has disabled SNMP</a></b>.</p>
+		<p>After use of this method, you will need to reconfigure <b><i>the device</i></b> back into using DHCP (automatic) for IP and DNS settings in order to go back online to your cable operator's network.</p>
+		<p>If <b>Method 1</b> did not get <b>DocsDiag</b> working, then <b>Methods 2</b> and <b>3</b> won't work either.</p>
+		<p><b>Method 2:</b> This has been reported to work with a Toshiba PCX 1100, and reported not to work with a PCX 1000. Please make your own trial. Reconfigure the IP routing tables of <b><i>the device</i></b> so as to create an additional direct on-LAN route to the cable modem address of <b>192.168.100.1</b>.</p>
+		<p>If <b><i>the device</i></b> connected directly to the cable modem is your PC, then you can do this by opening a command window and giving the following command (shown in the syntax for Windows):</p>
+		<blockquote>
+			<pre><b>route add 192.168.100.1 mask 255.255.255.255 <i>xxx.xxx.xxx.xxx</i></b></pre>
+		</blockquote>
+		<p>where <tt><b><i>xxx.xxx.xxx.xxx</i></b></tt> is the WAN IP address of the network interface connecting to the cable modem (not the gateway address) as allocated by DHCP from your cable ISP.</p>
+		<p>If <b><i>the device</i></b> connected directly to the cable modem is a NAT router, consult your router's user handbook for setting up routing tables on the WAN interface.</p>
+		<p>If <b>DocsDiag</b> now works, you will be able to run <b>DocsDiag</b> at any time during normal service.</p>
+		<p><b>Method 3:</b> [for expert users only] If <b>Method 1</b> works but <b>Method 2</b> does not, you might be able to use the <b>192.168.100.1</b> address in normal service by assigning a secondary IP address to the WAN network interface of <b>the device</b>, the secondary address being in the same sub-net as the cable modem on 192.168.100.1, with the primary address being the one allocated by DHCP by your cable operator. Adding a secondary IP address to a single network interface is an example of <b>multihoming</b>. If <b>the device</b> is a Windows PC, the only way to add secondary IP addresses to a single adapter is by <a href="http://support.microsoft.com/support/kb/articles/Q156/7/72.asp" title="MS Knowledge Base Q156772">editing the registry</a>, and it is non-trivial to find which registry entry is the one that corresponds to the adapter connected to the cable modem. With Linux and Macs, multihoming on a single adapter is somewhat easier.</p>
+		<h4>Discovering and using the ISP-side addresses</h4>
+		<p>Once you have <b>DocsDiag</b> working with the customer-side address, use <b>DocsDiag</b> with the verbose option <b>-v</b>. The output will include a list of addresses of the cable modem, like this:</p>
+		<blockquote>
+			<pre class="logns4">MAC address.1                        = 002040701235
+MAC address.2                        = <span class="yellbg">002040701234</span>
+IP address.172.16.229.150            = <span class="yellbg">172.16.229.105</span>
+IP address.192.168.100.1             = 192.168.100.1</pre>
+		</blockquote>
+		<p>The IP address that is <i>neither</i> <span class="nowrap">192.168.100.1</span> <i>nor</i> <span class="nowrap">127.0.0.1</span> will be the ISP-side private IP address, as shown above. The ISP-side private address should be of the form <b class="nowrap">10.xxx.xxx.xxx</b> or <b class="nowrap">172.yy.xxx.xxx</b>, where <b>yy</b> is in the range 16-31. The second MAC address shown will normally be the ISP-side HFC MAC address of the cable modem. So to use <b>DocsDiag</b> with the ISP-side, you could type:</p>
+		<blockquote>
+			<pre><b>jview /cp docsdiag.jar docsdiag -cmip <i>172.16.229.105</i> -cmmac <i>002040701234</i></b></pre>
+		</blockquote>
+		<p>where <b class="nowrap">-cmip</b> introduces the ISP-side IP address (replace <b class="nowrap"><i><tt>172.16.229.105</tt></i></b> with your value), and <b class="nowrap">-cmmac</b> introduces the HFC MAC address of the cable modem (replace <b><i><tt>002040701234</tt></i></b> with your value). This technique will enable you to use <b>DocsDiag</b> when your PC is in a normal in-service configuration, and even if it is behind a NAT router.</p>
+		<p><b>Tip:</b> If you are trying to use <b class="nowrap">-cmser</b> (in conjunction with <b class="nowrap">-cmip</b> or <b class="nowrap">-ubrip</b>) with a Toshiba cable modem, then note that the serial number required by <b class="nowrap">-cmser</b> for a Toshiba PCX is a ten-digit decimal number, without a hyphen or any trailing digits after the hyphen.</p>
+		<hr>
+		<h3><a name="generic"></a>Recipe for use of DocsDiag with a generic cable modem</h3>
+		<p>First, just try <b>DocsDiag</b> without any parameters:</p>
+		<blockquote>
+			<pre><b>jview /cp docsdiag.jar docsdiag</b></pre>
+		</blockquote>
+		<p>If the above works, then you have no need for the more complicated methods below. It should work this way with (please e-mail me with any updates to this list of models):</p>
+		<ul>
+			<li>GI/Motorola Surfboards;</li>
+			<li>3Com HomeConnect (Tailfins);</li>
+			<li>ntl:home 100/120 series (rebadged Ambits).</li>
+		</ul>
+		<p>If you have so far not got <b>DocsDiag</b> working, then review the <a href="#custside">customer-side</a> recipe above for some techniques for making the customer-side IP address work.</p>
+		<p>If you cannot discover the customer-side IP address, but you can discover the ISP-side IP address (see for instance the <a href="#cmx">CMX</a> recipe above), then use:</p>
+		<blockquote>
+			<pre><b>jview /cp docsdiag.jar docsdiag -cmip <i>172.18.148.159</i> -cmmac <i>00104B012345</i></b></pre>
+		</blockquote>
+		<p>where <b class="nowrap">-cmip</b> introduces the ISP-side IP address (replace <b class="nowrap"><i><tt>172.18.148.159</tt></i></b> with your value) and <b class="nowrap">-cmmac</b> introduces the HFC MAC address of your cable modem, as a string of 12 hexadecimal characters (replace <b><i><tt>00104B012345</tt></i></b> with the value from the label of your cable modem: you may use hyphens, colons, or periods to separate the hexadecimal digits into groups as you wish). This should work unless your cable operator denies SNMP traffic.</p>
+		<p>If you have no means of discovering the ISP-side IP address, then disable any firewall and use:</p>
+		<blockquote>
+			<pre><b>jview /cp docsdiag.jar docsdiag -ubrip <i>172.19.83.254</i> -cmmac <i>00E06F012345</i></b></pre>
+		</blockquote>
+		<p>where <b class="nowrap">-ubrip</b> introduces the private IP address of your local UBR (replace <b class="nowrap"><i><tt>172.19.83.254</tt></i></b> with your value), and <b class="nowrap">-cmmac</b> introduces the HFC MAC address of your cable modem (replace <b><i><tt>00E06F012345</tt></i></b> with your value). This method is described more fully in the <a href="#ispside">ISP-side</a> recipe above. This method should work unless your cable operator denies SNMP traffic, but it will only work when the cable modem is online to the cable operator's network. Once this search has discovered your ISP-side IP address, it will tell you what the ISP-side address is, so that you can use it in future with the <b class="nowrap">-cmip</b> method above, and you need not run the search again.</p>
+		<hr>
+		<hr>
+		<h3><a name="cispdis"></a>How to tell if your cable ISP has disabled SNMP</h3>
+		<p>Before contacting me to query why you can't get any results from <b>DocsDiag</b>, or why the only messages you get from it are:</p>
+		<ul>
+			<li><b>Cable modem not found</b></li>
+			<li><b>Host </b>xxx.xxx.xxx.xxx <b>not responding</b></li>
+			<li><b>Search for cable modem unsuccessful</b></li>
+		</ul>
+		<p>then please check first whether your ISP is blocking the use of SNMP, as follows (but do not try this with the 3Com CMX):</p>
+		<ul>
+			<li>Configure your PC's IP settings out of DHCP and assign a static IP address of <b class="nowrap">192.168.100.xxx</b> where <b>xxx</b> is in the range 2 to 254 inclusive, with sub-net mask <b class="nowrap">255.255.255.0</b> and default gateway <b class="nowrap">192.168.100.1</b>. Let it restart if it wants to.</li>
+			<li>Power off the cable modem.</li>
+			<li>Unplug the TV coax cable from the cable modem.</li>
+			<li>Power on the cable modem again, and, after its self-test has finished, try using <b>DocsDiag</b> with no parameters. You should get an immediate response of the normal <b>DocsDiag</b> output, as shown in the section <b><a href="#typicalop">Typical Output</a></b> above, but with data which is meaningless, because the cable modem is offline. (If you don't get any <b>DocsDiag</b> output at this stage, something else is wrong which you need to look into).</li>
+			<li>Reconnect the TV cable to the cable modem, and keep trying with <b>DocsDiag</b>. If <b>DocsDiag</b> stops working and reverts to <b>Cable modem not found</b> at the moment that the cable modem goes online (the LEDs settle down), then this is evidence that your ISP is disabling your use of SNMP. On the other hand, if <b>DocsDiag</b> continues to work, then you are now successfully using the <a href="#custside">customer-side recipe</a>.</li>
+			<li>Remember to configure your PC's IP and DNS settings back into DHCP (automatic) after making this test.</li>
+		</ul>
+		<p>If it is your ISP that is disabling your use of SNMP, then there is nothing that I can do to help you. This issue is between you and your ISP.</p>
+		<hr>
+		<hr>
+	</body>
+
+</html>

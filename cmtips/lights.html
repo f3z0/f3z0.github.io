@@ -1,0 +1,534 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+
+<html lang="en">
+
+	<!-- #BeginTemplate "../../cmtips.data/Templates/cmtemp.html" -->
+
+		<head>
+			<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+			<title>Cable Modem Troubleshooting Tips: LEDs</title>
+			<!-- #BeginHeadLocked "" -->
+				<meta name="description" content="Technical tips for troubleshooting a cable modem connection.">
+				<meta name="keywords" content="cable modem, FAQ, broadband, cablemodem, troubleshooting, tips, NTL, NTLworld, ntlhome, Telewest, blueyonder">
+				<meta name="author" content="Robin Walker">
+				<meta name="copyright" content="&copy; 2001-02 Robin Walker">
+				<link href="../favicon.ico" rel="shortcut icon">
+				<link href="mailto:rdhw@cam.ac.uk" rel="author">
+				<link href="copyright.html" rel="copyright">
+				<link href="index.html" rel="index">
+				<link href="cmstyle.css" rel="stylesheet">
+				<script type="text/javascript" language="JavaScript"><!--
+function jsinit() {
+  if (top!=self) top.location.href = self.location.href;
+}
+// -->
+</script>
+			<!-- #EndHeadLocked -->
+		</head>
+
+		<body onload="jsinit()" bgcolor="#eeffff">
+			<h1>Cable Modem Troubleshooting Tips</h1>
+			<hr>
+			<table border="0" cellpadding="0" align="left" summary="Quick links">
+				<tr>
+					<td nowrap bgcolor="#ffffff">
+						<div class="menubox">
+							<a class="sidelink" title="Introduction and Index to articles" href="index.html">Intro&nbsp;&amp;&nbsp;Index</a>.<br>
+							<a class="sidelink" title="History of updates and changes to this site" href="hist.html">Update&nbsp;history</a>.<br>
+							<a class="sidelink" title="Problems with BroadJump Broadband Installer" href="broadjump.html">Installer issues</a>.<br>
+							<a class="sidelink" title="Problems associated with getting a cable modem registered with your cable operator" href="register.html">Registration&nbsp;issues</a>.&nbsp;<br>
+							<a class="sidelink" title="PC network configuration for cable service" href="basicset.html">Network&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Swapping one PC between multiple networks" href="mobile.html">Mobile&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Understanding the flashing lights on the cable modem" href="lights.html">Cable&nbsp;Modem&nbsp;LEDs</a>.<br>
+							<a class="sidelink" title="How to determine various important IP addresses" href="ipaddr.html">IP&nbsp;addresses</a>.<br>
+							<a class="sidelink" title="How to determine various important MAC addresses" href="macaddr.html">MAC addresses</a>.<br>
+							<a class="sidelink" title="What to check if you have no service" href="badip.html">Dead&nbsp;connection</a>.<br>
+							<a class="sidelink" title="Updating your system with the latest patches and fixes" href="sysupdates.html">System&nbsp;updates</a>.<br>
+							<a class="sidelink" title="Tweaking your PC for best cable modem performance" href="tweaks.html">Network&nbsp;tweaks</a>.<br>
+							<a class="sidelink" title="Problems specifically related to the ethernet connection between your PC and the cable modem" href="ethernet.html">Ethernet&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Problems specifically related to a USB connection between the PC and cable modem" href="usb.html">USB&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Procedures and tips specifically for Surfboard cable modems" href="surfboard.html">Surfboard&nbsp;tips</a>.<br>
+							<a class="sidelink" title="Diagnosing your cable modem's connection" href="signal.html">CM&nbsp;diagnostics</a>.<br>
+							<a class="sidelink" title="Quality of service determined by configuration file" href="cmfile.html">CM&nbsp;config&nbsp;file</a>.<br>
+							<a class="sidelink" title="The network structure of a cable modem" href="cmworks.html">CM&nbsp;tech&nbsp;info</a>.<br>
+							<a class="sidelink" title="DHCP-related problems" href="dhcp.html">DHCP&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Understanding DNS and fixing DNS problems" href="dnsname.html">DNS&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Transparent web proxy caches and how to sidestep them" href="trancache.html">Web&nbsp;proxy&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance of streaming media" href="stream.html">Streaming&nbsp;media</a>.<br>
+							<a class="sidelink" title="Settings that affect performance, latency and pings" href="games.html">Gaming&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance; avoiding saturation of upstream" href="p2p.html">P2P&nbsp;file-sharing</a>.<br>
+							<a class="sidelink" title="Work around connection errors" href="seti.html">SETI@home&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect web browsing performance" href="fasterweb.html">Faster&nbsp;web&nbsp;browsing</a>.<br>
+							<a class="sidelink" title="Strategies to get better download speeds" href="fasterftp.html">Faster&nbsp;downloads</a>.<br>
+							<a class="sidelink" title="How to avoid performance hits" href="downup.html">Simul&nbsp;down/uploads</a>.<br>
+							<a class="sidelink" title="How to restore lost connection when you swap PCs connected to the CM" href="swap.html">Swapping&nbsp;PCs&nbsp;on&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Multiple PCs sharing one CM, home LANs, and NAT Routers" href="homelan.html">PCs&nbsp;sharing&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Using dial-up without losing cable connection" href="dialup.html">Simul&nbsp;dialup&nbsp;&amp;&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Problems with some VPN configurations" href="vpn.html">VPN&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Keep your clock correct, for ever, from cable time" href="timesync.html">Time&nbsp;sync</a>.<br>
+							<a class="sidelink" title="Avoiding virus and trojan infections" href="virus.html">Virus&nbsp;security</a>.<br>
+							<a class="sidelink" title="Configuring firewalls for cable connection" href="security.html">Firewall&nbsp;security</a>.<br>
+							<a class="sidelink" title="Limitations of some speed tests" href="speed.html">Speed&nbsp;testing</a>.<br>
+							<a class="sidelink" title="Understanding, diagnosing, and fixing latency and ping problems" href="latency.html">Latency issues</a>.<br>
+							<a class="sidelink" title="How to perform a traceroute, and how they can mislead" href="traceroute.html">Traceroute</a>.<br>
+							<a class="sidelink" title="Understanding and diagnosing packet loss" href="loss.html">Packet loss</a>.<br>
+							<a class="sidelink" href="frontpage.html">FrontPage tips</a>.<br>
+							<a class="sidelink" title="How to obtain technical support" href="techsupp.html">NTL/BY&nbsp;Tech&nbsp;Support</a>.</div>
+					</td>
+					<td width="18">&nbsp;</td>
+				</tr>
+			</table>
+			<!-- #BeginEditable "main" -->
+				<h2><a name="lights"></a>The flashing lights</h2>
+				<ul>
+					<li><a href="#activity">Cable modem data activity light keeps flashing</a> <span class="flash">&nbsp;New 2002 Nov 10&nbsp;</span></li>
+					<li><a href="#ltsb">Surfboard 3100 or 4100</a> lights</li>
+					<li><a href="#lttf">3Com Tailfin</a> lights</li>
+					<li><a href="#ltcmx">3Com CMX</a> lights</li>
+					<li><a href="#lttj">Terayon TeraJet 210</a> lights</li>
+					<li><a href="#ltntl100">ntl:home 100/120</a> (Ambit) lights&nbsp;<span class="flash">&nbsp;New 2002 May 6&nbsp;</span></li>
+					<li><a href="#ltpace">Pace digital STB</a> lights</li>
+				</ul>
+				<hr>
+				<h3><a name="activity"></a>Cable modem data activity light keeps flashing</h3>
+				
+				Most cable modems have an LED labelled <b>Cable</b> or <b>Data</b> or <b>D/S</b>, which indicates when data arrives from the cable network. Some users get worried that this LED flashes even when their PC is doing nothing or is switched off. If they are running a firewall, they are puzzled that the firewall does not register any traffic. There is no need for concern: some essential data (DHCP and ARP protocols) is <b>broadcast</b> into the cable network and arrives at every cable modem whether your PC needs it or not. You need not worry that someone is trying to hack into your PC just because the data light is flashing.
+
+				<p>If the rate of flashing goes up when your PC is online (compared to when your PC is switched off or disconnected), but you do not know of any reason why your PC should be generating network traffic, then that might be a source of concern.</p>
+				<hr>
+				<h3><a name="ltsb"></a>Surfboard 3100 or 4100</h3>
+				<p>A Surfboard cable modem has five lights on the front panel, and two on the back panel associated with the ethernet socket. The ones on the front panel are:</p>
+				<ul>
+					<li>Power</li>
+					<li>Receive</li>
+					<li>Send</li>
+					<li>Online</li>
+					<li>Activity</li>
+				</ul>
+				<p>The ones on the back of the 3100 are:</p>
+				<ul>
+					<li>LINK</li>
+					<li>ACT</li>
+				</ul>
+				<p>The ones on the back of the 4100 are:</p>
+				<ul>
+					<li>LNK/ACT</li>
+					<li>100</li>
+				</ul>
+				<p><b>Power:</b> When the Surfboard powers up or re-boots, the <b>Power</b> light flashes while it carries out internal self-diagnosis. If it never comes on at all, check the mains supply to the cable modem (it is easy for the little mains plug to come loose within the socket on the back of the modem). If the <b>Power</b> light never goes steady, the cable modem is faulty, and should be exchanged for a new one. When the <b>Power</b> light does steady, the cable modem is ready to try using the CATV cable.</p>
+				<p><b>Receive:</b> Next the cable modem begins searching all frequencies on the cable for a channel which looks as if it is carrying the cable modem downstream data. The <b>Receive</b> light flashes while it is searching - this can take several minutes if the cable modem is new or after a hard reset. The cable modem remembers in non-volatile memory the frequency it last successfully used, and it tries that channel first: if that works, this search process will take only a few seconds. If the <b>Receive</b> light <b>never</b> goes steady (and you have to watch it for a long time), then there is a serious problem with your CATV feed, or the local UBR is not working: check that your CATV cable is properly screwed in to the back of the cable modem. If this condition persists, contact your local ISP's Customer Service. When the cable modem has locked on to the downstream data frequency, the <b>Receive</b> light goes steady.</p>
+				<p><b>Send:</b> Once the <b>Receive</b> light has gone steady, the <b>Send</b> light starts to flash. The cable modem listens to the downstream data stream. From time to time the UBR sends information out on the downstream channel, telling all newly online cable modems on what frequency to transmit upstream data. When it receives that information, the cable modem tries to announce its presence on the appropriate upstream channel. If the UBR hears the announcement, a set of negotiations (<b>ranging requests</b>) take place during which the cable modem gets allocated a specific <b>minislot</b> (time slot allocation) on the upstream channel, and the cable modem is commanded to adjust its upstream transmit signal level until the UBR hears the right level (so that all cable modems on the same network present about the same signal level to the UBR). If the <b>Send</b> light never goes steady, it is possible that there is a problem so severe with your CATV feed that the UBR cannot hear your cable modem announcing itself: contact your ISP for service. When finally the UBR grants the cable modem permission to access the network, the <b>Send</b> light goes steady.</p>
+				<p><b>Online:</b> Once the <b>Send</b> light has gone steady, the <b>Online</b> light starts to flash. The cable modem, having been granted access to the network, broadcasts a DHCP request, sending its own HFC MAC address as data. If this HFC MAC address has been registered with the DHCP server (that's what is supposed to have happened when you registered your HFC MAC address), the DHCP server replies, granting an IP address to the HFC interface of the cable modem (this IP number will be in the <b>172.xx.xxx.xxx</b> or <b>10.xxx.xxx.xxx</b> range). If the DHCP server rejects the DHCP request, the cable modem gives up and re-boots, starting with the flashing <b>Power</b> light above. <b>This behaviour (reboot after online light flashed for a short period) is characteristic of your MAC address not having been correctly registered with the DHCP server for your area:</b> call your ISP for help. Having acquired an IP number, the cable modem is now able to initiate TCP/IP requests. It calls again with a TFTP protocol request for a configuration file: the configuration file will be downloaded to the cable modem. See <b><a href="cmfile.html#cmfile">Cable Modem configuration file</a></b> below for more about this file. Once all this has finished, the <b>Online</b> light goes steady, and all four green lights will now be steadily lit.</p>
+				<p>The cable modem is now fully online to the network, but there might be a delay of a few minutes before it is ready to offer service to your PC. For instance, it might need to download a firmware update for itself. If you tend to keep your cable modem powered off when not in use, you should wait a while after all green lights have gone steady on the cable modem before powering up your PC, otherwise your PC will make DHCP requests to the cable modem before the cable modem is ready to respond. If this happens, the PC will <a href="badip.html#badip">fail to obtain connectivity</a> to the network.</p>
+				<p><b>Activity:</b> this light flashes yellow if the cable modem is receiving or transmitting data on the CATV cable.</p>
+				<p><b>ACT:</b> [3100] this light on the back of the cable modem flashes when the cable modem is receiving or tranmistting data on the ethernet link to your PC.</p>
+				<p><b>LINK:</b> [3100] this light on the back of the cable modem lights steadily green when the ethernet socket sees a connection from a live ethernet socket on your PC. If your PC is running, and ethernet enabled, the <b>LINK</b> light should be lit. If it is not lit, then either there is an ethernet cable fault, or ethernet networking is disabled in your PC. This is your problem to fix, not your ISP's.</p>
+				<p><b>LINK/ACT:</b> [4100] lights steadily when an ethernet link has been made, and flashes when data is being transferred.</p>
+				<p><b>100:</b> [4100] indicates that the ethernet link has been sensed to be 100 Mbps.</p>
+				<hr>
+				<h3><a name="lttf"></a>3Com Tailfin lights</h3>
+				<ul>
+					<li><b>Power:</b> this lights steadily green when the cable modem is powered up.</li>
+					<li><b>Link Status:</b> this light flashes green while the cable modem is acquiring a connection, and lights steadily green when the connection has been acquired successfully. See the Surfboard notes above for details of the acquisition process.</li>
+					<li><b>Data Rate:</b> this light flashes when the cable modem is receiving or transmitting data. For early firmware versions, the resting state of this light is off. For later firmware versions, the resting state of this light is off when there is no link to the PC (check your cables and drivers), and steadily lit when there is a working connection.</li>
+					<li><b>Multifunction:</b> use unknown at time of writing.</li>
+					<li><b>Status:</b> (on the rear of the Tailfin near the power socket) this two-colour LED lights as follows:</li>
+				</ul>
+				<table border="1" cellpadding="1" cellspacing="0" align="center">
+					<tr>
+						<td nowrap>Blinking short off, long orange</td>
+						<td nowrap>Power-on self-test in progress</td>
+					</tr>
+					<tr>
+						<td nowrap>Steady orange</td>
+						<td nowrap>Power-on self-test failed</td>
+					</tr>
+					<tr>
+						<td nowrap>Blinking short off, short orange</td>
+						<td nowrap>Searching for downstream channel</td>
+					</tr>
+					<tr>
+						<td nowrap>Blinking long orange, short green&nbsp;&nbsp;</td>
+						<td nowrap>Acquisition negotiations in progress</td>
+					</tr>
+					<tr>
+						<td nowrap>Blinking short off, short green</td>
+						<td nowrap>Denied permission to go online</td>
+					</tr>
+					<tr>
+						<td nowrap>Steady green</td>
+						<td nowrap>Online and operational</td>
+					</tr>
+				</table>
+				<hr>
+				<h3><a name="ltcmx"></a>3Com CMX lights</h3>
+				<ul>
+					<li><b>Cable Modem Power:</b> this light is steadily green when the modem is on.</li>
+					<li><b>Cable Modem Status:</b> this orange/green LED behaves the same as the Status light on the rear of the Tailfin, described above.</li>
+					<li><b>PC Link Status:</b> this light is steasily green when an ethernet link has been made from your PC. If this light is off, check your cables and plugs, and check for missing drivers in your PC.</li>
+					<li><b>PC Link Activity:</b> flashes orange when data is being transmitted or received over the ethernet link from the PC.</li>
+					<li><b>Cable Activity:</b> - flashes orange when data is being transmitted or received over the CATV cable to or from your ISP.</li>
+					<li><b>FCN:</b> function unknown at the time of writing.</li>
+				</ul>
+				<hr>
+				<h3><a name="lttj"></a>Terayon TeraJet 210 lights</h3>
+				<ul>
+					<li><b>Power</b>: steadily green when modem is on.</li>
+					<li><b>Cable</b>:</li>
+					<ul>
+						<li><b>Off</b>: there is no data signal on the CATV network.</li>
+						<li><b>Slow flash</b>: during connection to data channel on the CATV network.</li>
+						<li><b>Fast flash</b>: while registering the cable modem with the ISP's network.</li>
+						<li><b>Steadily green</b>: during normal service or during self-test.</li>
+					</ul>
+					<li><b>PC</b>: steadily green when there is a physical ethernet or USB connection to the PC.</li>
+					<li><b>Data</b>: flickers green while data is being transmitted to or received from the CATV network.</li>
+					<li><b>Test</b>:</li>
+					<ul>
+						<li><b>Off</b>: in normal service.</li>
+						<li><b>Flashing orange</b>: running self-test after power-up.</li>
+						<li><b>Steadily orange</b>: cable modem has failed its self-test.</li>
+					</ul>
+				</ul>
+				<hr>
+				<h3><a name="ltntl100"></a>ntl:home 100/120 (Ambit) lights</h3>
+				<ul>
+					<li><b>PWR</b>: steadily lit when modem is powered on.</li>
+					<li><b>USB</b>: lit when there is a physical USB connection to the PC; flashes when transferring data.</li>
+					<li><b>ENET</b>: lit when there is a physical ethernet connection to the PC; flashes when transferring data.</li>
+					<li><b>U/S</b>: normally unlit; flashes when transmitting data to the cable network.</li>
+					<li><b>D/S</b>: normally unlit; flashes when receiving data from the cable network.</li>
+					<li><b>SYNC</b>: lit when the cable modem is locked on to the downstream signal.</li>
+					<li><b>RDY</b>: lit when the cable modem is ready for use.</li>
+				</ul>
+				<p>For the sequence of LEDs as the modems boots up, see <a href="http://www.ntlworld.com/help/manual/Prodspec.htm#initial">http://www.ntlworld.com/help/manual/Prodspec.htm#initial</a>.</p>
+				<hr>
+				<h3><a name="ltpace"></a>Pace digital set top box lights</h3>
+				<p>The centre LED of three flashes while the STB is trying to establish two-way communication with the cable network, and is lit steadily when two-way communication is available. The cable modem service will be available when this LED is steadily lit.</p>
+				<hr>
+				<p>CATV = Communal Antenna Television<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+						UBR = Universal Broadband Router = CMTS coupled with a router.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+						CMTS = Cable Modem Termination Shelf (or System).<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+						DHCP = Dynamic Host Control Protocol.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+						TFTP = Trivial File Transfer Protocol.<br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+						STB = Set Top Box.</p>
+				<hr>
+			<!-- #EndEditable -->
+			<p>Return to <a href="index.html">Index</a>.</p>
+		</body>
+
+	<!-- #EndTemplate -->
+
+</html>
+

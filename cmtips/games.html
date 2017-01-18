@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+
+<html lang="en">
+
+	<!-- #BeginTemplate "../../cmtips.data/Templates/cmtemp.html" -->
+
+		<head>
+			<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+			<title>Cable Modem Troubleshooting Tips: Gaming issues</title>
+			<!-- #BeginHeadLocked "" -->
+				<meta name="description" content="Technical tips for troubleshooting a cable modem connection.">
+				<meta name="keywords" content="cable modem, FAQ, broadband, cablemodem, troubleshooting, tips, NTL, NTLworld, ntlhome, Telewest, blueyonder">
+				<meta name="author" content="Robin Walker">
+				<meta name="copyright" content="&copy; 2001-02 Robin Walker">
+				<link href="../favicon.ico" rel="shortcut icon">
+				<link href="mailto:rdhw@cam.ac.uk" rel="author">
+				<link href="copyright.html" rel="copyright">
+				<link href="index.html" rel="index">
+				<link href="cmstyle.css" rel="stylesheet">
+				<script type="text/javascript" language="JavaScript"><!--
+function jsinit() {
+  if (top!=self) top.location.href = self.location.href;
+}
+// -->
+</script>
+			<!-- #EndHeadLocked -->
+		</head>
+
+		<body onload="jsinit()" bgcolor="#eeffff">
+			<h1>Cable Modem Troubleshooting Tips</h1>
+			<hr>
+			<table border="0" cellpadding="0" align="left" summary="Quick links">
+				<tr>
+					<td nowrap bgcolor="#ffffff">
+						<div class="menubox">
+							<a class="sidelink" title="Introduction and Index to articles" href="index.html">Intro&nbsp;&amp;&nbsp;Index</a>.<br>
+							<a class="sidelink" title="History of updates and changes to this site" href="hist.html">Update&nbsp;history</a>.<br>
+							<a class="sidelink" title="Problems with BroadJump Broadband Installer" href="broadjump.html">Installer issues</a>.<br>
+							<a class="sidelink" title="Problems associated with getting a cable modem registered with your cable operator" href="register.html">Registration&nbsp;issues</a>.&nbsp;<br>
+							<a class="sidelink" title="PC network configuration for cable service" href="basicset.html">Network&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Swapping one PC between multiple networks" href="mobile.html">Mobile&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Understanding the flashing lights on the cable modem" href="lights.html">Cable&nbsp;Modem&nbsp;LEDs</a>.<br>
+							<a class="sidelink" title="How to determine various important IP addresses" href="ipaddr.html">IP&nbsp;addresses</a>.<br>
+							<a class="sidelink" title="How to determine various important MAC addresses" href="macaddr.html">MAC addresses</a>.<br>
+							<a class="sidelink" title="What to check if you have no service" href="badip.html">Dead&nbsp;connection</a>.<br>
+							<a class="sidelink" title="Updating your system with the latest patches and fixes" href="sysupdates.html">System&nbsp;updates</a>.<br>
+							<a class="sidelink" title="Tweaking your PC for best cable modem performance" href="tweaks.html">Network&nbsp;tweaks</a>.<br>
+							<a class="sidelink" title="Problems specifically related to the ethernet connection between your PC and the cable modem" href="ethernet.html">Ethernet&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Problems specifically related to a USB connection between the PC and cable modem" href="usb.html">USB&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Procedures and tips specifically for Surfboard cable modems" href="surfboard.html">Surfboard&nbsp;tips</a>.<br>
+							<a class="sidelink" title="Diagnosing your cable modem's connection" href="signal.html">CM&nbsp;diagnostics</a>.<br>
+							<a class="sidelink" title="Quality of service determined by configuration file" href="cmfile.html">CM&nbsp;config&nbsp;file</a>.<br>
+							<a class="sidelink" title="The network structure of a cable modem" href="cmworks.html">CM&nbsp;tech&nbsp;info</a>.<br>
+							<a class="sidelink" title="DHCP-related problems" href="dhcp.html">DHCP&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Understanding DNS and fixing DNS problems" href="dnsname.html">DNS&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Transparent web proxy caches and how to sidestep them" href="trancache.html">Web&nbsp;proxy&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance of streaming media" href="stream.html">Streaming&nbsp;media</a>.<br>
+							<a class="sidelink" title="Settings that affect performance, latency and pings" href="games.html">Gaming&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance; avoiding saturation of upstream" href="p2p.html">P2P&nbsp;file-sharing</a>.<br>
+							<a class="sidelink" title="Work around connection errors" href="seti.html">SETI@home&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect web browsing performance" href="fasterweb.html">Faster&nbsp;web&nbsp;browsing</a>.<br>
+							<a class="sidelink" title="Strategies to get better download speeds" href="fasterftp.html">Faster&nbsp;downloads</a>.<br>
+							<a class="sidelink" title="How to avoid performance hits" href="downup.html">Simul&nbsp;down/uploads</a>.<br>
+							<a class="sidelink" title="How to restore lost connection when you swap PCs connected to the CM" href="swap.html">Swapping&nbsp;PCs&nbsp;on&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Multiple PCs sharing one CM, home LANs, and NAT Routers" href="homelan.html">PCs&nbsp;sharing&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Using dial-up without losing cable connection" href="dialup.html">Simul&nbsp;dialup&nbsp;&amp;&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Problems with some VPN configurations" href="vpn.html">VPN&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Keep your clock correct, for ever, from cable time" href="timesync.html">Time&nbsp;sync</a>.<br>
+							<a class="sidelink" title="Avoiding virus and trojan infections" href="virus.html">Virus&nbsp;security</a>.<br>
+							<a class="sidelink" title="Configuring firewalls for cable connection" href="security.html">Firewall&nbsp;security</a>.<br>
+							<a class="sidelink" title="Limitations of some speed tests" href="speed.html">Speed&nbsp;testing</a>.<br>
+							<a class="sidelink" title="Understanding, diagnosing, and fixing latency and ping problems" href="latency.html">Latency issues</a>.<br>
+							<a class="sidelink" title="How to perform a traceroute, and how they can mislead" href="traceroute.html">Traceroute</a>.<br>
+							<a class="sidelink" title="Understanding and diagnosing packet loss" href="loss.html">Packet loss</a>.<br>
+							<a class="sidelink" href="frontpage.html">FrontPage tips</a>.<br>
+							<a class="sidelink" title="How to obtain technical support" href="techsupp.html">NTL/BY&nbsp;Tech&nbsp;Support</a>.</div>
+					</td>
+					<td width="18">&nbsp;</td>
+				</tr>
+			</table>
+			<!-- #BeginEditable "main" -->
+				<h2><a name="games"></a>On-line gaming performance issues</h2>
+				<p class="byns4">Blueyonder users please see <a title="blueyonder multiplayer gaming" href="http://gaming.blueyonder.co.uk/">http://gaming.blueyonder.co.uk/</a>.</p>
+				<p>The most common complaint from on-line gamers is that they experience too high a <b>latency</b> or <b>ping</b> time (technically known as the round trip time, <b>RTT</b>, usually measured in milliseconds) when playing games connected to an on-line game server via a cable modem. Often the latency times they complain of from their game are far higher than the RTTs measured by system commands such as <b>ping</b> or <b><a href="traceroute.html#traceroute">tracert</a></b>. Games users often also report suffering from higher packet loss than detected by system utilities.</p>
+				<p>Possible causes of high ping times and packet loss in on-line games are that:</p>
+				<ul>
+					<li>the game's network traffic is exceeding the cable modem's rate cap, and the cable modem itself is therefore causing network packets to be delayed or lost;</li>
+					<li>the game's network traffic is exceeding the game server's per-client rate cap - a mechanism which can be used by server admins to limit the natural advantage that cable/DSL users have over slow modem users. For instance, Barrysworld servers set a rate cap of 10000 bytes per second.</li>
+				</ul>
+				<p>A possible cause of this is that some games, when they detect that (or are told that) the connection is via ethernet or USB, automatically switch themselves into a configuration designed for a 10Mbps LAN connection, where very high network traffic is possible. The game is ignorant of the rate capping in the cable modem, and overloads the connection, causing the latency. The rate capping in the cable modem will generally be non-destructive for TCP traffic, but many games use UDP (unreliable datagram protocol), where rate capping can lead to packet loss as well as high ping times. The downstream and upstream network demands of a game are reasonably symmetric, whereas cable modem rate caps are not, so it is the lower upstream rate cap that affects game-players most.</p>
+				<p><b>Therefore, many network games require their configuration to be tweaked so that they are aware that the cable connection is slower than a normal LAN connection.</b> You should tweak the game down to the safe throughput of your upstream connection: for instance a 128kbps upstream can sustain only about 12000 bytes per second before rate-capping begins to take effect, and even that assumes a clear network path to an uncapped server: if the network is congested, or the server capped, a lower value will be required. Many game service providers cap the per-client data rate at 10000 bytes per second, so there is no point trying higher than this.</p>
+				<p>The procedure for tweaking will be different for each game. Here for instance is a direct quote from the <b><a title="Unreal performance tweaks" href="http://unreal.epicgames.com/utperf.htm">Unreal</a></b> site:</p>
+				<blockquote>
+					<p>If you are seeing significant lag while playing Unreal Tournament, try adjusting your netspeed.&nbsp; You can do this by typing <b>netspeed xxxx</b> (where <b>xxxx</b> is a value in bytes/sec).&nbsp; Your new netspeed will be saved.&nbsp; Typically you will want to adjust the netspeed setting down if you are seeing poor performance, because laggy network play is very likely because your connection cannot handle the rate selected for it.&nbsp; Netspeed is set by default based on your selection of your network connection in the networking menu.&nbsp; The default values are 2600 for modems, 5000 for ISDN, and 20000 for xDSL, cable modem, and LAN.&nbsp;&nbsp; For example, some cable modems limit upstream bandwidth.&nbsp; For cable modems, try <b>netspeed 10000</b> or lower if you are seeing poor network performance.</p>
+				</blockquote>
+				<p>In other games, look for console commands called <b>cl_rate</b> or <b>rate</b> to set the maximum network data rate in bytes per second.</p>
+				<p>Other sites recommend settings in the range 6000-10000 for cable connections. [A &quot;cable connection&quot; is an ill-defined object, as different operators apply different upstream caps, and it is the cap that is the significant thing. The 128kpbs upstream cap for NTLworld and Blueyonder is lower than that most American sites would be familiar with as typical of DSL/Cable performance].</p>
+				<p>General help and tweaking tips for network games are available at <a href="http://guides.barrysworld.com/">http://guides.barrysworld.com/</a>. For many games, they provide optimal network settings for certain classes of modems, but the coverage of cable modems is poor. Here are some recommendations for specific games on cable modem connections that have a 128kbps upstream cap (if your upstream cap is less than 128kbps, you should reduce the rate settings pro rata):</p>
+				<p><b>Quake III Arena:</b> See <a title="Quake III tweaks" href="http://guides.barrysworld.com/quake3/tweakingq3/">http://guides.barrysworld.com/quake3/tweakingq3/</a> for general advice. They give no specific advice for cable modems, but the following should give good results:</p>
+				<blockquote>
+					<pre>/cl_rate 10000
+/cl_maxpackets 40
+/snaps 40</pre>
+				</blockquote>
+				<p><b>HalfLife/CounterStrike:</b> See: <a title="HalfLife/CS tweaks" href="http://guides.barrysworld.com/cs/tweaking/">http://guides.barrysworld.com/cs/tweaking/</a> for general advice. They give no specific advice for cable modems, but the following should give good results:</p>
+				<blockquote>
+					<pre>rate 10000</pre>
+				</blockquote>
+				<p>If you are unable to limit the game's network traffic by means of a console command, there might be menu options to describe the nature of the network connection. Given the low upstream cap on NTLworld and Blueyonder, it is probably wrong to select <b>DSL/Cable</b>, and it is certainly wrong to select <b>LAN</b>. You should select the description which is equal to, or next lower than, your upstream cap. For instance, a 64kbps-downstream/32kbps-upstream user should use the same settings as a <b>56kbps</b> dial-up modem, and a 512kbps-downstream/128kbps-upstream user should select <b>Dual-ISDN</b>, if available, or the next lower setting.</p>
+				<p>64kbps (32kbps upstream) cable modem users should bear in mind that there is no compression on the modem link, and so the data throughput of a 64kbps cable modem can be <b>lower</b> than a 56kbps dial-up modem that has compression turned on.</p>
+				<p>If you have a home LAN with multiple simultaneous network game clients on a cable connection, each should set their data rate to an even lower value, such that the sum of all game data rates does not exceed the upstream data rate cap.</p>
+				<p>Feedback on this issue is sought [Thanks to Paul Gotch so far].</p>
+				<p>To check the inherent network ping time to your game server, you should use the <b>ping</b> command in a command prompt window. (If instead you use the <b><a href="traceroute.html#traceroute">tracert</a></b> command, use the figures on the last line only: ignore all intermediate lines). You will not be able to tweak your game to improve on the figures returned by the <b>ping</b> command. If the ping times shown in the game exceed those, you should reduce the game's network data rate until the game pings come down to an acceptable level, closer to the inherent time.</p>
+				<h3>DirectPlay and VoIP issues</h3>
+				<p>Many peer-to-peer games and peer-to-peer Voice-over-IP applications (such as GameVoice, n&eacute;e Battlecom) use the Microsoft DirectPlay API.</p>
+				<p>If a remote DirectPlay application needs to make an incoming connection to your PC, and your PC is behind a NAT router, then you need to configure the NAT router to send the incoming DirectPlay connections to the correct destination. See:</p>
+				<p><a title="DirectX: Ports Required to Play on a Network" href="http://support.microsoft.com/support/kb/articles/Q240/4/29.ASP">http://support.microsoft.com/support/kb/articles/Q240/4/29.ASP</a> and<br>
+					<a title="Game Voice: Unable to Start or Join Chat Through a Firewall or Proxy Server" href="http://support.microsoft.com/support/kb/articles/Q273/8/74.ASP">http://support.microsoft.com/support/kb/articles/Q273/8/74.ASP</a>.</p>
+				<p>Since all the participants in the game have to talk to all the others the amount of network traffic increases roughly as the square of the number of players, which has implications for cable modem rate caps.</p>
+				<p>If you use a game and a VoIP application (such as GameVoice, Roger Wilco) simultaneously, there is usually enough bandwidth in a 512kbps or better broadband connection for the two to work side by side providing you select one of the higher compression ratios in the VoIP application.</p>
+				<hr>
+			<!-- #EndEditable -->
+			<p>Return to <a href="index.html">Index</a>.</p>
+		</body>
+
+	<!-- #EndTemplate -->
+
+</html>
+

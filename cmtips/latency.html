@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+
+<html lang="en">
+
+	<!-- #BeginTemplate "../../cmtips.data/Templates/cmtemp.html" -->
+
+		<head>
+			<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+			<title>Cable Modem Troubleshooting Tips - Latency issues</title>
+			<!-- #BeginHeadLocked "" -->
+				<meta name="description" content="Technical tips for troubleshooting a cable modem connection.">
+				<meta name="keywords" content="cable modem, FAQ, broadband, cablemodem, troubleshooting, tips, NTL, NTLworld, ntlhome, Telewest, blueyonder">
+				<meta name="author" content="Robin Walker">
+				<meta name="copyright" content="&copy; 2001-02 Robin Walker">
+				<link href="../favicon.ico" rel="shortcut icon">
+				<link href="mailto:rdhw@cam.ac.uk" rel="author">
+				<link href="copyright.html" rel="copyright">
+				<link href="index.html" rel="index">
+				<link href="cmstyle.css" rel="stylesheet">
+				<script type="text/javascript" language="JavaScript"><!--
+function jsinit() {
+  if (top!=self) top.location.href = self.location.href;
+}
+// -->
+</script>
+			<!-- #EndHeadLocked -->
+		</head>
+
+		<body onload="jsinit()" bgcolor="#eeffff">
+			<h1>Cable Modem Troubleshooting Tips</h1>
+			<hr>
+			<table border="0" cellpadding="0" align="left" summary="Quick links">
+				<tr>
+					<td nowrap bgcolor="#ffffff">
+						<div class="menubox">
+							<a class="sidelink" title="Introduction and Index to articles" href="index.html">Intro&nbsp;&amp;&nbsp;Index</a>.<br>
+							<a class="sidelink" title="History of updates and changes to this site" href="hist.html">Update&nbsp;history</a>.<br>
+							<a class="sidelink" title="Problems with BroadJump Broadband Installer" href="broadjump.html">Installer issues</a>.<br>
+							<a class="sidelink" title="Problems associated with getting a cable modem registered with your cable operator" href="register.html">Registration&nbsp;issues</a>.&nbsp;<br>
+							<a class="sidelink" title="PC network configuration for cable service" href="basicset.html">Network&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Swapping one PC between multiple networks" href="mobile.html">Mobile&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Understanding the flashing lights on the cable modem" href="lights.html">Cable&nbsp;Modem&nbsp;LEDs</a>.<br>
+							<a class="sidelink" title="How to determine various important IP addresses" href="ipaddr.html">IP&nbsp;addresses</a>.<br>
+							<a class="sidelink" title="How to determine various important MAC addresses" href="macaddr.html">MAC addresses</a>.<br>
+							<a class="sidelink" title="What to check if you have no service" href="badip.html">Dead&nbsp;connection</a>.<br>
+							<a class="sidelink" title="Updating your system with the latest patches and fixes" href="sysupdates.html">System&nbsp;updates</a>.<br>
+							<a class="sidelink" title="Tweaking your PC for best cable modem performance" href="tweaks.html">Network&nbsp;tweaks</a>.<br>
+							<a class="sidelink" title="Problems specifically related to the ethernet connection between your PC and the cable modem" href="ethernet.html">Ethernet&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Problems specifically related to a USB connection between the PC and cable modem" href="usb.html">USB&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Procedures and tips specifically for Surfboard cable modems" href="surfboard.html">Surfboard&nbsp;tips</a>.<br>
+							<a class="sidelink" title="Diagnosing your cable modem's connection" href="signal.html">CM&nbsp;diagnostics</a>.<br>
+							<a class="sidelink" title="Quality of service determined by configuration file" href="cmfile.html">CM&nbsp;config&nbsp;file</a>.<br>
+							<a class="sidelink" title="The network structure of a cable modem" href="cmworks.html">CM&nbsp;tech&nbsp;info</a>.<br>
+							<a class="sidelink" title="DHCP-related problems" href="dhcp.html">DHCP&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Understanding DNS and fixing DNS problems" href="dnsname.html">DNS&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Transparent web proxy caches and how to sidestep them" href="trancache.html">Web&nbsp;proxy&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance of streaming media" href="stream.html">Streaming&nbsp;media</a>.<br>
+							<a class="sidelink" title="Settings that affect performance, latency and pings" href="games.html">Gaming&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance; avoiding saturation of upstream" href="p2p.html">P2P&nbsp;file-sharing</a>.<br>
+							<a class="sidelink" title="Work around connection errors" href="seti.html">SETI@home&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect web browsing performance" href="fasterweb.html">Faster&nbsp;web&nbsp;browsing</a>.<br>
+							<a class="sidelink" title="Strategies to get better download speeds" href="fasterftp.html">Faster&nbsp;downloads</a>.<br>
+							<a class="sidelink" title="How to avoid performance hits" href="downup.html">Simul&nbsp;down/uploads</a>.<br>
+							<a class="sidelink" title="How to restore lost connection when you swap PCs connected to the CM" href="swap.html">Swapping&nbsp;PCs&nbsp;on&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Multiple PCs sharing one CM, home LANs, and NAT Routers" href="homelan.html">PCs&nbsp;sharing&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Using dial-up without losing cable connection" href="dialup.html">Simul&nbsp;dialup&nbsp;&amp;&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Problems with some VPN configurations" href="vpn.html">VPN&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Keep your clock correct, for ever, from cable time" href="timesync.html">Time&nbsp;sync</a>.<br>
+							<a class="sidelink" title="Avoiding virus and trojan infections" href="virus.html">Virus&nbsp;security</a>.<br>
+							<a class="sidelink" title="Configuring firewalls for cable connection" href="security.html">Firewall&nbsp;security</a>.<br>
+							<a class="sidelink" title="Limitations of some speed tests" href="speed.html">Speed&nbsp;testing</a>.<br>
+							<a class="sidelink" title="Understanding, diagnosing, and fixing latency and ping problems" href="latency.html">Latency issues</a>.<br>
+							<a class="sidelink" title="How to perform a traceroute, and how they can mislead" href="traceroute.html">Traceroute</a>.<br>
+							<a class="sidelink" title="Understanding and diagnosing packet loss" href="loss.html">Packet loss</a>.<br>
+							<a class="sidelink" href="frontpage.html">FrontPage tips</a>.<br>
+							<a class="sidelink" title="How to obtain technical support" href="techsupp.html">NTL/BY&nbsp;Tech&nbsp;Support</a>.</div>
+					</td>
+					<td width="18">&nbsp;</td>
+				</tr>
+			</table>
+			<!-- #BeginEditable "main" -->
+				<h2>Latency Issues <span class="flash">&nbsp;New page 2002 Aug 18&nbsp;</span></h2>
+				<ul>
+					<li><a href="#what">What is Latency</a>?</li>
+					<li><a href="#ping">How can Latency be measured</a>? - the <b>ping</b> command.</li>
+					<li><a href="#docsis">Latency in DOCSIS cable modem systems</a>.</li>
+					<li><a href="#fixes">Troubleshooting latency problems</a>.</li>
+				</ul>
+				<hr>
+				<h3><a name="what"></a>What is Latency?</h3>
+				<p>Latency is the time delay caused by getting a network message to a remote computer, and getting a response back again. It is normally expressed in milliseconds (thousandths of a second).</p>
+				<p>High latency times cause noticeable performance degradation in applications such as:</p>
+				<ul>
+					<li>browsing web pages with many embedded graphics;</li>
+					<li>on-line interactive games.</li>
+				</ul>
+				<p>An internet connection consists of a number of transmission <i>hops</i> between <i>routers</i>. Latency times can be made larger by:</p>
+				<ul>
+					<li><b>propagation delay</b>: this varies with the total end-to-end length of the network connection, all signal propagation being limited by the speed of light. An additional latency of 80ms is not unusual for a transatlantic connection, and another 70ms if the US continent has to be crossed.</li>
+					<li><b>transmission delay</b>: the time taken to transmit a packet on each hop of a connection: this depends on the bandwidth, or speed, of the connection in bits-per-second. The higher the bits-per-second, the lower the transmission delay. With a dial-up modem, the slowest hop is usually the dial-up link itself. It can take 22msecs or more to transmit a full-size packet on a 56kbps link. With cable modems, the transmission delay surprisingly does <b>not</b> vary with the class of service, or the downstream/upstream rate caps, because the underlying transmission technology has a higher capacity than any rate cap.</li>
+					<li><b>router delays</b>: packets are re-assembled when received by routers, then buffered in memory until they can be transmitted on the hop to the next router. If that next hop is congested, the packet can be delayed inside the router for long periods. Internet congestion is unpredictable and unavoidable.</li>
+					<li><b>packet loss, recovery, and re-transmission</b>: although this is not normally counted as latency in data transmission discussions, it will certainly appear as latency to high-level applications at each end of a data link. The TCP protocol is self-healing and recovers from problems, but at a cost in real time.</li>
+				</ul>
+				<p>In addition, there are additional latencies caused specifically by the DOCSIS cable modem system, which will be discussed below.</p>
+				<hr>
+				<h3><a name="ping"></a>How can Latency be measured? - the ping command</h3>
+				<p>Latency between your PC and a remote computer can be measured with the <b>ping</b> command. This can only be executed inside a <b>command window</b>. For instance, if you were interested in the latency to <b>www.jolt.co.uk</b>, you would type the command:</p>
+				<blockquote>
+					<pre class="logns4">C:\&gt;<b>ping www.jolt.co.uk</b>
+
+Pinging clarity.jolt.co.uk [195.149.21.11] with 32 bytes of data:
+
+Reply from 195.149.21.11: bytes=32 time=<span class="yellbg">21ms</span> TTL=245
+Reply from 195.149.21.11: bytes=32 time=<span class="yellbg">19ms</span> TTL=245
+Reply from 195.149.21.11: bytes=32 time=<span class="yellbg">23ms</span> TTL=245
+Reply from 195.149.21.11: bytes=32 time=<span class="yellbg">19ms</span> TTL=245
+
+Ping statistics for 195.149.21.11:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milliseconds:
+    Minimum = 19ms, Maximum = 23ms, Average = 20ms</pre>
+				</blockquote>
+				<p>The times highlit above are the round-trip times (RTT), expressed in milliseconds, for a ping request to be sent and replied to, and represent the latency of the internet path between your PC and the specified remote computer. This is a rather unrealistic test, because the test packet size was, by default, too small. To perform a more realistic test, add the parameter <b class="nowrap">-l&nbsp;1472</b>, (that's a lower case <b class="nowrap">-L</b> for Length), like this:</p>
+				<blockquote>
+					<pre class="logns4">C:\&gt;<b>ping -l 1472 www.jolt.co.uk</b>
+
+Pinging clarity.jolt.co.uk [195.149.21.11] with 1472 bytes of data:
+
+Reply from 195.149.21.11: bytes=1472 time=<span class="yellbg">43ms</span> TTL=245
+Reply from 195.149.21.11: bytes=1472 time=<span class="yellbg">45ms</span> TTL=245
+Reply from 195.149.21.11: bytes=1472 time=<span class="yellbg">45ms</span> TTL=245
+Reply from 195.149.21.11: bytes=1472 time=<span class="yellbg">41ms</span> TTL=245
+
+Ping statistics for 195.149.21.11:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milliseconds:
+    Minimum = 41ms, Maximum = 45ms, Average = 43ms</pre>
+				</blockquote>
+				<p>Note the higher RTTs, caused by higher transmission delays from the longer data packets: these are more realistic measurements than the default ones above.</p>
+				<p>The ping probes and replies are carried by the ICMP protocol. ICMP is carried within an IP packet. The IP protocol has a header overhead of 20 bytes, and ICMP has a header overhead of 8 bytes, making 28 total bytes of overhead within a maximum packet size of 1500 bytes. This leaves 1500-28&nbsp;=&nbsp;1472 as the longest ping request which can be made without fragmentation.</p>
+				<p>The ping request is carried as an <b>ICMP Echo Request</b>, and the reply comes as an <b>ICMP Echo Reply</b>. Firewalls have to permit these classes of packet through at each end of the connection for the ping command to work.</p>
+				<p>To alter the number of ping trials from the default of 4, use the parameter <b class="nowrap">-n</b> followed by the number.  For instance <b class="nowrap">-n&nbsp;100</b> will do 100 pings. A long sequence of pings is useful for spotting short-term variations in the latency.</p>
+				<p>To ping continuously, use the parameter <b class="nowrap">-t</b>. Stop it by typing <b class="nowrap">Ctrl-C</b>.</p>
+				<p>Please note that, if <a href="trancache.html">transparent web proxying</a> is in effect, a ping or <a href="traceroute.html">traceroute</a> to the remote web server will not follow the same path as the web browser's data. You might get successful pings or traceroutes to the server, but the transparent proxy might be broken. Pings and traceroutes are not affected by proxy settings, and always go direct.</p>
+				<p><b>Apple Mac OS 8.x/9.x</b> users can perform ping tests with utilities such as <a href="http://www.sustworks.com/">IPNetMonitor</a>.</p>
+				<p><b>Apple Mac OS X</b> users can open a command window by launching the <b>Terminal</b> application (in the <b>Utilities</b> folder inside the <b>Applications</b> folder), and then use the <b>ping</b> command. However, the parameters are different from the Windows description above: type the command <b>man ping</b> for details. Alternatively, the <b>Network Utility</b> application (in the <b>Utilities</b> folder) offers a simple GUI version of <b>ping</b> with no parameters.</p>
+				<hr>
+				<h3><a name="docsis"></a>Latency in DOCSIS cable modem systems</h3>
+				<p>Apart from normal internet latencies, there are additional latencies caused by the DOCSIS cable modem system. The ping times one gets on tests from a PC to the UBR, for instance, far exceed the times one can normally account for with the short length and high speed of the cable network. The main reasons for additional latency between the cable modem and the UBR are:</p>
+				<ul>
+					<li>allocation of upstream transmission slots to cable modems;</li>
+					<li>Forward Error Correction (FEC) interleaving;</li>
+					<li>operation of the rate caps.</li>
+				</ul>
+				<p><b>Upstream slots</b>: Unlike an ethernet card, a cable modem is not allowed to transmit on demand. A single upstream channel frequency has to be shared by hundreds of cable modems that cannot hear each other's transmissions. If more than one cable modem transmitted at once, the UBR would not be able to understand either of them. So all cable modems must remain silent until they are allocated a time slot (measured with a precision of microseconds) by the UBR. The time-slot allocations are broadcast by the UBR on the downstream as MAP packets, so called because they map time slots to individual cable modems. So a typical sequence might be:</p>
+				<ul>
+					<li>PC transmits a packet to the cable modem.</li>
+					<li>The cable modem stores the packet, and waits for an opportunity to transmit a <b>bandwidth request</b> to the UBR.</li>
+					<li>The UBR receives the <b>bandwidth request</b>, and schedules an upstream time-slot in the near future. This is added to a list of such scheduled slots for all other cable modems, and transmitted as a <b>MAP</b> packet at intervals on the downstream channel.</li>
+					<li>The cable modem monitors all MAP packets on the downstream. When it sees a timeslot allocated to itself, it waits until that allocated time, and then transmits the waiting packet.</li>
+				</ul>
+				<p>All of this takes time. If the upstream is congested, the UBR might not be able to allocate a time-slot until some considerable time in the future, and poor latency will be seen. If signal conditions on the cable are poor, the bandwidth request or the MAP packet might not be heard, and nothing will happen until the cable modem retries the bandwidth request.</p>
+				<p><b>FEC Interleaving</b>: The data transmitted by the UBR on the downstream, and by cable modems on the upstream, carries with it extra information, enabling simple errors (e.g. from noise) to be corrected at the receiving end: this is called Forward Error Correction. To reduce the effect of impulse noise (e.g. from mains switching, typical of domestic environments), the data bits are interleaved (sent out of order) after the FEC is applied, and put back into order at the receiving end before FEC correction. The interleaving and de-interleaving causes some additional unavoidable latency, but usually very little compared to other effects.</p>
+				<p><b>Rate caps</b>: The upstream rate cap enforcement in the UBR is like a <i>leaky bucket</i>: the user's PC is allowed to send data in a bursty sort of way, maybe exceeding the rate cap for a few seconds, but the data is buffered in the UBR and transmitted onwards at a steady rate, not exceeding the rate cap. This is like slopping water randomly into a leaky bucket: however much is held in the bucket, it dribbles out of the leak at a fixed rate. But the effect of buffering the data in the UBR and holding it in the leaky bucket is to add dramatically to the latency, maybe thousands of milliseconds. Thus, if latency matters to you, you must avoid sending data faster than your upstream rate cap: you can achieve this only with bandwidth throttling software in your own PC, or by configuring individual applications.</p>
+				<p>All the above effects combine to give an RTT between the user's PC and the UBR (first hop in the ISP's network) which is usually no better then 7 or 8 milliseconds.</p>
+				<p>It is important to realise that, unlike dial-up modems, the latency arising from transmission delay on cable modems is independent of the rate caps. One packet is transmitted on the downstream at roughly 30Mbps, regardless of the downstream rate cap. One packet is transmitted on the upstream at roughtly 2.56Mbps, regardless of the upstream rate cap. So ping times on a 128kbps service will be the same as ping times on a 1Mbps service. The different rate caps affect only how often packets are allowed, not the transmission rate of a single packet.</p>
+				<hr>
+				<h3><a name="fixes"></a>Troubleshooting latency problems</h3>
+				<p>If you think you are having latency problems with a certain remote host, the first thing to do is to identify roughly where the latency is accumulating: a <a href="traceroute.html">traceroute</a> is the best way to do this.</p>
+				<p>If the first hop with poor RTT is occurring beyond the last hop in your ISP's network, then there is nothing that you or your ISP can do about it. Latency such as propagation delay on transatlantic or transcontinental routes is simply a fact of life and cannot be avoided: for this reason it is not sensible to attempt using highly interactive games servers on the opposite side of the Atlantic.</p>
+				<p>If the first hop with poor RTT is occurring after the first hop and before the far edge of your ISP's network, then all you can do is draw it to the attention of your ISP as some sort of internal problem.</p>
+				<p>If  the first hop itself has poor RTT, meaning the latency problem is between your PC and the UBR, then it is necessary to distinguish whether this is something that you can remedy, or whether it is something that your ISP needs to attend to.</p>
+				<p>Things that you can possibly remedy are:</p>
+				<ul>
+					<li>network configuration of the PC: poor latency can be caused by unnecessary network services or protocols being active in the PC (putting unnecessary traffic on the upstream), or by duplex mis-matches between the PC's ethernet interface and the cable modem's. See <a href="tweaks.html#cfg">Network Configuration Tweaks</a> for what you can do to minimise these effects.</li>
+					<li>background applications in your PC putting traffic on the network without your knowledge. For instance, P2P applications can generate traffic even when they are just sitting in the system tray, and spyware might be totally invisible.</li>
+					<li>cable problems with the ethernet or USB connection to the cable modem.</li>
+					<li>cable problems with the CATV connection to the cable modem (tighten it).</li>
+					<li>avoid hitting the upstream rate cap: the solutions are the same as the solutions listed to <a href="downup.html">Simultaneous download and upload performance</a>.</li>
+					<li>if your latency problems occur in online games, see <!-- #BeginEditable "main" --><a href="games.html">On-line gaming performance issues</a>.<!-- #EndEditable --></li>
+				</ul>
+				<p>The things that you might be able to diagnose but the ISP needs to remedy are:</p>
+				<ul>
+					<li>poor cable signal conditions: see <a href="signal.html">Cable modem diagnostics and signal levels</a>;</li>
+					<li>overloaded upstream: you might be able to diagnose this by use of the <b class="nowrap">-traffic -ubrip</b> keywords of the <a href="../docsdiag/index.html">DocsDiag program</a>. This will work only if the ISP permits customers to use SNMP queries on the cable network. If your latency problems vary with time of day and are worst at peak usage periods, then an overloaded upstream is possibly the problem.</li>
+				</ul>
+				<p>Guidelines from Cisco suggest that no more than 200 cable modems should use a single upstream; however, that figure was estimated on assumptions of domestic usage only: if customers run servers such as P2P systems, upstreams might get overloaded on fewer than 200 users. The capacity of a single cable upstream is just over 2 Mbps, and this is easily saturated by a handful of cable modem users running servers at full capacity.</p>
+				<p>If you discover that your cable modem is on an overloaded upstream, and if the cable modem is a Surfboard, then you can reconfigure the Surfboard to try a different upstream channel: see <a href="surfboard.html#upid">Changing the Surfboard's Upstream Channel</a>.</p>
+				<hr>
+			<!-- #EndEditable -->
+			<p>Return to <a href="index.html">Index</a>.</p>
+		</body>
+
+	<!-- #EndTemplate -->
+
+</html>
+

@@ -1,0 +1,332 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+
+<html lang="en">
+
+	<!-- #BeginTemplate "../../cmtips.data/Templates/cmtemp.html" -->
+
+		<head>
+			<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+			<title>Cable Modem Troubleshooting Tips: Time Synchronisation</title>
+			<!-- #BeginHeadLocked "" -->
+				<meta name="description" content="Technical tips for troubleshooting a cable modem connection.">
+				<meta name="keywords" content="cable modem, FAQ, broadband, cablemodem, troubleshooting, tips, NTL, NTLworld, ntlhome, Telewest, blueyonder">
+				<meta name="author" content="Robin Walker">
+				<meta name="copyright" content="&copy; 2001-02 Robin Walker">
+				<link href="../favicon.ico" rel="shortcut icon">
+				<link href="mailto:rdhw@cam.ac.uk" rel="author">
+				<link href="copyright.html" rel="copyright">
+				<link href="index.html" rel="index">
+				<link href="cmstyle.css" rel="stylesheet">
+				<script type="text/javascript" language="JavaScript"><!--
+function jsinit() {
+  if (top!=self) top.location.href = self.location.href;
+}
+// -->
+</script>
+			<!-- #EndHeadLocked -->
+		</head>
+
+		<body onload="jsinit()" bgcolor="#eeffff">
+			<h1>Cable Modem Troubleshooting Tips</h1>
+			<hr>
+			<table border="0" cellpadding="0" align="left" summary="Quick links">
+				<tr>
+					<td nowrap bgcolor="#ffffff">
+						<div class="menubox">
+							<a class="sidelink" title="Introduction and Index to articles" href="index.html">Intro&nbsp;&amp;&nbsp;Index</a>.<br>
+							<a class="sidelink" title="History of updates and changes to this site" href="hist.html">Update&nbsp;history</a>.<br>
+							<a class="sidelink" title="Problems with BroadJump Broadband Installer" href="broadjump.html">Installer issues</a>.<br>
+							<a class="sidelink" title="Problems associated with getting a cable modem registered with your cable operator" href="register.html">Registration&nbsp;issues</a>.&nbsp;<br>
+							<a class="sidelink" title="PC network configuration for cable service" href="basicset.html">Network&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Swapping one PC between multiple networks" href="mobile.html">Mobile&nbsp;setup</a>.<br>
+							<a class="sidelink" title="Understanding the flashing lights on the cable modem" href="lights.html">Cable&nbsp;Modem&nbsp;LEDs</a>.<br>
+							<a class="sidelink" title="How to determine various important IP addresses" href="ipaddr.html">IP&nbsp;addresses</a>.<br>
+							<a class="sidelink" title="How to determine various important MAC addresses" href="macaddr.html">MAC addresses</a>.<br>
+							<a class="sidelink" title="What to check if you have no service" href="badip.html">Dead&nbsp;connection</a>.<br>
+							<a class="sidelink" title="Updating your system with the latest patches and fixes" href="sysupdates.html">System&nbsp;updates</a>.<br>
+							<a class="sidelink" title="Tweaking your PC for best cable modem performance" href="tweaks.html">Network&nbsp;tweaks</a>.<br>
+							<a class="sidelink" title="Problems specifically related to the ethernet connection between your PC and the cable modem" href="ethernet.html">Ethernet&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Problems specifically related to a USB connection between the PC and cable modem" href="usb.html">USB&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Procedures and tips specifically for Surfboard cable modems" href="surfboard.html">Surfboard&nbsp;tips</a>.<br>
+							<a class="sidelink" title="Diagnosing your cable modem's connection" href="signal.html">CM&nbsp;diagnostics</a>.<br>
+							<a class="sidelink" title="Quality of service determined by configuration file" href="cmfile.html">CM&nbsp;config&nbsp;file</a>.<br>
+							<a class="sidelink" title="The network structure of a cable modem" href="cmworks.html">CM&nbsp;tech&nbsp;info</a>.<br>
+							<a class="sidelink" title="DHCP-related problems" href="dhcp.html">DHCP&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Understanding DNS and fixing DNS problems" href="dnsname.html">DNS&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Transparent web proxy caches and how to sidestep them" href="trancache.html">Web&nbsp;proxy&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance of streaming media" href="stream.html">Streaming&nbsp;media</a>.<br>
+							<a class="sidelink" title="Settings that affect performance, latency and pings" href="games.html">Gaming&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect performance; avoiding saturation of upstream" href="p2p.html">P2P&nbsp;file-sharing</a>.<br>
+							<a class="sidelink" title="Work around connection errors" href="seti.html">SETI@home&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Settings that affect web browsing performance" href="fasterweb.html">Faster&nbsp;web&nbsp;browsing</a>.<br>
+							<a class="sidelink" title="Strategies to get better download speeds" href="fasterftp.html">Faster&nbsp;downloads</a>.<br>
+							<a class="sidelink" title="How to avoid performance hits" href="downup.html">Simul&nbsp;down/uploads</a>.<br>
+							<a class="sidelink" title="How to restore lost connection when you swap PCs connected to the CM" href="swap.html">Swapping&nbsp;PCs&nbsp;on&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Multiple PCs sharing one CM, home LANs, and NAT Routers" href="homelan.html">PCs&nbsp;sharing&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Using dial-up without losing cable connection" href="dialup.html">Simul&nbsp;dialup&nbsp;&amp;&nbsp;CM</a>.<br>
+							<a class="sidelink" title="Problems with some VPN configurations" href="vpn.html">VPN&nbsp;issues</a>.<br>
+							<a class="sidelink" title="Keep your clock correct, for ever, from cable time" href="timesync.html">Time&nbsp;sync</a>.<br>
+							<a class="sidelink" title="Avoiding virus and trojan infections" href="virus.html">Virus&nbsp;security</a>.<br>
+							<a class="sidelink" title="Configuring firewalls for cable connection" href="security.html">Firewall&nbsp;security</a>.<br>
+							<a class="sidelink" title="Limitations of some speed tests" href="speed.html">Speed&nbsp;testing</a>.<br>
+							<a class="sidelink" title="Understanding, diagnosing, and fixing latency and ping problems" href="latency.html">Latency issues</a>.<br>
+							<a class="sidelink" title="How to perform a traceroute, and how they can mislead" href="traceroute.html">Traceroute</a>.<br>
+							<a class="sidelink" title="Understanding and diagnosing packet loss" href="loss.html">Packet loss</a>.<br>
+							<a class="sidelink" href="frontpage.html">FrontPage tips</a>.<br>
+							<a class="sidelink" title="How to obtain technical support" href="techsupp.html">NTL/BY&nbsp;Tech&nbsp;Support</a>.</div>
+					</td>
+					<td width="18">&nbsp;</td>
+				</tr>
+			</table>
+			<!-- #BeginEditable "main" -->
+				<h2><a name="timesync"></a>Time Synchronisation</h2>
+				<p>When sending e-mails or posting news, the PC's clock will be used to timestamp the message. It is therefore helpful to others if your PC's date and time are kept correct. This can be done manually, and/or with automatic assistance</p>
+				<p>The best way of automatically synchronising computer clocks is to use the <b>Network Time Protocol</b> (NTP, sometimes known as SNTP, not to be confused with NNTP or SMTP) on port 123. The NTP system is capable of synchronising computer clocks with an accuracy of a few scores of microseconds. To use NTP you need to:</p>
+				<ul>
+					<li>identify an NTP server close to you (the closer the better);</li>
+					<li>Windows 9x/ME/NT only: acquire an NTP client;</li>
+					<li>configure NTP client software.</li>
+				</ul>
+				<p>Typical places to try for an NTP server are (use the first of this list that works for you, on the principle of using the closest NTP server possible):</p>
+				<ul>
+					<li>Your UBR <b>might</b> support NTP: use the public <a href="ipaddr.html#gateway">Default Gateway</a> IP address for the UBR rather than its private IP address. <span class="ntl">In the original NTL regions,</span><span class="by"> and on Blueyonder,</span><span class="ntl"> the UBR <b>does</b> support NTP, although some particular UBRs are giving problems. In the ex-C&amp;W regions of NTL (where cable modem service is provided from a Pace digital TV STB), the UBR <b>does</b> support NTP for customers via the Default Gateway address.</span> In general, the UBR does <b>not</b> support older time protocols such as DayTime (port 13) or Time (port 37).</li>
+					<li>Your DHCP server: see <a href="ipaddr.html#dhcpip">Finding the DHCP server address</a>. <span class="ntl">In the ex-C&amp;W regions of NTL (where cable modem service is provided from a Pace digital TV STB), the DHCP server <b>does not</b> support NTP for customers.</span></li>
+					<li>A time server provided by your ISP, if any:</li>
+					<ul>
+						<li class="ntlns4">On NTL, use time.cableol.net</li>
+						<li class="byns4">On Blueyonder, use ntp.blueyonder.co.uk</li>
+					</ul>
+				</ul>
+				<p>For all <b>Windows</b> users, first ensure that the PC is in the correct timezone, and set the time manually:</p>
+				<ul>
+					<li>Open <b>Control Panel</b>.</li>
+					<li>Double-click <b>Date/Time</b>.</li>
+					<li>[WinNT/2000/XP] Click tab <b>Time Zone</b>.</li>
+					<li>In the pull-down, select <b class="nowrap">(GMT) Greenwich Mean Time: Dublin, Edinburgh, Lisbon, London</b>.</li>
+					<li>Check <b>Automatically adjust clock for daylight saving changes</b>.</li>
+					<li>[WinNT/2000/XP] Click tab <b>Date &amp; Time</b>.</li>
+					<li>Adjust the date and time to be correct.</li>
+					<li>Click <b>OK</b>.</li>
+				</ul>
+				<p><b>Windows 9x/ME/NT:</b> For automatic synchronisation, some popular time clients (e.g. WorldTime, TimeSync) do not support the NTP protocol. The following freeware applications support NTP synchronisation:</p>
+				<ul>
+					<li><a href="http://www.arachnoid.com/abouttime/" title="AboutTime home page">AboutTime</a>, which can be downloaded from its <a href="http://tucows.mirror.ac.uk/preview/195339.html" title="Tucows preview for AboutTime">Tucows UK mirror preview page</a>.</li>
+					<li><a href="http://www.oneguycoding.com/automachron/" title="One Guy Coding">Automachron</a>.</li>
+				</ul>
+				<p>Set up AboutTime as follows:</p>
+				<ul>
+					<li>Click the tab <b>Time Hosts</b>.</li>
+					<li>Click button <b>Add</b>.</li>
+					<ul>
+						<li>In the box <b>Site name</b> type a descriptive name of your choice.</li>
+						<li>In the box <b>Host name/address</b> type the IP address of the NTP server that you discovered.</li>
+						<li>In the dropdown <b>Protocol</b> select <b>SNTP</b>.</li>
+						<li>Click <b>Verify Entry</b>, then click <b>OK</b>.</li>
+					</ul>
+					<li>Click the tab <b>Control/Time Client</b>.</li>
+					<li>Click <b>Set Time</b>.</li>
+					<li>Click <b>Hide</b>.</li>
+				</ul>
+				<p><b>Windows 2000</b> has an NTP client built-in, a very smart one which not only synchronises your clock but also tweaks the rate of the clock so that it keeps better time anyway. If the <b>Windows Time</b> service is not already started, set it up as follows:</p>
+				<ul>
+					<li>In a Command Prompt window, type the command<br>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+							&nbsp;<br>
+						<tt><b>net time /setsntp:xxx<i>.xx.xxx.xxx</i></b></tt><br>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+							&nbsp;<br>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+							where <tt><b><i>xxx.xxx.xxx.xxx</i></b></tt> is the address of the NTP server that you discovered.</li>
+					<li>Right-click on <b>My Computer</b> and select <b>Manage</b>.</li>
+					<li>In the left-hand window, expand <b>Services and Applications</b> and select <b>Services</b>.</li>
+					<li>In the right-hand window, scroll down and double-click <b>Windows Time</b>.</li>
+					<ul>
+						<li>In the drop-down <b>Startup typ<u>e</u></b> select <b>Automatic</b>.</li>
+						<li>Click button <b><u>S</u>tart</b> (unless it was already started, when the button is dimmed).</li>
+						<li>Click <b>OK</b>.</li>
+					</ul>
+					<li>Close the window Computer Management.</li>
+				</ul>
+				<p>This setup will automatically start the time synchroniser after every restart. If the <b>Windows Time</b> service had already been started, then just use the following commands:</p>
+				<blockquote>
+					<pre><b>net stop  &quot;Windows Time&quot;
+net time  /setsntp:<i>xxx.xxx.xxx.xxx</i>
+net start &quot;Windows Time&quot;</b></pre>
+				</blockquote>
+				<p>where <tt><b><i>xxx.xxx.xxx.xxx</i></b></tt> is the DNS name or IP number of the new NTP server. [Thanks to NiShFiSh for this Windows 2000 information].</p>
+				<p><b>Windows XP</b> supports network time synchronisation. As installed, it synchronises automatically to a Microsoft time server in the USA. To select a closer time server:</p>
+				<ul>
+					<li>Open the Control Panel <b>Date and Time</b>.</li>
+					<li>Click the tab <b>Internet Time</b>.</li>
+					<li>Check <b>Automatically synchronize with an Internet time server</b>.</li>
+					<li>In the box <b>Server</b> type the IP address or DNS name of the desired NTP time server.</li>
+					<li>Click <b>Update Now</b> to check that it works. If it doesn't work, go back and set another server.</li>
+					<li>Click <b>OK</b>.</li>
+				</ul>
+				<p>This simple XP service synchronises with the server only once a week.</p>
+				<p><b>Apple Mac OS 8.5 to 9.2</b>: has an NTP client incorporated into the <b>Date &amp; Time</b> control panel. Set it up as follows:</p>
+				<ul>
+					<li>Open the control panel <b>Date &amp; Time</b>.</li>
+					<li>Check <b>Set Daylight-Saving Time Automatically</b>.</li>
+					<li>If the timezone shown is not correct, click <b>Set Time Zone...</b></li>
+					<ul>
+						<li>Scoll and select <b>London</b>, <b>Cardiff</b>, <b>Edinburgh</b>, or <b>Dublin</b> as appropriate.</li>
+						<li>Click <b>OK</b>.</li>
+					</ul>
+					<li>Correct the date and time if necessary.</li>
+					<li>For automatic synchronisation, check <b>Use a Network Time Server</b>.</li>
+					<li>Click <b>Server Options...</b></li>
+					<ul>
+						<li>From the drop-down <b>Network Time Server</b>, select <b>Edit List...</b></li>
+						<ul>
+							<li>Click the button <b>Add...</b></li>
+							<ul>
+								<li>In the box <b>Descriptive name:</b> type a name of your choice.</li>
+								<li>In the box <b>Server address:</b> type the IP address of the NTP server that you discovered.</li>
+								<li>Click <b>Add</b>.</li>
+							</ul>
+							<li>Ensure the new entry is selected, and click <b>Done</b>.</li>
+						</ul>
+						<li>Check and set a suitable refresh rate (e.g. 24 hours).</li>
+						<li>Click the button <b>Set Time Now</b>.</li>
+						<li>Click <b>OK</b>.</li>
+					</ul>
+					<li>Close the control panel.</li>
+				</ul>
+				<p><b>Apple Mac OS X</b>:</p>
+				<ul>
+					<li>Pull down the <b>Apple</b> menu, select <b>System Preferences...</b></li>
+					<li>Click <b>Date &amp; Time</b>.</li>
+					<li>Click tab <b>Time Zone</b>:</li>
+					<ul>
+						<li>Click on the world map in your part of the world;</li>
+						<li>In the pull-down <b>Closest City</b>, select the name of the most suitable close city in your time zone.</li>
+					</ul>
+					<li>Click tab <b>Date &amp; Time</b>:</li>
+					<ul>
+						<li>Use the controls to set the correct date and time.</li>
+					</ul>
+					<li>For automatic syncronisation, click tab <b>Network Time</b>:</li>
+					<ul>
+						<li>Check <b>Use a network time server</b>;</li>
+						<li>In the box <b>NTP Server</b>, enter the address of your chosen NTP server, or select one of the pre-set ones in the drop-down;</li>
+						<li>Click <b>Set Time Now</b>;</li>
+						<li>Check you get the message <b>Synchronization Succeeded</b>, otherwise configure a different server.</li>
+					</ul>
+				</ul>
+				<p><b>Linux</b> users should create or edit the file <b>/etc/ntp.conf</b> to contain the line:</p>
+				<blockquote>
+					<pre><b>server <i>xxx.xxx.xxx.xxx</i></b></pre>
+				</blockquote>
+				<p>where <tt><b><i>xxx.xxx.xxx.xxx</i></b></tt> is the NTP server address that you discovered. Starting the NTP client daemon varies according to system: for RedHat 7.0 give the command:</p>
+				<blockquote>
+					<pre><b>chkconfig --level 345 ntpd on</b></pre>
+				</blockquote>
+				<p>RedHat 6.2 uses <b>xntpd</b> instead of <b>ntpd</b>. [Thanks to Jon Peatfield for this Linux information].</p>
+				<p><b>Other platforms</b>: see <a href="http://www.eecis.udel.edu/%7entp/software.html" title="Time synchronization software">http://www.eecis.udel.edu/~ntp/software.html</a>.</p>
+				<hr>
+			<!-- #EndEditable -->
+			<p>Return to <a href="index.html">Index</a>.</p>
+		</body>
+
+	<!-- #EndTemplate -->
+
+</html>
+
